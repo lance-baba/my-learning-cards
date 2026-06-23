@@ -1,1 +1,1 @@
-# my-learning-cards
+# lance-learning-cards
