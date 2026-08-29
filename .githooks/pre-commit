@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# CardFlow pre-commit —— 数据契约校验门禁
+#
+# 背景：tools/card_tool.js 早已写好数据契约校验（layout 契约、必填字段、
+#       全角引号、重复 id、跨文件核对），但一直靠人记得手动跑，
+#       等于没有。此 hook 把它变成强制门禁（工程评审 P0 第 5 项）。
+#
+# 策略：仅当暂存区包含 data/*.json 变更时才校验，纯代码提交不受影响。
+# 绕过：确需紧急提交用 git commit --no-verify（不推荐）。
+#
+changed=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^data/.*\.json$')
+
+if [ -z "$changed" ]; then
+  exit 0
+fi
+
+echo "[pre-commit] 检测到题库数据变更，执行数据契约校验..."
+echo ""
+
+node tools/card_tool.js validate
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo ""
+  echo "[pre-commit] 数据校验未通过（存在 [错误]），提交已中止。"
+  echo "[pre-commit] 请修复上述错误后重新提交。"
+  echo "[pre-commit] 紧急绕过：git commit --no-verify"
+  exit 1
+fi
+
+echo ""
+echo "[pre-commit] 数据校验通过"
+exit 0
