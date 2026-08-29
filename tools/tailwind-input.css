@@ -1,0 +1,12 @@
+/*!
+ * Tailwind 构建入口
+ *
+ * 仅含三条指令，实际样式由 JIT 依据 tailwind.config.js 扫描
+ * public/index.html + public/app.js 后按需生成。
+ *
+ * 构建：`npm run build:css`
+ * 产物：public/vendor/tailwind.min.css（覆盖原 2.80MB 全量文件）
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

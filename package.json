@@ -1,11 +1,13 @@
 {
   "name": "cardflow",
   "version": "1.0.0",
-  "private":  true,
+  "private": true,
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "preview": "node local-server.js",
+    "build:css": "tailwindcss -i tools/tailwind-input.css -o public/vendor/tailwind.min.css --minify",
+    "audit:css": "node tools/audit_css_classes.js",
     "validate": "node tools/card_tool.js validate",
     "new": "node tools/card_tool.js new",
     "setup-kv": "node tools/setup_kv.js",
@@ -13,6 +15,7 @@
     "login": "wrangler login"
   },
   "devDependencies": {
+    "tailwindcss": "2.2.19",
     "wrangler": "^3.0.0"
   }
 }

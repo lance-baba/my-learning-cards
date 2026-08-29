@@ -14,6 +14,14 @@ npm_install*.log
 # 本地预览截图（非源码资产）
 _preview_*.png
 
+# 一次性回滚备份：改造前的 2.80MB 全量 Tailwind。
+# 不入库（2.8MB 死重且永不变更）；回滚直接用 git revert 即可，
+# 或按需重建：npx tailwindcss@2.2.19 build -o tailwind.full.backup.css
+public/vendor/tailwind.full.backup.css
+
+# 临时脚本工作区
+tools/tmp/
+
 # 系统 / 编辑器
 .DS_Store
 Thumbs.db
