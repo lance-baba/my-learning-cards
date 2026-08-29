@@ -1,0 +1,362 @@
+{
+  "bundle_id": "bundle:plants:v1",
+  "category_id": "plants",
+  "version": "v1",
+  "items": [
+    {
+      "id": "plants_topic_含羞草害羞",
+      "title": "含羞草为什么害羞",
+      "tags": [
+        "植物",
+        "趣味百科",
+        "感震运动"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "含羞草",
+        "url": "https://baike.baidu.com/item/%E5%90%AB%E7%BE%9E%E8%8D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "含羞草为什么会\"害羞\"？",
+          "content": "含羞草（Mimosa pudica）叶片受到触碰会迅速合拢下垂，这是植物的感震运动（seismonasty）。它的叶柄基部有一个叫\"叶枕\"的膨大结构，里面充满水分。受刺激时叶枕细胞失水收缩，叶片就闭合下垂了。这种反应约在0.1秒内开始，十几分钟到半小时内恢复。一般认为这是防御昆虫啃食或风雨的一种自我保护。",
+          "action_hint": "左右滑动看叶枕与恢复时间 ➔",
+          "citation_anchor": "定义/总述"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它是怎么\"秒收\"的？",
+          "streaming_content": "触碰信号会以生物电方式沿着茎快速传导，速度大约每秒几厘米到十几厘米。到达叶枕后，细胞膜调节钾离子和水外流，细胞膨压骤降。整片复叶能在不到一秒内合拢。之后要靠主动运输把离子和水重新泵回，叶片才慢慢张开。所以你越频繁逗它，它越\"懒得理你\"——因为恢复需要消耗能量。",
+          "citation_anchor": "感震运动机制"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "为什么反复碰它就不灵了？（点击翻转）",
+          "front_text": "含羞草被连续逗弄后为什么反应变弱？",
+          "back_text": "因为每次闭合都靠主动运输把水分和离子重新泵回细胞，连续刺激会耗尽能量储备，细胞暂时\"疲惫\"，反应阈值升高。这也是植物界一种简单的\"学习\"或适应：把能量留给真正危险的刺激，避免对无关触碰白白浪费。",
+          "citation_anchor": "适应性反应"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_捕蝇草吃虫",
+      "title": "捕蝇草怎么吃虫",
+      "tags": [
+        "植物",
+        "食虫植物",
+        "趣味百科"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "捕蝇草",
+        "url": "https://baike.baidu.com/item/%E6%8D%95%E8%9D%89%E8%8D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "它是怎么判断\"有虫\"的？（点击翻转）",
+          "front_text": "捕蝇草为什么不会误吞雨滴和落叶？",
+          "back_text": "它的夹子内壁有3根（少数4根）细密的触发毛。昆虫爬动会碰到触发毛，而且必须\"在约20秒内触碰两次\"才会闭合。这种双重确认机制能过滤掉偶然的落叶、雨滴等单次干扰，避免白白消耗能量去关夹子。",
+          "citation_anchor": "触发机制"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "吃一顿虫分几步？",
+          "items": [
+            "第一步：昆虫连续触碰触发毛两次，夹子在两秒内猛地合拢，齿状边缘交错锁成笼子。",
+            "第二步：若猎物还在挣扎，夹子进一步紧闭形成\"胃\"状，分泌消化酶和酸性物质。",
+            "第三步：约5到10天慢慢把软组织消化吸收，剩下外壳，夹子重新张开。",
+            "第四步：一只夹子通常只能捕猎并消化有限的几次，老了就失去捕虫能力。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "qa_card",
+          "title": "捕蝇草靠虫活命吗？",
+          "content": "捕蝇草（Dionaea muscipula）原产地是美国北卡罗来纳州的贫瘠湿地，那里的土壤缺氮。它虽然能靠光合作用自己制造糖分，但需要从昆虫体内补充氮、磷等矿质营养。所以虫不是它的\"主食\"，更像是营养补充剂。人工种植时给太多肉反而可能把夹子撑坏。",
+          "action_hint": "左右滑动看触发毛与消化时间 ➔",
+          "citation_anchor": "生态习性"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_大王花",
+      "title": "最大的花（大王花）",
+      "tags": [
+        "植物",
+        "世界之最",
+        "寄生植物"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "大王花",
+        "url": "https://baike.baidu.com/item/%E5%A4%A7%E7%8E%8B%E8%8A%B1",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "世界上现存最大的花是什么？",
+          "content": "是大王花（Rafflesia arnoldii），生长在东南亚热带雨林。它一朵花直径可达1米左右，重量能到10公斤，堪称\"花中之王\"。但它其实没有茎、叶、根，整个身体都寄生在葡萄科植物的藤蔓里，只有开花时才探出头来。最特别的是它散发类似腐肉的臭味，用来吸引苍蝇帮它传粉。",
+          "action_hint": "左右滑动看臭味与寄生秘密 ➔",
+          "citation_anchor": "形态/概述"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它为什么这么\"臭\"？",
+          "streaming_content": "大王花开放时会释放含硫化合物，气味像腐烂的肉，这种\"尸臭\"在热带里能飘出很远。它的传粉者主要是喜欢腐肉的苍蝇和甲虫——闻味而来，在花心里爬进爬出，顺便把花粉带走。对植物来说，臭味不是缺点，而是精准的\"招聘广告\"，用最低成本找到对的搬运工。",
+          "citation_anchor": "传粉策略"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "大花 vs 花序",
+          "wrong": "大王花是\"最大的花\"，所以没有更大的花了。",
+          "right": "严格说它单朵最大；而\"花序\"更大的有巨魔芋（泰坦魔芋）和巨掌棕榈，但它们是一大串小花聚成的\"花序\"，不是一个花器官。两者别混为一谈。"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_狐尾松",
+      "title": "最老的树（狐尾松）",
+      "tags": [
+        "植物",
+        "世界之最",
+        "长寿"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "狐尾松",
+        "url": "https://baike.baidu.com/item/%E7%8B%90%E5%B0%BE%E6%9D%BE",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "世界上最长寿的树是谁？（点击翻转）",
+          "front_text": "已知活了最久的树大概多少岁？",
+          "back_text": "是生长在美国西部高山上的狐尾松（bristlecone pine，学名 Pinus longaeva）。其中一棵代号\"玛士撒拉\"（Methuselah）的个体，经年轮测定树龄超过4800岁，至今还活着。它们长在贫瘠、寒冷、风大的石灰岩坡上，长得极慢，木质极密，反而躲过了火灾和病虫害。",
+          "citation_anchor": "寿命纪录"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "它凭什么活这么久？",
+          "items": [
+            "生长环境恶劣但稳定：高海拔、低温、贫土，竞争者少，火和虫也少。",
+            "木质极密且富含树脂，抗腐抗虫，伤口不容易烂。",
+            "只有朝风的一面每年长新枝，背风面会\"假死\"，整体代谢极低。",
+            "靠分生组织不断更新，老皮脱落、新组织接续，像在\"分段续命\"。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "狐尾松被广泛认为是地球上现存最古老的独立生命体之一，单株年龄可超过4800年。",
+          "citation": "概述"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_竹子是草",
+      "title": "竹子是草不是树",
+      "tags": [
+        "植物",
+        "冷知识",
+        "禾本科"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "竹",
+        "url": "https://baike.baidu.com/item/%E7%AB%B9",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "compare_card",
+          "title": "竹子到底是树还是草？",
+          "wrong": "竹子长得高高大大的，当然是树。",
+          "right": "竹子属于禾本科（Poaceae），和稻、麦、玉米是亲戚，本质是多年生草本，不是木本植物。真正的树有形成层和年轮、能不断加粗；竹子靠\"居间分生组织\"一次性拔高，长成后茎秆粗细基本不变，也没有真正年轮。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "竹子为什么长得那么快？",
+          "content": "竹子是禾本科里的\"速长冠军\"。很多竹子用多年时间在地下的竹鞭（rhizome）里默默积累养分，一旦出笋，居间分生组织让每一节同时伸长，可以一天长几十厘米，少数品种记录到一天近1米。它一次性长成固定高度，之后不再加粗。所以\"雨后春笋\"不是比喻，是真能肉眼可见地窜高。",
+          "action_hint": "左右滑动看居间生长与年轮对比 ➔",
+          "citation_anchor": "生长特性"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "那它算草的证据还有哪些？",
+          "streaming_content": "除了没有年轮，竹子开花也很\"草性\"：许多种类是一次性集体开花后整片枯死，和稻麦\"结籽后衰老\"的策略相似。它的茎是空的节间结构，也和芦苇、甘蔗同源。所以下次见到竹林，别当树林逛——你正站在一片超级大的\"草丛\"里，只是这草能长到二十多米。",
+          "citation_anchor": "分类证据"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_向日葵追太阳",
+      "title": "向日葵真的追太阳吗",
+      "tags": [
+        "植物",
+        "向光性",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "向日葵",
+        "url": "https://baike.baidu.com/item/%E5%90%91%E6%97%A5%E8%91%B5",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "向日葵一直跟着太阳转吗？（点击翻转）",
+          "front_text": "成熟的向日葵花盘也天天追太阳吗？",
+          "back_text": "只有还没开花的嫩花盘会跟着太阳从东转到西，这叫向光性（heliotropism）。花盘成熟、籽粒开始灌浆后，茎秆木质化变硬，就基本固定朝东了。朝东能让花盘在清晨更快回暖、吸引更多传粉昆虫，也避免正午西晒灼伤。",
+          "citation_anchor": "向光性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它小时候怎么\"追日\"？",
+          "streaming_content": "幼嫩花盘背光侧的生长素更多，细胞长得更快，于是花盘被\"推向\"有光的一侧，白天从东向西画弧。夜里生长素重新分布，茎又悄悄转回东边，准备迎接日出。这套节奏由内部生物钟和光照共同调控，并不是简单被太阳\"吸\"着走，而是植物自己的定时舞蹈。",
+          "citation_anchor": "运动机制"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "关于向日葵的3个真相",
+          "items": [
+            "幼花盘白天随太阳转、夜里转回东，靠生长素不对称分布实现。",
+            "花盘成熟后固定朝东，利于升温、招蜂、防晒。",
+            "我们看到的\"花\"其实是上百朵小花组成的头状花序，外围舌状花只是招揽用的\"广告\"。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_含咖啡因植物",
+      "title": "含咖啡因的植物",
+      "tags": [
+        "植物",
+        "咖啡因",
+        "提神"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "咖啡因",
+        "url": "https://baike.baidu.com/item/%E5%92%96%E5%95%A1%E5%9B%A0",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "list_card",
+          "title": "哪些植物天然含咖啡因？",
+          "items": [
+            "咖啡树：种子（咖啡豆）含咖啡因，是咖啡的来源。",
+            "茶树：嫩叶含咖啡因（茶叶里叫咖啡碱），也是提神主力。",
+            "可可树：种子含少量咖啡因，更多是可可碱和茶碱。",
+            "可乐果：原产非洲，是早期可乐饮料的咖啡因来源。",
+            "瓜拿纳：南美藤本，种子咖啡因浓度很高，常用于能量饮料。",
+            "巴拉圭茶（马黛）：冬青属植物，同样天然含咖啡因。"
+          ]
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "植物为什么要制造咖啡因？",
+          "content": "咖啡因对植物自己不是\"提神\"，而是化学武器。它能抑制昆虫和草食动物的进食，还能抑制周围别的植物种子发芽，减少竞争（这叫化感作用）。对人类来说，咖啡因阻断腺苷受体，让人短暂不困、注意力提升。所以植物造它是为了\"防虫防邻居\"，我们喝它却是图个清醒——各取所需。",
+          "action_hint": "左右滑动看含咖啡因植物全家福 ➔",
+          "citation_anchor": "生理作用"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "咖啡因是多种植物次生代谢产物，兼具驱虫与化感（抑制邻近植物生长）作用，人类则主要利用其中枢神经兴奋效应。",
+          "citation": "概述"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_会走路的植物",
+      "title": "会走路的植物",
+      "tags": [
+        "植物",
+        "复活草",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "卷柏",
+        "url": "https://baike.baidu.com/item/%E5%8D%B7%E6%9F%8F",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "compare_card",
+          "title": "真有会\"走路\"的植物？",
+          "wrong": "卷柏能自己迈开腿走到有水的地方。",
+          "right": "严格说植物没有腿也不会主动\"走\"。典型的是复活草——卷柏（Selaginella lepidophylla）：干旱时整株卷成球，被风吹着滚到别处；遇到水又舒展开继续活。这是一种被风\"搬运\"的被动移动，不是自主行走，但确实能换位置求生。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它为什么旱不死？（点击翻转）",
+          "front_text": "卷柏枯成球之后为什么还能\"复活\"？",
+          "back_text": "它能进入隐生状态（干燥休眠）：把体内水分降到几乎为零，代谢暂停，叶绿素和结构暂时\"封存\"。一旦遇水，细胞在几小时内重新吸水展开，光合作用恢复。它可耐受长期脱水，这正是\"九死还魂草\"之名由来，也是它敢卷成球随风流浪的底气。",
+          "citation_anchor": "耐旱机制"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "还有别的\"流浪植物\"吗？",
+          "streaming_content": "除了卷柏，沙漠里一些风滚草（如俄罗斯蓟）成熟后整株脱离根部，被风推着满地滚，边滚边撒种子，算是另一种\"会走的植物\"。还有报道说某些沼泽植物会朝水源缓慢改变生长方向。但要强调：这些都是靠风、靠生长偏移，植物并没有神经系统和肌肉，永远不会像动物那样迈步走路。",
+          "citation_anchor": "相关现象"
+        }
+      ]
+    }
+  ]
+}

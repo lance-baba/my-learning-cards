@@ -1,0 +1,110 @@
+[
+  {
+    "category": "health",
+    "title": "糖尿病",
+    "tags": ["健康", "慢病", "内分泌"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "糖尿病", "url": "https://zh.wikipedia.org/wiki/糖尿病", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是糖尿病？", "content": "糖尿病是以持续性高血糖为特点的代谢性疾病，因胰脏无法制造足够胰岛素或身体细胞对胰岛素欠反应而引起。", "action_hint": "左右滑动看分型与并发症 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "1 型和 2 型有何不同？（点击翻转）", "front_text": "两型主要区别是什么？", "back_text": "1 型多为自身免疫破坏胰岛 β 细胞、胰岛素严重缺乏、常突发且多见于儿童青少年；2 型占 90%–95% 以上，主要为胰岛素抵抗及分泌不足、多发于成人且常伴肥胖。", "citation_anchor": "1型/2型" },
+      { "layout": "streaming_text", "title": "诊断与管理", "streaming_content": "诊断：空腹血糖 ≥7.0 mmol/L、糖耐量 2 小时 ≥11.1 mmol/L 或糖化血红素 ≥6.5%。约 75% 患者死于冠状动脉疾病，常见视网膜、肾、神经病变。2 型一线药二甲双胍；管理靠教育、营养、运动、监测与药物“五驾马车”。", "citation_anchor": "诊断/管理" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "流行性感冒",
+    "tags": ["健康", "传染病", "呼吸"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "流行性感冒", "url": "https://zh.wikipedia.org/wiki/流行性感冒", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "流感是什么？", "content": "流行性感冒（流感）是由流感病毒造成的传染性疾病，虽有“感冒”二字但不应与普通感冒混淆，其症状通常更严重且突发高烧。", "action_hint": "左右滑动看传播与预防 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "流感怎么传播？（点击翻转）", "front_text": "主要传播途径是什么？", "back_text": "通常由咳嗽、打喷嚏和说话产生的飞沫传播，也可经接触污染物体表面后碰触口眼传播。", "citation_anchor": "传播" },
+      { "layout": "streaming_text", "title": "高危与预防", "streaming_content": "可感染人的有甲、乙、丙型。WHO 建议高危人群每年接种针对当年流行株的疫苗（病毒突变快、当年最有效）。全球每年约 29 万–65 万人死于流感；勤洗手、戴口罩可降低风险。", "citation_anchor": "疫苗/预防" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "冠心病",
+    "tags": ["健康", "心血管", "慢病"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "冠状动脉疾病", "url": "https://zh.wikipedia.org/wiki/冠心病", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是冠心病？", "content": "冠心病（冠状动脉性心脏病）是冠状动脉结构或功能异常引起冠脉狭窄、痉挛，导致心肌血流灌注降低，造成心肌缺血和/或梗死的一组临床综合征。", "action_hint": "左右滑动看病因与预防 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "冠心病最常见原因？（点击翻转）", "front_text": "主要病因是什么？", "back_text": "最常见由冠状动脉粥样硬化引起，使心肌血流灌注降低，轻则心绞痛、重则心肌梗死。", "citation_anchor": "粥样硬化" },
+      { "layout": "streaming_text", "title": "危险因素与预防", "streaming_content": "危险因子包括高血压、吸烟、糖尿病、缺乏运动、肥胖、高胆固醇血症（“三高”及吸烟为主）。症状为胸痛可放射至肩臂背部，常于运动或情绪压力下出现、休息可缓解。预防靠健康饮食、规律运动、戒烟及控三高。", "citation_anchor": "危险因素/预防" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "肥胖症",
+    "tags": ["健康", "营养", "慢病"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "肥胖症", "url": "https://zh.wikipedia.org/wiki/肥胖症", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是肥胖？", "content": "肥胖症是指体脂肪累积过多而对健康造成负面影响的身体状态，可能导致寿命减短及各种健康问题。", "action_hint": "左右滑动看标准与防控 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "BMI 怎么判断肥胖？（点击翻转）", "front_text": "肥胖的 BMI 阈值是多少？", "back_text": "西方标准 BMI ≥30 kg/m² 为肥胖（25–30 为过重）；东亚更严格，如中国大陆 >28、台湾 >27 即属肥胖。", "citation_anchor": "BMI 标准" },
+      { "layout": "streaming_text", "title": "成因与防控", "streaming_content": "多数因热量摄取过多与运动不足（坐式生活）致能量正平衡，也与遗传、疾病相关。风险含心血管疾病、2 型糖尿病、某些癌症；防控靠饮食控制、运动，必要时药物或手术。", "citation_anchor": "成因/防控" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "抑郁症",
+    "tags": ["健康", "心理", "精神"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "重性抑郁障碍", "url": "https://zh.wikipedia.org/wiki/重性抑郁障碍", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "抑郁症（重性抑郁障碍）是什么？", "content": "重性抑郁障碍是一种特征为超过两周的大多数时间都抑郁不已、常伴随兴趣丧失与自尊心低落的精神疾患。", "action_hint": "左右滑动看症状与求助 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "抑郁症有哪些典型症状？（点击翻转）", "front_text": "核心表现有哪些？", "back_text": "持续情绪低落、对以往有趣的活动失去兴趣（失乐）、失眠或嗜睡/食欲体重改变/疲劳疼痛，严重时出现妄想或幻觉。", "citation_anchor": "症状" },
+      { "layout": "streaming_text", "title": "可治疗与求助", "streaming_content": "一般治疗为心理治疗或抗抑郁药（如 SSRI），无效可考虑电休克疗法，运动也有积极作用。若持续两周以上并伴自伤风险应及早就诊；勿将网络内容当作专业意见。", "citation_anchor": "治疗/求助" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "癌症",
+    "tags": ["健康", "肿瘤", "重疾"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "癌症", "url": "https://zh.wikipedia.org/wiki/癌症", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是癌症？", "content": "癌症又称恶性肿瘤，是各种恶性肿瘤的统称，由细胞失控生长分裂、具浸润转移性质且分化不成熟所致。", "action_hint": "左右滑动看转移与预防 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "癌症最危险的特征？（点击翻转）", "front_text": "为何癌症难治？", "back_text": "肿瘤细胞可局部侵入周遭组织，并经由循环或淋巴系统转移到身体其他部分。", "citation_anchor": "转移" },
+      { "layout": "streaming_text", "title": "致癌因素与预防", "streaming_content": "吸烟占癌症死者 22%、肥胖不良饮食缺运动酒精共占 10%，另有感染、辐射及污染等。早筛（大肠镜、子宫颈抹片）可早发现降死亡率；预防靠戒烟限酒、多蔬果、维持体重与运动。", "citation_anchor": "因素/早筛" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "维生素",
+    "tags": ["健康", "营养", "微量"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "维生素", "url": "https://zh.wikipedia.org/wiki/维生素", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是维生素？", "content": "维生素（维他命）是生物体所需、一般无法自身生产而需通过饮食获取的微量有机化合物营养成分，在体内扮演辅酶及辅因子角色。", "action_hint": "左右滑动看分类与缺乏 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "维生素分哪两类？（点击翻转）", "front_text": "按溶解性怎么分？", "back_text": "水溶性（B 族、C）易溶于水；脂溶性（A、D、E、K）易溶于非极性溶剂并可体内储积。人体共需 13 种（4 脂溶 + 9 水溶）。", "citation_anchor": "水溶/脂溶" },
+      { "layout": "streaming_text", "title": "缺乏与过量", "streaming_content": "缺乏会导致特定缺乏症候群（如夜盲症、坏血病、脚气病），过量摄取脂溶性维生素可中毒。平衡膳食一般不会缺乏，补充品过量才有危险。", "citation_anchor": "缺乏/过量" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "阿尔茨海默病",
+    "tags": ["健康", "神经", "老年"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "阿尔茨海默病", "url": "https://zh.wikipedia.org/wiki/阿尔茨海默病", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "阿尔茨海默病是什么？", "content": "阿尔茨海默病（AD）是一种发病缓慢、随时间不断恶化的神经退化性疾病，占了痴呆症成因的六至七成，是最常见的痴呆类型。", "action_hint": "左右滑动看病理与风险 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "脑组织有什么特征病变？（点击翻转）", "front_text": "病理标志是什么？", "back_text": "脑组织可见 β 类淀粉蛋白斑块，以及 Tau 蛋白过度磷酸化形成的神经原纤维缠结。", "citation_anchor": "斑块/缠结" },
+      { "layout": "streaming_text", "title": "进程与现状", "streaming_content": "早期丧失短期记忆，进展出现语言障碍、定向障碍、自理丧失；65 岁以上盛行率约 6%，每五岁罹病风险加倍。1906 年首次描述；无法根治，药物仅暂缓症状。", "citation_anchor": "进程/风险" }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "艾滋病",
+    "tags": ["健康", "传染病", "免疫"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "获得性免疫缺陷综合征", "url": "https://zh.wikipedia.org/wiki/获得性免疫缺陷综合征", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "艾滋病是什么？", "content": "艾滋病（AIDS）是由人类免疫缺陷病毒（HIV）感染造成的、攻击人体免疫系统导致获得性免疫缺陷综合征的疾病。", "action_hint": "左右滑动看传播与治疗 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "HIV 主要攻击什么细胞？（点击翻转）", "front_text": "病毒破坏哪类免疫细胞？", "back_text": "HIV 主要攻击免疫系统中的 CD4+ T 细胞，逐渐摧毁免疫能力，使患者易发机会性感染或恶性肿瘤。", "citation_anchor": "CD4+ T 细胞" },
+      { "layout": "streaming_text", "title": "传播与防控", "streaming_content": "经血液、母婴和性接触传播，唾液汗液不传播。抗反转录病毒（鸡尾酒疗法）可控制但无法根治，需终生携带。安全性行为、包皮环切、暴露前预防可防；规范治疗下可防可控、预期寿命延长。", "citation_anchor": "传播/治疗" }
+    ]
+  }
+]

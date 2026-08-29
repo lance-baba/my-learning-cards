@@ -1,0 +1,167 @@
+[
+  {
+    "category": "science",
+    "title": "光合作用",
+    "tags": ["科学", "植物", "生物"],
+    "type": "knowledge",
+    "source": {
+      "name": "中文维基百科",
+      "title": "光合作用",
+      "url": "https://zh.wikipedia.org/wiki/光合作用",
+      "publish_date": "2026",
+      "authority_level": "encyclopedia"
+    },
+    "sub_cards": [
+      {
+        "layout": "qa_card",
+        "title": "什么是光合作用？",
+        "content": "光合作用是某些生物利用感光色素吸收光能，把二氧化碳和水等无机物转化为可储存化学能的有机物（如葡萄糖），并释放氧气的生物过程。通俗意义主要指占据地球生物圈主流的产氧光合作用。",
+        "action_hint": "左右滑动看反应式与发生场所 ➔",
+        "citation_anchor": "定义/总述"
+      },
+      {
+        "layout": "streaming_text",
+        "title": "总反应式与能量效率",
+        "streaming_content": "配平总式：12 H2O + 6 CO2 →（光能、叶绿素）C6H12O6 + 6 O2 + 6 H2O。等号两边的水不能抵消：左侧水用于光解释放电子，右侧水的氧来自二氧化碳。产氧光合理论最高能量转换效率约 4.6%–6%，实际效率仅 1.9%–2.5%。",
+        "citation_anchor": "反应总方程式/生态意义"
+      },
+      {
+        "layout": "flip_card",
+        "title": "光反应发生在哪里？（点击翻转）",
+        "front_text": "你知道光反应和碳反应分别在细胞的什么部位进行吗？",
+        "back_text": "光反应在叶绿体的类囊体膜上进行；碳反应（固碳/暗反应，以卡尔文循环为主）在叶绿体基质中进行。",
+        "citation_anchor": "发生场所"
+      },
+      {
+        "layout": "flip_card",
+        "title": "为什么光合作用如此重要？（点击翻转）",
+        "front_text": "为什么说它是地球生命的基础？",
+        "back_text": "光合自养者生产的有机物通过食物链供给异养生物，是地球碳循环和氧循环最重要的一环，也是除深海以外绝大多数生态系统维持的关键。",
+        "citation_anchor": "生态意义"
+      }
+    ]
+  },
+  {
+    "category": "health",
+    "title": "高血压",
+    "tags": ["健康", "慢病", "心血管"],
+    "type": "knowledge",
+    "source": {
+      "name": "中文维基百科",
+      "title": "高血压",
+      "url": "https://zh.wikipedia.org/wiki/高血压",
+      "publish_date": "2026",
+      "authority_level": "encyclopedia"
+    },
+    "sub_cards": [
+      {
+        "layout": "qa_card",
+        "title": "什么是高血压？",
+        "content": "高血压是动脉血压持续偏高的慢性疾病，通常没有症状，却是冠心病、中风、心衰、慢性肾病等的主要危险因子。血压分收缩压（心脏收缩时的最大值）和舒张压（舒张时的最小值）。",
+        "action_hint": "左右滑动看诊断标准与干预 ➔",
+        "citation_anchor": "定义/收缩压舒张压"
+      },
+      {
+        "layout": "flip_card",
+        "title": "血压多高算高血压？（点击翻转）",
+        "front_text": "静息血压持续超过多少可判断为高血压？",
+        "back_text": "传统成人标准：静息血压持续 > 140/90 mmHg。2017 ACC/AHA 标准：130–139/80–89 为高血压一期，≥140/≥90 为二期；家庭自测阈值更低（≥135/85 mmHg）。",
+        "citation_anchor": "诊断标准"
+      },
+      {
+        "layout": "streaming_text",
+        "title": "生活方式干预要点",
+        "streaming_content": "减少钠摄入至每天 < 6 克盐（<2.4 克钠）；采用 DASH 得舒饮食（多果蔬、坚果、全谷类、鱼类，富钾镁钙）；大多数日子每天有氧运动 ≥30 分钟；戒烟、限制饮酒；维持 BMI 20–25 kg/m²。",
+        "citation_anchor": "生活方式干预"
+      },
+      {
+        "layout": "qa_card",
+        "title": "原发性和继发性有什么区别？",
+        "content": "原发性高血压占 90%–95%，起因于生活型态或遗传，具体原因不明；继发性高血压占 5%–10%，由明确病因所致，最常见为肾脏疾病，也包括内分泌疾病、睡眠呼吸暂停、某些药物等。",
+        "citation_anchor": "分类"
+      }
+    ]
+  },
+  {
+    "category": "history",
+    "title": "丝绸之路",
+    "tags": ["历史", "文化交流", "贸易"],
+    "type": "knowledge",
+    "source": {
+      "name": "中文维基百科",
+      "title": "丝绸之路",
+      "url": "https://zh.wikipedia.org/wiki/丝绸之路",
+      "publish_date": "2026",
+      "authority_level": "encyclopedia"
+    },
+    "sub_cards": [
+      {
+        "layout": "qa_card",
+        "title": "丝绸之路是什么？",
+        "content": "丝绸之路指从汉唐古都长安/洛阳出发，经甘肃、新疆到中亚、西亚、欧洲并联结地中海各国的陆上通道。因西运货物中丝绸制品影响最大而得名，时间约从公元前 114 年到公元 1450 年。",
+        "action_hint": "左右滑动看商品与技术传播 ➔",
+        "citation_anchor": "定义与起止"
+      },
+      {
+        "layout": "streaming_text",
+        "title": "主要交易商品",
+        "streaming_content": "中国西出：丝绸、瓷器、玉石（和田玉）、铁器与豪华制品；东传：香料、珠宝、良种马（大宛）、药材，以及葡萄、核桃、胡萝卜、石榴等作物。技术上，造纸术（751 年怛罗斯战役后西传）与印刷术（13 世纪入欧洲）沿丝路扩散。",
+        "citation_anchor": "主要交易商品/技术传播"
+      },
+      {
+        "layout": "flip_card",
+        "title": "“丝绸之路”是谁提出的？（点击翻转）",
+        "front_text": "“丝绸之路”这个名称最早由谁在何时提出？",
+        "back_text": "由德意志帝国地理学家费迪南·冯·李希霍芬于 1877 年出版的地图集中提出。它并非一条单一的道路，而是穿越山川沙漠海洋的道路网络。",
+        "citation_anchor": "名称来源"
+      },
+      {
+        "layout": "qa_card",
+        "title": "哪些技术沿丝路传播？",
+        "content": "造纸术在 751 年怛罗斯战役后由唐军战俘带到撒马尔罕，再传伊斯兰世界，15 世纪入西欧；雕版印刷术 8 世纪传中亚，13 世纪由欧洲传教士带到元朝，古腾堡 1450 年印《圣经》。",
+        "citation_anchor": "技术传播"
+      }
+    ]
+  },
+  {
+    "category": "geography",
+    "title": "板块构造论",
+    "tags": ["地理", "地质", "地球科学"],
+    "type": "knowledge",
+    "source": {
+      "name": "中文维基百科",
+      "title": "板块构造论",
+      "url": "https://zh.wikipedia.org/wiki/板块构造论",
+      "publish_date": "2026",
+      "authority_level": "encyclopedia"
+    },
+    "sub_cards": [
+      {
+        "layout": "qa_card",
+        "title": "什么是板块构造论？",
+        "content": "板块构造论认为地球的岩石圈由若干板块拼合而成，海洋和陆地的位置随板块移动不断变化。理论基于两种独立观测：海底扩张与大陆漂移。板块包含地壳及一小部分上部地幔。",
+        "action_hint": "左右滑动看板块划分与边界 ➔",
+        "citation_anchor": "定义"
+      },
+      {
+        "layout": "flip_card",
+        "title": "全球分几大板块？（点击翻转）",
+        "front_text": "1968 年学者将全球岩石圈划分为几大板块？",
+        "back_text": "法国学者勒皮雄于 1968 年首先将全球岩石圈分为六大板块：太平洋、亚欧、印度洋、非洲、美洲、南极洲板块。后续又分出许多小板块。",
+        "citation_anchor": "六大板块"
+      },
+      {
+        "layout": "streaming_text",
+        "title": "三种板块边界",
+        "streaming_content": "离散（张裂）型：受张力，形成裂谷与中洋脊，新地壳在此生成。汇聚（聚合）型：受压力，形成海沟、火山岛弧与褶曲山脉，有隐没带。转换（错动）型：受剪力，发育转形断层，常伴地震。环太平洋边界最活跃。",
+        "citation_anchor": "板块边界三种类型"
+      },
+      {
+        "layout": "qa_card",
+        "title": "魏格纳贡献了什么？",
+        "content": "1912 年气象学家阿尔弗雷德·魏格纳根据地质证据提出大陆漂移学说，因缺乏漂移的动力来源当时未被接受，却成为板块构造论解释大陆漂移的前驱理论。",
+        "citation_anchor": "魏格纳贡献"
+      }
+    ]
+  }
+]

@@ -1,0 +1,226 @@
+{
+  "bundle_id": "bundle:entertainment:v1",
+  "category_id": "entertainment",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "fun_topic_001",
+      "title": "买黄瓜",
+      "tags": [
+        "冷笑话"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】买黄瓜",
+          "content": "老婆对程序员说：“去买1斤黄瓜，如果看到卖西瓜的，买一个。”\n半小时后，程序员抱着1个黄瓜回家了...",
+          "punchline": "老婆：“为什么只买1个黄瓜？”\n程序员：“因为我确实看到卖西瓜的了。”"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_002",
+      "title": "程序员的浪漫",
+      "tags": [
+        "梗图"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "程序员的浪漫",
+            "caption": "0 和 1 也能写成情书。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_003",
+      "title": "石头剪刀布",
+      "tags": [
+        "小游戏"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "g1",
+          "layout": "game_card",
+          "title": "来一局石头剪刀布"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_面试",
+      "title": "面试",
+      "tags": [
+        "冷笑话",
+        "程序员"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】面试",
+          "content": "面试官问程序员：你最擅长什么？程序员：把简单的问题搞复杂。面试官：比如？程序员：比如把“不会”说成“暂未在技术栈中沉淀”。",
+          "punchline": "面试官：……你被录用了。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_Bug",
+      "title": "Bug",
+      "tags": [
+        "冷笑话",
+        "程序员"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】Bug",
+          "content": "程序员修了三天 Bug，终于发现是少写了一个分号。他长舒一口气：原来世界这么简单。",
+          "punchline": "同事：那你昨天说的“架构重构”是？程序员：……分号附近的。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_咖啡",
+      "title": "咖啡",
+      "tags": [
+        "冷笑话",
+        "程序员"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】咖啡",
+          "content": "医生：你一天喝几杯咖啡？程序员：看 Bug 数量。医生：那是多少？程序员：无限循环。",
+          "punchline": "医生：建议你把 while(true) 改成 for 循环。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_需求",
+      "title": "需求",
+      "tags": [
+        "冷笑话",
+        "产品"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】需求",
+          "content": "产品经理：这个按钮能不能再大一点？程序员：可以，顺便把屏幕也放大吗？产品经理：好主意！",
+          "punchline": "程序员：那叫换显示器，不是需求变更。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_备份",
+      "title": "备份",
+      "tags": [
+        "冷笑话",
+        "职场"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "joke_text",
+          "title": "【放松一下】备份",
+          "content": "老板：你有备份吗？员工：有，在脑子里。老板：那脑子备份了吗？员工：……",
+          "punchline": "第二天，员工带着一块移动硬盘来上班。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_周一的状态",
+      "title": "周一的状态",
+      "tags": [
+        "梗图",
+        "打工人"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "meme_card",
+          "title": "周一的状态",
+            "caption": "系统启动中……（进度 1%）"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_学习五分钟",
+      "title": "学习五分钟",
+      "tags": [
+        "梗图",
+        "自律"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "meme_card",
+          "title": "学习五分钟",
+            "caption": "学习五分钟，刷手机两小时。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_程序员的浪漫",
+      "title": "程序员的浪漫",
+      "tags": [
+        "梗图",
+        "程序员"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "meme_card",
+          "title": "程序员的浪漫",
+            "caption": "0 和 1 也能写成情书。"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_石头剪刀布",
+      "title": "石头剪刀布",
+      "tags": [
+        "小游戏"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "game_card",
+          "title": "来一局石头剪刀布"
+        }
+      ]
+    },
+    {
+      "id": "fun_topic_猜数字",
+      "title": "猜数字",
+      "tags": [
+        "小游戏"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "game_card",
+          "title": "再来一局猜数字"
+        }
+      ]
+    }
+  ]
+}

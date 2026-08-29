@@ -1,0 +1,368 @@
+{
+  "bundle_id": "bundle:tech:v1",
+  "category_id": "tech",
+  "version": "v1",
+  "items": [
+    {
+      "id": "tech_topic_WiFi80211",
+      "title": "WiFi名字里的802.11是什么",
+      "tags": [
+        "数码科技",
+        "WiFi",
+        "通信"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "IEEE 802.11",
+        "url": "https://baike.baidu.com/item/IEEE%20802.11",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "802.11到底啥意思？",
+          "content": "802.11是IEEE（电气电子工程师学会）制定的一族无线局域网标准的总编号。802是局域网和城域网系列标准的代号，点11代表无线局域网这一支。后面的字母是升级版本：a、b、g、n、ac、ax分别对应不同年代的技术。我们说的WiFi，其实就是这些802.11标准的产品化。所以WiFi 6背后是802.11ax——名字越长，通常越快越稳。它只是工程标准的编号，不是什么神秘密码。",
+          "action_hint": "左右滑动看标准家族 ➔",
+          "citation_anchor": "标准含义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "常见后缀对应哪一代",
+          "items": [
+            "802.11b/g：早期2.4GHz，速度慢，如今基本淘汰。",
+            "802.11n（WiFi 4）：首次同时支持2.4和5GHz。",
+            "802.11ac（WiFi 5）：主打5GHz，速度快。",
+            "802.11ax（WiFi 6）：兼顾双频，更省电更抗挤。",
+            "802.11be（WiFi 7）：最新，多链路、极低延迟。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "为什么还有2.4G和5G？（点击翻转）",
+          "front_text": "路由器两个频段有啥区别？",
+          "back_text": "2.4GHz穿墙好、覆盖远，但通道挤、容易被微波炉蓝牙干扰，速度上限低；5GHz速度快、干净，但波长短、穿墙差、覆盖范围小。所以离路由器近用5G爽，隔几堵墙用2.4G稳。新标准还加入6GHz（WiFi 6E和7）当专属高速道。选哪个频段，本质是速度和覆盖的取舍。",
+          "citation_anchor": "双频区别"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_USB插几次",
+      "title": "USB为什么总插不准",
+      "tags": [
+        "数码科技",
+        "USB",
+        "接口"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "USB",
+        "url": "https://baike.baidu.com/item/USB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "USB为啥总要试三次？",
+          "content": "老式USB-A接口内部上下不对称但外观几乎对称，肉眼很难分清正反；加上很多人是盲插，插反了顶住、再翻一面又可能歪，于是三次才对成了梗。其实USB有防呆设计——内部塑料挡片只在一侧，本意是不让你插反，可惜外观太像，反而容易试错。Type-C接口终于做成真正正反都能插，才终结了这个烦恼。",
+          "action_hint": "左右滑动看防呆设计 ➔",
+          "citation_anchor": "插反原因"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "Type-C为什么能盲插？（点击翻转）",
+          "front_text": "新接口凭啥正反都行？",
+          "back_text": "Type-C把触点做成上下两排、完全对称的布局，并且主控能自动识别方向，所以无论哪面朝上，电路都能正确对接。它还在更小体积里塞下更高功率（USB-PD快充）和更高数据率。代价是线材和芯片更复杂、成本更高。简单说：对称引脚加智能识别，让翻面焦虑成为历史。",
+          "citation_anchor": "盲插原理"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "USB除了插，还管供电",
+          "streaming_content": "USB最早只是传数据的接口，后来顺手承担了充电职责。今天的USB-PD协议能让接口输出到100W甚至更高，给笔记本、手机快充；供电协商由芯片自动谈妥电压电流，既快又不易烧设备。所以一根USB-C线，可能同时干三件事：传数据、放视频、送电力——接口虽小，背后是一套会谈判的供电协议。",
+          "citation_anchor": "供电协议"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_电池鼓包",
+      "title": "手机电池为什么会鼓包",
+      "tags": [
+        "数码科技",
+        "锂电池",
+        "安全"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "锂离子电池",
+        "url": "https://baike.baidu.com/item/锂离子电池",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "电池鼓包是咋回事？",
+          "content": "手机电池多为锂离子电池，里面是密封的电芯。一旦电芯受过充、过烫、被刺穿或老化，内部会发生副反应，电解液分解产生气体（主要是二氧化碳、一氧化碳等），气体出不去，就把软包装的外壳慢慢顶鼓。鼓包说明内部结构已经受损，是安全警告。继续用有漏液、起火风险，发现鼓包应停用、别刺破，交给专业回收，千万别自己戳或充电。",
+          "action_hint": "左右滑动看产气过程 ➔",
+          "citation_anchor": "鼓包原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "哪些习惯容易鼓包",
+          "items": [
+            "过充：整夜插着、用第三方劣质充电器。",
+            "高温：放车里暴晒、边玩大型游戏边充。",
+            "物理损伤：摔、压、刺穿电池。",
+            "老化：用了两三年仍强撑，内部已退化。",
+            "劣质电池：非原装电芯保护电路缩水。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "鼓包了还能凑合用？",
+          "wrong": "电池只是鼓了一点，按按回去继续用没事。",
+          "right": "千万别。鼓包代表电芯已产气、隔膜可能破损，内部短路风险高，受压或穿刺可能起火。正确做法：停止使用、避免高温和挤压、不要刺破放气，尽快到官方或回收点更换。把鼓包电池当定时隐患处理，而不是还能撑的零件。"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_蓝光伤眼",
+      "title": "蓝光真的伤眼睛吗",
+      "tags": [
+        "数码科技",
+        "蓝光",
+        "护眼"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "蓝光",
+        "url": "https://baike.baidu.com/item/蓝光",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "手机蓝光会不会瞎？",
+          "content": "先安心：日常屏幕的蓝光强度远低于正午阳光，没有直接烧毁眼睛的证据。真正被研究证实的伤害有两方面：一是高能量短波蓝光可能加速视网膜细胞的氧化压力（长期、高强度下才显著）；二是它抑制褪黑素，扰乱睡眠节律，让人晚睡。所以蓝光的主要锅是影响睡眠和长时间盯屏的视疲劳，而非立刻伤眼。夜里少看、开护眼模式，比买防蓝光眼镜更实在。",
+          "action_hint": "左右滑动看蓝光真相 ➔",
+          "citation_anchor": "蓝光影响"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "防蓝光眼镜必要吗？（点击翻转）",
+          "front_text": "人人都该配防蓝光眼镜？",
+          "back_text": "对多数人不必。研究对防蓝光眼镜能否缓解视疲劳、保护视网膜结论不一，效果有限；与其靠眼镜，不如控制用眼时长、增加眨眼、保持距离、夜里降亮度和开夜览模式。真正需要强防护的是特殊人群（如某些视网膜疾病患者）或在极强光源下作业者。普通用户，少看一会儿屏幕比加一层黄镜片管用。",
+          "citation_anchor": "眼镜取舍"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "真正伤眼的是久不是蓝",
+          "streaming_content": "盯着屏幕几小时，眼睛酸涩的主因是：眨眼次数减半、泪液蒸发、睫状肌一直绷着对焦近处，加上姿势不对。这些和蓝光关系不大，而是用眼过度。所以护眼核心不是滤蓝光，而是20-20-20法则：每20分钟看20英尺（约6米）外20秒，多眨眼、调亮度和距离。蓝光顶多算帮凶，久坐久盯才是主犯。",
+          "citation_anchor": "视疲劳主因"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_AI看图片",
+      "title": "AI是怎么看懂图片的",
+      "tags": [
+        "数码科技",
+        "人工智能",
+        "计算机视觉"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "计算机视觉",
+        "url": "https://baike.baidu.com/item/计算机视觉",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "AI怎么认出图里是猫？",
+          "content": "AI不是看图，而是把图片当成数字矩阵：每个像素是颜色数值。卷积神经网络（CNN）用一层层小滤镜扫描，先抓边缘、纹理，再组合出眼睛、耳朵等部件，最后拼成猫的概念。训练时给它看成千上万张标好猫的图，它自己调参数学会区分。如今更先进的模型（如Transformer系）还能理解整张图的语义关系。本质是从像素到特征到概念的层层抽象，不是真有眼睛。",
+          "action_hint": "左右滑动看识别过程 ➔",
+          "citation_anchor": "识别原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它也会看错吗？",
+          "streaming_content": "会，而且很离谱。AI只在训练分布内靠谱：贴张小贴纸能让它把停车标志认成限速、把熊猫看成长臂猿，这叫对抗样本。原因是它学的是统计相关性而非真正理解世界，背景、角度、光照一变就可能翻车。所以自动驾驶、医疗影像里AI只是辅助，仍要人把关。看懂是比喻，离真理解还远。",
+          "citation_anchor": "对抗样本"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "AI有常识吗？（点击翻转）",
+          "front_text": "AI认出猫，就懂猫吗？",
+          "back_text": "不懂。它学到的是像素到标签的映射，并不知道猫会叫、怕水、是动物。给它一张猫长在天上的怪图，它可能照样标猫，因为它没有物理常识。近年大模型试图把语言和图像连起来补常识，但仍常犯傻。所以视觉AI是模式识别高手、世界理解菜鸟，离人类那种一眼就懂语境的智能还差得远。",
+          "citation_anchor": "常识缺失"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_二维码",
+      "title": "二维码的工作原理",
+      "tags": [
+        "数码科技",
+        "二维码",
+        "编码"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "二维码",
+        "url": "https://baike.baidu.com/item/二维码",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "二维码黑块是乱画的？",
+          "content": "不是乱画，是精密的二进制地图。黑白小方块代表0和1：黑是1、白是0，按固定规则排成信息。三个角上的回字定位标让相机无论怎么斜着扫都能找到方向和边界；剩下的区域存数据，并分成多份加冗余纠错码——即使脏了、缺一角，也能算回来。所以它比条形码能存更多、更抗脏。你扫到的网址、付款信息，就是这些黑白格子翻译回的文字。",
+          "action_hint": "左右滑动看编码逻辑 ➔",
+          "citation_anchor": "编码原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "二维码上的固定零件",
+          "items": [
+            "三个定位角标：回字形，帮相机找位置和方向。",
+            "对齐图案：大尺寸码里有，校正畸变。",
+            "定时线：黑白相间的线，定格子坐标。",
+            "数据区：真正存信息的黑白块。",
+            "纠错码：冗余备份，脏损也能读。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "二维码比条形码强在哪？",
+          "wrong": "二维码和超市条形码差不多，只是小一点。",
+          "right": "差很多。条形码只是一维线，存几十个字符、怕脏怕折；二维码是二维面，能存几千字符（网址、名片、Wi-Fi密码都行），还带纠错，脏了缺角仍能扫。条形码要激光逐线读，二维码用相机拍整张图解码。一个像单行纸条，一个像二维表格，容量和抗损天差地别。"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_旧手机变卡",
+      "title": "旧手机为什么会变卡",
+      "tags": [
+        "数码科技",
+        "手机",
+        "性能"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "智能手机",
+        "url": "https://baike.baidu.com/item/智能手机",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "手机用两年就卡，为啥？",
+          "content": "卡是软硬件一起老的结果。硬件上：存储芯片反复擦写后变慢、电池老化降频保护、散热变差；软件上：新系统新App越来越胖，对算力要求更高，老芯片跟不上；后台还常驻一堆自启程序抢内存CPU。再加上存储快写满时读写骤降。厂商更新往往为新机优化，老机跑新系统更吃力。所以卡不是单一原因，是性能需求上涨撞上硬件衰退。",
+          "action_hint": "左右滑动看软硬件老化 ➔",
+          "citation_anchor": "卡顿成因"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "清内存能根治卡顿？（点击翻转）",
+          "front_text": "天天清后台，手机就不卡了？",
+          "back_text": "只能缓解，治不了本。清后台确实能腾出内存、关掉偷跑的程序，立刻轻快一点；但硬件老化、存储变慢、新App变重这些根因还在，过会儿又卡。真正有效的是：留足存储空间、少装流氓管家、必要时开效能模式、电池不行就换。把清内存当万能药，反而因频繁重载应用更费电。",
+          "citation_anchor": "清内存局限"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "电池和卡顿的隐藏关系",
+          "streaming_content": "很多人不知道：旧手机卡，常是电池背锅。锂电池老化后内阻变大、电压不稳，手机怕突然关机，就主动降频、限制性能——你感觉到的卡，其实是系统在保命。苹果就曾因这事被讨论。换个电池，很多老机立马回春。所以先查电池健康度，往往比清内存更对症。",
+          "citation_anchor": "降频保护"
+        }
+      ]
+    },
+    {
+      "id": "tech_topic_5G比4G快",
+      "title": "5G到底比4G快多少",
+      "tags": [
+        "数码科技",
+        "5G",
+        "通信"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "5G",
+        "url": "https://baike.baidu.com/item/5G",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "5G比4G快在哪？",
+          "content": "快来自几招：更高频段（含毫米波）提供巨宽信道；Massive MIMO用几十根天线同时和多用户通信；波束赋形把信号像手电筒一样对准你而不是广播；再加上极低的网络延迟。理论峰值5G可达Gbps级（每秒上吉比特），4G通常百Mbps级，差十倍甚至更多。但实际速度看覆盖和拥堵，日常可能只快几倍。除了快，5G更值钱的是低延迟和连更多设备（物联网）。",
+          "action_hint": "左右滑动看关键技术 ➔",
+          "citation_anchor": "速率提升"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "5G的关键技术招数",
+          "items": [
+            "大带宽：高频段加毫米波，信道更宽。",
+            "Massive MIMO：多天线并发，容量翻倍。",
+            "波束赋形：信号定向追踪用户，不浪费。",
+            "网络切片：一张网切出多种专网。",
+            "低时延：空口延迟压到毫秒，撑实时应用。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "5G通过大带宽、Massive MIMO与超低时延，在速率、容量和连接规模上较4G实现数量级提升，并为物联网与实时应用奠定基础。",
+          "citation": "概述"
+        }
+      ]
+    }
+  ]
+}

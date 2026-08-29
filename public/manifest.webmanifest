@@ -1,0 +1,19 @@
+{
+  "name": "卡片智刷 CardFlow",
+  "short_name": "CardFlow",
+  "description": "TikTok 式知识卡片刷题，刷一刷 / 收藏 / 发现",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

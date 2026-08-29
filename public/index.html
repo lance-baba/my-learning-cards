@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#090d16">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <title>卡片智刷 - CardFlow</title>
+  <link rel="stylesheet" href="./vendor/tailwind.min.css" />
+  <link rel="stylesheet" href="./vendor/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./style.css">
+  <script src="./vendor/vue.global.prod.js"></script>
+  <script src="./vendor/swiper-bundle.min.js"></script>
+</head>
+<body>
+  <div id="app" class="w-screen h-screen relative flex flex-col">
+    <!-- 跟随卡片类型切换的氛围光晕层 -->
+    <div class="ambient" :class="glowClass"></div>
+
+    <!-- 顶部状态栏：左=分类按钮 / 中=品牌标题 / 右=发现新库 -->
+    <header class="app-header flex-shrink-0 flex items-center gap-2 bg-gradient-to-b from-slate-900/95 to-slate-900/40 border-b border-slate-800/50">
+      <!-- 左：分类按钮（左对齐） -->
+      <button @click="store.catSheet = true" class="flex-shrink-0 text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:border-emerald-500 whitespace-nowrap">📂 分类</button>
+      <!-- 中：品牌标题（居中） -->
+      <span class="flex-1 text-center text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">CardFlow</span>
+      <!-- 右：发现新库提示 -->
+      <div v-if="store.hasUpdate" @click="syncData" class="flex-shrink-0 pointer-events-auto cursor-pointer bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-full font-bold animate-pulse whitespace-nowrap">
+        发现新库 ↺
+      </div>
+    </header>
+
+    <!-- 主滑动区域 (Swiper 容器) -->
+    <main class="w-full h-full flex-1 relative z-10">
+      <div class="swiper vertical-swiper w-full h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="topic in store.mixedTopics" :key="topic.id">
+            <!-- 左右滑动子卡片 Swiper -->
+            <div class="swiper horizontal-swiper w-full h-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide card-slide" :class="(sub.layout === 'flip_card' || sub.layout === 'meme_card') ? 'card-slide--fill' : ''" v-for="sub in topic.sub_cards" :key="sub.sub_id">
+                  <card-shell :topic="topic" :sub="sub">
+                    <component :is="layoutComp(sub.layout)" :topic="topic" :sub="sub"></component>
+                  </card-shell>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 收藏夹视图 -->
+    <favorites-view v-if="store.view==='favorites'"></favorites-view>
+
+    <!-- 分类选择（刷自选分类） -->
+    <category-sheet v-if="store.catSheet"></category-sheet>
+
+    <!-- 引用来源半屏抽屉（Teleport 到 body + 纯 CSS 类控制层级/遮罩） -->
+    <Teleport to="body">
+      <div v-if="store.activeSource" class="source-overlay" @click.self="store.activeSource = null">
+        <div class="source-panel">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="font-bold text-slate-100 text-base">🏛️ 权威引用来源</h4>
+            <button @click="store.activeSource = null" class="source-close">&times;</button>
+          </div>
+          <div class="space-y-3 text-sm">
+            <p><span class="text-slate-400">发布机构：</span><span class="text-emerald-400 font-medium">{{ store.activeSource.name }}</span></p>
+            <p><span class="text-slate-400">文件标题：</span><span class="text-slate-200">{{ store.activeSource.title }}</span></p>
+            <p v-if="store.activeSource.publish_date"><span class="text-slate-400">发布日期：</span><span class="text-slate-200">{{ store.activeSource.publish_date }}</span></p>
+            <p v-if="store.activeAnchor"><span class="text-slate-400">引用章节：</span><span class="text-amber-400 font-medium">{{ store.activeAnchor }}</span></p>
+            <div v-if="store.activeSource.url" class="pt-4">
+              <a :href="store.activeSource.url" target="_blank" class="block w-full text-center py-2.5 bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold rounded-lg transition">
+                访问官方原网页 🔗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
+
+    <!-- 底部导航：刷一刷 / 收藏夹（分类/收藏夹打开时隐藏，避免重叠） -->
+    <nav class="bottom-nav" v-show="!store.catSheet && store.view!=='favorites'">
+      <button :class="['nav-tab', store.view==='stream'?'active':'']" @click="setView('stream')">
+        📱 刷一刷
+      </button>
+      <button :class="['nav-tab', store.view==='favorites'?'active':'']" @click="setView('favorites')">
+        收藏夹
+      </button>
+    </nav>
+  </div>
+
+  <script src="./app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+      });
+    }
+  </script>
+</body>
+</html>

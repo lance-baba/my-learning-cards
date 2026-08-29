@@ -1,0 +1,883 @@
+/* Tailwind 已通过 index.html <link> 引入本地 ./vendor/tailwind.min.css，不再依赖 CDN */
+
+/* ============ 背景：深色基底 + 氛围光晕 ============ */
+body {
+  background-color: #090d16;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* 跟随当前卡片类型切换的氛围光晕层（置于最底层） */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: background 0.8s ease;
+}
+/* 知识：翡翠绿 / 蓝 光晕 */
+.glow-knowledge {
+  background:
+    radial-gradient(at 22% 18%, rgba(16, 185, 129, 0.20) 0px, transparent 55%),
+    radial-gradient(at 82% 88%, rgba(59, 130, 246, 0.16) 0px, transparent 55%);
+}
+/* 放松：暖橙 / 琥珀 光晕 */
+.glow-fun {
+  background:
+    radial-gradient(at 22% 18%, rgba(245, 158, 11, 0.20) 0px, transparent 55%),
+    radial-gradient(at 82% 88%, rgba(249, 115, 22, 0.16) 0px, transparent 55%);
+}
+
+/* ============ 卡片容器 ============ */
+.glass-card {
+  background: rgba(30, 41, 59, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* 娱乐卡片：暖色发光渐变边框 */
+.glass-card-fun {
+  background: rgba(45, 30, 20, 0.78);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.18), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* ============ 字号阶梯（放大、易读） ============ */
+.card-title {
+  font-size: 1.35rem;      /* ~21-22px */
+  line-height: 1.4;
+  font-weight: 700;
+}
+.card-subtitle {
+  font-size: 1.1rem;       /* ~18px */
+  line-height: 1.5;
+  font-weight: 600;
+}
+.card-body {
+  font-size: var(--card-fs, 1.05rem);      /* 短内容时由 CardShell 放大到 1.2rem */
+  line-height: 1.75;
+  color: #e2e8f0;
+}
+
+/* 底部页脚/来源文字：14px */
+.card-footer-text {
+  font-size: 0.875rem;
+}
+/* 快捷操作按钮 */
+.action-btn {
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, color 0.2s ease;
+}
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+/* ============ 头图占位区 ============ */
+.card-hero {
+  height: 140px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+.hero-knowledge {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(59, 130, 246, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.hero-fun {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.28), rgba(249, 115, 22, 0.22));
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.card-hero-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+/* ============ 微信风聊天气泡（放松卡片） ============ */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0;
+}
+.bubble {
+  max-width: 86%;
+  padding: 11px 15px;
+  border-radius: 16px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.bubble-left {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom-left-radius: 5px;
+}
+.bubble-right {
+  align-self: flex-end;
+  background: rgba(245, 158, 11, 0.22);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-bottom-right-radius: 5px;
+}
+
+/* 点击揭晓笑点按钮 */
+.reveal-btn {
+  margin-top: 8px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(245, 158, 11, 0.16);
+  border: 1px dashed rgba(245, 158, 11, 0.55);
+  color: #fbbf24;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.reveal-btn:active {
+  transform: scale(0.97);
+  background: rgba(245, 158, 11, 0.28);
+}
+
+/* ============ 3D 翻牌 ============ */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; transition: transform 0.6s; }
+.rotate-y-180 { transform: rotateY(180deg); }
+.backface-hidden { backface-visibility: hidden; }
+
+/* ============ 分页点：落在 Swiper 底部 padding 区域内、翡翠绿高亮 ============ */
+.horizontal-swiper .swiper-pagination {
+  bottom: 4px;
+}
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+.swiper-pagination-bullet-active {
+  background: #10B981;
+  width: 22px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+}
+
+/* ============ 引用来源抽屉（纯 CSS，避免依赖 Tailwind 任意值） ============ */
+.source-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.source-panel {
+  background: rgba(30, 41, 59, 0.97);
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 16px 16px 0 0;
+  padding: 24px;
+  max-height: 68vh;
+  overflow-y: auto;
+  margin: 0 8px 4px 8px;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+}
+.source-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(51, 65, 85, 0.6);
+  font-size: 22px;
+  line-height: 1;
+  color: #94a3b8;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.source-close:hover {
+  background: rgba(71, 85, 105, 0.85);
+  color: #fff;
+}
+
+/* ============ 卡片尺寸（纯 CSS，替代 h-[80vh] 等任意值） ============
+ * 统一策略：横向 Swiper 容器底部留出 32px 给分页点（padding-bottom），
+ * 子卡(.card-slide)填满剩余高度，卡片外壳(.card-shell)再填满子卡。
+ * 分页点落在 Swiper 的 padding 区域内，永远不与卡片内容/按钮重叠。
+ * 全屏 / 窗口化 / 移动端表现完全一致。 */
+.card-shell {
+  width: 100%;
+  height: 100%;
+}
+.stream-min {
+  min-height: 140px;
+}
+
+/* 横向 Swiper：底部留出分页点专属区域，卡片不会侵入 */
+.horizontal-swiper {
+  padding-bottom: 32px;
+  box-sizing: border-box;
+}
+
+/* 横向子卡容器：纵向铺满父级（Swiper slide）；水平居中卡片（max-w-md），全屏/窗口一致 */
+.card-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  height: 100%;
+}
+/* 翻牌 / 梗图：全屏满铺、无内边距（内容居中） */
+.card-slide--fill {
+  padding: 0;
+}
+.card-slide > .card-shell {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* 知识卡徽章（替代 bg-emerald-950 / border-emerald-800/60，纯色值确定生效） */
+.badge-knowledge {
+  background: #064e3b;
+  color: #6ee7b7;
+  border: 1px solid #065f46;
+}
+
+/* 放松卡徽章（替代 bg-amber-500/20，opacity 修饰符不生效） */
+.badge-fun {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* 翻牌背面实底（替代 bg-slate-800/90，opacity 修饰符不生效） */
+.flip-back {
+  background: rgba(30, 41, 59, 0.97);
+}
+
+/* 卡片内分隔线（替代 border-slate-700/50，opacity 修饰符不生效） */
+.divider {
+  border-top: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* ============ 梗图：内容区大图 ============ */
+.content-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+}
+.meme-caption {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fcd34d;
+  text-align: center;
+  max-width: 92%;
+}
+
+/* ============ 小游戏：出拳按钮 ============ */
+.game-btn {
+  font-size: 2.5rem;
+  line-height: 1;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+.game-btn:active {
+  transform: scale(0.9);
+  background: rgba(245, 158, 11, 0.22);
+}
+
+/* ============ 难度徽章（纯 CSS，solid 色值，避免 opacity 修饰符） ============ */
+.badge-difficulty {
+  background: rgba(59, 130, 246, 0.16);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+/* ============ 要点清单 list_card ============ */
+.list-card {
+  list-style: none;
+  margin: 6px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--card-fs, 1.02rem);
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+.list-dot {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.18);
+  color: #6ee7b7;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ============ 权威摘录 quote_card ============ */
+.quote-card {
+  margin: 4px 0 0 0;
+  padding: 16px 18px;
+  border-left: 3px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border-radius: 0 14px 14px 0;
+}
+.quote-text {
+  font-size: var(--card-fs, 1.05rem);
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+.quote-src {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+/* ============ 易错对照 compare_card ============ */
+.compare-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+.compare-wrong, .compare-right {
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+.compare-wrong {
+  background: rgba(239, 68, 68, 0.10);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+.compare-right {
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.compare-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  margin-bottom: 8px;
+}
+.compare-tag.wrong { background: rgba(239, 68, 68, 0.22); color: #fca5a5; }
+.compare-tag.right { background: rgba(16, 185, 129, 0.22); color: #6ee7b7; }
+.compare-wrong p, .compare-right p {
+  font-size: var(--card-fs, 1.0rem);
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* ============ 底部导航 ============ */
+.bottom-nav {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  background: rgba(15, 23, 42, 0.92);
+  border-top: 1px solid rgba(51, 65, 85, 0.6);
+  backdrop-filter: blur(8px);
+}
+.nav-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-tab.active {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* ============ 收藏夹 ============ */
+.fav-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  /* 收藏夹隐藏了底部 nav，无需再为它预留 72px；仅留安全区 + 小内边距，
+     让 .fav-list(flex:1) 向下延伸、显示更多卡片，回收底部空带 */
+  padding: calc(56px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));
+  background: #0f172a;
+  overflow: hidden;
+}
+.fav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.fav-back {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.fav-back:active { background: rgba(16, 185, 129, 0.22); }
+.fav-title { font-size: 1.15rem; font-weight: 700; color: #e2e8f0; }
+.fav-count { font-size: 0.8rem; color: #94a3b8; }
+.fav-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.fav-chip {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  background: rgba(51, 65, 85, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fav-chip.active {
+  color: #0f172a;
+  background: #6ee7b7;
+  border-color: #6ee7b7;
+  font-weight: 600;
+}
+/* 分类标签默认折叠为 2 排，超出时由「展开全部分类」按钮解锁 */
+.fav-chips.chips-collapsed {
+  max-height: 76px;            /* ≈ 2 排（chip ~32px + gap 8px） */
+  overflow: hidden;
+}
+.fav-chip-more {
+  align-self: flex-start;
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: #6ee7b7;
+  background: transparent;
+  border: 1px dashed rgba(16, 185, 129, 0.45);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.fav-chip-more:active { background: rgba(16, 185, 129, 0.14); }
+/* 收藏列表：原生 CSS 滚动（简单可靠，不嵌套 Swiper 避免宽度爆炸）。
+ * 内层横向 Swiper 独立处理子卡左右滑动，与外层竖向滚动正交无冲突。 */
+.fav-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.fav-list::-webkit-scrollbar { display: none; }
+/* .fav-item 已被 .fav-topic-card 取代，此处遗留样式已清除 */
+.fav-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+.fav-cat {
+  font-size: 0.78rem;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  padding: 2px 10px;
+  border-radius: 9999px;
+}
+.fav-open, .fav-remove {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.fav-open {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+.fav-remove {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+.fav-empty {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* ============ 收藏夹：紧凑列表（参考知乎收藏/微信收藏） ============
+ * 每条收藏 = topic 行头（分类名 + 操作）+ 可横滑的子卡预览。
+ * 子卡预览只显示：序号/标题/2行摘要，不嵌套完整 CardShell（避免框套框）。 */
+.fav-topic-card {
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 16px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.fav-swiper-wrap {
+  position: relative;
+  /* 固定高度：给内层横向 Swiper 确定的视口高度，避免 slide 塌缩 */
+  height: 220px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(51, 65, 85, 0.3);
+  overflow: hidden;
+}
+.fav-topic-swiper {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+.fav-swiper-slide {
+  height: 100%;
+  width: 100%;
+  padding: 14px 16px 10px;
+  box-sizing: border-box;
+}
+
+/* 紧凑子卡预览：铺满 slide，内容不溢出 */
+.fav-sub-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  overflow: hidden;
+}
+.fav-sub-index {
+  font-size: 0.7rem;
+  color: #64748b;
+  background: rgba(51, 65, 85, 0.5);
+  padding: 1px 8px;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+.fav-sub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+.fav-sub-body {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+.fav-sub-hint {
+  font-size: 0.75rem;
+  color: #475569;
+  text-align: right;
+  margin-top: 2px;
+}
+/* 收藏夹内分页点调小一点，适配紧凑空间 */
+.fav-topic-swiper .swiper-pagination {
+  bottom: 4px;
+}
+.fav-topic-swiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+.fav-topic-swiper .swiper-pagination-bullet-active {
+  width: 16px;
+}
+
+/* ---- 收藏夹底部操作栏已移除：空间留给卡片内容；清空入口移至头部 ---- */
+
+/* ============ 发现 / 搜索 ============ */
+.discover-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  padding: calc(56px + env(safe-area-inset-top)) 14px calc(72px + env(safe-area-inset-bottom));   /* 顶留 header，底留 nav + 安全区 */
+  background: #0f172a;
+  overflow: hidden;
+}
+.discover-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.discover-title { font-size: 1.15rem; font-weight: 700; color: #e2e8f0; }
+.discover-count { font-size: 0.8rem; color: #94a3b8; }
+.discover-search { margin-bottom: 12px; }
+.discover-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(71, 85, 105, 0.7);
+  outline: none;
+}
+.discover-input:focus { border-color: rgba(16, 185, 129, 0.6); }
+.discover-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.discover-lib {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.discover-lib-label {
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  padding-top: 7px;
+  white-space: nowrap;
+}
+.discover-lib .discover-chips { margin-bottom: 0; flex: 1; }
+.discover-chip {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  background: rgba(51, 65, 85, 0.5);
+  border: 1px solid rgba(71, 85, 105, 0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.discover-chip.active {
+  color: #0f172a;
+  background: #6ee7b7;
+  border-color: #6ee7b7;
+  font-weight: 600;
+}
+.discover-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+  scrollbar-width: none;          /* Firefox 隐藏滚动条 */
+  -ms-overflow-style: none;       /* 旧 Edge 隐藏滚动条 */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+.discover-list::-webkit-scrollbar { display: none; }   /* Chrome/Safari 隐藏滚动条 */
+.discover-item {
+  background: rgba(30, 41, 59, 0.55);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.05s;
+}
+.discover-item:active { transform: scale(0.985); border-color: rgba(16, 185, 129, 0.5); }
+.discover-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.discover-cat {
+  font-size: 0.74rem;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  padding: 2px 10px;
+  border-radius: 9999px;
+}
+.discover-diff {
+  font-size: 0.74rem;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  padding: 2px 10px;
+  border-radius: 9999px;
+}
+.discover-bm { margin-left: auto; font-size: 0.95rem; }
+.discover-name { font-size: 1.02rem; font-weight: 700; color: #f1f5f9; line-height: 1.4; }
+.discover-snippet {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.discover-empty {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* ============ 分类选择 sheet ============ */
+.cat-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  background: rgba(2, 6, 12, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.cat-sheet {
+  width: 100%;
+  max-width: 28rem;
+  background: #0f172a;
+  border-top: 1px solid rgba(71, 85, 105, 0.6);
+  border-radius: 20px 20px 0 0;
+  padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+}
+.cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.fav-search { margin-bottom: 12px; }
+
+/* Header 内元素不换行，窄窗口保持单行 */
+header { white-space: nowrap; }
+header > div:first-child { flex-wrap: nowrap; }
+
+/* 主区域禁止整体滚动，卡片内容滚动交给卡片内部处理 */
+main {
+  overflow: hidden;
+  /* 移动端底部导航是 position:fixed，需要预留空间避免卡片 footer 被遮挡；
+   * PC 端（≥768px）nav 改为 static 后此 padding 会被覆盖为 0 */
+  padding-bottom: calc(52px + env(safe-area-inset-bottom));
+}
+
+/* 顶部安全区：避免刘海屏 / 前置摄像头遮挡 */
+.app-header { padding-top: calc(0.75rem + env(safe-area-inset-top)); }
+
+
+/* ============ 平板/窄窗口（480px~767px）：轻度居中，Header 对齐 ============ */
+@media (min-width: 480px) and (max-width: 767px) {
+  #app {
+    max-width: 30rem;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  }
+}
+
+/* ============ PC / 大屏（≥768px）：居中手机框，flex 三段式填满 100vh ============
+ *   布局：#app(flex-col,100vh) → [header(固定)] + [main(flex-1)] + [nav(固定)]
+ *   底栏在流内，不会被挤出；卡片高度跟随 main 自适应。
+ *   移动端不受影响（<768px 不命中此块）。 */
+@media (min-width: 768px) {
+  #app {
+    max-width: 30rem;
+    height: 100vh;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.06),
+      0 20px 60px -15px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+  }
+  body { background-color: #060a12; }
+
+  /* 底栏：回到文档流内（不再是 fixed），随 #app flex 自然排在 main 之后 */
+  .bottom-nav {
+    position: static;
+    flex-shrink: 0;
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* 卡片：用 calc 直接算出 header+nav 之后的剩余空间，不依赖 % 链 */
+  /* 卡片高度由 flex 三段式统一驱动，无需覆盖 */
+  main { overflow: hidden; padding-bottom: 0; }
+}

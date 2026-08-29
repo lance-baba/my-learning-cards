@@ -1,0 +1,533 @@
+{
+  "bundle_id": "bundle:history:v1",
+  "category_id": "history",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "history_topic_丝绸之路",
+      "title": "丝绸之路",
+      "tags": [
+        "历史",
+        "文化交流",
+        "贸易"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "丝绸之路是什么？",
+          "content": "丝绸之路指从汉唐古都长安/洛阳出发，经甘肃、新疆到中亚、西亚、欧洲并联结地中海各国的陆上通道。因西运货物中丝绸制品影响最大而得名，时间约从公元前 114 年到公元 1450 年。",
+          "action_hint": "左右滑动看商品与技术传播 ➔",
+          "citation_anchor": "定义与起止"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "主要交易商品",
+          "streaming_content": "中国西出：丝绸、瓷器、玉石（和田玉）、铁器与豪华制品；东传：香料、珠宝、良种马（大宛）、药材，以及葡萄、核桃、胡萝卜、石榴等作物。技术上，造纸术（751 年怛罗斯战役后西传）与印刷术（13 世纪入欧洲）沿丝路扩散。",
+          "citation_anchor": "主要交易商品/技术传播"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "“丝绸之路”是谁提出的？（点击翻转）",
+          "front_text": "“丝绸之路”这个名称最早由谁在何时提出？",
+          "back_text": "由德意志帝国地理学家费迪南·冯·李希霍芬于 1877 年出版的地图集中提出。它并非一条单一的道路，而是穿越山川沙漠海洋的道路网络。",
+          "citation_anchor": "名称来源"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "qa_card",
+          "title": "哪些技术沿丝路传播？",
+          "content": "造纸术在 751 年怛罗斯战役后由唐军战俘带到撒马尔罕，再传伊斯兰世界，15 世纪入西欧；雕版印刷术 8 世纪传中亚，13 世纪由欧洲传教士带到元朝，古腾堡 1450 年印《圣经》。",
+          "citation_anchor": "技术传播"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "古代连接中国与中亚、西亚、欧洲的陆上/海上贸易与文化交流通道。",
+            "西汉张骞通西域后逐步贯通，并非单一固定路线。",
+            "贸易品含丝绸、瓷器、茶叶，也输回香料、宝石与作物。",
+            "技术（造纸、印刷）与宗教（佛教）沿路东传西渐。",
+            "『丝绸之路』一名由德国地理学家李希霍芬于 19 世纪提出。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "丝绸之路只运丝绸，而且是笔直一条大道。",
+          "right": "商品多样，且由多段驿站、绿洲组成的网络，并非一条笔直公路；海上丝路同样重要。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "丝绸之路是横贯欧亚的商贸与文明交流网络，极大促进了东西方技术、宗教与物产的互通。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "丝绸之路",
+        "url": "https://baike.baidu.com/item/%E4%B8%9D%E7%BB%B8%E4%B9%8B%E8%B7%AF",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "history_topic_秦朝",
+      "title": "秦朝",
+      "tags": [
+        "中国历史",
+        "秦汉",
+        "大一统"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "秦朝是哪一年统一的？",
+          "content": "公元前221年，秦王政攻灭齐国，结束秦灭六国之战，统一中原，建立中国历史上首个大一统中央集权帝国。",
+          "citation_anchor": "公元前221年统一中原",
+          "action_hint": "记住这个年份，它是中国帝制开端。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "秦朝的统一措施",
+          "front_text": "秦始皇为巩固统一做了哪些事？",
+          "back_text": "统一文字（小篆、隶书）、车同轨、统一度量衡与货币（秦半两）；政治上确立皇帝制度、三公九卿与郡县制；北伐匈奴后连接秦赵燕旧城，建成西起临洮东至辽东的万里长城。",
+          "citation_anchor": "书同文车同轨统一度量衡",
+          "action_hint": "翻到背面看完整措施清单。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "秦朝的历史意义",
+          "streaming_content": "① 建立首个大一统中央集权帝国，政治体制为后世沿用。\n② 统一文字、度量衡、货币，促进文化融合。\n③ “秦”成为中国文化象征之一（兵马俑等列入世界遗产）。\n④ 奠定中原、荆楚、齐鲁等文化整合的基础。",
+          "citation_anchor": "秦成为文化象征",
+          "action_hint": "这些是中华文明连续性的关键节点。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "秦朝",
+        "url": "https://baike.baidu.com/item/%E7%A7%A6%E6%9C%9D",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_工业革命",
+      "title": "工业革命",
+      "tags": [
+        "世界史",
+        "经济史",
+        "技术革命"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "工业革命从哪里开始？",
+          "content": "始于18世纪英国（英格兰中部），约1760年代兴起，由手工劳动向动力机器生产转变，又称第一次工业革命。",
+          "citation_anchor": "始于18世纪英国",
+          "action_hint": "英国为何率先？想想煤炭与殖民地。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "蒸汽机的关键作用",
+          "front_text": "工业革命的核心动力是什么？",
+          "back_text": "瓦特于1781年改良蒸汽机（1712年纽科门发明，1769年瓦特改良），为工业化提供廉价动力，使人类进入“蒸汽时代”。",
+          "citation_anchor": "瓦特改良蒸汽机",
+          "action_hint": "翻面看蒸汽机如何改变生产。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "工业革命的影响",
+          "streaming_content": "① 工厂制度取代家庭手工业，生产集中化、机械化。\n② 形成资产阶级与工人阶级两大阶级。\n③ 推动城市化与现代化进程。\n④ 促进科学发展和自由贸易，深刻改变社会生活。",
+          "citation_anchor": "工厂制度与阶级分化",
+          "action_hint": "它是现代社会的起点之一。"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "18 世纪中后期始于英国，由手工生产转向机器大工业。",
+            "瓦特改良蒸汽机提供通用动力，带动纺织、采矿、冶金。",
+            "伴生工厂制、城市化与交通运输革命（铁路、轮船）。",
+            "生产力跃升，也带来污染、劳工与殖民扩张问题。",
+            "逐步扩散至欧洲大陆与北美，重塑世界格局。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "工业革命就是蒸汽机一项发明的事。",
+          "right": "是能源（蒸汽）、材料（钢铁）、机械与制度（工厂/专利/市场）协同的系统性变革，非单点发明。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "瓦特对纽科门蒸汽机的改良使热效率大幅提升，成为工厂与机车可依赖的通用动力源。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "工业革命",
+        "url": "https://baike.baidu.com/item/%E5%B7%A5%E4%B8%9A%E9%9D%A9%E5%91%BD",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "history_topic_文艺复兴",
+      "title": "文艺复兴",
+      "tags": [
+        "世界史",
+        "文化史",
+        "欧洲"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "文艺复兴发生在何时何地？",
+          "content": "14至16世纪发生于意大利（亚平宁半岛），随后扩展至全欧洲的一场文化运动。",
+          "citation_anchor": "14-16世纪意大利",
+          "action_hint": "注意它正好是中世纪与近代的分界。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "文艺复兴的核心思想",
+          "front_text": "文艺复兴主张什么？",
+          "back_text": "人文主义盛行，重视人的价值胜过宗教；以复兴古罗马为名，实际进行新型态文化变革并研究古典文献。代表人物有但丁、达芬奇、米开朗基罗。",
+          "citation_anchor": "人文主义与古典复兴",
+          "action_hint": "翻面看代表人物。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "文艺复兴的历史意义",
+          "streaming_content": "① 中世纪与近代的分水岭。\n② 为资产阶级革命制造舆论前提。\n③ 推动宗教改革与地理大发现等现代开端。",
+          "citation_anchor": "近代开端",
+          "action_hint": "它开启了现代世界。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "文艺复兴",
+        "url": "https://baike.baidu.com/item/%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_第二次世界大战",
+      "title": "第二次世界大战",
+      "tags": [
+        "世界史",
+        "战争",
+        "20世纪"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "二战是哪几年？",
+          "content": "1939年9月1日至1945年9月2日，是史上规模最大的全球军事冲突，交战双方为同盟国与轴心国。",
+          "citation_anchor": "1939-1945",
+          "action_hint": "中国战场自1937年全面抗战起算。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "二战的主要战场",
+          "front_text": "二战在哪些地方打？",
+          "back_text": "欧洲战场、亚洲和太平洋战场、地中海中东及非洲战场，以及大西洋空战等。同盟国（美苏英中法）战胜轴心国（德日意）。",
+          "citation_anchor": "多战场与同盟国",
+          "action_hint": "翻面看战场分布。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "二战的深远影响",
+          "streaming_content": "① 造成6000万至7500万人死亡，史上最惨重。\n② 1945年联合国成立，美苏中英法为安理会常任理事国。\n③ 美苏成为超级大国，开启冷战；欧洲衰落、亚非去殖民化。",
+          "citation_anchor": "联合国与冷战格局",
+          "action_hint": "战后世界秩序由此奠定。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "第二次世界大战",
+        "url": "https://baike.baidu.com/item/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%98",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_罗马帝国",
+      "title": "罗马帝国",
+      "tags": [
+        "世界史",
+        "古代史",
+        "欧洲"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "罗马帝国何时建立？",
+          "content": "前27年，屋大维崛起并建立奥古斯都元首制，罗马共和国转型为帝国，他成为首位皇帝。",
+          "citation_anchor": "前27年屋大维",
+          "action_hint": "共和国如何变帝国？看背面。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "罗马帝国的成就",
+          "front_text": "罗马留下了什么遗产？",
+          "back_text": "罗马法是现代大陆法系的源头；工程上以拱、圆顶、水道与道路技术著称；图拉真时（117年）疆域达500万平方公里。",
+          "citation_anchor": "罗马法与大工程",
+          "action_hint": "翻面看工程与法律。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "罗马的兴衰",
+          "streaming_content": "① 前27年建立，117年图拉真时疆域极盛。\n② 西罗马帝国于476年灭亡。\n③ 东罗马（拜占庭）延续至1453年。\n④ 影响欧洲语言、法律、政治至今。",
+          "citation_anchor": "476年西罗马灭亡",
+          "action_hint": "千年帝国的落幕。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "罗马帝国",
+        "url": "https://baike.baidu.com/item/%E7%BD%97%E9%A9%AC%E5%B8%9D%E5%9B%BD",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_四大发明",
+      "title": "四大发明",
+      "tags": [
+        "中国历史",
+        "科技史",
+        "发明"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "四大发明指什么？",
+          "content": "指古代中国的四种伟大发明：造纸术、指南针、火药、印刷术。",
+          "citation_anchor": "造纸印刷火药指南针",
+          "action_hint": "它们如何改变世界？看背面。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "四大发明的细节",
+          "front_text": "每项发明的关键点？",
+          "back_text": "造纸术：东汉蔡伦改进，利于知识保存流通；指南针：前身为司南，用于航海贸易；火药：唐起源、宋用于战争；印刷术：北宋毕昇发明胶泥活字。",
+          "citation_anchor": "蔡伦毕昇与火器",
+          "action_hint": "翻面看各发明要点。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "四大发明的意义",
+          "streaming_content": "① 培根与马克思认为印刷术、火药、指南针改变世界面貌。\n② 文艺复兴之初流播欧洲，推动近代世界形成。\n③ 是中国对世界文明的重大贡献。",
+          "citation_anchor": "预告资产阶级社会到来",
+          "action_hint": "它们推动了近代化。"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "通常指造纸术、印刷术、火药、指南针。",
+            "造纸（蔡伦改进）、活字印刷（毕昇）利于知识传播。",
+            "火药由炼丹术演进，改变战争形态。",
+            "指南针推动航海与地理大发现。",
+            "经阿拉伯地区西传，深刻影响世界文明进程。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "四大发明全都是中国人 100% 原创并直接传到欧洲。",
+          "right": "多源于中国并经改造与传播（常经阿拉伯中转），在欧洲被进一步发展应用；传播是长期互鉴过程。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "造纸术与印刷术的推广，使知识摆脱竹简羊皮的稀缺，推动教育与科学普及。",
+          "citation": "影响"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "四大发明",
+        "url": "https://baike.baidu.com/item/%E5%9B%9B%E5%A4%A7%E5%8F%91%E6%98%8E",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "history_topic_郑和下西洋",
+      "title": "郑和下西洋",
+      "tags": [
+        "中国历史",
+        "航海",
+        "明朝"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "郑和下西洋是什么时候？",
+          "content": "明初1405年至1433年，郑和率船队七次远航西洋，是中国古代规模空前的远洋航海活动。",
+          "citation_anchor": "1405-1433七下西洋",
+          "action_hint": "比哥伦布早近一个世纪。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "宝船有多大？",
+          "front_text": "郑和船队的规模？",
+          "back_text": "据载大船长四十四丈四尺、阔十八丈（约长151米、宽61.6米），可容上千人；七次拜访三十余个国家与地区，最远达非洲东岸与红海。",
+          "citation_anchor": "宝船长约151米",
+          "action_hint": "翻面看成船体量。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "郑和下西洋的意义",
+          "streaming_content": "① 象征中国航海史高峰，技术规模当时世界空前。\n② 开展朝贡贸易，远及非洲与红海。\n③ 未如后来西方航海家那样改变世界格局。",
+          "citation_anchor": "朝贡贸易与航海高峰",
+          "action_hint": "古代远洋的极致。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "郑和下西洋",
+        "url": "https://baike.baidu.com/item/%E9%83%91%E5%92%8C%E4%B8%8B%E8%A5%BF%E6%B4%8B",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_法国大革命",
+      "title": "法国大革命",
+      "tags": [
+        "世界史",
+        "政治革命",
+        "欧洲"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "法国大革命起止时间？",
+          "content": "始于1789年三级会议召开，终于1799年拿破仑雾月政变，是法国重大的政治与社会变革。",
+          "citation_anchor": "1789-1799",
+          "action_hint": "攻占巴士底狱是开端。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "大革命的关键节点",
+          "front_text": "革命经历了哪些阶段？",
+          "back_text": "1789.7.14 攻占巴士底狱；8.26 发布《人权和公民权宣言》、废封建行君主立宪；1792 建第一共和国、1793 处决路易十六；1799 拿破仑雾月政变结束。",
+          "citation_anchor": "人权宣言与共和国",
+          "action_hint": "翻面看时间线。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "法国大革命的意义",
+          "streaming_content": "① 被视为民主自由的基石。\n② 资本主义工业与资产阶级自由社会取得胜利。\n③ 是真正的群众社会革命，影响全世界。",
+          "citation_anchor": "民主自由基石",
+          "action_hint": "现代政治思想的重要源头。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "法国大革命",
+        "url": "https://baike.baidu.com/item/%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "history_topic_明治维新",
+      "title": "明治维新",
+      "tags": [
+        "世界史",
+        "日本",
+        "近代化"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "明治维新是哪一年？",
+          "content": "1868年明治天皇颁布“王政复古大号令”，废除幕府，维新政权成立，开启日本近代化改革。",
+          "citation_anchor": "1868王政复古",
+          "action_hint": "日本由此走上强国之路。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "明治维新的举措",
+          "front_text": "日本如何近代化？",
+          "back_text": "1871年废藩置县（1都3府1道72县），终结幕藩体制；殖产兴业建官办工厂、筑铁路实现工业化；福泽谕吉《脱亚论》推动脱亚入欧。",
+          "citation_anchor": "废藩置县殖产兴业",
+          "action_hint": "翻面看改革清单。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "明治维新的意义",
+          "streaming_content": "① 少数亚洲成功近代化的国家之一。\n② 经甲午战争等胜果跃为亚洲最强新兴帝国。\n③ 国力大幅膨胀，影响至今。",
+          "citation_anchor": "亚洲近代化样板",
+          "action_hint": "东亚格局由此改变。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "明治维新",
+        "url": "https://baike.baidu.com/item/%E6%98%8E%E6%B2%BB%E7%BB%B4%E6%96%B0",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    }
+  ]
+}

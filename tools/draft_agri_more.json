@@ -1,0 +1,410 @@
+[
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "水稻",
+    "tags": ["粮食作物", "禾本科"],
+    "source": { "name": "维基百科", "title": "水稻", "url": "https://zh.wikipedia.org/wiki/水稻", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "水稻是什么？", "content": "水稻（学名 Oryza sativa）是禾本科稻属的一至二年生草本植物，其果实称米，全世界有半数以上人口以水稻为主食。", "citation_anchor": "半数人口主食", "action_hint": "为何亚洲是主产区？" },
+      { "layout": "flip_card", "title": "水稻的起源", "front_text": "水稻从哪来？", "back_text": "野生稻约8500年前在长江中下游驯化为粳稻，后传至印度转为籼稻，属亚洲起源；喜温湿、耐水，多种于水田。", "citation_anchor": "长江中下游驯化", "action_hint": "翻面看驯化史。" },
+      { "layout": "streaming_text", "title": "种植要点", "streaming_content": "① 不耐低温，最适生长温度25~30°C。\n② 年雨量1200毫米以上或具灌溉设施地区可栽培。\n③ 熟分乳熟、黄熟（机收适期）、完熟（人收适期）、枯熟四阶段。", "citation_anchor": "四熟期", "action_hint": "水田管理的核心。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "小麦",
+    "tags": ["粮食作物", "禾本科"],
+    "source": { "name": "维基百科", "title": "小麦", "url": "https://zh.wikipedia.org/wiki/小麦", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "小麦为什么能做面包？", "content": "小麦籽粒蛋白质含麦谷蛋白和醇溶蛋白，赋予面团黏弹性，是制作面包等面食的主要原料；普通小麦占全球产量约95%。", "citation_anchor": "面筋蛋白", "action_hint": "其他谷物为何不行？" },
+      { "layout": "flip_card", "title": "小麦的栽培类型", "front_text": "冬麦与春麦？", "back_text": "栽培分冬小麦（耐寒、利用夏前成熟）与春小麦；最早约1.28万年前在西亚新月沃地被驯化，后传播至全球温带与亚热带。", "citation_anchor": "新月沃地驯化", "action_hint": "翻面看传播史。" },
+      { "layout": "streaming_text", "title": "小麦的意义", "streaming_content": "① 全球超三分之一人口的主要食粮。\n② 中国第二大口粮作物，仅次于水稻。\n③ 支撑食品加工与牲畜饲料。", "citation_anchor": "第二大口粮", "action_hint": "主粮安全的基石。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "大豆",
+    "tags": ["油料作物", "豆科"],
+    "source": { "name": "维基百科", "title": "大豆", "url": "https://zh.wikipedia.org/wiki/大豆", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "大豆为何能肥田？", "content": "大豆根部与根瘤菌共生可固氮，是“田里的肉”——蛋白质含量高，为素食者优质蛋白首选，也是全球重要饲料蛋白来源。", "citation_anchor": "根瘤菌固氮", "action_hint": "豆科为何特殊？" },
+      { "layout": "flip_card", "title": "大豆的用途", "front_text": "大豆能做成什么？", "back_text": "种子富含蛋白质与脂肪，可制大豆油、豆粕；也是豆腐、酱油、味噌等豆制品及调味品原料。原产中国，约5000年栽培史。", "citation_anchor": "豆腐酱油原料", "action_hint": "翻面看加工链。" },
+      { "layout": "streaming_text", "title": "大豆要点", "streaming_content": "① 学名 Glycine max，古称“菽”。\n② 新石器时代遗址已有残留物。\n③ 兼作含油种子与豆类蛋白来源。", "citation_anchor": "5000年栽培", "action_hint": "东方传统作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "番茄",
+    "tags": ["蔬菜", "茄科"],
+    "source": { "name": "维基百科", "title": "番茄", "url": "https://zh.wikipedia.org/wiki/番茄", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "番茄是蔬菜还是水果？", "content": "番茄（学名 Solanum lycopersicum）原产中美洲和南美洲；大番茄定义为蔬菜，小番茄（圣女果）为水果，美国最高法院曾判其为蔬菜。", "citation_anchor": "蔬果之争", "action_hint": " botanically 是果实。" },
+      { "layout": "flip_card", "title": "番茄的营养", "front_text": "番茄好在哪？", "back_text": "红色番茄富含维生素C（14mg/100g）与番茄红素（2573µg/100g）；2019年全球产量1.81亿吨，中国居首。", "citation_anchor": "番茄红素", "action_hint": "翻面看营养数据。" },
+      { "layout": "streaming_text", "title": "番茄要点", "streaming_content": "① 林奈1753年命名，与马铃薯同属茄科。\n② 最早栽培记录可溯公元前500年。\n③ 是茄科开花植物模型生物之一。", "citation_anchor": "模型生物", "action_hint": "家常却重要。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "苹果",
+    "tags": ["水果", "蔷薇科"],
+    "source": { "name": "维基百科", "title": "苹果", "url": "https://zh.wikipedia.org/wiki/苹果", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "苹果从哪里来？", "content": "苹果（学名 Malus domestica）起源于中亚，野生祖先为新疆野苹果，沿丝绸之路传播至欧洲等地；已知超过7500个品种。", "citation_anchor": "新疆野苹果", "action_hint": "丝绸之路带去的。" },
+      { "layout": "flip_card", "title": "苹果的产业", "front_text": "苹果产量多大？", "back_text": "2017年全球苹果产量8310万公吨，中国占总产量一半，为温带广泛种植果树；平安夜作为“平安果”成文化象征。", "citation_anchor": "中国占一半", "action_hint": "翻面看产业数据。" },
+      { "layout": "streaming_text", "title": "苹果要点", "streaming_content": "① 蔷薇科苹果属落叶乔木。\n② 富含营养，有“一天一苹果，医生远离我”之说。\n③ 多国文化具宗教与神话意义。", "citation_anchor": "一日一苹果", "action_hint": "最常见的水果之一。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "茶",
+    "tags": ["饮料作物", "山茶科"],
+    "source": { "name": "维基百科", "title": "茶", "url": "https://zh.wikipedia.org/wiki/茶", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "六大茶类怎么分？", "content": "现代茶学按加工工序分绿茶、白茶、黄茶、青茶、红茶、黑茶六大基本类别；茶树学名 Camellia sinensis，属山茶科。", "citation_anchor": "六大茶类", "action_hint": "发酵程度是关键。" },
+      { "layout": "flip_card", "title": "茶的地位", "front_text": "茶有多重要？", "back_text": "茶含咖啡因等生物碱，是世界最广泛饮用饮品之一，为全球三大无酒精饮料之一（另为咖啡、可可）；中国为饮茶文化发源地。", "citation_anchor": "三大饮料之一", "action_hint": "翻面看文化地位。" },
+      { "layout": "streaming_text", "title": "茶要点", "streaming_content": "① 以茶树嫩叶及芽经加工、热水冲泡而成。\n② 自然分布一般认为位于中国西南部等地。\n③ 2022年入选联合国教科文组织非物质文化遗产。", "citation_anchor": "非遗", "action_hint": "千年饮品。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "棉花",
+    "tags": ["纤维作物", "锦葵科"],
+    "source": { "name": "维基百科", "title": "棉花", "url": "https://zh.wikipedia.org/wiki/棉花", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "棉花是什么纤维？", "content": "棉花是锦葵科棉属植物种子上的纤维，含纤维素约87–90%，是最常使用的天然纤维；中国为全球最大生产国（占24%）。", "citation_anchor": "天然纤维", "action_hint": "为何比化纤古老？" },
+      { "layout": "flip_card", "title": "棉花的用途", "front_text": "棉花能做什么？", "back_text": "因生产较易、适用纺织面广，成为衣物主要天然材料，并衍生油、饲料、造纸等用途；原产亚热带/热带地区。", "citation_anchor": "衣物主料", "action_hint": "翻面看产业链。" },
+      { "layout": "streaming_text", "title": "棉花要点", "streaming_content": "① 锦葵科棉属，英文 cotton。\n② 旧新世界均已独立驯化。\n③ 前十大产棉国含中、印、美、巴、澳。", "citation_anchor": "多国生产", "action_hint": "支柱经济作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "马铃薯",
+    "tags": ["粮食作物", "茄科"],
+    "source": { "name": "维基百科", "title": "马铃薯", "url": "https://zh.wikipedia.org/wiki/马铃薯", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "马铃薯为何叫地下苹果？", "content": "马铃薯（学名 Solanum tuberosum）是全球第四大重要粮食作物，仅次于稻米、玉米和小麦；营养价值高，有“地下苹果”之称。", "citation_anchor": "第四大粮食", "action_hint": "块茎是储存器官。" },
+      { "layout": "flip_card", "title": "吃马铃薯的禁忌", "front_text": "什么部位不能吃？", "back_text": "食用部分为地下块茎；含茄碱等生物碱，发芽或变绿部位毒素高，需注意不可食用。原产南美洲安第斯山脉。", "citation_anchor": "茄碱中毒", "action_hint": "翻面看食品安全。" },
+      { "layout": "streaming_text", "title": "马铃薯要点", "streaming_content": "① 茄科茄属多年生草本，块茎可食。\n② 栽培最早溯公元前8000–5000年。\n③ 2008年被联合国定为“国际马铃薯年”。", "citation_anchor": "国际马铃薯年", "action_hint": "粮食安全作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "稻瘟病",
+    "tags": ["植物病害", "真菌"],
+    "source": { "name": "维基百科", "title": "稻瘟病", "url": "https://zh.wikipedia.org/wiki/稻瘟病", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "稻瘟病由什么引起？", "content": "稻瘟病由稻梨孢菌（Pyricularia oryzae）引起，可危害叶、节、颈等地上全株部位，致枯叶、秆断、不结实。", "citation_anchor": "稻梨孢菌", "action_hint": "真菌性病害。" },
+      { "layout": "flip_card", "title": "什么环境易爆发？", "front_text": "发病条件？", "back_text": "宜摄氏25–28度、近饱和相对湿度之高湿环境，叶组织高含水量为感染必要，过度施氮肥易发。", "citation_anchor": "高温高湿", "action_hint": "翻面看诱因。" },
+      { "layout": "streaming_text", "title": "防治要点", "streaming_content": "① 选用抗病品种、清除残株。\n② 避免过度施肥与定期灌溉。\n③ 药剂如加普胺可抑制附着器穿透。\n④ 现于85国，年损稻作可供超6000万人食用。", "citation_anchor": "抗病+药剂", "action_hint": "综合防治最稳。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "玉米",
+    "tags": ["粮食作物", "禾本科"],
+    "source": { "name": "维基百科", "title": "玉米", "url": "https://zh.wikipedia.org/wiki/玉米", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "玉米产量排第几？", "content": "玉米（学名 Zea mays）是全世界总产量最高的粮食作物，亦是美洲种植最多的粮食作物；原产北美洲墨西哥。", "citation_anchor": "总产量最高", "action_hint": "自2012年中国面积第一。" },
+      { "layout": "flip_card", "title": "玉米的花", "front_text": "玉米怎么授粉？", "back_text": "花单性、雌雄同株：雄花圆锥花序顶生，雌花肉穗花序着生叶腋间（即果穗）。可作粮食、饲料，亦用于乙醇燃料及化工。", "citation_anchor": "雌雄同株", "action_hint": "翻面看花结构。" },
+      { "layout": "streaming_text", "title": "玉米要点", "streaming_content": "① 禾本科玉米属一年生草本。\n② 由美洲原住民最早种植。\n③ 粮饲兼用，亦作化工与生物燃料原料。", "citation_anchor": "粮饲兼用", "action_hint": "万能作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "有害生物",
+    "tags": ["农业害虫", "防治"],
+    "source": { "name": "维基百科", "title": "有害生物", "url": "https://zh.wikipedia.org/wiki/害虫", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是农业害虫？", "content": "害虫常指对人类生产产生负面影响的节肢动物（多属昆虫纲），如蚜虫、蝗虫、螟虫损害作物，米象蛀食储粮。", "citation_anchor": "节肢动物为害", "action_hint": "益虫害虫相对性。" },
+      { "layout": "flip_card", "title": "害虫的危害", "front_text": "害虫造成什么损失？", "back_text": "节肢动物所致经济损失最高（螨虫最大），并可传播疾病（跳蚤传鼠疫、疟蚊传疟疾）；森林害虫如天牛、松毛虫破坏林木。", "citation_anchor": "传播疾病", "action_hint": "翻面看连锁危害。" },
+      { "layout": "streaming_text", "title": "防治思路", "streaming_content": "① 农业防治与病虫害综合治理。\n② 合理用药（参害虫防治与农药）。\n③ 部分昆虫仅幼体为害、成体为益。", "citation_anchor": "综合防治", "action_hint": "生态视角看虫。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "肥料",
+    "tags": ["农艺", "养分"],
+    "source": { "name": "维基百科", "title": "肥料", "url": "https://zh.wikipedia.org/wiki/肥料", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "肥料的三大要素？", "content": "人工合成肥料主要含氮（N）、磷（P）、钾（K），混合称“N.P.K.”或复合肥；约30%–50%的作物增产归因于商业肥料。", "citation_anchor": "氮磷钾", "action_hint": "作物需量最大 trio。" },
+      { "layout": "flip_card", "title": "肥料的两大类", "front_text": "有机肥 vs 无机肥？", "back_text": "依成分分无机肥料（化学肥料）与有机肥料（天然肥料）；有机肥需发酵腐熟后使用，勿新鲜施用以防肥害。", "citation_anchor": "有机无机之分", "action_hint": "翻面看用法。" },
+      { "layout": "streaming_text", "title": "科学施用", "streaming_content": "① 过量易生肥害、长期使土壤酸化。\n② 蔬菜避免过量氮肥，防硝酸盐残留。\n③ 渗漏致水体优养化（面源污染）。", "citation_anchor": "面源污染", "action_hint": "平衡用量。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "灌溉",
+    "tags": ["水利", "农艺"],
+    "source": { "name": "维基百科", "title": "灌溉", "url": "https://zh.wikipedia.org/wiki/灌溉", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是灌溉？", "content": "灌溉是人为以天然降水以外的水源供给土地或土壤水分，多半用于种植农作物；仅靠雨水的农业称旱田。", "citation_anchor": "人工补水", "action_hint": "五千多年农业中心。" },
+      { "layout": "flip_card", "title": "灌溉的方式", "front_text": "有哪些灌溉法？", "back_text": "包括漫灌、喷灌（时针式/平移式/微喷）、滴灌、渗灌、井灌等；滴灌可最大限度减少蒸发损失。", "citation_anchor": "滴灌最节水", "action_hint": "翻面看方式对比。" },
+      { "layout": "streaming_text", "title": "灌溉要点", "streaming_content": "① 公元前60世纪埃及与美索不达米亚已用。\n② 中国前250年建成都江堰。\n③ 可保护植物免霜害、抑杂草。", "citation_anchor": "都江堰", "action_hint": "文明赖水而生。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "土壤",
+    "tags": ["自然资源", "农基"],
+    "source": { "name": "维基百科", "title": "土壤", "url": "https://zh.wikipedia.org/wiki/土壤", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "土壤怎么形成？", "content": "土壤由母质经风化作用形成，是矿物质、有机质、空气和水分混合组成，并存在固体、气体及液体三种状态。", "citation_anchor": "风化形成", "action_hint": "农业的根本。" },
+      { "layout": "flip_card", "title": "土壤的分层", "front_text": "表土之下是什么？", "back_text": "一般分六层：O枯枝落叶、A腐殖质（以上为表土）、B淀积层、C风化层、R岩石层；腐殖质层最肥沃。", "citation_anchor": "A层最肥", "action_hint": "翻面看剖面。" },
+      { "layout": "streaming_text", "title": "土壤保护", "streaming_content": "① 支撑植物生长、提供养分与水分。\n② 周期漫长但脆弱易侵蚀退化。\n③ 形成与保护确保生物生存。", "citation_anchor": "易退化", "action_hint": "耕地红线意义在此。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "杂交水稻",
+    "tags": ["育种", "粮食安全"],
+    "source": { "name": "维基百科", "title": "杂交水稻", "url": "https://zh.wikipedia.org/wiki/杂交水稻", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "杂交水稻为何高产？", "content": "利用杂种优势将优良性状互补的品种杂交，子代可获得“又多又大”等优势，一般单位产量比普通水稻高约20%。", "citation_anchor": "杂种优势", "action_hint": "袁隆平团队突破。" },
+      { "layout": "flip_card", "title": "中国杂交稻里程碑", "front_text": "关键年份？", "back_text": "袁隆平1966年发表《水稻的雄性不孕性》，1970年发现“野败”，1973年籼型杂交水稻“三系”配套成功；2019年第三代试验亩产达1046.3公斤。", "citation_anchor": "三系配套", "action_hint": "翻面看时间线。" },
+      { "layout": "streaming_text", "title": "杂交稻意义", "streaming_content": "① 截止2016年累计占地80亿亩、产6000亿公斤。\n② 耐盐碱“海水稻”可多养活约2亿人。\n③ 技术已推广至40多国。", "citation_anchor": "60亿公斤", "action_hint": "科技撑粮食安全。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "转基因作物",
+    "tags": ["生物技术", "争议"],
+    "source": { "name": "维基百科", "title": "转基因作物", "url": "https://zh.wikipedia.org/wiki/转基因作物", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "转基因作物是什么？", "content": "指依靠转基因技术产生的农作物，通过转入外源基因（如抗虫、抗除草剂基因）至棉花、水稻、玉米等，增强产量或抗逆。", "citation_anchor": "外源基因", "action_hint": "性状可定制。" },
+      { "layout": "flip_card", "title": "转基因的规模", "front_text": "种了多少？", "back_text": "截至2018年全球26国种植达1.917亿公顷，较1996年增长113倍；美巴阿加印五国占91%面积。", "citation_anchor": "113倍增长", "action_hint": "翻面看格局。" },
+      { "layout": "streaming_text", "title": "争议与监管", "streaming_content": "① 抗虫/耐除草剂为主要性状。\n② 受《卡塔赫纳生物安全议定书》等监管。\n③ 全球70国以种植或进口方式采纳。", "citation_anchor": "生物安全议定书", "action_hint": "理性看待争议。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "有机农业",
+    "tags": ["可持续", "生态"],
+    "source": { "name": "维基百科", "title": "有机农业", "url": "https://zh.wikipedia.org/wiki/有机农业", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "有机农业不用什么？", "content": "有机农业不采用人工化学合成农药、肥料、基因改造生物等非天然物质，维护土壤与生态系统健康。", "citation_anchor": "禁用合成物质", "action_hint": "各国定义共通。" },
+      { "layout": "flip_card", "title": "有机农业怎么做？", "front_text": "靠什么方法？", "back_text": "运用作物轮作、绿肥、堆肥控制水土流失并促进生物多样性；遵循自然节律与生态循环（IFOAM定义）。", "citation_anchor": "轮作绿肥堆肥", "action_hint": "翻面看方法。" },
+      { "layout": "streaming_text", "title": "有机农业意义", "streaming_content": "① 各国设法定认证标准，第三方验证。\n② 保护共享生存环境。\n③ 促进人与自然公平共生。", "citation_anchor": "认证制度", "action_hint": "生态循环农业。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "蜜蜂",
+    "tags": ["授粉", "益虫"],
+    "source": { "name": "维基百科", "title": "蜜蜂", "url": "https://zh.wikipedia.org/wiki/蜜蜂", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "蜜蜂为何重要？", "content": "蜜蜂（Apis）是膜翅目蜜蜂科有真社会性昆虫，主要采食花蜜和花粉，是农业最重要的益虫、农粮作物的重要授粉者。", "citation_anchor": "重要授粉者", "action_hint": "维系粮食安全。" },
+      { "layout": "flip_card", "title": "蜜蜂的危机", "front_text": "什么威胁蜜蜂？", "back_text": "自2007年北美西方蜜蜂出现异常高比例死亡（蜂群崩坏症候群），威胁授粉与粮食安全；联合国自2018年定每年5月20日为世界蜜蜂日。", "citation_anchor": "蜂群崩坏", "action_hint": "翻面看危机。" },
+      { "layout": "streaming_text", "title": "蜜蜂要点", "streaming_content": "① 群体由蜂后、雄蜂、工蜂组成。\n② 产蜂蜜、分泌蜂蜡建巢。\n③ 生态系不可或缺角色。", "citation_anchor": "真社会性", "action_hint": "小而关键的角色。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "堆肥",
+    "tags": ["有机肥", "循环"],
+    "source": { "name": "维基百科", "title": "堆肥", "url": "https://zh.wikipedia.org/wiki/堆肥", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "堆肥是什么过程？", "content": "堆肥是在微生物作用下通过高温发酵使有机物矿质化、腐殖化、无害化变成腐熟肥料的过程，产物也指该混合物。", "citation_anchor": "高温发酵", "action_hint": "有机质变肥料。" },
+      { "layout": "flip_card", "title": "堆肥怎么做？", "front_text": "关键参数？", "back_text": "最有效碳氮比10:1至20:1，需定期加水、翻堆维持氧气与水分促进高温分解；产物深褐具泥土味。", "citation_anchor": "碳氮比", "action_hint": "翻面看操作。" },
+      { "layout": "streaming_text", "title": "堆肥意义", "streaming_content": "① 作土壤添加剂提供养分、改良土质。\n② 抑制病害、减废循环。\n③ 有机农业关键成分。", "citation_anchor": "改良土质", "action_hint": "变废为宝。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "温室",
+    "tags": ["设施农业", "反季节"],
+    "source": { "name": "维基百科", "title": "温室", "url": "https://zh.wikipedia.org/wiki/温室", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "温室为什么能保温？", "content": "温室以玻璃或塑料作气流屏障捕获太阳辐射、防止对流，使内部植物与空气变暖；屋顶开小窗即显著降温。", "citation_anchor": "捕获辐射", "action_hint": "反季节栽培基础。" },
+      { "layout": "flip_card", "title": "温室能做什么？", "front_text": "温室的价值？", "back_text": "冬末春初种菜回暖后移植；也可种热带蔬菜免受气候影响；密封环境控制温光水肥与害虫。", "citation_anchor": "控制环境", "action_hint": "翻面看用途。" },
+      { "layout": "streaming_text", "title": "温室意义", "streaming_content": "① 提高土地利用率，非耕地变可耕。\n② 保护作物免受极端天气与害虫。\n③ 为第三世界提供温饱。", "citation_anchor": "提高土地率", "action_hint": "设施农业。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "农药",
+    "tags": ["植保", "风险"],
+    "source": { "name": "维基百科", "title": "农药", "url": "https://zh.wikipedia.org/wiki/农药", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "农药分几类？", "content": "农药依使用对象分杀菌剂、杀真菌剂、除草剂、杀虫剂（有机氯/有机磷等）、杀螨剂、杀线虫剂、杀鼠剂等；用于保护农作物。", "citation_anchor": "按对象分类", "action_hint": "不含肥料与兽药。" },
+      { "layout": "flip_card", "title": "农药的风险", "front_text": "滥用会怎样？", "back_text": "未守停药期或滥用禁药会造成残留带毒；污染河湖致鱼蛙死亡、富营养化；DDT等威胁生物多样性。", "citation_anchor": "残留与污染", "action_hint": "翻面看风险。" },
+      { "layout": "streaming_text", "title": "科学用药", "streaming_content": "① 1939年DDT等大幅增效，1950来用量增约50倍。\n② 各地有残留限量规范。\n③ 需合理使用、控残留。", "citation_anchor": "合理用药", "action_hint": "保产亦保安全。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "轮作",
+    "tags": ["耕作制度", "养地"],
+    "source": { "name": "维基百科", "title": "轮作", "url": "https://zh.wikipedia.org/wiki/轮作", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "轮作是什么？", "content": "轮作指同一块土地轮流种植不同作物，以助减少土壤侵蚀、保持地力及增加产量，避免连作缺点。", "citation_anchor": "轮流种植", "action_hint": "古老智慧。" },
+      { "layout": "flip_card", "title": "轮作为什么好？", "front_text": "双重好处？", "back_text": "害虫只侵特定植物，轮作可中止其周期减少虫患；不同作物养分需求不同，豆科可固氮补肥平衡地力。", "citation_anchor": "打断病虫害", "action_hint": "翻面看机理。" },
+      { "layout": "streaming_text", "title": "轮作要点", "streaming_content": "① 常配合休耕、绿肥或豆谷复种。\n② 减少连作导致的地力耗损。\n③ 中国废休耕用复种套种。", "citation_anchor": "绿肥配合", "action_hint": "用地养地结合。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "滴灌",
+    "tags": ["节水灌溉", "精准"],
+    "source": { "name": "维基百科", "title": "滴灌", "url": "https://zh.wikipedia.org/wiki/滴灌", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "滴灌怎么节水？", "content": "滴灌将水和肥料一滴一滴输送到植物根部，可最大限度利用有限水资源、降低水肥损失、减少蒸腾浪费、均匀度高。", "citation_anchor": "根部供给", "action_hint": "以色列 pioneered。" },
+      { "layout": "flip_card", "title": "滴灌适用哪？", "front_text": "哪些地方最受益？", "back_text": "特别适用于急性缺水地区（如椰子、葡萄、棉花等作物）；出水口间距多为10–75cm；为种植者提供准确控制模式。", "citation_anchor": "干旱区适用", "action_hint": "翻面看场景。" },
+      { "layout": "streaming_text", "title": "滴灌意义", "streaming_content": "① 由以色列人员研究开发并大量应用。\n② 科学满足作物水肥需要。\n③ 水资源极度紧张时的优选。", "citation_anchor": "以方开发", "action_hint": "精准农业一环。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "番薯",
+    "tags": ["粮食作物", "旋花科"],
+    "source": { "name": "维基百科", "title": "番薯", "url": "https://zh.wikipedia.org/wiki/番薯", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "番薯有什么营养？", "content": "番薯（学名 Ipomoea batatas）地下块根硕大味甜、富含淀粉，是世界主要主食作物之一；红心番薯富含β-胡萝卜素（可转化维生素A）。", "citation_anchor": "β-胡萝卜素", "action_hint": "缓解维生素A缺乏。" },
+      { "layout": "flip_card", "title": "番薯的来历", "front_text": "从哪来？", "back_text": "原产南美洲热带地区，经哥伦布大交换传播至全球；对土壤适应强、耐瘠薄，历史上常救荒保粮食安全。", "citation_anchor": "哥伦布大交换", "action_hint": "翻面看传播。" },
+      { "layout": "streaming_text", "title": "番薯要点", "streaming_content": "① 旋花科番薯属一年生或多年生。\n② 块根作主食。\n③ 发展中国家重要作物。", "citation_anchor": "耐瘠薄", "action_hint": "救命作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "农业",
+    "tags": ["第一产业", "文明"],
+    "source": { "name": "维基百科", "title": "农业", "url": "https://zh.wikipedia.org/wiki/农业", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "农业包含什么？", "content": "农业属第一级产业，包括作物种植、畜牧、渔业养殖、林业等，负责主副食和经济作物供应；人类约1.15万年前开始种植作物。", "citation_anchor": "第一级产业", "action_hint": "文明的基柱。" },
+      { "layout": "flip_card", "title": "农业的起源", "front_text": "农业从哪来？", "back_text": "农业独立起源于多个地区，至少可归为11个起源中心，与新石器革命密切相关；促进早期城市发展与定居。", "citation_anchor": "11个起源中心", "action_hint": "翻面看起源。" },
+      { "layout": "streaming_text", "title": "农业意义", "streaming_content": "① 驯化作物与绵羊、山羊、猪、牛等。\n② 使世界人口较狩猎采集时代显著增长。\n③ 可持续农业致力平衡生态与粮食。", "citation_anchor": "支撑人口", "action_hint": "生存之本。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "油菜",
+    "tags": ["油料作物", "十字花科"],
+    "source": { "name": "维基百科", "title": "油菜", "url": "https://zh.wikipedia.org/wiki/油菜", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "油菜有什么用？", "content": "油菜是芸薹属几种油料作物统称，种子榨油供食用及工业用，是世界四大油料作物之一；植株、花苔也为优良蔬菜。", "citation_anchor": "四大油料", "action_hint": "油蔬兼用。" },
+      { "layout": "flip_card", "title": "油菜的生态角色", "front_text": "除了产油？", "back_text": "水稻收割后种油菜作绿肥（打入土中肥田）；油菜花田亦为蜜源与观光资源；甘蓝型、白菜型、芥菜型皆产油。", "citation_anchor": "绿肥蜜源", "action_hint": "翻面看多价值。" },
+      { "layout": "streaming_text", "title": "油菜要点", "streaming_content": "① 俗称油菜籽，十字花科。\n② 甘蓝型又称西洋油菜。\n③ 支撑食用油与生态循环。", "citation_anchor": "十字花科", "action_hint": "金色花海作物。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "甘蔗",
+    "tags": ["糖料作物", "禾本科"],
+    "source": { "name": "维基百科", "title": "甘蔗", "url": "https://zh.wikipedia.org/wiki/甘蔗", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "糖从哪来？", "content": "甘蔗是制造蔗糖的原料，全球约79%的糖类产量来自甘蔗；学名 Saccharum，原产热带东南亚。", "citation_anchor": "79%糖源", "action_hint": "最大糖料作物。" },
+      { "layout": "flip_card", "title": "甘蔗还能做什么？", "front_text": "不止产糖？", "back_text": "可提炼乙醇作生质能源；全世界百余国出产，巴西为最大生产国（占世界40%）；年约18.8亿吨居世界产量最大农作物之一。", "citation_anchor": "乙醇能源", "action_hint": "翻面看多用途。" },
+      { "layout": "streaming_text", "title": "甘蔗要点", "streaming_content": "① 禾本科甘蔗属总称。\n② 温带至热带皆宜种植。\n③ 兼能源作物与饲料。", "citation_anchor": "能源作物", "action_hint": "甜甜的支柱。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "葡萄",
+    "tags": ["水果", "酿酒"],
+    "source": { "name": "维基百科", "title": "葡萄", "url": "https://zh.wikipedia.org/wiki/葡萄", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "葡萄用来做什么？", "content": "葡萄（Vitis）为落叶木质藤本，果实为浆果；可生吃或酿葡萄酒，亦制果酱、果汁、葡萄干，分鲜食与酿酒葡萄。", "citation_anchor": "酿酒鲜食", "action_hint": "藤本水果。" },
+      { "layout": "flip_card", "title": "葡萄的来历", "front_text": "从哪驯化？", "back_text": "多数品种培育自欧洲葡萄（Vitis vinifera），人工栽培始于6000–8000年前近东；生长期要求温暖、阳光充足、夏季干燥。", "citation_anchor": "近东驯化", "action_hint": "翻面看历史。" },
+      { "layout": "streaming_text", "title": "葡萄要点", "streaming_content": "① 最适温25–30°C。\n② 重要经济水果与酿酒原料。\n③ 猫狗宠物禁忌（致肾衰竭）。", "citation_anchor": "宠物禁忌", "action_hint": "人爱宠慎。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "柑橘",
+    "tags": ["水果", "芸香科"],
+    "source": { "name": "维基百科", "title": "柑橘", "url": "https://zh.wikipedia.org/wiki/柑橘", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "柑橘有什么营养？", "content": "柑橘是芸香科柑橘属各种水果统称，富含维生素C；主要源头物种包括柚、枸橼、橘、柑、金柑等。", "citation_anchor": "富含维C", "action_hint": "冬季主力水果。" },
+      { "layout": "flip_card", "title": "柑橘的起源", "front_text": "从哪来？", "back_text": "基因组学显示柑橘属起源与早期分化可能发生于南亚至东亚交界（如喜马拉雅东南麓、中国西南—华南）；今日多数商业柑橘由祖源杂交形成。", "citation_anchor": "中国西南起源", "action_hint": "翻面看演化。" },
+      { "layout": "streaming_text", "title": "柑橘要点", "streaming_content": "① 学名 Citrus，芸香科。\n② 世界产量最大水果，年超一亿吨。\n③ 巴西、中国、美国产量最多。", "citation_anchor": "产量最大水果", "action_hint": "酸甜大宗。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "花生",
+    "tags": ["油料作物", "豆科"],
+    "source": { "name": "维基百科", "title": "花生", "url": "https://zh.wikipedia.org/wiki/花生", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "花生为什么叫落花生？", "content": "花生（Arachis hypogaea）地上开花、受粉后子房柄入土发育荚果（地下结果），故有“落花生”之称；原产南美洲。", "citation_anchor": "地下结果", "action_hint": "豆科独一份。" },
+      { "layout": "flip_card", "title": "花生的价值", "front_text": "能做什么？", "back_text": "种子含丰富脂肪与蛋白质，可制花生油、花生酱等零食；根部根瘤能固氮，兼可改良土壤肥力。", "citation_anchor": "固氮改土", "action_hint": "翻面看用途。" },
+      { "layout": "streaming_text", "title": "花生要点", "streaming_content": "① 豆科落花生属一年生草本。\n② 约16世纪引种至中国。\n③ 重要油料与经济作物。", "citation_anchor": "16世纪入华", "action_hint": "平民坚果。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "向日葵",
+    "tags": ["油料作物", "菊科"],
+    "source": { "name": "维基百科", "title": "向日葵", "url": "https://zh.wikipedia.org/wiki/向日葵", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "向日葵为什么追太阳？", "content": "向日葵（Helianthus annuus）未成熟花蕾具向日性追踪太阳，成熟后花头固定朝东不再随日转动；原产北美。", "citation_anchor": "向日性", "action_hint": "成熟后不再转。" },
+      { "layout": "flip_card", "title": "向日葵的用途", "front_text": "能做什么？", "back_text": "种子（葵花籽）可生食或烤制，榨取的葵花籽油作烹饪油；亦为常见观赏植物；2020年产量达5000万吨。", "citation_anchor": "葵花籽油", "action_hint": "翻面看产业。" },
+      { "layout": "streaming_text", "title": "向日葵要点", "streaming_content": "① 菊科向日葵属大型一年生。\n② 可吸收铅、砷、铀等重金属（生态修复）。\n③ 多国文化国花或艺术象征。", "citation_anchor": "生态修复", "action_hint": "油赏兼修。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "香蕉",
+    "tags": ["水果", "热带"],
+    "source": { "name": "维基百科", "title": "香蕉", "url": "https://zh.wikipedia.org/wiki/香蕉", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "香蕉是什么植物？", "content": "香蕉是芭蕉科芭蕉属小果野蕉与野蕉杂交的栽培种，泛指广泛栽种于热带、亚热带的多年生草本植物，假茎高2–3米。", "citation_anchor": "杂交栽培种", "action_hint": "最大草本植物之一。" },
+      { "layout": "flip_card", "title": "香蕉的价值", "front_text": "为何重要？", "back_text": "果实富含淀粉，多可生食或烹饪；为全球重要的热带、亚热带经济栽培果树，世界上单体体型最大的草本植物之一。", "citation_anchor": "热带经济果", "action_hint": "翻面看价值。" },
+      { "layout": "streaming_text", "title": "香蕉要点", "streaming_content": "① 学名 Musa × paradisiaca。\n② 地上部分由地下块茎生出。\n③ 全球重要热带果树。", "citation_anchor": "块茎生茎", "action_hint": "热带主食水果。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "大白菜",
+    "tags": ["蔬菜", "十字花科"],
+    "source": { "name": "维基百科", "title": "白菜", "url": "https://zh.wikipedia.org/wiki/白菜", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "大白菜从哪来？", "content": "大白菜学名 Brassica rapa subsp. pekinensis，原产中国，是中国北方常见冬季蔬菜，明代出现，古人亦称“菘”。", "citation_anchor": "原产中国", "action_hint": "北方冬储菜。" },
+      { "layout": "flip_card", "title": "白菜的家族", "front_text": "“白菜”指哪些？", "back_text": "白菜是十字花科芸薹属植物俗称，可指大白菜、小白菜（Brassica rapa subsp. chinensis，古称菘）、圆白菜（结球甘蓝）等。", "citation_anchor": "同名多物", "action_hint": "翻面看区分。" },
+      { "layout": "streaming_text", "title": "白菜要点", "streaming_content": "① 喜冷凉气候。\n② 可腌制（如泡菜、酸菜）。\n③ 大众日常蔬菜。", "citation_anchor": "可腌制", "action_hint": "家常百菜。" }
+    ]
+  },
+  {
+    "category": "agriculture",
+    "type": "knowledge",
+    "title": "草莓",
+    "tags": ["水果", "蔷薇科"],
+    "source": { "name": "维基百科", "title": "草莓", "url": "https://zh.wikipedia.org/wiki/草莓", "publish_date": "", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "草莓是浆果吗？", "content": "草莓（Fragaria × ananassa）食用部分为膨大花托形成的假果，表面瘦果为真正果实，属聚合果；富含维生素C。", "citation_anchor": "聚合果", "action_hint": "真果是表面小点。" },
+      { "layout": "flip_card", "title": "草莓的来历", "front_text": "栽培种怎么来？", "back_text": "现代栽培草莓为异源八倍体（2n=8x=56），由弗州草莓与智利草莓杂交而来；每100克鲜果约满足每日维C的71%。", "citation_anchor": "八倍体杂交", "action_hint": "翻面看身世。" },
+      { "layout": "streaming_text", "title": "草莓要点", "streaming_content": "① 蔷薇科草莓属杂交栽培种。\n② 全球最大的小浆果类作物。\n③ 鲜食与加工市场广阔。", "citation_anchor": "最大小浆果", "action_hint": "红颜经济果。" }
+    ]
+  }
+]

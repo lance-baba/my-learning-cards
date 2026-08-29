@@ -1,0 +1,110 @@
+[
+  {
+    "category": "science",
+    "title": "细胞",
+    "tags": ["科学", "生物", "细胞"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "细胞", "url": "https://zh.wikipedia.org/wiki/细胞", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是细胞？", "content": "细胞是生物体结构和功能的基本单位，是除病毒外所有有完整生命力的生物的最小单位。细胞学说表明所有生物由细胞组成、细胞由已存细胞分裂而来。", "action_hint": "左右滑动看细胞分类与细胞器 ➔", "citation_anchor": "定义/细胞学说" },
+      { "layout": "flip_card", "title": "原核和真核细胞有什么区别？（点击翻转）", "front_text": "细胞主要分哪两类，关键差别是什么？", "back_text": "原核细胞无细胞核只有拟核（细菌、古菌）；真核细胞有膜包被的细胞核（动植物、真菌等），体积可达原核的约 1000 倍。", "citation_anchor": "原核/真核" },
+      { "layout": "streaming_text", "title": "关键细胞器", "streaming_content": "细胞核操控整粒细胞并携带遗传物质 DNA；线粒体协助细胞呼吸、产生能量 ATP 且拥有自身遗传物质。真核通过有丝分裂和减数分裂保证种族延续，原核以二元分裂繁殖。", "citation_anchor": "细胞器/分裂" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "脱氧核糖核酸",
+    "tags": ["科学", "生物", "遗传"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "脱氧核糖核酸", "url": "https://zh.wikipedia.org/wiki/脱氧核糖核酸", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是 DNA？", "content": "脱氧核糖核酸（DNA）是一种可组成遗传指令、引导生物发育与生命机能运作的生物大分子，以序列形式保存遗传信息，比喻为生命的“蓝图”。", "action_hint": "左右滑动看双螺旋与发现史 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "DNA 的碱基如何配对？（点击翻转）", "front_text": "DNA 两条链的碱基配对规则是什么？", "back_text": "一股上 A 只与 T 相连、C 只与 G 相连；A-T 之间两条氢键，G-C 之间三条氢键。两条链右旋且反平行缠绕成双螺旋。", "citation_anchor": "碱基配对/双螺旋" },
+      { "layout": "streaming_text", "title": "结构模型的提出", "streaming_content": "1953 年沃森与克里克依据 X 光衍射图提出最早的核酸分子结构精确模型并发表于《自然》。DNA 的互补双股结构与复制机制，是遗传信息传递与分子生物学诞生的物质基础。", "citation_anchor": "1953 沃森克里克" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "进化",
+    "tags": ["科学", "生物", "进化"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "进化", "url": "https://zh.wikipedia.org/wiki/进化", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是生物进化？", "content": "进化是指生物的可遗传性状在世代间的改变，操作上定义为种群内基因频率的改变。它是现代生物学的中心原则。", "action_hint": "左右滑动看机制与起源 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "进化的主要机制是什么？（点击翻转）", "front_text": "什么驱动了生物进化？", "back_text": "自然选择使有利生存繁殖的性状更普遍、有害性状更稀有；基因突变与重组提供遗传差异作为原材料。地球上所有生命约 35–38 亿年前起源于最后共同祖先。", "citation_anchor": "自然选择/共同祖先" },
+      { "layout": "streaming_text", "title": "进化论的提出", "streaming_content": "达尔文于 1859 年出版《物种起源》，详述以自然选择为基础的进化理论。进化统一解释了地球生物多样性，并应用于农业、医学与人工智能等领域。", "citation_anchor": "达尔文 1859" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "牛顿运动定律",
+    "tags": ["科学", "物理", "力学"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "牛顿运动定律", "url": "https://zh.wikipedia.org/wiki/牛顿运动定律", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "牛顿三大运动定律是什么？", "content": "牛顿运动定律是描述施加于物体的外力与物体运动之间关系的三条定律总称（一般不含万有引力），1687 年发表于《自然哲学的数学原理》，是经典力学的基础。", "action_hint": "左右滑动看三条定律 ➔", "citation_anchor": "定义/1687" },
+      { "layout": "flip_card", "title": "F=ma 是第几定律？（点击翻转）", "front_text": "力、质量与加速度的关系对应哪条定律？", "back_text": "第二定律（加速度定律）：施加于物体的外力等于质量与加速度的乘积，即 F = ma，也可表述为动量变化率。", "citation_anchor": "第二定律" },
+      { "layout": "streaming_text", "title": "三条定律要点", "streaming_content": "第一定律（惯性）：外力为零则速度不变，静止者保持静止、运动者维持速度与方向。第三定律（作用反作用）：两物体相互作用时彼此施加的力大小相等、方向相反，成对出现。", "citation_anchor": "第一/第三定律" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "元素周期表",
+    "tags": ["科学", "化学", "元素"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "元素周期表", "url": "https://zh.wikipedia.org/wiki/元素周期表", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "元素周期表是什么？", "content": "元素周期表是依原子序数、核外电子排布情况和化学性质的相似性来排列化学元素的表格，可推演元素间性质关系并预测新元素性质。", "action_hint": "左右滑动看排列规律 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "最早的元素周期表是谁提出的？（点击翻转）", "front_text": "周期表由谁在何时首创？", "back_text": "俄国化学家门捷列夫于 1869 年发布最早的元素周期表，用于表现已知元素的周期性规律。", "citation_anchor": "门捷列夫 1869" },
+      { "layout": "streaming_text", "title": "排列与规模", "streaming_content": "现代周期表按原子序数（核内质子数）递增排列；横行称“周期”，纵列称“族”，同族元素大多性质相似。截至当前共有 118 种已确认元素（1 号氢至 118 号鿫），前七个周期已被填满。", "citation_anchor": "原子序数/118 元素" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "疫苗",
+    "tags": ["科学", "医学", "免疫"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "疫苗", "url": "https://zh.wikipedia.org/wiki/疫苗", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "疫苗是什么？", "content": "疫苗是利用细菌、病毒、肿瘤细胞等制成的生物制品，通过使机体产生特异性免疫来获得对特定传染病的获得性免疫力。", "action_hint": "左右滑动看原理与里程碑 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "“vaccine”一词源自什么？（点击翻转）", "front_text": "疫苗名称的词源是什么？", "back_text": "源自牛痘的拉丁文 vacca（牛）；1796 年英国医生爱德华·詹纳发明牛痘接种术对抗天花。", "citation_anchor": "詹纳 1796/词源" },
+      { "layout": "streaming_text", "title": "类型与公共卫生意义", "streaming_content": "按制备工艺分减毒疫苗（保留活性但弱化毒性）、灭活疫苗（灭活后保留全微生物体）等。大规模接种是实现个人及群体免疫、控制致命疾病的根本策略，天花已灭绝，小儿麻痹、乙肝等大幅减少。", "citation_anchor": "类型/群体免疫" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "抗生素",
+    "tags": ["科学", "医学", "药物"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "抗生素", "url": "https://zh.wikipedia.org/wiki/抗生素", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "抗生素是什么？", "content": "抗生素（抗菌素）是微生物的代谢产物或人工合成类似物，主要用于抑制或杀死其他微生物，临床常指抗细菌抗生素。", "action_hint": "左右滑动看发现与警示 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "人类第一种抗生素是什么？（点击翻转）", "front_text": "青霉素由谁在何时发现？", "back_text": "青霉素由弗莱明于 1928 年偶然发现，1945 年获诺贝尔奖，可治疗多数细菌感染。", "citation_anchor": "弗莱明 1928" },
+      { "layout": "streaming_text", "title": "局限与耐药警示", "streaming_content": "抗生素通过破坏细胞壁、抑制蛋白合成等发挥作用，但对病毒、朊毒体等无效。滥用可致肠道菌群失调、副作用及耐药性；应在专业指导下合理使用，病毒性疾病无需使用。", "citation_anchor": "对病毒无效/耐药性" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "黑洞",
+    "tags": ["科学", "天文", "物理"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "黑洞", "url": "https://zh.wikipedia.org/wiki/黑洞", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是黑洞？", "content": "黑洞是一种因自身极高密度而产生极大引力，致使所有粒子与光等电磁辐射都无法逃逸的天体。其存在可经引力相互作用与间接观测推断。", "action_hint": "左右滑动看边界与首张照片 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "光无法逃逸的边界叫什么？（点击翻转）", "front_text": "黑洞的边界叫什么？", "back_text": "事件视界：时空中的边界，任何物质与光只能向内、无法直接向外逃逸。", "citation_anchor": "事件视界" },
+      { "layout": "streaming_text", "title": "尺度与观测", "streaming_content": "史瓦西半径由 Rs = 2GM/c² 给出，质量越大半径越大（地球质量对应仅约 9 毫米）。2019 年 4 月 10 日事件视界望远镜发布 M87 星系中心超大质量黑洞首张影像。", "citation_anchor": "史瓦西半径/2019 首张照片" }
+    ]
+  },
+  {
+    "category": "science",
+    "title": "温室效应",
+    "tags": ["科学", "气候", "环境"],
+    "type": "knowledge",
+    "source": { "name": "中文维基百科", "title": "温室效应", "url": "https://zh.wikipedia.org/wiki/温室效应", "publish_date": "2026", "authority_level": "encyclopedia" },
+    "sub_cards": [
+      { "layout": "qa_card", "title": "什么是温室效应？", "content": "温室效应是大气中的温室气体吸收行星表面散发的长波辐射能量，使行星表面温度比没有大气层时更高的效应。自然温室效应使地球适于居住。", "action_hint": "左右滑动看气体与变暖 ➔", "citation_anchor": "定义" },
+      { "layout": "flip_card", "title": "若无大气地球均温多少？（点击翻转）", "front_text": "自然温室效应把地球均温维持在多少？", "back_text": "无大气时地球平均温度约 −18℃；自然温室效应使平均温度维持在约 15℃，避免昼夜温差剧变。", "citation_anchor": "15℃ / −18℃" },
+      { "layout": "streaming_text", "title": "气体组成与人为增强", "streaming_content": "主要温室气体：水蒸气 36–70%、二氧化碳 9–26%、甲烷 4–9%、臭氧 3–7%。人类活动增加温室气体造成“增强型温室效应”与全球暖化；IPCC 指出二氧化碳等浓度达八十万年来最高。", "citation_anchor": "气体比例/人为增强" }
+    ]
+  }
+]

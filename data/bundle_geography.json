@@ -1,0 +1,533 @@
+{
+  "bundle_id": "bundle:geography:v1",
+  "category_id": "geography",
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "geography_topic_板块构造论",
+      "title": "板块构造论",
+      "tags": [
+        "地理",
+        "地质",
+        "地球科学"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是板块构造论？",
+          "content": "板块构造论认为地球的岩石圈由若干板块拼合而成，海洋和陆地的位置随板块移动不断变化。理论基于两种独立观测：海底扩张与大陆漂移。板块包含地壳及一小部分上部地幔。",
+          "action_hint": "左右滑动看板块划分与边界 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "全球分几大板块？（点击翻转）",
+          "front_text": "1968 年学者将全球岩石圈划分为几大板块？",
+          "back_text": "法国学者勒皮雄于 1968 年首先将全球岩石圈分为六大板块：太平洋、亚欧、印度洋、非洲、美洲、南极洲板块。后续又分出许多小板块。",
+          "citation_anchor": "六大板块"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "三种板块边界",
+          "streaming_content": "离散（张裂）型：受张力，形成裂谷与中洋脊，新地壳在此生成。汇聚（聚合）型：受压力，形成海沟、火山岛弧与褶曲山脉，有隐没带。转换（错动）型：受剪力，发育转形断层，常伴地震。环太平洋边界最活跃。",
+          "citation_anchor": "板块边界三种类型"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "qa_card",
+          "title": "魏格纳贡献了什么？",
+          "content": "1912 年气象学家阿尔弗雷德·魏格纳根据地质证据提出大陆漂移学说，因缺乏漂移的动力来源当时未被接受，却成为板块构造论解释大陆漂移的前驱理论。",
+          "citation_anchor": "魏格纳贡献"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "地球岩石圈分裂为若干刚性板块，漂浮于软流圈之上并缓慢移动。",
+            "全球分六大主要板块及若干次级板块。",
+            "板块边界三类：生长（张裂）、消亡（俯冲/碰撞）、转换（错动）。",
+            "地震、火山、造山多集中于板块边界。",
+            "魏格纳 1912 年提出大陆漂移说，为板块构造论奠基。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "大陆像船一样在海水上漂来漂去。",
+          "right": "板块在软流圈（塑性地幔物质）上移动，非在液态海水上；驱动来自地幔对流与板块重力。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "魏格纳依据大陆轮廓吻合与古生物分布等证据，于 1912 年提出大陆漂移学说。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "板块构造论",
+        "url": "https://baike.baidu.com/item/%E6%9D%BF%E5%9D%97%E6%9E%84%E9%80%A0%E8%AE%BA",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "geography_topic_季风气候",
+      "title": "季风气候",
+      "tags": [
+        "气候",
+        "气象",
+        "亚洲"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "季风是什么？",
+          "content": "季风是周期性伴随降水变化的风，随季节变化且盛行风向季节切换达120度以上，主要发生在季风亚洲、西非和澳大利亚北部。",
+          "citation_anchor": "盛行风向季节切换",
+          "action_hint": "想想海陆温差如何造就它。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "季风的成因",
+          "front_text": "季风为何形成？",
+          "back_text": "主要由海陆热力性质差异（陆地与海洋比热容不同）和行星风系季节移动（如ITCZ南北移动、信风越赤道偏转）共同形成。",
+          "citation_anchor": "海陆热力差异",
+          "action_hint": "翻面看成因机制。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "季风的意义",
+          "streaming_content": "① 东亚季风是对中国影响最大的气候，夏季东南风带来降水。\n② 风向转变伴随云雨变化，与农业生产密切相关。\n③ 南亚季风强而稳定、对流活跃，但热带气旋较少。\n④ 直接决定东亚、南亚的农业收成与水文循环。",
+          "citation_anchor": "季风与农业收成",
+          "action_hint": "季风是亚洲文明的命脉。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "季风",
+        "url": "https://baike.baidu.com/item/%E5%AD%A3%E9%A3%8E%E6%B0%94%E5%80%99",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_河流",
+      "title": "河流",
+      "tags": [
+        "地貌",
+        "水文",
+        "自然地理"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "河流从哪里来、到哪里去？",
+          "content": "河流是陆地上自然流动的地表水，主要源自降水、冰川融水、泉水及地下水；终点多为海洋、湖泊，少数流入地下或干涸。",
+          "citation_anchor": "源头与归宿",
+          "action_hint": "内流河与外流河如何区分？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "河流塑造了什么地貌？",
+          "front_text": "河流改变地表的方式？",
+          "back_text": "通过沉积作用形成冲积岛、沙洲、三角洲、冲积扇等多种水文地貌；按终点分内流河（入内陆湖）与外流河（入海洋）。",
+          "citation_anchor": "冲积平原与三角洲",
+          "action_hint": "翻面看地貌类型。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "河流的意义",
+          "streaming_content": "① 是水循环的重要一环，补给海洋或湖泊并蒸发回归大气。\n② 提供食物、淡水、灌溉、航运与水力能源。\n③ 支撑古文明起源，也是生态系的依托。\n④ 同时带来洪灾等需防治的灾害。",
+          "citation_anchor": "支撑文明与灾害",
+          "action_hint": "人类文明的摇篮。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "河流",
+        "url": "https://baike.baidu.com/item/%E6%B2%B3%E6%B5%81",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_洋流",
+      "title": "洋流",
+      "tags": [
+        "海洋",
+        "气候",
+        "自然地理"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "洋流是什么？",
+          "content": "洋流亦称海流，是具有相对稳定流速和流向的大规模海水运动。",
+          "citation_anchor": "大规模海水运动",
+          "action_hint": "为何能远距离输送热量？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "洋流如何影响气候？",
+          "front_text": "冷暖洋流的作用？",
+          "back_text": "暖流由低纬流向高纬、增温增湿；寒流由高纬流向低纬、降温减湿，表面多平流雾。墨西哥湾流与拉布拉多寒流交汇形成纽芬兰渔场。",
+          "citation_anchor": "暖流增温寒流降温",
+          "action_hint": "翻面看具体案例。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "洋流的意义",
+          "streaming_content": "① 传送不同洋域的热能、养分与含氧量。\n② 对地球生物圈和物理环境起平衡与带动作用。\n③ 助益大部分生物存活。\n④ 成因分风海流、密度流、倾斜流、补偿流。",
+          "citation_anchor": "平衡地球环境",
+          "action_hint": "海洋的“传送带”。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "洋流",
+        "url": "https://baike.baidu.com/item/%E6%B4%8B%E6%B5%81",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_地震",
+      "title": "地震",
+      "tags": [
+        "地质灾害",
+        "板块",
+        "防灾"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "地震是怎么产生的？",
+          "content": "地震是地球表层或表层下的振动造成的地面震动，主要由地壳板块运动碰撞累积应力、岩层破裂释放地震波引起。",
+          "citation_anchor": "板块运动释放应力",
+          "action_hint": "三大地震带在哪里？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "震级与烈度",
+          "front_text": "震级和烈度有何不同？",
+          "back_text": "震级表示释放能量大小（里氏、矩震级），每次地震唯一；烈度指某地实际震动破坏程度，随距离等变化。震源是断裂位置，震中是地表投影。",
+          "citation_anchor": "震级唯一烈度可变",
+          "action_hint": "翻面看关键术语。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "地震防灾要点",
+          "streaming_content": "① 建筑物作有效防震设计。\n② 地震时保持冷静、就近躲坚固家具下保护头部，避开玻璃窗。\n③ 关闭煤气，主震后迅速撤至开阔空地。\n④ 被埋时减少体力消耗等待救援。",
+          "citation_anchor": "防震与避险",
+          "action_hint": "安全第一，冷静应对。"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "地震是地壳快速释放能量引起的地面震动，多生于板块边界。",
+            "震级（能量大小）与烈度（某地破坏程度）是不同的概念。",
+            "主震后常有余震；海沟俯冲带可引发海啸。",
+            "室内避险：伏地、遮挡、抓牢，远离窗与吊物。",
+            "抗震设防与预警系统可显著减损。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "动物异常或天气变怪，就能准确预报地震。",
+          "right": "目前地震短临预报仍无可靠方法；动物异常非特异性，应以官方预警与平时设防为主。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "全球绝大多数破坏性地震发生在板块边界，尤其是环太平洋地震带与地中海—喜马拉雅带。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "地震",
+        "url": "https://baike.baidu.com/item/%E5%9C%B0%E9%9C%87",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "geography_topic_生物多样性",
+      "title": "生物多样性",
+      "tags": [
+        "生态",
+        "保护",
+        "环境"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "生物多样性包含哪几个层次？",
+          "content": "生物多样性可从基因差异、物种多样性、生态系统多样性三个层面审视。",
+          "citation_anchor": "基因/物种/生态系统",
+          "action_hint": "热带为何物种最丰富？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "生物多样性为何下降？",
+          "front_text": "主要威胁因素？",
+          "back_text": "栖息地破坏、入侵物种、过度开发、污染及气候变迁是主要驱动因素；生物多样性热点指拥有大量特有种且栖地严重破坏的地区。",
+          "citation_anchor": "栖息地破坏与入侵种",
+          "action_hint": "翻面看威胁源。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "保护意义",
+          "streaming_content": "① 热带雨林不足10%地表却拥有约90%物种。\n② 支持供应、调节、文化、支持四类生态系统服务。\n③ 维系人类健康、粮食安全与经济永续。\n④ 减损会削弱地球生命复原力。",
+          "citation_anchor": "生态系统服务",
+          "action_hint": "保护就是保护人类自己。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "生物多样性",
+        "url": "https://baike.baidu.com/item/%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_生态系统",
+      "title": "生态系统",
+      "tags": [
+        "生态",
+        "环境",
+        "自然地理"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "生态系统由什么组成？",
+          "content": "生态系统是特定环境内所有生物与该环境非生物因子，通过物质交换和能量传递连接形成的整体。",
+          "citation_anchor": "生物与非生物整体",
+          "action_hint": "三大功能类群是？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "能量如何流动？",
+          "front_text": "生产者/消费者/分解者？",
+          "back_text": "生产者（光合固定能量）、消费者（异养）、分解者（分解有机物释放养分）；能量沿食物链从植物传递到各级消费者，最终经呼吸释放。",
+          "citation_anchor": "能量沿食物链传递",
+          "action_hint": "翻面看物质循环。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "生态系统的意义",
+          "streaming_content": "① 提供食物、水、燃料等有形产品。\n② 维持水文循环、空气净化、传粉等无形服务。\n③ 具动态平衡，破坏可致永久失衡。\n④ 许多系统因人为影响退化需保护。",
+          "citation_anchor": "有形与无形服务",
+          "action_hint": "人类依赖生态系统。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "生态系统",
+        "url": "https://baike.baidu.com/item/%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_城市化",
+      "title": "城市化",
+      "tags": [
+        "人文地理",
+        "社会",
+        "发展"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "城市化是什么？",
+          "content": "城市化是人口密度较低的聚居地因人口聚集、经济活动频繁、基础设施扩大而变为城市，并引发经济社会结构变迁的过程。",
+          "citation_anchor": "人口集中与结构变迁",
+          "action_hint": "它何时开始加速？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "城市化的代价",
+          "front_text": "城市病有哪些？",
+          "back_text": "快速发展会带来热岛效应、内涝、污染等“城市病”；规划手段（田园城市、紧凑城市）是重要应对。",
+          "citation_anchor": "热岛效应与内涝",
+          "action_hint": "翻面看规划对策。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "城市化的意义",
+          "streaming_content": "① 真正始于工业革命后，世界城市人口至今增长近60倍。\n② 推动农业向非农业、农村人口转城镇。\n③ 带来文明成果，也需城乡协调发展。",
+          "citation_anchor": "工业革命后加速",
+          "action_hint": "现代化的核心进程。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "城市化",
+        "url": "https://baike.baidu.com/item/%E5%9F%8E%E5%B8%82%E5%8C%96",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_人口",
+      "title": "人口",
+      "tags": [
+        "人文地理",
+        "人口学",
+        "社会"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "全球有多少人口？",
+          "content": "全球人口约83亿（2026年约83.0亿），从1804年10亿增至2022年80亿，呈爆炸性增长。",
+          "citation_anchor": "约83亿",
+          "action_hint": "增长类型有哪些？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "人口再生产类型",
+          "front_text": "人口如何分类？",
+          "back_text": "原始型（高出生高死亡低增长）、传统型、过渡型（高出生低死亡高增长）、现代型（低出生低死亡很低增长）。",
+          "citation_anchor": "四种再生产类型",
+          "action_hint": "翻面看类型划分。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "人口的意义",
+          "streaming_content": "① 地域承载能力有限，未受抑制增长或致马尔萨斯灾难。\n② 涉及生物承载力与可持续发展。\n③ 迄今约1060亿人曾生活过，现占6.8%。",
+          "citation_anchor": "承载力与可持续",
+          "action_hint": "人口与发展的平衡。"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "人口",
+        "url": "https://baike.baidu.com/item/%E4%BA%BA%E5%8F%A3",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      }
+    },
+    {
+      "id": "geography_topic_气候变化",
+      "title": "气候变化",
+      "tags": [
+        "气候",
+        "环境",
+        "全球议题"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "气候变化和天气有什么区别？",
+          "content": "气候是长期演变（当前主要指人类活动导致的升温），天气是短期现象；气候变化含全球均温上升及其对气候系统的影响。",
+          "citation_anchor": "长期 vs 短期",
+          "action_hint": "主因是什么？"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "气候变化的关键事实",
+          "front_text": "核心数据？",
+          "back_text": "温室气体（如CO₂）主要来自化石燃料，浓度较工业前增约50%；工业革命以来全球温升近1.5°C，2024年为有纪录最热年。",
+          "citation_anchor": "CO2增50%",
+          "action_hint": "翻面看升温数据。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "应对气候变化",
+          "streaming_content": "① 减排：淘汰化石燃料、转向风/光/水/核等低碳电力。\n② 移除碳：增加森林覆盖、固碳耕作。\n③ 适应：防洪、抗旱作物等。\n④ 《巴黎协定》目标控升温“远低于2°C”。",
+          "citation_anchor": "巴黎协定2°C",
+          "action_hint": "全球共同行动。"
+        },
+        {
+          "sub_id": "s_en2_list",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "气候是长时段（通常 30 年）平均天气状态，天气是短时局地现象。",
+            "近百年全球地表显著升温，与化石燃料排放温室气体密切相关。",
+            "主要温室气体：CO₂、CH₄、N₂O；其中 CO₂ 在大气存留期最长。",
+            "影响：极端天气增多、海平面上升、冰川退缩、生态紊乱。",
+            "应对分减缓（减排）与适应（防灾、韧性）两条主线。"
+          ]
+        },
+        {
+          "sub_id": "s_en2_compare",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "这几天特别冷，说明全球变暖是骗人的。",
+          "right": "寒潮是短期天气波动；全球变暖指长期平均升温与极端事件频率上升，局部降温不否定整体趋势。"
+        },
+        {
+          "sub_id": "s_en2_quote",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "政府间气候变化专门委员会（IPCC）指出，人类活动极可能是 20 世纪中叶以来观测到变暖的主因。",
+          "citation": "IPCC"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "气候变化",
+        "url": "https://baike.baidu.com/item/%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96",
+        "publish_date": "",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    }
+  ]
+}
