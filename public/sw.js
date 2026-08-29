@@ -11,7 +11,7 @@
 //     且补齐了 v2.2.19 默认主题缺失的 slate/emerald/amber 色族（详见 tailwind.config.js）。
 //     该文件走 cache-first 策略，必须 bump 版本号才能让老用户丢弃旧缓存。
 const CACHE = 'cardflow-v4';
-const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/manifest.webmanifest', '/icon.svg', '/sw.js'];
+const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

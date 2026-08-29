@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="./vendor/tailwind.min.css" />
   <link rel="stylesheet" href="./vendor/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./style.css">
+  <!-- 错误监控必须在业务脚本之前加载，才能捕获 vendor / app.js 自身的加载与执行异常 -->
+  <script src="./monitor.js"></script>
   <script src="./vendor/vue.global.prod.js"></script>
   <script src="./vendor/swiper-bundle.min.js"></script>
 </head>

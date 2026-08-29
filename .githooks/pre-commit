@@ -1,34 +1,61 @@
 #!/bin/sh
 #
-# CardFlow pre-commit —— 数据契约校验门禁
+# CardFlow pre-commit —— 提交前质量门禁（工程评审 P0 第 5 项）
 #
 # 背景：tools/card_tool.js 早已写好数据契约校验（layout 契约、必填字段、
-#       全角引号、重复 id、跨文件核对），但一直靠人记得手动跑，
-#       等于没有。此 hook 把它变成强制门禁（工程评审 P0 第 5 项）。
+#       全角引号、重复 id、跨文件核对），但一直靠人记得手动跑，等于没有。
+#       此 hook 把它连同单测、CSS 审计一起变成强制门禁。
 #
-# 策略：仅当暂存区包含 data/*.json 变更时才校验，纯代码提交不受影响。
-# 绕过：确需紧急提交用 git commit --no-verify（不推荐）。
+# 策略：按变更内容**选择性**执行，纯文档提交几乎零开销：
+#   - 改了 data/*.json        -> 跑数据契约校验（validate）
+#   - 改了 worker/* 或 tools/ -> 跑单元测试（test）
+#   - 改了 public/index.html / public/app.js / 产物 CSS -> 跑 CSS 类名审计（audit:css）
+#     另：若改了模板类名却没重新 build:css，这里会直接拦下
 #
-changed=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^data/.*\.json$')
+# 绕过：确需紧急提交用 git commit --no-verify（不推荐，事后请补跑）。
+#
+changed=$(git diff --cached --name-only --diff-filter=ACM)
 
-if [ -z "$changed" ]; then
-  exit 0
-fi
-
-echo "[pre-commit] 检测到题库数据变更，执行数据契约校验..."
-echo ""
-
-node tools/card_tool.js validate
-status=$?
-
-if [ $status -ne 0 ]; then
+# ---------- 1) 数据契约校验 ----------
+data_changed=$(echo "$changed" | grep -E '^data/.*\.json$')
+if [ -n "$data_changed" ]; then
+  echo "[pre-commit] 检测到题库数据变更，执行数据契约校验..."
   echo ""
-  echo "[pre-commit] 数据校验未通过（存在 [错误]），提交已中止。"
-  echo "[pre-commit] 请修复上述错误后重新提交。"
-  echo "[pre-commit] 紧急绕过：git commit --no-verify"
-  exit 1
+  node tools/card_tool.js validate
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "[pre-commit] ❌ 数据校验未通过（存在 [错误]），提交已中止。"
+    echo "[pre-commit]    请修复上述错误后重新提交。"
+    echo "[pre-commit]    紧急绕过：git commit --no-verify"
+    exit 1
+  fi
+  echo "[pre-commit] ✅ 数据校验通过"
 fi
 
-echo ""
-echo "[pre-commit] 数据校验通过"
+# ---------- 2) 单元测试 ----------
+code_changed=$(echo "$changed" | grep -E '^(worker/|tools/.*\.(mjs|js)$)')
+if [ -n "$code_changed" ]; then
+  echo "[pre-commit] 检测到 Worker / 工具代码变更，执行单元测试..."
+  node tools/observe.test.mjs >/dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    echo "[pre-commit] ❌ 单元测试未通过，提交已中止。运行 npm test 查看详情。"
+    exit 1
+  fi
+  echo "[pre-commit] ✅ 单元测试通过"
+fi
+
+# ---------- 3) CSS 类名审计（防 purge 漏扫导致样式静默失效）----------
+tpl_changed=$(echo "$changed" | grep -E '^public/(index\.html|app\.js|style\.css)$')
+css_changed=$(echo "$changed" | grep -E '^public/vendor/tailwind\.min\.css$')
+if [ -n "$tpl_changed" ] || [ -n "$css_changed" ]; then
+  echo "[pre-commit] 检测到模板或样式产物变更，执行 CSS 类名审计..."
+  node tools/audit_css_classes.js
+  if [ $? -ne 0 ]; then
+    echo ""
+    echo "[pre-commit] ❌ CSS 类名审计未通过，提交已中止。"
+    echo "[pre-commit]    若你刚改了模板类名，请先跑：npm run build:css"
+    exit 1
+  fi
+fi
+
 exit 0

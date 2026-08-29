@@ -736,6 +736,18 @@ const FavoritesView = {
       if (!confirm('确定清空所有收藏？')) return;
       store.bookmarked = {};
       try { localStorage.setItem('bookmarked_cards', '{}'); } catch (e) {}
+    },
+    // 分类标签是否超出 2 排（折叠态下容器被 max-height 裁切，scrollHeight>clientHeight 即溢出）
+    //
+    // 注意：必须定义在 methods 内。Vue Options API 只会把 methods 里的函数挂到实例上，
+    // 写在 options 根层级的函数访问 this.measureChips 得到 undefined。
+    // 这里曾踩坑：函数被误放在 mounted 之后、options 根层级，导致每次进收藏夹都抛
+    //   TypeError: this.measureChips is not a function
+    // 而 hasMoreCats 永远不会被更新（「展开」按钮逻辑形同虚设）。
+    // 该异常此前一直静默发生，是接入前端错误监控后捕获到的第一个真实缺陷。
+    measureChips() {
+      const el = this.$refs.chipsEl;
+      if (el) this.hasMoreCats = el.scrollHeight > el.clientHeight + 2;
     }
   },
   // 收藏夹 Swiper 延迟初始化（等 DOM 渲染完成）
@@ -758,11 +770,6 @@ const FavoritesView = {
     });
   },
   beforeUnmount() {},
-  // 分类标签是否超出 2 排（折叠态下容器被 max-height 裁切，scrollHeight>clientHeight 即溢出）
-  measureChips() {
-    const el = this.$refs.chipsEl;
-    if (el) this.hasMoreCats = el.scrollHeight > el.clientHeight + 2;
-  },
   // 收藏集合变化导致分类数变化时，重新测量是否需要「展开」按钮
   watch: {
     cats() {

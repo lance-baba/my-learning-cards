@@ -1,0 +1,4 @@
+{
+  "//": "将 worker/ 目录显式声明为 ES Module。根目录 package.json 不能加 type:module（tools/ 与 local-server.js 仍是 CommonJS），而这个目录 100% 是 ESM。声明后：Node 不再需要语法探测重复解析（消除 MODULE_TYPELESS_PACKAGE_JSON 告警），测试可直接 import worker/*.js，esbuild 打包时也能正确识别模块类型。",
+  "type": "module"
+}
