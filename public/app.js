@@ -26,6 +26,8 @@ const store = reactive({
   speaking: {},           // sub_id -> 是否正在朗读
   activeSource: null,     // 引用抽屉：当前来源对象
   activeAnchor: null,     // 引用抽屉：当前章节锚点
+  loading: false,         // 首屏数据加载中（驱动加载态 UI）
+  loadError: '',          // 加载失败信息；空=正常，非空=显示错误态+重试
 });
 
 /* -------------------------------------------------------------
@@ -191,8 +193,37 @@ function mixTopics(topics, ratio) {
   return out;
 }
 
+// 带超时 + 指数退避重试的 fetch 封装（解决「网络抖动即白屏、无重试」问题）
+// - 单次请求 8s 超时（AbortController 中断）
+// - 瞬时失败（网络错误 / 超时 / 5xx）最多重试 2 次，退避 700ms → 1400ms
+// - 4xx（客户端错误，重试无意义）直接抛出不重试
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function fetchWithRetry(url, opts = {}, { timeout = 8000, retries = 2, baseDelay = 700 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const controller = new AbortController();
+    const tid = setTimeout(() => controller.abort(), timeout);
+    try {
+      const res = await fetch(url, { ...opts, signal: controller.signal });
+      clearTimeout(tid);
+      if (res.ok) return res;
+      if (res.status >= 500 && attempt < retries) {
+        lastErr = new Error('HTTP ' + res.status);
+        await sleep(baseDelay * 2 ** attempt);
+        continue;
+      }
+      throw new Error('HTTP ' + res.status);
+    } catch (e) {
+      clearTimeout(tid);
+      if (attempt < retries) { lastErr = e; await sleep(baseDelay * 2 ** attempt); continue; }
+      throw e;
+    }
+  }
+  throw lastErr;
+}
+
 async function fetchAllTopics() {
-  const indexRes = await fetch('/api/index');
+  const indexRes = await fetchWithRetry('/api/index');
   const indexData = await indexRes.json();
 
   // 版本号写入 bundle 请求 URL（?v=），与 Worker 边缘缓存配合：版本不变命中缓存、零 KV 读；
@@ -205,7 +236,7 @@ async function fetchAllTopics() {
     for (const cat of indexData.categories) {
       if (enabled && enabled.length && !enabled.includes(cat.id)) continue; // ② 按需下载：未勾选分类直接跳过
       for (const bundleId of (cat.bundles || [])) {
-        const bundleRes = await fetch(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
+        const bundleRes = await fetchWithRetry(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
         const bundleData = await bundleRes.json();
         if (bundleData && Array.isArray(bundleData.items)) {
           bundleData.items.forEach(it => { it.catId = cat.id; it.catName = cat.name; });
@@ -623,6 +654,8 @@ const app = createApp({
     const layoutComp = resolveLayout;
 
     const initData = async () => {
+      store.loading = true;
+      store.loadError = '';
       try {
         const { topics, indexData } = await fetchAllTopics();
         const ratio = (indexData && indexData.global_config && indexData.global_config.relax_ratio) || 5;
@@ -644,6 +677,13 @@ const app = createApp({
         setTimeout(initSwipers, 100);
       } catch (e) {
         console.error('加载卡片失败', e);
+        store.loadError = (e && e.name === 'AbortError')
+          ? '加载超时，请检查网络后重试'
+          : '卡片加载失败，请检查网络';
+        // 同步上报到监控（与 monitor.js 去重/限流一致）
+        if (window.__cfReport) window.__cfReport('load', (e && e.message) ? e.message : 'load-failed');
+      } finally {
+        store.loading = false;
       }
     };
 
@@ -673,7 +713,7 @@ const app = createApp({
       initData();
     });
 
-    return { store, glowClass, layoutComp, syncData, setView, favCount };
+    return { store, glowClass, layoutComp, syncData, setView, favCount, retryLoad: initData };
   }
 });
 

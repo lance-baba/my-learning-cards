@@ -54,6 +54,21 @@
       </div>
     </main>
 
+    <!-- 加载/错误态：失败不再白屏，可一键重试 -->
+    <div v-if="store.loadError" class="load-error" role="alert" aria-live="assertive">
+      <div class="load-error__card glass-card">
+        <div class="load-error__icon">⚠️</div>
+        <p class="load-error__msg">{{ store.loadError }}</p>
+        <button class="load-error__btn" @click="retryLoad" aria-label="重新加载">重试</button>
+      </div>
+    </div>
+    <div v-if="store.loading && store.mixedTopics.length === 0" class="load-error" aria-busy="true">
+      <div class="load-error__card glass-card">
+        <div class="load-error__spinner"></div>
+        <p class="load-error__msg">正在加载卡片…</p>
+      </div>
+    </div>
+
     <!-- 收藏夹视图 -->
     <favorites-view v-if="store.view==='favorites'"></favorites-view>
 

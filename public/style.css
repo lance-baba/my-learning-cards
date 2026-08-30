@@ -881,3 +881,61 @@ main {
   /* 卡片高度由 flex 三段式统一驱动，无需覆盖 */
   main { overflow: hidden; padding-bottom: 0; }
 }
+
+/* ============================================================
+ * 加载态 / 错误态 UI（纯 CSS，关键视觉不依赖 Tailwind 任意值）
+ * 失败不再白屏：显示玻璃拟态卡片 + 重试按钮；首屏无数据时显示加载圈
+ * ============================================================ */
+.load-error {
+  position: fixed;
+  inset: 0;
+  z-index: 60;                /* 高于底部导航与内容层 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(9, 13, 22, 0.82);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.load-error__card {
+  width: 100%;
+  max-width: 22rem;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.load-error__icon { font-size: 2.5rem; margin-bottom: 0.75rem; line-height: 1; }
+.load-error__msg {
+  color: #e2e8f0;            /* slate-200 */
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.load-error__btn {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #34d399, #3b82f6);  /* emerald-400 → blue-500 */
+  color: #04121f;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 0;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.load-error__btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.load-error__btn:active { transform: translateY(0); }
+.load-error__spinner {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0 auto 1rem;
+  border: 3px solid rgba(148, 163, 184, 0.3);   /* slate-400/30 */
+  border-top-color: #34d399;                     /* emerald-400 */
+  border-radius: 50%;
+  animation: cf-spin 0.8s linear infinite;
+}
+@keyframes cf-spin { to { transform: rotate(360deg); } }
