@@ -528,6 +528,696 @@
         "authority_level": "encyclopedia"
       },
       "difficulty": 2
+    },
+    {
+      "id": "geography_topic_火山",
+      "title": "火山",
+      "tags": [
+        "地理",
+        "地质",
+        "地貌"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是火山？",
+          "content": "火山是地下岩浆、气体和碎屑沿地壳薄弱带喷出地表而形成的地貌与地质现象，喷发既塑造陆地，也向大气释放气体与灰烬。",
+          "action_hint": "左右滑动看火山分类与火环 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "火山怎么分类？（点击翻转）",
+          "front_text": "活火山、休眠火山、死火山有何不同？",
+          "back_text": "按活动状态分活火山（近期喷发）、休眠火山（暂静）、死火山（长期不活动）；按方式分裂隙式与中心式，夏威夷式较温和、普林尼式猛烈。",
+          "citation_anchor": "分类/喷发方式"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "影响与分布",
+          "streaming_content": "喷出地表的岩浆称熔岩；火山灰可肥田，但强烈喷发能掩埋城镇、短期改变气候。全球多数活火山集中在环太平洋“火环”，这里是板块俯冲最活跃的地带。",
+          "citation_anchor": "熔岩/火环"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "火山由岩浆沿地壳薄弱带喷出地表形成。",
+            "按活动分活、休眠、死火山三类。",
+            "喷发方式从温和到猛烈差异巨大。",
+            "环太平洋火环集中全球多数活火山。",
+            "火山灰肥沃土壤，也具破坏性。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "火山都分布在板块边界上。",
+          "right": "多数火山在板块边界，但地幔热点（如夏威夷）可在板块内部形成火山链，与边界无关。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "环太平洋火山带集中了地球上绝大多数活火山与强震，被称为火环。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "火山",
+        "url": "https://baike.baidu.com/item/火山",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "geography_topic_沙漠",
+      "title": "沙漠",
+      "tags": [
+        "地理",
+        "气候",
+        "干旱区"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是沙漠？",
+          "content": "沙漠是降水极少、蒸发强烈的干旱区域，植被稀疏，地表多为沙丘、砾石或裸岩，约占陆地相当比例。",
+          "action_hint": "左右滑动看冷热沙漠 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "沙漠都炎热吗？（点击翻转）",
+          "front_text": "南极也算沙漠吗？",
+          "back_text": "算。沙漠按降水少定义，并非都热；南极内陆降水极少的干谷属冷沙漠，且昼夜与季节温差极大。",
+          "citation_anchor": "冷沙漠"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "特征与荒漠化",
+          "streaming_content": "撒哈拉是最大的热沙漠，横跨北非。沙丘随风缓慢迁移，绿洲依赖地下水或河流。荒漠化指土地因气候与过度开垦等退化为类似沙漠的状态，威胁生计。",
+          "citation_anchor": "撒哈拉/荒漠化"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "沙漠核心是极端干旱、植被稀少。",
+            "有热沙漠也有冷沙漠（如南极干谷）。",
+            "撒哈拉是世界上最大的热沙漠。",
+            "沙丘随风迁移，绿洲赖地下水。",
+            "荒漠化使可耕地退化为沙漠。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "沙漠里完全没有生命。",
+          "right": "沙漠栖息着骆驼、仙人掌等耐旱生物及众多夜行动物，生命以节水和穴居等方式适应极端环境。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "撒哈拉沙漠是世界上面积最大的热沙漠，横跨北非多个国家。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "沙漠",
+        "url": "https://baike.baidu.com/item/沙漠",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "geography_topic_冰川",
+      "title": "冰川",
+      "tags": [
+        "地理",
+        "地貌",
+        "气候"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是冰川？",
+          "content": "冰川是多年积雪在重力作用下压实、重结晶形成的巨大流动固体冰体，是地球淡水的重要储存库。",
+          "action_hint": "左右滑动看冰川如何流动 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "冰川会移动吗？（点击翻转）",
+          "front_text": "冰也会像河流一样“流”吗？",
+          "back_text": "会。冰川在重力与自身压力下缓慢蠕变，像极黏稠的流体般移动，能刻蚀山谷、搬运岩屑，速度常以年计。",
+          "citation_anchor": "冰川运动"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "类型与意义",
+          "streaming_content": "分山地冰川（如山谷冰川）与大陆冰川（南极、格陵兰冰盖）。冰川消融补给河流，其进退反映气候冷暖；当前全球冰川普遍退缩，关系海平面与水资源。",
+          "citation_anchor": "类型/退缩"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "冰川是长期积累压实的巨大冰体。",
+            "会缓慢蠕变移动，塑造冰蚀地貌。",
+            "分山地冰川与大陆冰川两类。",
+            "是地球重要的固态淡水库。",
+            "当前普遍退缩，是气候变暖指标。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "南极只有冰，不算冰川。",
+          "right": "南极冰盖是巨大的大陆冰川，属于冰川的一种，储存了地球大部分淡冰。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "冰川是巨大的固态淡水库，其消长是全球气候变化的敏感指示器。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "冰川",
+        "url": "https://baike.baidu.com/item/冰川",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "geography_topic_大气",
+      "title": "大气",
+      "tags": [
+        "地理",
+        "气候",
+        "地球科学"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是大气？",
+          "content": "大气是包围地球的气体层，主要由氮气（约78%）与氧气（约21%）组成，既保护生命也调节气候。",
+          "action_hint": "左右滑动看大气分层 ➔",
+          "citation_anchor": "定义/成分"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "大气分几层？（点击翻转）",
+          "front_text": "雷雨天发生在大气哪一层？",
+          "back_text": "自下而上分对流层、平流层、中间层、热层等；风雨雷电等天气主要发生在最下面的对流层，平流层则含保护生命的臭氧层。",
+          "citation_anchor": "分层/对流层"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "功能与屏障",
+          "streaming_content": "臭氧层吸收紫外线保护生物；对流层集中大部分水汽与天气现象。大气像毯子般减弱昼夜温差，并参与水循环，是把热量与水分送达各地的关键媒介。",
+          "citation_anchor": "臭氧层/保温"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "大气以氮、氧为主，另有少量氩与二氧化碳。",
+            "自下而上：对流层、平流层、中间层、热层。",
+            "天气主要发生在对流层。",
+            "平流层臭氧层吸收有害紫外线。",
+            "大气调节温度、参与水循环。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "臭氧层在对流层，对人体有害应消除。",
+          "right": "臭氧层位于平流层，吸收紫外线、护佑生命；只有近地面的低空臭氧才是污染物。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "地球大气以氮、氧为主，平流层臭氧层吸收紫外线，是生命的重要屏障。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "大气",
+        "url": "https://baike.baidu.com/item/大气",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "geography_topic_土壤",
+      "title": "土壤",
+      "tags": [
+        "地理",
+        "自然地理",
+        "生态"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是土壤？",
+          "content": "土壤是岩石风化产物与有机质、水、空气、生物共同组成的疏松表层，是陆地生态系统和农业生产的根基。",
+          "action_hint": "左右滑动看土壤为何珍贵 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "土壤形成要多久？（点击翻转）",
+          "front_text": "表土是不是取之不尽？",
+          "back_text": "不是。有生产力的土壤以百年千年计缓慢形成，靠母岩风化、生物残体积累与微生物分解，极难在短时间内再生。",
+          "citation_anchor": "成土缓慢"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "剖面与肥力",
+          "streaming_content": "典型土壤剖面自上而下分腐殖质层、淋溶层、淀积层与母质层。植被破坏与水土流失会致土壤退化；有机质含量与团粒结构决定肥力高低。",
+          "citation_anchor": "剖面/肥力"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "土壤是岩石风化与生物作用长期耦合的产物。",
+            "形成极慢，是有价值的有限资源。",
+            "典型剖面含腐殖质层、淋溶层等。",
+            "有机质与团粒结构决定肥力。",
+            "侵蚀与污染会使其迅速丧失生产力。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "泥土和土壤差不多，用一点少一点无所谓。",
+          "right": "有生产力的土壤形成以百年计，侵蚀与污染可使其快速退化且难恢复，是必须珍惜的资源。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "土壤是岩石风化与生物作用长期耦合的产物，是食物生产的物质基础。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "土壤",
+        "url": "https://baike.baidu.com/item/土壤",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "geography_topic_地貌",
+      "title": "地貌",
+      "tags": [
+        "地理",
+        "地质",
+        "自然地理"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是地貌？",
+          "content": "地貌是地球表面各种形态的总称，由内力（构造运动、火山）与外力（流水、风、冰川、海浪）共同塑造。",
+          "action_hint": "左右滑动看峡谷怎么来的 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "大峡谷如何形成？（点击翻转）",
+          "front_text": "科罗拉多大峡谷是谁“挖”的？",
+          "back_text": "主要是科罗拉多河长期下切侵蚀而成，辅以抬升与风化，历经数百万年；并非一次灾难，而是缓慢的流水切割。",
+          "citation_anchor": "流水下切"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "常见类型",
+          "streaming_content": "基本地貌有平原、高原、山地、盆地、丘陵。外力中以流水地貌最普遍；干旱区多见风成地貌（雅丹、沙丘）。内力造高、外力削平，二者长期博弈决定今日地形。",
+          "citation_anchor": "地貌类型"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "地貌由内力抬升与外力剥蚀共同塑造。",
+            "常见类型：平原、高原、山地、盆地、丘陵。",
+            "流水下切形成峡谷等地貌。",
+            "干旱区多风成地貌（沙丘、雅丹）。",
+            "冰川与海浪也改造地表形态。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "地形只由地壳运动决定，跟水没关系。",
+          "right": "内力抬升、外力（尤其流水、冰川）削平，二者相互作用才决定今日地貌，缺一不可。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "地貌是内力造山与外力剥蚀长期平衡的结果。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "地貌",
+        "url": "https://baike.baidu.com/item/地貌",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "geography_topic_海洋",
+      "title": "海洋",
+      "tags": [
+        "地理",
+        "海洋",
+        "气候"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是海洋？",
+          "content": "海洋是地球表面连成一片的广大咸水水体，覆盖地球表面约七成，是气候调节与生命支持的关键系统。",
+          "action_hint": "左右滑动看海与洋的区别 ➔",
+          "citation_anchor": "定义/覆盖"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "海和洋一样吗？（点击翻转）",
+          "front_text": "南海是海还是洋？",
+          "back_text": "洋是开阔的主体水域（如太平洋）；海是洋的边缘部分（如南海、地中海），受陆地影响更大、深度较浅。",
+          "citation_anchor": "海/洋"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "海洋的作用",
+          "streaming_content": "海水盐度约35‰，温度随深度下降。海洋吸收大量二氧化碳与热量，缓减全球变暖；洋流与大气环流共同调节全球气候，并供给渔业与氧气。",
+          "citation_anchor": "盐度/碳汇"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "海洋覆盖地球约七成表面。",
+            "洋是主体水域，海是洋的边缘部分。",
+            "盐度约35‰，温度随深度降低。",
+            "吸收碳与热量，缓减气候变暖。",
+            "提供渔业、氧气与气候调节。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "海洋那么大，排点污无所谓。",
+          "right": "海洋自净力有限，塑料与营养盐污染会引发赤潮、缺氧死区，并沿食物链累积危害生态与人类。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "海洋覆盖地球约七成表面，是碳与热量的巨大缓冲库。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "海洋",
+        "url": "https://baike.baidu.com/item/海洋",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "geography_topic_森林",
+      "title": "森林",
+      "tags": [
+        "地理",
+        "生态",
+        "环境"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是森林？",
+          "content": "森林是以乔木为主体、群落层次丰富的生态系统，是陆地生物多样性最丰富的栖息地之一，也是重要的碳库。",
+          "action_hint": "左右滑动看森林的多元价值 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "森林只产木材吗？（点击翻转）",
+          "front_text": "砍光树会不会只少点木料？",
+          "back_text": "远不止。森林涵养水源、固碳释氧、防风固沙、庇护动植物，并提供药材与休憩，生态服务远超木材本身。",
+          "citation_anchor": "生态服务"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "类型与危机",
+          "streaming_content": "按气候带分热带雨林、温带阔叶林、北方针叶林（泰加林）等。雨林面积不大却物种极多；森林破坏会释放碳、加剧变暖并引发生物丧失。",
+          "citation_anchor": "森林类型/破坏"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "森林是以乔木为主的复杂生态系统。",
+            "热带雨林物种极丰富。",
+            "涵养水源、固碳释氧、防风固沙。",
+            "破坏会释放碳、加剧变暖。",
+            "保护森林是应对气候变化的关键。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "砍掉天然林再种上树，生态就一样了。",
+          "right": "原生林破坏后物种与土壤结构难在数十年内恢复，人工林的生态功能远不及天然林。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "森林是陆地碳库与生物多样性热点，保护森林对应对气候变化至关重要。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "森林",
+        "url": "https://baike.baidu.com/item/森林",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "geography_topic_山脉",
+      "title": "山脉",
+      "tags": [
+        "地理",
+        "地貌",
+        "地质"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是山脉？",
+          "content": "山脉是沿一定方向延伸、海拔较高且起伏显著的山体集合，多形成于板块碰撞或地壳断裂隆起处。",
+          "action_hint": "左右滑动看高山为何更冷 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "世界最高山脉怎么来的？（点击翻转）",
+          "front_text": "喜马拉雅山为何那么高？",
+          "back_text": "由印度板块与亚欧板块碰撞、地壳挤压抬升而成，至今仍在缓慢升高；是板块构造塑造地形的典型例证。",
+          "citation_anchor": "板块碰撞"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "山脉的影响",
+          "streaming_content": "山脉影响降水：迎风坡多雨、背风坡成雨影区（较干）。高山呈垂直自然带，海拔升高气候近似向高纬度过渡；山脉也是重要分水岭与河流发源地。",
+          "citation_anchor": "雨影/垂直带"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "山脉多生于板块碰撞或断裂隆起带。",
+            "喜马拉雅由印度—亚欧板块碰撞隆起。",
+            "迎风坡多雨、背风坡较干。",
+            "高山有垂直自然带。",
+            "是分水岭与河流发源地。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "山越高越冷，是因为离太阳更近了。",
+          "right": "高山更冷源于海拔升高、空气稀薄保温差，气温随高度递减，与离太阳远近无关。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "喜马拉雅山脉是印度—亚欧板块碰撞隆起的产物，拥有多座极高峰。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "山脉",
+        "url": "https://baike.baidu.com/item/山脉",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
+    },
+    {
+      "id": "geography_topic_农业",
+      "title": "农业",
+      "tags": [
+        "地理",
+        "人文地理",
+        "经济"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是农业？",
+          "content": "农业是人类栽培植物、饲养动物以获取食物与原料的生产活动，是文明诞生与城市兴起的根基。",
+          "action_hint": "左右滑动看农业起源 ➔",
+          "citation_anchor": "定义"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "作物最早在哪驯化？（点击翻转）",
+          "front_text": "小麦、稻、玉米分别源于何处？",
+          "back_text": "约一万年前，西亚驯化小麦大麦，东亚驯化稻与粟，中美洲驯化玉米，世界多处独立起源，农业使人类走向定居。",
+          "citation_anchor": "农业起源"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "发展与代价",
+          "streaming_content": "农业分种植与畜牧；灌溉、轮作与现代农业（化肥、农机、良种）大幅提升产量。但过度开垦与单一种植也带来土壤退化、水资源紧张与生态压力。",
+          "citation_anchor": "绿色革命/代价"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "农业是栽培与饲养以获取食物的活动。",
+            "约一万年前多区域独立起源。",
+            "灌溉与良种极大提升产量。",
+            "仍依赖气候、土壤与授粉等自然基础。",
+            "过度开发带来土壤与生态压力。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "现代农业技术这么强，已经完全不需要自然了。",
+          "right": "农业仍依赖气候、土壤、传粉与生物链；设施农业只能部分替代，无法脱离自然基础。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "约一万年前农业起源，使人类从采集走向定居，催生城市与文明。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "农业",
+        "url": "https://baike.baidu.com/item/农业",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
     }
   ]
 }

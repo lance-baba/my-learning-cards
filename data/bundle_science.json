@@ -511,6 +511,696 @@
         "publish_date": "2026",
         "authority_level": "encyclopedia"
       }
+    },
+    {
+      "id": "science_topic_相对论",
+      "title": "相对论",
+      "tags": [
+        "科学",
+        "物理",
+        "时空"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是相对论？",
+          "content": "相对论是爱因斯坦建立的物理理论，分狭义相对论（1905）与广义相对论（1915）。狭义相对论基于光速不变与相对性原理，推出时间膨胀、长度收缩与质能方程 E=mc²；广义相对论把引力解释为时空的几何弯曲。",
+          "action_hint": "左右滑动看双生子佯谬与质能方程 ➔",
+          "citation_anchor": "定义/1905/1915"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "双生子佯谬讲什么？（点击翻转）",
+          "front_text": "宇航员高速旅行归来，会比地球双胞胎年轻还是年老？",
+          "back_text": "年轻。相对于地球高速运动的钟走得更慢（时间膨胀），这是相对论的直接推论，已被精密实验验证。",
+          "citation_anchor": "时间膨胀/双生子"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "狭义相对论两大公设",
+          "streaming_content": "一、所有惯性参考系中物理定律形式相同。二、真空中光速对任何观察者恒定约30万千米/秒。由此导出同时性的相对性、运动物体质量增大与质能等价，彻底改变了牛顿绝对时空观。",
+          "citation_anchor": "两大公设"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "狭义相对论（1905）：光速不变、时间膨胀、长度收缩、质能方程 E=mc²。",
+            "广义相对论（1915）：引力是时空弯曲的几何表现。",
+            "有静质量的物体速度只能趋近、无法达到光速。",
+            "相对论已在 GPS 定位、粒子加速器等众多领域被验证。",
+            "它不是推翻牛顿力学，而是其在高速强场下的更普适框架。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "只要一直加速，飞船就能超过光速飞向其他星系。",
+          "right": "能量随速度趋近光速而趋于无穷，有静质量物体无法达到或超越光速；光速是信息传播的极限。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "爱因斯坦1905年提出狭义相对论，1915年完成广义相对论，将引力诠释为时空的弯曲。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "相对论",
+        "url": "https://baike.baidu.com/item/相对论",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "science_topic_量子力学",
+      "title": "量子力学",
+      "tags": [
+        "科学",
+        "物理",
+        "微观"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是量子力学？",
+          "content": "量子力学研究原子、电子、光子等微观粒子的运动规律，揭示能量、角动量等物理量只能取分立的量子化数值，并引入概率描述。",
+          "action_hint": "左右滑动看不确定原理与光电效应 ➔",
+          "citation_anchor": "定义/量子化"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "测不准是什么意思？（点击翻转）",
+          "front_text": "为什么不能同时精确知道粒子的位置和速度？",
+          "back_text": "海森堡不确定性原理表明，位置与动量无法同时被任意精确测定；这不是仪器不够好，而是微观世界的内在属性，测量本身会扰动系统。",
+          "citation_anchor": "不确定性原理"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "量子论的诞生",
+          "streaming_content": "普朗克1900年为解释黑体辐射提出能量量子化；爱因斯坦1905年用光量子（光子）解释光电效应；玻尔建立原子量子化模型。量子力学奠定了现代半导体、激光与核能的理论基础。",
+          "citation_anchor": "普朗克/爱因斯坦/玻尔"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "微观量（能量、角动量）是分立的，不是连续的。",
+            "波粒二象性：光与电子既像波又像粒子。",
+            "不确定性原理：位置与动量不可同时精确测定。",
+            "量子态用概率幅描述，测量前只有出现概率。",
+            "应用遍布激光、晶体管、核磁共振与量子计算。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "电子像小弹珠一样沿固定轨道绕核转圈。",
+          "right": "电子以概率云（轨道/电子云）形式存在，没有确定轨迹，只能给出在某处出现的概率大小。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "普朗克提出能量量子化标志量子论诞生，爱因斯坦的光量子说为其奠定基石。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "量子力学",
+        "url": "https://baike.baidu.com/item/量子力学",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "science_topic_光的本质",
+      "title": "光的本质",
+      "tags": [
+        "科学",
+        "物理",
+        "光学"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "光到底是什么？",
+          "content": "光具有波粒二象性：传播时表现出干涉、衍射等波动特征，与物质相互作用时表现为粒子（光子）。可见光只是电磁波谱中很窄的一段。",
+          "action_hint": "左右滑动看色光混合与光谱 ➔",
+          "citation_anchor": "波粒二象性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "光的三原色是哪三种？（点击翻转）",
+          "front_text": "显示器靠哪三种色光叠出彩色？",
+          "back_text": "红、绿、蓝。它们以不同强度相加混合可合成绝大多数可见颜色（加色混合）；颜料三原色则是品红、黄、青（减色），原理不同。",
+          "citation_anchor": "三原色/加色混合"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "可见光与光谱",
+          "streaming_content": "可见光波长约380至780纳米，由短到长依次为紫、蓝、青、绿、黄、橙、红，波长决定颜色。白光经棱镜可分解为连续彩色光谱，牛顿据此证明白光由多色光复合。",
+          "citation_anchor": "波长/棱镜分光"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "光既是电磁波也是光子流，具波粒二象性。",
+            "可见光波长约380–780纳米，对应不同颜色。",
+            "光的三原色：红、绿、蓝（加色）。",
+            "光速在真空中约每秒30万千米，是宇宙速度上限。",
+            "白光由多种色光复合，棱镜可将其分解。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "颜料三原色也是红、绿、蓝。",
+          "right": "光的三原色是红绿蓝（加色混合）；颜料三原色是品红、黄、青（减色混合），二者原理不同。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "牛顿用棱镜把白光分解为彩色光谱，证明白光由若干不同色光复合而成。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "光的本质",
+        "url": "https://baike.baidu.com/item/光的本质",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_原子",
+      "title": "原子",
+      "tags": [
+        "科学",
+        "化学",
+        "物质"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "原子是什么？",
+          "content": "原子是化学变化中的最小粒子，由带正电的原子核（质子与中子）和核外电子组成；核内质子数决定元素种类，原子整体电中性。",
+          "action_hint": "左右滑动看结构比例与同位素 ➔",
+          "citation_anchor": "定义/结构"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "原子里面是实心的吗？（点击翻转）",
+          "front_text": "原子核和电子占满整个原子空间吗？",
+          "back_text": "不。原子绝大部分是空旷空间：极小的原子核集中了几乎全部质量，电子在核外广大空间按能级排布，原子体积极小但内部极其空旷。",
+          "citation_anchor": "核/电子云"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "关键概念",
+          "streaming_content": "原子序数等于核内质子数，决定元素身份；同位素是质子数相同、中子数不同的同种元素原子。化学反应中原子核不变，只涉及核外电子的得失或共用，因此元素种类不发生改变。",
+          "citation_anchor": "原子序数/同位素"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "原子由原子核（质子+中子）与核外电子构成。",
+            "质子数决定元素种类，即原子序数。",
+            "同位素：质子数同、中子数不同的原子。",
+            "原子绝大部分体积是空旷空间，质量集中于核。",
+            "化学反应只改电子排布，不改原子核。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "原子像实心的小钢珠，不可分割。",
+          "right": "原子内部绝大部分是空旷空间，且有复杂结构；现代物理中粒子还可进一步细分。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "道尔顿19世纪初提出原子论，认为元素由不可再分的原子组成；现代原子模型远比其设想复杂。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "原子",
+        "url": "https://baike.baidu.com/item/原子",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_热力学",
+      "title": "热力学",
+      "tags": [
+        "科学",
+        "物理",
+        "能量"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是热力学？",
+          "content": "热力学研究热、功与能量相互转换的规律，其定律（常列第零、一、二、三定律）是物理、化学与工程的基石。",
+          "action_hint": "左右滑动看永动机为何造不成 ➔",
+          "citation_anchor": "定义/定律"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "为什么永动机造不出来？（点击翻转）",
+          "front_text": "能不能造一台永远自己转下去的机器？",
+          "back_text": "不能。第一类永动机违反能量守恒（第一定律）；第二类永动机想从单一热源不断取热做功，违反熵增方向（第二定律），二者在原理上均不可能。",
+          "citation_anchor": "第一/第二定律"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "三条基本定律",
+          "streaming_content": "第一定律：能量守恒，ΔU=Q−W，能量不能创生或消灭。第二定律：热量自发从高温流向低温，孤立系统趋向无序（熵增）。第三定律：绝对零度（0 K，约−273.15℃）不可达到。",
+          "citation_anchor": "能量守恒/熵增"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "第一定律：能量守恒，总量不变。",
+            "第二定律：过程有方向，孤立系统熵不减。",
+            "第三定律：绝对零度不可达到。",
+            "温度是分子平均动能的宏观体现。",
+            "热力学支撑热机、制冷与一切能量利用。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "冰箱把热量从冷处搬到热处，肯定违反第二定律。",
+          "right": "冰箱靠外部供电做功才能把热从低温移到高温，连同耗电的整体过程仍满足熵增，并不违反第二定律。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "热力学第二定律表明孤立系统的熵永不减少，揭示了自然过程的方向性。",
+          "citation": "原理"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "热力学",
+        "url": "https://baike.baidu.com/item/热力学",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 3
+    },
+    {
+      "id": "science_topic_大脑",
+      "title": "大脑",
+      "tags": [
+        "科学",
+        "生物",
+        "神经"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "大脑是什么？",
+          "content": "大脑是神经系统的中枢，约由860亿个神经元组成，负责感觉、运动、思维、记忆与情绪等高级功能，并通过神经连接协调整个身体。",
+          "action_hint": "左右滑动看左右脑与睡眠 ➔",
+          "citation_anchor": "定义/神经元"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "左右脑功能完全分开吗？（点击翻转）",
+          "front_text": "左脑管逻辑、右脑管艺术，是这样吗？",
+          "back_text": "有偏侧化（如多数人语言偏左脑），但左右半球经胼胝体紧密协作，几乎所有任务都需双侧参与，并非“左脑理性、右脑感性”那样绝对。",
+          "citation_anchor": "左右脑/偏侧化"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "运作与耗能",
+          "streaming_content": "神经元靠电信号与化学递质在突触间传递信息。大脑虽只占体重约2%，静息时却消耗全身约五分之一的能量。睡眠有助记忆巩固与代谢废物清理，长期缺眠损害认知。",
+          "citation_anchor": "突触/耗能/睡眠"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "大脑约860亿神经元，经突触形成复杂网络。",
+            "左右半球有分工但高度协作，并非绝对割裂。",
+            "耗能极高，占全身静息能耗约两成。",
+            "睡眠对记忆巩固与脑代谢清理至关重要。",
+            "可塑性使大脑能随经验与训练重组连接。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "普通人一生只用到了大脑的10%。",
+          "right": "脑成像显示清醒时几乎所有脑区都有活动；10%是误传，只是特定任务才集中激活特定区域。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "大脑由约860亿神经元及海量突触连接构成，是认知与行为的物质基础。",
+          "citation": "概述"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "大脑",
+        "url": "https://baike.baidu.com/item/大脑",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_免疫系统",
+      "title": "免疫系统",
+      "tags": [
+        "科学",
+        "生物",
+        "免疫"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "免疫系统是什么？",
+          "content": "免疫系统是机体抵御病原体和异常细胞的防御网络，分先天免疫（快速、非特异）与适应性免疫（特异、有记忆）两大部分。",
+          "action_hint": "左右滑动看免疫记忆与发烧 ➔",
+          "citation_anchor": "定义/分类"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "得过一次病为何常不再得？（点击翻转）",
+          "front_text": "为什么麻疹大多一生只患一次？",
+          "back_text": "适应性免疫会生成记忆细胞，再次遇到同一病原时能更快更强地响应，这就是免疫记忆，也是疫苗能长期保护的原因。",
+          "citation_anchor": "免疫记忆"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "主力与平衡",
+          "streaming_content": "白细胞是免疫主力：中性粒细胞吞噬病原，淋巴细胞（B、T细胞）分别负责抗体与细胞免疫。抗体由B细胞产生、特异结合抗原。免疫过强会过敏或攻击自身，过弱则易感染，需维持平衡。",
+          "citation_anchor": "白细胞/抗体/平衡"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "分先天免疫（快、非特异）与适应性免疫（慢、特异、有记忆）。",
+            "B细胞产抗体，T细胞参与细胞免疫。",
+            "免疫记忆使再感染反应更快更强，是疫苗原理。",
+            "过敏与自身免疫病源于免疫失衡。",
+            "规律作息与营养有助维持免疫力。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "发烧一定要立刻吃退烧药压下去。",
+          "right": "适度发热是免疫作战的一部分，有助抑制病原；仅在高热或明显不适时对症处理，并遵医嘱。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "适应性免疫的特异性与记忆性，使机体对再次感染的反应更快、更强。",
+          "citation": "原理"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "免疫系统",
+        "url": "https://baike.baidu.com/item/免疫系统",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_血液循环",
+      "title": "血液循环",
+      "tags": [
+        "科学",
+        "生物",
+        "生理"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "血液循环是什么？",
+          "content": "血液循环是血液在心脏与血管中按固定路径流动、运输氧气养分与代谢废物的系统，由威廉·哈维于1628年系统阐明。",
+          "action_hint": "左右滑动看体循环与肺循环 ➔",
+          "citation_anchor": "定义/哈维1628"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "动脉血都含氧高吗？（点击翻转）",
+          "front_text": "肺动脉里流的也是鲜红的含氧血吗？",
+          "back_text": "不是。多数动脉血含氧高、呈鲜红，但肺动脉例外——它把缺氧血从右心送往肺部；而肺静脉运回的是刚加过氧的血。",
+          "citation_anchor": "肺动脉/肺静脉"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "两条循环路径",
+          "streaming_content": "体循环：左心室→主动脉→全身毛细血管→右心房，供氧并收集废物。肺循环：右心室→肺动脉→肺→左心房，在肺泡处换气。心脏瓣膜防止血液倒流，心率随活动与年龄变化。",
+          "citation_anchor": "体循环/肺循环"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "血液在心脏与血管间循环，运输氧、养分与废物。",
+            "体循环供氧全身，肺循环在肺部换气。",
+            "肺动脉运缺氧血、肺静脉运含氧血，是特例。",
+            "心脏瓣膜防止血液倒流。",
+            "毛细血管是物质交换的实际场所。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "血液只在血管里转圈，从不到达组织细胞。",
+          "right": "毛细血管壁极薄，血浆与组织液在此交换物质，细胞正是通过它获取氧、排出废物。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "哈维于1628年发表《心血运动论》，首次系统论证血液在体内循环而非单向流动。",
+          "citation": "史实"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "血液循环",
+        "url": "https://baike.baidu.com/item/血液循环",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_电",
+      "title": "电与电流",
+      "tags": [
+        "科学",
+        "物理",
+        "电磁"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "什么是电？",
+          "content": "电是电荷产生、运动与相互作用的现象；电流是电荷的定向移动，单位为安培。电是现代社会最常用的能量形式之一。",
+          "action_hint": "左右滑动看闪电与欧姆定律 ➔",
+          "citation_anchor": "定义/电流"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "闪电是怎么来的？（点击翻转）",
+          "front_text": "云端为何会劈下闪电？",
+          "back_text": "云内冰晶碰撞使正负电荷分离，电荷积累到足够强时击穿空气放电，即为闪电；瞬时电流极大、温度可达数万摄氏度。",
+          "citation_anchor": "闪电成因"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "从发现到定律",
+          "streaming_content": "富兰克林18世纪用风筝实验证实闪电是电现象；伏打1800年发明电池提供持续电流；欧姆提出 I=U/R，即导体电流与电压成正比、与电阻成反比，是电路分析的基础。",
+          "citation_anchor": "富兰克林/伏打/欧姆"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "电流是电荷的定向移动，单位是安培。",
+            "闪电是云内电荷分离后的空气放电。",
+            "电池把化学能转为持续电流。",
+            "欧姆定律 I=U/R 描述电流、电压、电阻关系。",
+            "安全用电：防触电、防过载与短路。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "金属里电子从负极流向正极，所以电流方向就是电子方向。",
+          "right": "约定电流方向为正电荷移动方向，而金属中实际移动的是电子，方向恰与电流方向相反。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "欧姆定律 I=U/R 表明导体中的电流与电压成正比、与电阻成反比，是电路分析的基础。",
+          "citation": "原理"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "电",
+        "url": "https://baike.baidu.com/item/电",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 2
+    },
+    {
+      "id": "science_topic_潮汐",
+      "title": "潮汐",
+      "tags": [
+        "科学",
+        "物理",
+        "海洋"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "潮汐是什么？",
+          "content": "潮汐是海水在天体引力作用下产生的周期性涨落现象，主要由月球、其次由太阳的引潮力引起。",
+          "action_hint": "左右滑动看大潮小潮 ➔",
+          "citation_anchor": "定义/引潮力"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "一天为何通常两涨两落？（点击翻转）",
+          "front_text": "地球自转一圈，为什么会出现两次高潮？",
+          "back_text": "月球引潮力在地球正对月与背对月的两侧都形成涨潮（潮汐隆起），随地球自转约每24小时50分经历两次高潮与两次低潮。",
+          "citation_anchor": "潮汐隆起"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "大潮与小潮",
+          "streaming_content": "新月、满月时日月引潮力同向叠加，形成潮差最大的大潮；上弦、下弦时二者相消，形成小潮。潮汐蕴含巨大能量可发电，并影响港口作业与海岸生物节律。",
+          "citation_anchor": "大潮/小潮"
+        },
+        {
+          "sub_id": "s4",
+          "layout": "list_card",
+          "title": "核心要点",
+          "items": [
+            "潮汐主因是月球与太阳的引潮力，月球贡献更大。",
+            "一天通常两涨两落，周期约12小时25分。",
+            "朔望成大潮，上下弦成小潮。",
+            "可用于潮汐发电。",
+            "影响航运、养殖与海岸生态。"
+          ]
+        },
+        {
+          "sub_id": "s5",
+          "layout": "compare_card",
+          "title": "常见误区",
+          "wrong": "潮汐主要是风把海水一阵阵吹起来的。",
+          "right": "潮汐主因是天体引潮力（引力差），风只造成短周期的波浪，并非半日或全日规律的潮位变化。"
+        },
+        {
+          "sub_id": "s6",
+          "layout": "quote_card",
+          "title": "权威摘录",
+          "quote": "引潮力源于天体引力在地球不同位置的差值，其中月球的贡献约为太阳的两倍多。",
+          "citation": "原理"
+        }
+      ],
+      "source": {
+        "name": "百度百科",
+        "title": "潮汐",
+        "url": "https://baike.baidu.com/item/潮汐",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "difficulty": 1
     }
   ]
 }

@@ -373,6 +373,1180 @@
           "citation_anchor": "开盖原理"
         }
       ]
+    },
+    {
+      "id": "lifehacks_topic_报纸擦玻璃",
+      "title": "报纸擦玻璃无水痕",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "玻璃"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "玻璃",
+        "url": "https://baike.baidu.com/item/玻璃",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "为什么报纸能擦出无水痕玻璃？",
+          "content": "报纸纸质纤维略粗糙又有吸墨性，能把玻璃上的水膜和污渍刮带走；旧报纸油墨里的少量溶剂还能轻度去油。关键是干擦收尾——先用湿布去脏，再用报纸团干擦，把残留水痕吸走，玻璃就亮净无水印。比普通纸巾更不易掉屑留痕。",
+          "action_hint": "左右滑动看报纸擦窗 ➔",
+          "citation_anchor": "擦窗原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "擦玻璃三步",
+          "items": [
+            "湿布或海绵先去浮尘和污点。",
+            "喷点稀释白醋水去水垢油膜。",
+            "旧报纸团用力干擦收尾，亮而无痕。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "一定要旧报纸吗？（点击翻转）",
+          "front_text": "没有报纸用别的行不行？",
+          "back_text": "行。核心动作是干擦收水痕，鱼鳞布、超纤布也能替代，只要不掉毛、吸水性好。报纸胜在随手可得、略磨砂感去痕；现代彩印报油墨少、效果略差，但旧黑白报最好。所以报纸是便捷选项，不是唯一解。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_牙膏去银饰",
+      "title": "牙膏擦亮发黑的银饰",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "银饰"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "银",
+        "url": "https://baike.baidu.com/item/银",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "银饰发黑用牙膏能擦亮？",
+          "content": "能。银发黑是硫化银（银和空气中的硫反应），牙膏含细微研磨颗粒和表面活性剂，轻轻一擦就把表层硫化银磨掉、恢复亮银。用软毛旧牙刷蘸牙膏刷，冲净擦干即可。注意是物理打磨，别太用力伤了细纹，也别用于有漆面或珍珠贝的饰品。",
+          "action_hint": "左右滑动看牙膏抛光 ➔",
+          "citation_anchor": "抛光原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "银饰恢复光泽法",
+          "items": [
+            "牙膏加软刷：轻刷发黑处，冲净擦干。",
+            "铝箔加热水加盐：浸泡让硫转移到铝。",
+            "擦银布：含抛光剂，日常维护方便。",
+            "小苏打糊：温和研磨去污。",
+            "密封保存：少接触空气和硫磺皂延缓黑。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "发黑是假货？",
+          "wrong": "银饰发黑是质量问题。",
+          "right": "不是，银本就容易和硫反应生成硫化银而发黑，是正常氧化，越纯越易黑。牙膏轻刷或擦银布即可恢复。避免接触硫磺皂、温泉水、化妆品能延缓。发黑不等于假货，反而纯银常见；放心清理即可。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_橡皮擦墙印",
+      "title": "橡皮擦去墙上铅笔印",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "墙面"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "铅笔",
+        "url": "https://baike.baidu.com/item/铅笔",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "墙上铅笔印为什么橡皮能擦掉？",
+          "content": "铅笔芯是石墨粉末附着在墙漆表面，没渗进底层。普通橡皮摩擦时把石墨颗粒粘起带走，漆面又够硬不被蹭掉，所以能擦净。但圆珠笔、水彩、油污是渗进或沾牢的，橡皮就无能为力，得上专用清洁剂。",
+          "action_hint": "左右滑动看橡皮去印 ➔",
+          "citation_anchor": "去印原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "所有墙印都能擦吗？（点击翻转）",
+          "front_text": "墙上脏了都用橡皮擦？",
+          "back_text": "不行。橡皮只对付表面石墨（铅笔印）这类浮粉最有效；油手印、酱油、圆珠笔、水彩都渗进或粘牢，擦不掉还可能把漆磨花。那种魔力擦（密胺海绵）对部分污渍更猛，但用多也伤墙面光泽，轻试为上。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "墙面轻清洁",
+          "items": [
+            "铅笔印：软橡皮轻擦。",
+            "浮灰：除尘掸或微湿布。",
+            "小污点：密胺海绵蘸水轻蹭。",
+            "顽固油渍：稀释洗洁精局部。",
+            "大面积脏：考虑补漆，别硬擦。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_保鲜膜遥控器",
+      "title": "保鲜膜包遥控器防油污",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "厨房"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "保鲜膜",
+        "url": "https://baike.baidu.com/item/保鲜膜",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "遥控器为啥要包保鲜膜？",
+          "content": "遥控器缝隙多，手上的油汗灰尘钻进去，按键发黏、接触不良。套一层保鲜膜（尤其厨房、餐馆的遥控器），能挡油污、防水溅，脏了撕掉换新的，里面还是干净的。取下时膜一撕，等于给遥控器穿雨衣。",
+          "action_hint": "左右滑动看遥控器防护 ➔",
+          "citation_anchor": "防污原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "遥控器防脏几招",
+          "items": [
+            "保鲜膜包裹：防油防水，定期更换。",
+            "透明袋套：更耐撕、可反复用。",
+            "勤洗手再拿：从源头少油。",
+            "定期用酒精棉擦缝：去黏防菌。",
+            "厨房遥控器尽量挂墙远处灶台。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "qa_card",
+          "title": "包了会影响按键吗？",
+          "content": "薄保鲜膜有一定弹性，手指按下去能透过膜压到键，一般不影响操作；但膜别绷太紧、别太厚，否则手感发硬。选薄款、松松裹一两层即可。若是触屏遥控，膜要更薄且贴合，否则灵敏度下降。总体利大于弊，尤其油腻环境。",
+          "action_hint": "左右滑动看使用注意 ➔",
+          "citation_anchor": "使用要点"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_吸管去草莓蒂",
+      "title": "吸管去草莓蒂不浪费",
+      "tags": [
+        "生活妙招",
+        "厨房",
+        "小技巧"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "草莓",
+        "url": "https://baike.baidu.com/item/草莓",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "吸管怎么去草莓蒂？",
+          "content": "把粗吸管从草莓底部（尖头那端）往上戳，穿过果肉把顶部叶蒂和白芯顶出来，蒂就整片脱落，草莓完好不浪费果肉。比用刀切省料、不沾水更耐放。这是果盘备料的小窍门，孩子也能安全操作。",
+          "action_hint": "左右滑动看吸管去蒂 ➔",
+          "citation_anchor": "去蒂技巧"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "为什么从底下戳？（点击翻转）",
+          "front_text": "去蒂为啥不从上面切？",
+          "back_text": "从上切会削掉一大块红果肉，还让草莓开口易进水变质。从底部戳，吸管刚好把中心的硬蒂和白芯顶出，外皮几乎不破、不进水，草莓完整漂亮又省料。所以方向选对，事半功倍，做果盘尤其省事。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "草莓清洗处理",
+          "items": [
+            "去蒂前先别摘叶：带叶冲更防脏水进果肉。",
+            "流水轻冲，去泥沙农残。",
+            "用吸管从底戳出蒂，完整不浪费。",
+            "吃前再处理，避免久放出水。",
+            "淡盐水泡几分钟更安心。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_丝袜套地漏",
+      "title": "旧丝袜套地漏防堵",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "浴室"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "地漏",
+        "url": "https://baike.baidu.com/item/地漏",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "旧丝袜套地漏有什么用？",
+          "content": "丝袜网眼细又透水，套在下水口能拦住头发、絮状物，水照流、脏东西被兜住，几天一换，地漏不堵、不反味。比专门滤网便宜随手，尤其浴室掉发多的人特好用。脏了直接连袜丢掉，省了通管道的麻烦。",
+          "action_hint": "左右滑动看丝袜滤毛 ➔",
+          "citation_anchor": "防堵原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "丝袜的 reuse 妙用",
+          "items": [
+            "套地漏：拦头发防堵。",
+            "包香皂头：攒成新皂团不浪费。",
+            "擦皮鞋：旧丝袜抛光不伤皮。",
+            "绑洋葱大蒜：挂通风处保存。",
+            "当过滤网：套在排水管口。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "会不会反而堵得更狠？（点击翻转）",
+          "front_text": "套了丝袜地漏不会更堵？",
+          "back_text": "只要定期换就不会。丝袜只是把本来会钻进管道的毛发拦在表面，你看得见、好清理；若不套，毛发直接进管深处结成团，反而难通。关键是勤换——看到兜满就换掉，别等塞死。所以它防堵，不制造堵。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_吹风机去标签胶",
+      "title": "吹风机除标签残胶",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "去胶"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "不干胶",
+        "url": "https://baike.baidu.com/item/不干胶",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "标签撕掉后的残胶怎么去？",
+          "content": "用吹风机热风对着残胶吹几十秒，热量让不干胶软化、粘性下降，这时用手指或卡片一刮就掉，再用酒精棉擦净。比硬抠省事，也不伤大多数表面。塑料、玻璃、金属都适用，但怕热的漆面要离远点、低温短时。",
+          "action_hint": "左右滑动看热风去胶 ➔",
+          "citation_anchor": "去胶原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "只能用刀刮？",
+          "wrong": "残胶只能用刀刮。",
+          "right": "不必。热风软化是最省力法：吹风机加热让胶层失去粘接力，轻轻揭或刮即可，避免刀刮伤表面。配合酒精或风油精溶解残迹更干净。只有极顽固且表面坚硬时才用塑料刮板，金属刀易留痕，能免则免。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "除残胶三招",
+          "items": [
+            "吹风机热吹：胶软后刮掉，最通用。",
+            "酒精或风油精：溶解不干胶，棉擦。",
+            "食用油浸泡：油渗松胶，适合小件。",
+            "橡皮擦：薄胶层能蹭掉。",
+            "别用强溶剂：怕腐蚀漆面和塑料。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_可乐洗马桶",
+      "title": "可乐洗马桶去黄渍",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "卫浴"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "马桶",
+        "url": "https://baike.baidu.com/item/马桶",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "可乐真能洗马桶？",
+          "content": "能。可乐含磷酸，能和马桶里的尿垢、水垢（钙镁沉积）发生反应帮着溶解，对轻度黄渍有去污效果。倒进马桶泡一夜，刷一刷冲掉，会干净些。但它不是强效清洁剂，重垢还得靠洁厕灵；而且含糖，用完要冲净别留甜渍招虫。",
+          "action_hint": "左右滑动看可乐去垢 ➔",
+          "citation_anchor": "去垢原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "可乐比洁厕灵强吗？（点击翻转）",
+          "front_text": "用可乐就能代替洁厕灵？",
+          "back_text": "不能全替。可乐的磷酸弱、去垢慢，只对轻微水垢黄渍有效；洁厕灵含更强酸和杀菌成分，对付顽固尿垢更高效。可乐胜在随手、温和，适合日常维护；真脏了还是专业清洁剂更靠谱。用完记得多冲水，别留糖招蚂蚁。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "马桶日常去黄",
+          "items": [
+            "可乐浸泡：轻度黄渍，泡后刷净。",
+            "洁厕灵：顽固垢，按说明用。",
+            "定期刷：别等结厚垢再处理。",
+            "小苏打加醋：天然组合去味去渍。",
+            "冲净残留：防糖渍招虫。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_橡皮筋开罐盖",
+      "title": "橡皮筋开紧罐盖",
+      "tags": [
+        "生活妙招",
+        "厨房",
+        "应急"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "罐头",
+        "url": "https://baike.baidu.com/item/罐头",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "玻璃罐头盖拧不开怎么办？",
+          "content": "在盖子上缠几圈橡皮筋，增加手和盖之间的摩擦力，再拧就省力很多；或者一手按住罐身、用橡皮筋垫着转盖。原理就是增大摩擦、防滑，尤其手湿或盖上有油时特别灵。没有橡皮筋，橡胶手套、湿布也能增摩擦。",
+          "action_hint": "左右滑动看橡皮筋开盖 ➔",
+          "citation_anchor": "增摩擦原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "开紧盖几招",
+          "items": [
+            "橡皮筋缠盖：增摩擦最省事。",
+            "橡皮手套或湿布：同样防滑。",
+            "掌心拍盖底：震松真空密封。",
+            "热水淋盖：金属盖热胀略松。",
+            "勺尖撬边：放点气破坏真空，小心手。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "为什么盖会拧不开？（点击翻转）",
+          "front_text": "明明没锁死，怎么拧不动？",
+          "back_text": "多是真空加热胀冷缩：罐装时抽真空或内容物冷却后内部负压，盖被外界气压吸住；有时加热后冷却更紧。橡皮筋只是解决手滑使不上劲，配合拍底放气、热水松盖，从根上破解负压，自然就开了。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_白醋除水垢",
+      "title": "白醋除水垢",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "除垢"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "水垢",
+        "url": "https://baike.baidu.com/item/水垢",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "水壶里的水垢怎么去掉？",
+          "content": "水垢主要是碳酸钙镁，白醋里的醋酸能和它反应溶解。往水壶倒等量白醋加水，煮开或浸泡一会儿，水垢就松脱，冲净即可。水龙头、花洒、玻璃上的白渍也用醋擦。天然不伤环境，比强酸清洁剂温和，适合日常除垢。",
+          "action_hint": "左右滑动看醋酸溶垢 ➔",
+          "citation_anchor": "溶垢原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "硬刷就能刷掉？",
+          "wrong": "水垢用硬刷就能刷掉。",
+          "right": "硬刷费劲还伤表面。水垢是钙镁盐，醋酸能化学溶解，省力又不伤壶。白醋浸泡后一冲就掉，顽固的重复或加热助溶。所以以酸溶垢比硬碰硬聪明，厨房里醋就是便宜好用的除垢剂。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "醋的去垢场景",
+          "items": [
+            "水壶：醋水同煮浸泡去内部垢。",
+            "花洒：拆下泡醋，通孔更顺。",
+            "水龙头：醋湿巾包裹敷几分钟再擦。",
+            "玻璃水渍：喷醋水擦净。",
+            "咖啡机：醋水循环去水垢，后冲净。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_蜡烛涂拉链",
+      "title": "蜡烛涂拉链更顺滑",
+      "tags": [
+        "生活妙招",
+        "小技巧",
+        "衣物"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "拉链",
+        "url": "https://baike.baidu.com/item/拉链",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "拉链卡住不顺怎么办？",
+          "content": "在拉链齿上涂一点蜡烛（白蜡）或铅笔芯的石墨，蜡和石墨都是固体润滑，减少齿间摩擦，拉头就能顺滑走过。尤其牛仔裤、外套拉链发涩时特好用。比喷油干净，不会沾一身。注意别用液体油，容易吸灰反而更卡。",
+          "action_hint": "左右滑动看蜡润滑 ➔",
+          "citation_anchor": "润滑原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "为什么不用食用油？（点击翻转）",
+          "front_text": "家里油多，直接抹油不行？",
+          "back_text": "食用油会粘灰、日久发黏，反而让拉链更涩甚至发霉；蜡烛蜡是干性润滑，不吸灰、不沾污，更适合布料和拉链。铅笔石墨也同理，干净又随手。所以干润滑优于油润滑，拉链卡了先找蜡烛或铅笔。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "拉链保养",
+          "items": [
+            "卡涩涂蜡或石墨：干润滑最稳。",
+            "别硬拽：先理平布料再拉。",
+            "湿了晾干再拉：防锈卡。",
+            "金属链偶尔擦净：去垢防氧化。",
+            "坏齿及时修：别等彻底卡死。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_旧袜除尘",
+      "title": "旧袜子当除尘手套",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "收纳"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "袜子",
+        "url": "https://baike.baidu.com/item/袜子",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "旧袜子怎么当除尘布？",
+          "content": "把旧棉袜套在手上，沾点水或静电除尘喷雾，就能当手套擦桌子、百叶窗、书架缝隙，指头能伸进死角，比抹布灵活。用完脱下丢洗，手不脏。棉袜还能蘸地板清洁剂擦踢脚线，拐角处特别顺手。",
+          "action_hint": "左右滑动看袜套除尘 ➔",
+          "citation_anchor": "除尘用法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "旧袜的清洁用途",
+          "items": [
+            "套手擦死角：百叶窗、书架缝。",
+            "蘸蜡打鞋：抛光不伤皮。",
+            "套扫把：吸毛少飞扬。",
+            "装大米当热敷：微波加热敷颈肩。",
+            "套鞋撑：没鞋撑时塞干袜定型。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "丝袜和棉袜都能用吗？（点击翻转）",
+          "front_text": "哪种旧袜最适合除尘？",
+          "back_text": "棉袜吸水性好、蘸水擦更实用；丝袜偏滑、适合干擦抛光（如皮鞋、玻璃）。所以看用途选：湿擦除尘用棉袜，干抛去灰用丝袜。都别用破洞太大的，免得线头掉。旧袜 reuse，省钱又减废，是经典的物尽其用。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_热水盐去砧板味",
+      "title": "热水加盐去砧板味",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "厨房"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "砧板",
+        "url": "https://baike.baidu.com/item/砧板",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "砧板有腥臭味怎么去？",
+          "content": "用粗盐撒在砧板上，再倒热水，用刷子刷，盐的摩擦去污、热水杀菌去油，腥味大减；之后冲净立起晾干。盐和热水是天然的清洁组合，比只冲凉水更去味。木质、塑料砧板都适用，但木砧别长时间泡，免得开裂。",
+          "action_hint": "左右滑动看盐热水去味 ➔",
+          "citation_anchor": "去味原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "冲冲水就没味？",
+          "wrong": "砧板冲冲水就没味了。",
+          "right": "生肉鱼后的腥味是蛋白质和油脂渗进刀痕，光冲凉水去不掉。盐搓加热水刷才能杀菌去油除味；之后竖放晾干、偶尔用白醋或柠檬擦更清新。定期这么处理，砧板才不串味、少生菌。所以盐加热比水冲管用。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "砧板养护",
+          "items": [
+            "用后盐搓热水刷，去味杀菌。",
+            "立起晾干：别平放积水和菌。",
+            "偶尔白醋或柠檬擦：去腥清新。",
+            "生熟分开：两块板防交叉污染。",
+            "木砧涂油：防干裂，延长寿命。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_纸芯收线",
+      "title": "卫生纸芯收纳乱线",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "理线"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "收纳",
+        "url": "https://baike.baidu.com/item/收纳",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "卫生纸芯怎么收乱线？",
+          "content": "把数据线、充电线卷好塞进空卫生纸芯（卷筒芯），线不散、不缠，立在小盒里一目了然，抽用方便。芯还能剪开做分隔、缠标示。是零成本的理线神器，尤其适合抽屉里一堆短线。配合标签，找线不再翻半天。",
+          "action_hint": "左右滑动看纸芯理线 ➔",
+          "citation_anchor": "收线方法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "纸芯的收纳用法",
+          "items": [
+            "卷线塞芯：数据线不缠不乱。",
+            "立放抽屉：每根一芯，整齐可取。",
+            "剪开做分隔：分格放小物。",
+            "缠胶带标记：写名字防混。",
+            "套透明胶收纳：当迷你线轴。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "没有纸芯用啥替代？（点击翻转）",
+          "front_text": "没纸芯怎么收线？",
+          "back_text": "任何中空小筒都行：旧笔筒、药盒、饮料瓶剪圈、卷胶带的内圈。核心是给线一个固定卷心，让它成圈不散。没有筒就用8字绕法或魔术贴绑带。目的就一个——别让线在抽屉里自由发挥，给它形状它就老实。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_柠檬去微波味",
+      "title": "柠檬去微波炉异味",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "除味"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "微波炉",
+        "url": "https://baike.baidu.com/item/微波炉",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "微波炉有腥味怎么除？",
+          "content": "半颗柠檬挤汁加水放进微波炉高火加热一两分钟，蒸汽带着柠檬酸香弥漫，既能软化内壁油污，又用清香盖掉腥味；取出用湿布一擦，味净如新。柠檬酸还能轻微去油去垢。比喷化学剂清新，吃完柠檬别浪费。",
+          "action_hint": "左右滑动看柠檬去味 ➔",
+          "citation_anchor": "去味原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "没有柠檬用别的行吗？（点击翻转）",
+          "front_text": "没柠檬怎么去微波味？",
+          "back_text": "行。白醋水加热同理（醋酸去味去油），橘子皮、柚子皮煮水也有清香；小苏打水擦洗也能去味。核心是蒸汽加酸性或清香双管齐下：先软化污、再盖异味。所以柠檬是优选不是唯一，看手边有什么。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "微波去味三法",
+          "items": [
+            "柠檬水加热：清香加去油。",
+            "白醋水加热：去腥去垢强。",
+            "橘皮水煮：天然果香。",
+            "小苏打擦：中和异味。",
+            "敞盖放碗水：日常吸味。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_吸管喝酸奶",
+      "title": "吸管喝酸奶不沾盖",
+      "tags": [
+        "生活妙招",
+        "小技巧",
+        "饮品"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "酸奶",
+        "url": "https://baike.baidu.com/item/酸奶",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "吸管怎么喝酸奶不沾盖？",
+          "content": "盒装酸奶先插吸管到底，再从对侧把吸管穿出（或揭开一小角），让吸管形成通路后吸，能减少撕盖时酸奶沾到盖顶、也避免一开盖溅一身。更常见的窍门是：插吸管后先别急着吸，轻晃让酸奶流向吸口。核心是不正对撕口猛吸。",
+          "action_hint": "左右滑动看吸管喝法 ➔",
+          "citation_anchor": "喝法技巧"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "还有更简单的喝法吗？（点击翻转）",
+          "front_text": "不想沾盖有啥秘籍？",
+          "back_text": "有：喝前把盒子轻轻捏扁排气、插吸管后从底部吸口那侧先吸一口建立通路，再正常喝，酸奶不易从撕口反涌。或者干脆撕盖后用勺吃。吸管法胜在不洗碗、不沾手，适合带出门。各家盒子不同，试两次就顺手。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "酸奶不浪费",
+          "items": [
+            "插吸管对侧穿出，建立通路。",
+            "喝前轻捏盒排气防溅。",
+            "盖顶残留用勺刮或舔。",
+            "撕口朝自己下方，防滴落。",
+            "凉饮更佳，常温易出水分离。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_衣架撑长靴",
+      "title": "衣架撑长筒靴不倒",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "衣物"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "衣架",
+        "url": "https://baike.baidu.com/item/衣架",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "长筒靴总倒怎么办？",
+          "content": "用铁丝衣架弯成长腿形状，撑进靴筒，让靴子立着不塌不倒，还能保持筒形不褶皱。或把衣架两端钩住靴口、中间撑开。简单改造就能解决长靴收纳的倒伏难题，尤其软皮靴特别需要支撑。",
+          "action_hint": "左右滑动看衣架撑靴 ➔",
+          "citation_anchor": "撑靴方法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "长靴收纳法",
+          "items": [
+            "衣架改造撑架：铁丝拗形撑筒。",
+            "卷报纸塞筒：临时定型防塌。",
+            "专用靴撑：长期保存更挺。",
+            "倒挂鞋架：省空间通风。",
+            "立放别叠压：防褶防变形。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "没有衣架怎么撑？（点击翻转）",
+          "front_text": "没铁丝衣架咋办？",
+          "back_text": "卷紧的旧报纸、塑料瓶（剪掉底）、卷起的毛巾都能临时塞进靴筒定型；或买现成充气或塑料靴撑。关键筒里有支撑物、能立住，靴子就不倒不皱。所以随手物都能替代，核心是给软筒一个骨架。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_肥皂涂镜防雾",
+      "title": "肥皂涂镜子防起雾",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "卫浴"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "镜子",
+        "url": "https://baike.baidu.com/item/镜子",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "洗澡镜子起雾怎么防？",
+          "content": "把干肥皂在镜面轻轻涂一层，再用干布擦匀至几乎看不见，肥皂膜能破坏水表面张力，让水汽凝不成连续水膜，而是成细珠滑落，镜子就不糊。洗澡前涂一次管一阵。比防雾喷剂便宜，原理一样是疏水膜。",
+          "action_hint": "左右滑动看肥皂防雾 ➔",
+          "citation_anchor": "防雾原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "起雾只能等干？",
+          "wrong": "镜子起雾只能等它干。",
+          "right": "不用等。肥皂或洗洁精涂一层再擦匀，形成的薄膜能让水汽凝成水珠而非雾膜，视线保持清。防雾喷剂同理。所以提前涂膜比事后擦聪明，尤其浴室镜、游泳镜都适用，省钱又长效。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "防雾小物",
+          "items": [
+            "肥皂涂擦：便宜长效。",
+            "洗洁精薄涂：同样疏水。",
+            "防雾喷剂：商用更持久。",
+            "刮水器：洗完刮一遍。",
+            "开排气：减少水汽堆积。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_木夹固定线",
+      "title": "木夹子固定与封口",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "小技巧"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "夹子",
+        "url": "https://baike.baidu.com/item/夹子",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "木夹子能当固定神器？",
+          "content": "能。晾衣木夹可夹住数据线、牙刷、笔在桌边，也能夹住撕开一半的零食袋封口，或把充电线夹在桌沿不滑落。夹子开口有弹力、不伤物，是零成本的固定、封口小工具，随手改造收纳。",
+          "action_hint": "左右滑动看木夹妙用 ➔",
+          "citation_anchor": "固定用法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "木夹妙用",
+          "items": [
+            "夹零食袋：临时封口保鲜。",
+            "夹数据线于桌沿：防掉地。",
+            "夹牙刷或笔：立放沥水。",
+            "夹说明书：归类标记。",
+            "夹门把挂物：临时挂钩。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "塑料夹和木夹一样吗？（点击翻转）",
+          "front_text": "哪种夹子好用？",
+          "back_text": "木夹带金属弹簧，夹力稳、可写标签，适合封口和固定；塑料夹轻便防水，适合潮湿处如浴室夹牙刷。核心都是弹力夹口提供固定力。选哪种看场景：要标签写字的选木夹，要防水的选塑料。都是几毛钱的收纳利器。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_茶叶渣除鞋臭",
+      "title": "茶叶渣除鞋臭",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "除味"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "茶",
+        "url": "https://baike.baidu.com/item/茶",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "晒干的茶叶渣能除鞋臭？",
+          "content": "能。茶叶有吸附性和淡淡茶香，晒干的茶渣装小布袋塞进鞋里，能吸走潮气和部分异味，留下清香。它靠物理吸附加遮盖，对汗臭轻度有效。记得茶渣务必晒干，湿的反而招霉。配合多换袜子、鞋轮流穿，效果更稳。",
+          "action_hint": "左右滑动看茶渣吸味 ➔",
+          "citation_anchor": "除臭原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "塞茶渣就一劳永逸？",
+          "wrong": "鞋臭塞茶渣就一劳永逸。",
+          "right": "茶渣只是辅助吸味，不能杀菌根治。脚汗多、真菌引起的臭味，得从源头：勤洗脚、换袜、鞋轮流晾晒通风，必要时用专门除臭或抗真菌粉。茶渣能吸潮去味、锦上添花，但别指望它解决所有问题，湿茶渣反而坏事。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "去鞋臭组合",
+          "items": [
+            "晒干茶渣袋：吸潮去味。",
+            "小苏打粉：撒鞋内过夜吸湿。",
+            "活性炭包：强吸附长效。",
+            "鞋轮流穿：给鞋时间干。",
+            "勤洗袜晒鞋：治本最要紧。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_橡皮筋缠衣架防滑",
+      "title": "橡皮筋缠衣架防滑",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "衣物"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "衣架",
+        "url": "https://baike.baidu.com/item/衣架",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "衣服总从衣架滑下怎么办？",
+          "content": "在衣架两端横杠缠几圈橡皮筋，增加衣架和肩带的摩擦力，吊带、真丝这类滑料就不容易滑落。橡皮筋有弹性、不伤衣，缠法简单，特别适合细肩带和丝绸衬衫。比换防滑衣架省钱。",
+          "action_hint": "左右滑动看橡皮筋防滑 ➔",
+          "citation_anchor": "防滑原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "缠哪段最管用？（点击翻转）",
+          "front_text": "橡皮筋缠衣架哪里？",
+          "back_text": "主要缠在衣架两端肩部那两道横杠——衣服肩带正好搭那儿，缠了橡皮筋增大摩擦，带子就咬得住不掉。中间钩子附近不用缠。想更防滑可在肩部多绕几圈。所以缠两端是关键，别满架乱缠。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "防衣物滑落",
+          "items": [
+            "缠两端横杠：增摩擦防肩带滑。",
+            "用防滑衣架：自带胶条。",
+            "对折挂法：滑料对折减少滑点。",
+            "夹子固定裙裤：防滑落变形。",
+            "阴干别暴晒：保形也防滑。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_吸管去樱桃核",
+      "title": "吸管去樱桃核",
+      "tags": [
+        "生活妙招",
+        "厨房",
+        "小技巧"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "樱桃",
+        "url": "https://baike.baidu.com/item/樱桃",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "吸管怎么去樱桃核？",
+          "content": "樱桃洗净，用粗吸管（或去核器）从顶部果蒂处往下戳，穿过果肉把核顶出，果子完整不破。比刀切剖半省事、不浪费肉，做樱桃酱、果盘都方便。吸管要够硬够粗，细软吸管戳不动。",
+          "action_hint": "左右滑动看吸管去核 ➔",
+          "citation_anchor": "去核技巧"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "去核小技巧",
+          "items": [
+            "粗吸管从蒂戳：顶出核，果完整。",
+            "回形针弯钩：勾出核，适合软果。",
+            "专门去核器：批量最省力。",
+            "刀对半剖：最直接但费料。",
+            "冷冻后更易：果肉稍硬好戳。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "没有粗吸管怎么办？（点击翻转）",
+          "front_text": "细吸管戳不动樱桃？",
+          "back_text": "换更硬的工具：不锈钢吸管、去核器、甚至干净的粗签字笔空管都能当冲头把核顶出；回形针弯个小钩也能从侧面勾核。关键是用硬管从蒂侧冲压，细软吸管确实不行。所以工具够硬，樱桃核乖乖出。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_热水泡油壶",
+      "title": "热水泡陈油壶",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "厨房"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "油壶",
+        "url": "https://baike.baidu.com/item/油壶",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "陈年老油壶怎么洗干净？",
+          "content": "油壶里陈油结痂，先用温水加洗洁精泡一阵，让油软化，再用热水加小苏打刷；顽固油垢可倒入热水晃荡、或加一勺大米加水摇（大米摩擦去油）。别用冷水硬刷，油遇冷更黏。冲净晾干再装新油，避免串味变质。",
+          "action_hint": "左右滑动看油壶清洗 ➔",
+          "citation_anchor": "清洗方法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "冷水一冲就干净？",
+          "wrong": "油壶用冷水一冲就干净。",
+          "right": "不对，油遇冷更黏更难掉，冷水冲只会越擦越花。要用温热洗洁精水浸泡软化，再配合摩擦（大米、海绵）去除；小苏打去油力强。所以温加泡加摩擦才是洗油壶的正确姿势，冷水是反效果。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "油壶清洗",
+          "items": [
+            "温水加洗洁精泡软油垢。",
+            "加米加水摇：米粒摩擦去油。",
+            "小苏打助洗：去重油。",
+            "热水冲净晾干：防串味。",
+            "定期洗：别等结厚痂。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_名片标记插头",
+      "title": "名片标记插头防拔错",
+      "tags": [
+        "生活妙招",
+        "收纳",
+        "理线"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "插头",
+        "url": "https://baike.baidu.com/item/插头",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "一堆插头分不清怎么办？",
+          "content": "用旧名片或硬纸条，写上电器名，对折插在插头和线之间，或套在线上，一眼认出哪个是哪个，拔错风险大降。尤其插座背后一团线、出差带一堆充电器时特管用。零成本，比贴胶布更挺括好看。",
+          "action_hint": "左右滑动看名片标签 ➔",
+          "citation_anchor": "识别方法"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "理线识别法",
+          "items": [
+            "名片写名插线：清晰不丢。",
+            "彩色胶带缠头：按色区分。",
+            "标签机打标：长期更耐。",
+            "拍照存档：复杂布线先拍。",
+            "分组绑带：同类线归一团。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "没名片用啥写？（点击翻转）",
+          "front_text": "没名片怎么标插头？",
+          "back_text": "任何小硬片都行：作废会员卡、药盒标签、剪下的纸箱片、甚至宽胶带写字的背面。核心是硬加写得名加套在线头，能一眼区分。软纸易被扯烂，硬片更耐久。所以家里废纸都能变身理线标签，别专买。"
+        }
+      ]
+    },
+    {
+      "id": "lifehacks_topic_报纸除纱窗灰",
+      "title": "报纸除纱窗灰",
+      "tags": [
+        "生活妙招",
+        "清洁",
+        "窗户"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "纱窗",
+        "url": "https://baike.baidu.com/item/纱窗",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "纱窗积灰怎么擦省事？",
+          "content": "把旧报纸用水打湿贴在纱窗上，稍等让灰尘被纸吸附，再取下报纸，用软刷或吸尘器轻扫，灰就跟着纸走，比拆下洗省事。报纸的纤维和湿度能粘走浮尘，尤其高层不便拆窗时特实用。",
+          "action_hint": "左右滑动看报纸贴敷 ➔",
+          "citation_anchor": "清洁原理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "为什么不直接水洗？（点击翻转）",
+          "front_text": "直接水冲纱窗不行？",
+          "back_text": "能冲，但拆装麻烦、还弄湿地板，高层更不便。报纸贴敷法是免拆轻清洁：湿报纸吸附浮灰后一揭即走，局部脏就局部贴，不惊动整窗。重垢还是得拆洗，但日常浮灰这招又快又干净。所以贴敷胜在省事。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "纱窗清洁",
+          "items": [
+            "湿报纸贴敷：吸浮灰免拆。",
+            "软毛刷扫：日常去尘。",
+            "吸尘器吸：不湿手。",
+            "拆下水洗：重垢才用。",
+            "旧牙刷清角：边角细致。"
+          ]
+        }
+      ]
     }
   ]
 }

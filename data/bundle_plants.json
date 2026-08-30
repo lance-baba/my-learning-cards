@@ -357,6 +357,1142 @@
           "citation_anchor": "相关现象"
         }
       ]
+    },
+    {
+      "id": "plants_topic_菟丝子寄生",
+      "title": "菟丝子缠着别人活",
+      "tags": [
+        "植物",
+        "寄生植物",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "菟丝子",
+        "url": "https://baike.baidu.com/item/%E8%8F%9F%E4%B8%9D%E5%AD%90",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "菟丝子为什么缠树？",
+          "content": "菟丝子是寄生植物，自己几乎不含叶绿素，不能好好光合，就缠上豆科等寄主，用吸器（haustorium）扎进对方茎里偷水、偷养分。它黄丝状、像乱麻，常成片盖住灌木。少了寄主它活不长，是农田和花园的麻烦杂草。",
+          "action_hint": "左右滑动看吸器 ➔",
+          "citation_anchor": "寄生习性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它还会联网？（点击翻转）",
+          "front_text": "菟丝子只吸一家吗？",
+          "back_text": "研究发现一株菟丝子能同时连多棵寄主，像藤蔓局域网，甚至能在植株间传递警报信号（如被害虫咬的化学信号），让邻居提前防御。它把几棵植物连成共享营养的吸血网，是植物界少见的接线员。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "寄生植物小览",
+          "items": [
+            "菟丝子：无叶黄丝，吸器偷寄主养分。",
+            "槲寄生：半寄生，自己能光合但仍吸寄主水。",
+            "大王花：全寄生，无茎叶，只开花露面。",
+            "列当：根寄生，专坑农作物。",
+            "寄生不等于全坏，也是生态系统的角色。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_红树呼吸根",
+      "title": "红树林的呼吸根",
+      "tags": [
+        "植物",
+        "红树林",
+        "湿地"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "红树",
+        "url": "https://baike.baidu.com/item/%E7%BA%A2%E6%A0%91",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "红树为什么长筷子？",
+          "content": "红树生活在海水淤泥里，泥缺氧，根泡着容易闷。于是它长出露出泥面的呼吸根（气生根），像插在泥里的通气桩，把空气导入地下根，帮它在烂泥里呼吸。退潮时根露出来喘气，涨潮时泡着也不慌。",
+          "action_hint": "左右滑动看呼吸根 ➔",
+          "citation_anchor": "呼吸根"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "红树怎么在海边活？（点击翻转）",
+          "front_text": "海水又咸又淹，红树不怕？",
+          "back_text": "它有两套绝活：一是呼吸根通气防缺氧；二是能排盐或拦盐——有的叶子有盐腺把多余盐吐出，有的根像过滤器挡盐。再加上胎生苗（种子在果里先发芽再掉）直接插泥，稳稳占领潮间带，成了海岸护盾林。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "红树林有什么用？",
+          "streaming_content": "红树林是海岸的天然防波堤，消浪护岸、减少侵蚀；淤泥里养着蟹、鱼、虾幼苗，是海鲜的 nursery；还能固碳、净化水质。它盘根错节的根给无数小动物躲藏。人类砍掉红树林，风暴和渔业损失就来了——所以它被称为海岸卫士。",
+          "citation_anchor": "生态价值"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_仙人掌刺",
+      "title": "仙人掌的刺是叶",
+      "tags": [
+        "植物",
+        "旱生植物",
+        "沙漠"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "仙人掌",
+        "url": "https://baike.baidu.com/item/%E4%BB%99%E4%BA%BA%E6%8E%8C",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "仙人掌的刺是叶子？（点击翻转）",
+          "front_text": "仙人掌怎么没有正常叶子？",
+          "back_text": "它的叶退化成刺，是为了在干旱里少蒸发、少被动物啃。真正光合的主角是那根肥厚的茎，绿色、储水又造糖。刺还能挡动物、收集晨露、给茎遮阴。所以你看到的刺，其实是改行的叶子。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它怎么存水？",
+          "content": "仙人掌茎膨大、皮厚、表有一层蜡质，像内置水罐，雨季猛吸存着，旱季慢慢用。刺代替叶大幅降低蒸腾。很多种类气孔夜里才开（CAM光合），避开白天高温失水。整套设计就一个目标：把每一滴水都攥紧。",
+          "action_hint": "左右滑动看水罐茎 ➔",
+          "citation_anchor": "储水结构"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "仙人掌生存三招",
+          "items": [
+            "叶变刺：减蒸腾、防啃、聚露。",
+            "茎储水：肥厚多汁，外披蜡质锁水。",
+            "夜开口：CAM光合，夜里换气省水。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_蕨类孢子",
+      "title": "蕨类靠孢子繁殖",
+      "tags": [
+        "植物",
+        "蕨类",
+        "繁殖"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "蕨",
+        "url": "https://baike.baidu.com/item/%E8%95%A8",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "蕨类为什么不结种子？",
+          "content": "蕨类是较古老的维管植物，不开花、不结种子，靠叶子背面的孢子囊群散出孢子繁殖。孢子随风飘，落到湿润荫处萌发成小小的原叶体，上面长出精子和卵，有水时精子游去受精，再长成我们熟悉的蕨叶。所以它离不开潮湿环境。",
+          "action_hint": "左右滑动看孢子囊 ➔",
+          "citation_anchor": "孢子繁殖"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "蕨的宝宝长啥样？（点击翻转）",
+          "front_text": "蕨孢子落地后怎么变植株？",
+          "back_text": "孢子先长成心形薄片原叶体，它独立生活、靠假根吸水，上面同时长精子器与颈卵器；下雨后带鞭毛的精子游过去受精，合子才发育成孢子体（就是平常的蕨）。这个两代交替是蕨类标志，也说明它仍保留对水的依赖。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "蕨类要点",
+          "items": [
+            "不开花、无种子，靠孢子繁殖。",
+            "叶背孢子囊群常排成点线。",
+            "生活史有孢子体与配子体两代。",
+            "喜阴湿，是森林底层的常客。",
+            "比苔藓高级（有维管），比种子植物原始。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_银杏活化石",
+      "title": "银杏是活化石",
+      "tags": [
+        "植物",
+        "裸子植物",
+        "古老"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "银杏",
+        "url": "https://baike.baidu.com/item/%E9%93%B6%E6%9D%8F",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "银杏为什么叫活化石？（点击翻转）",
+          "front_text": "银杏很常见，何来化石？",
+          "back_text": "它在地球上出现极早，野生种群曾几乎灭绝，仅存于中国并被人类栽培保存，形态和亿年前的化石几乎一样，所以叫活化石。它是银杏纲唯一幸存种，孑遗至今，被称为植物界的熊猫。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "银杏怎么传宗接代？",
+          "content": "银杏是裸子植物，不结真正的果子而结种子（外面肉质种皮臭臭的，常被误叫白果）。它分雌雄株，雄株花粉靠风传，雌株受粉后结种子。白果（种子核）可食但含微量毒素，须煮熟少量吃，生吃多可能中毒。城市多栽雄株避免落臭种。",
+          "action_hint": "左右滑动看雌雄株 ➔",
+          "citation_anchor": "繁殖特性"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "银杏冷知识",
+          "items": [
+            "雌雄异株，雄株花粉随风飘。",
+            "种子外皮臭，内核白果可食需熟。",
+            "叶形独特如扇，秋天金黄。",
+            "野生近绝，现存多为栽培孑遗。",
+            "和恐龙同时代，形态亿年稳定。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_莲出淤泥",
+      "title": "莲为何出淤泥不染",
+      "tags": [
+        "植物",
+        "水生植物",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "莲",
+        "url": "https://baike.baidu.com/item/%E8%8E%B2",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "莲叶为什么滚水珠？",
+          "content": "荷叶表面有极细的绒毛和蜡质，让水珠站不住、滚来滚去，顺带把灰尘带走，这叫自洁效应（莲花效应）。所以叶面总干净，出淤泥而不染说的就是它既长污泥又能保持洁净。人类据此仿出防水防污材料。",
+          "action_hint": "左右滑动看自洁效应 ➔",
+          "citation_anchor": "叶面结构"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "莲藕的洞干嘛用？（点击翻转）",
+          "front_text": "莲藕中间为什么一串洞？",
+          "back_text": "莲藕是莲的地下茎，长在水底泥里缺氧，那些孔是通气道，把叶子送来的空气导到地下茎和根，帮它在淤泥里呼吸。所以洞不是装饰，是水下氧气管。同理荷叶挺出水面、叶面蜡滑，整套都为水底生活设计。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "莲全身是宝？",
+          "streaming_content": "藕能吃、藕节入药；莲子补脾、心可清火；荷叶包饭清香、还能代茶；莲花观赏。莲从叶到果都有用，又因洁净意象成文化符号。它从泥里长大却浑身清爽，难怪被反复写进诗画。",
+          "citation_anchor": "用途价值"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_猪笼草",
+      "title": "猪笼草的捕虫瓶",
+      "tags": [
+        "植物",
+        "食虫植物",
+        "趣味"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "猪笼草",
+        "url": "https://baike.baidu.com/item/%E7%8C%AA%E7%AC%BC%E8%8D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "猪笼草怎么捕虫？",
+          "content": "猪笼草叶子特化成笼子（捕虫笼），笼口有滑溜的唇和蜜腺引虫，笼壁打滑，虫一踩空掉进笼里，被笼底的消化液淹死分解，吸收氮等营养。它长在贫氮的湿地或雨林，靠虫补营养，和捕蝇草是同行。",
+          "action_hint": "左右滑动看捕虫笼 ➔",
+          "citation_anchor": "捕虫机制"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "笼子能重生吗？（点击翻转）",
+          "front_text": "一个笼子能用多久？",
+          "back_text": "每个笼由一片叶变成，成熟后能用一段时间，捕过几次、老化就失效，之后这片叶不再长新笼。植株会不断从新叶顶出新的笼子接力。所以猪笼草是一片叶一个陷阱，旧笼退休、新笼上岗。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "猪笼草要点",
+          "items": [
+            "叶变笼，笼口蜜加滑唇诱虫。",
+            "笼底消化液分解虫体取氮。",
+            "喜湿贫氮环境，虫是营养补充。",
+            "每片叶一个笼，新旧接力。",
+            "和捕蝇草、茅膏菜同属食虫植物。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_苔藓先锋",
+      "title": "苔藓是开路先锋",
+      "tags": [
+        "植物",
+        "苔藓",
+        "生态"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "苔藓",
+        "url": "https://baike.baidu.com/item/%E8%8B%94%E8%97%93",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "苔藓为什么是先锋植物？",
+          "content": "苔藓矮小、无真正根和维管，靠全身吸水，却能在光秃岩石、冻土、火烧迹地率先落户。它分泌酸性慢慢风化岩石成土，攒住水分和碎屑，给后来蕨类、草、灌木铺路，是演替的先遣队。没有它，很多荒地难变绿。",
+          "action_hint": "左右滑动看成土 ➔",
+          "citation_anchor": "先锋作用"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "苔藓怎么繁殖？（点击翻转）",
+          "front_text": "苔藓不开花怎么生娃？",
+          "back_text": "它靠孢子繁殖，也能靠枝条断裂克隆扩张。潮湿时孢子萌发成丝状原丝体，再长出配子体（就是常见的绿毯）。精子需水游去受精，所以它离不开湿润。干旱时它能干缩假死，遇水复绿，是顽强的地毯战士。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "苔藓本事",
+          "items": [
+            "无维管、无真根，全身吸水。",
+            "分泌酸助岩石风化，启动成土。",
+            "孢子繁殖，需水受精。",
+            "耐旱可假死，遇水复活。",
+            "保水固土，是微型海绵地毡。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_年轮密码",
+      "title": "树木年轮会说话",
+      "tags": [
+        "植物",
+        "年轮",
+        "气候"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "年轮",
+        "url": "https://baike.baidu.com/item/%E5%B9%B4%E8%BD%AE",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "年轮怎么来的？",
+          "content": "温带树木春夏天暖水足，长出的木质疏松色浅；秋冬慢长，色深致密。一年一轮深浅环，就是年轮。数轮知树龄，轮宽窄还能反映当年雨水、温度——宽轮多半雨水好，窄轮可能干旱或冷。年轮像树的日记。",
+          "action_hint": "左右滑动看树日记 ➔",
+          "citation_anchor": "年轮形成"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "热带树有年轮吗？（点击翻转）",
+          "front_text": "年年都长轮吗？",
+          "back_text": "在明显有旱雨季或寒暑交替的地方，年轮清晰；在终年温暖湿润的热带，生长节律不明显，年轮常模糊甚至看不出。所以不是所有树都整齐记年，年轮主要在有季节变化的地区好用。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "年轮的用途",
+          "items": [
+            "数轮知树龄。",
+            "轮宽窄推测历史气候（旱涝冷暖）。",
+            "偏宽或受伤记录火灾、虫灾。",
+            "同区域古树轮可拼气候档案。",
+            "木材鉴定、考古断代也用得上。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_果实变甜",
+      "title": "果实成熟为何变甜",
+      "tags": [
+        "植物",
+        "果实",
+        "生理"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "果实",
+        "url": "https://baike.baidu.com/item/%E6%9E%9C%E5%AE%9E",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "青果为什么变甜？",
+          "content": "未熟果实常酸涩，是淀粉多、单宁（涩味）重、有机酸多，本意是防被提前吃掉。成熟时植物把淀粉转成糖、分解单宁和酸，并合成香气与色素，变得甜香可口，吸引动物来吃、顺带把种子带走播撒。甜，是植物请快递员的酬劳。",
+          "action_hint": "左右滑动看后熟 ➔",
+          "citation_anchor": "成熟生理"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "香蕉为什么放熟？（点击翻转）",
+          "front_text": "为什么青香蕉能放熟？",
+          "back_text": "果实成熟受一种气体激素乙烯调控。香蕉、苹果等会自己释放乙烯催熟，青果摘下后继续呼吸、积累乙烯就慢慢变黄变甜；放个苹果进袋子能加速同伙成熟，正是利用乙烯。所以捂熟是有化学依据的。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "为什么有的果越放越面？",
+          "streaming_content": "像猕猴桃、柿子、梨，采后还在后熟：淀粉转糖、果胶软化、单宁降解。硬果放几天变软甜，是靠自身乙烯和酶推动。但一旦过熟，细胞壁崩太多就发面发烂。把握乙烯和温度，人类能把青果调度成好果。",
+          "citation_anchor": "后熟作用"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_落叶树",
+      "title": "树叶秋天为何掉",
+      "tags": [
+        "植物",
+        "落叶",
+        "季节"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "落叶",
+        "url": "https://baike.baidu.com/item/%E8%90%BD%E5%8F%B6",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "树为什么秋天落叶？",
+          "content": "温带冬天冷、土水冻住根吸不上，留叶子反而会被冻坏、蒸腾失水。于是树在叶柄基部形成离层，主动落叶，进入休眠省水省能。落叶前把叶绿素拆掉、回收养分，叶黄素、胡萝卜素显出来，于是变黄；有些树合成花青素则变红。",
+          "action_hint": "左右滑动看离层 ➔",
+          "citation_anchor": "落叶原因"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "红叶是怎么红的？（点击翻转）",
+          "front_text": "叶子变红靠什么？",
+          "back_text": "黄叶多是叶绿素退去后本来的黄橙色素露脸；红叶则靠秋天新合成的花青素（在叶里、受光和糖积累诱导）。花青素或能护叶、延缓衰老、甚至防晒抗氧化。所以霜叶红于二月花是植物在告别前的最后一层化学妆。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "落叶三问",
+          "items": [
+            "冬寒缺水，落叶休眠保命。",
+            "叶柄生离层，主动脱落。",
+            "叶绿素回收，黄红显色退场。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_蘑菇非植物",
+      "title": "蘑菇不是植物",
+      "tags": [
+        "植物",
+        "真菌",
+        "分类"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "真菌",
+        "url": "https://baike.baidu.com/item/%E7%9C%9F%E8%8F%8C",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "compare_card",
+          "title": "蘑菇是植物吗？",
+          "wrong": "蘑菇长在土里、不会动，当然是植物。",
+          "right": "蘑菇属于真菌界，不是植物。它不会光合（没叶绿素），靠分泌酶分解有机物、吸收营养，细胞壁成分是几丁质而非纤维素。与植物、动物并列成独立界。所以野菜菌类虽常被一起说，科学上是两家人。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "蘑菇是真菌的什么？",
+          "content": "我们吃的蘑菇多是其生殖结构（子实体），像果实体；地下是丝状的菌丝体，铺在腐木、土壤里默默分解、吸收。条件合适时菌丝才冒出子实体散孢子。所以你看到的小伞，只是庞大地下菌网冒头的一角。",
+          "action_hint": "左右滑动看菌丝体 ➔",
+          "citation_anchor": "真菌结构"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "真菌有什么用？（点击翻转）",
+          "front_text": "真菌除了吃还有用吗？",
+          "back_text": "大有用：分解枯木落叶，是生态清道夫；和树根共生（菌根）帮植物吸水吸肥；酿酱、发面、制奶酪靠它；青霉素等抗生素来自真菌；当然也有致病种类。它默默撑起物质循环，是地球运转的隐形功臣。"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_睡莲昼开夜合",
+      "title": "睡莲白天开晚上合",
+      "tags": [
+        "植物",
+        "水生植物",
+        "感夜"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "睡莲",
+        "url": "https://baike.baidu.com/item/%E7%9D%A1%E8%8E%B2",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "睡莲也追太阳？（点击翻转）",
+          "front_text": "睡莲和向日葵一样追日？",
+          "back_text": "不同。睡莲是感夜性：白天开花、傍晚合拢，主要对光照和温度起反应，不是跟着太阳转头。它合拢能护住里面的花蕊、减少夜冷与失水。所以它是定时开关，不是追光族。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它为什么白天开？",
+          "content": "白天开吸引蜜蜂、甲虫等传粉者来探访，完成授粉；夜里合上保护花器、保暖。光照强时花瓣细胞膨压变化撑开，傍晚光弱温降就收拢。这种节律是植物对昼夜的生物钟反应，叫感夜运动。",
+          "action_hint": "左右滑动看感夜运动 ➔",
+          "citation_anchor": "感夜性"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "睡莲小知识",
+          "items": [
+            "昼开夜合是感夜性，非向光性。",
+            "开合由光照温度调控细胞膨压。",
+            "白天招虫传粉，夜里护花。",
+            "与荷不同科，叶多浮水或微挺。",
+            "王莲叶大能载小孩，是睡莲近亲。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_风媒虫媒",
+      "title": "花怎么找媒人",
+      "tags": [
+        "植物",
+        "传粉",
+        "花"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "传粉",
+        "url": "https://baike.baidu.com/item/%E4%BC%A0%E7%B2%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "虫媒花和风媒花区别？",
+          "content": "虫媒花用颜色、香味、花蜜讨好蜂蝶，通常大而艳、有蜜；风媒花不靠虫，靠风撒粉，多小而不显眼、无香无蜜，却产海量轻花粉（如杨树、水稻、玉米）。一个请客，一个撒网，是植物拉拢不同快递员的两套策略。",
+          "action_hint": "左右滑动看两类花 ➔",
+          "citation_anchor": "传粉方式"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "玉米的花粉靠风？（点击翻转）",
+          "front_text": "庄稼也靠风传粉？",
+          "back_text": "对，玉米是风媒：雄花序在顶、雌花序（玉米须）在腰，风把雄花粉吹到雌穗的须上受精。所以种玉米要通风、密度合理，否则授粉差、缺粒。水稻、小麦、桦树、杨树也都靠风，花粉多到能成花粉雨。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "传粉方式",
+          "items": [
+            "虫媒：色香蜜俱全，精准投送。",
+            "风媒：花粉海量轻盈，广撒网。",
+            "鸟媒：红喇叭状，吸引蜂鸟等。",
+            "水媒：少数水生植物靠水流。",
+            "自花或闭花：不依赖外媒也能结籽。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_种子旅行",
+      "title": "种子怎么去远方",
+      "tags": [
+        "植物",
+        "种子",
+        "传播"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "种子传播",
+        "url": "https://baike.baidu.com/item/%E7%A7%8D%E5%AD%90%E4%BC%A0%E6%92%AD",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "list_card",
+          "title": "种子传播的几种方式",
+          "items": [
+            "风媒：带绒毛（蒲公英）或翅（枫）随风飘。",
+            "动物：钩刺挂毛（苍耳）、果肉被吃后排泄（樱桃）。",
+            "弹射：豆荚晒干炸开，把籽弹出去。",
+            "水：椰子随海流漂到岛上发芽。",
+            "自身重力：果实落周，靠动物踩踏滚动。"
+          ]
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "蒲公英怎么飞？",
+          "content": "蒲公英的种子顶端长一簇冠毛，像小降落伞，风一吹就带着种子远行，落哪儿长哪儿。轻、大表面积、低密度，让它随风飘很远。这是风播的经典设计：把降落伞绑在种子上，免费搭风车环游。",
+          "action_hint": "左右滑动看降落伞 ➔",
+          "citation_anchor": "风播"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "苍耳为什么粘裤腿？（点击翻转）",
+          "front_text": "苍耳总粘人是什么原理？",
+          "back_text": "苍耳果实有倒钩刺，能勾住动物皮毛或人的衣物，被带到远处才掉。它不靠好吃，而靠搭便车。人类衣服的魔术贴（Velcro）就是受这种倒钩启发发明的——植物又一次当了工程师的师傅。"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_红豆杉抗癌",
+      "title": "红豆杉与紫杉醇",
+      "tags": [
+        "植物",
+        "裸子植物",
+        "药用"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "红豆杉",
+        "url": "https://baike.baidu.com/item/%E7%BA%A2%E8%B1%86%E6%9D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "红豆杉为什么珍贵？",
+          "content": "红豆杉（紫杉）是一类古老裸子植物，从中提取的紫杉醇（paclitaxel）是重要抗癌药成分，能干扰癌细胞分裂。因天然含量极低、生长慢，曾遭滥采。现多用半合成和人工栽培解决，既保树种又供药。它是树上长出的抗癌药。",
+          "action_hint": "左右滑动看紫杉醇 ➔",
+          "citation_anchor": "药用价值"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它长什么样？（点击翻转）",
+          "front_text": "红豆杉和杉树是一家？",
+          "back_text": "它是裸子植物，叶扁线形、常绿；种子包在红色肉质假种皮里（像小红豆露半边），所以叫红豆杉。它生长极慢、寿命长，材质细密。雌雄异株，红果其实是种子的外衣而非真果。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "紫杉醇咋来的？",
+          "streaming_content": "早期紫杉醇全从树皮提取，剥一棵老树才得一点、树还死，显然不可持续。后来科学家找到从枝叶里含量较高的前体、再半合成，或用细胞培养、种植园供料。如今红豆杉既受保护又被合理利用，提醒我们：良药不能靠砍光自然资源来换。",
+          "citation_anchor": "资源利用"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_水稻",
+      "title": "水稻是怎么来的",
+      "tags": [
+        "植物",
+        "农作物",
+        "粮食"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "水稻",
+        "url": "https://baike.baidu.com/item/%E6%B0%B4%E7%A8%BB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "水稻为什么泡水里？",
+          "content": "水稻是湿地作物，幼苗和分蘖期常灌浅水保温、抑草、供肥。它本就适应淹水环境，有气道把氧送到根。但也不是越泡越好，成熟期要排水晾田让籽实饱满。所以水田是人为管理的结果，不是它天生要淹死自己。",
+          "action_hint": "左右滑动看气道 ➔",
+          "citation_anchor": "水生适应"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "一粒米是种子？（点击翻转）",
+          "front_text": "我们吃的米饭是种子的哪部分？",
+          "back_text": "稻谷去壳是糙米，再碾掉种皮、糊粉层成白米，主要吃的是胚乳（存营养喂胚）。胚芽在精米里常被碾掉。所以一碗白饭大多是胚乳，维生素矿物质多在被去掉的外层——这也是糙米更全的原因。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "水稻要点",
+          "items": [
+            "禾本科，与小麦、玉米是亲戚。",
+            "喜湿，有气道把氧送根。",
+            "谷粒去壳为米，精米多为胚乳。",
+            "分蘖、抽穗、灌浆，靠水肥管理。",
+            "全球主粮，养活数十亿人。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_芦荟",
+      "title": "芦荟为什么黏",
+      "tags": [
+        "植物",
+        "多肉",
+        "家用"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "芦荟",
+        "url": "https://baike.baidu.com/item/%E8%8A%A6%E8%8D%BB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "芦荟胶为什么黏？（点击翻转）",
+          "front_text": "掰开芦荟为什么滑溜溜？",
+          "back_text": "芦荟叶肉是储水的薄壁组织，掰开流出透明凝胶，含多糖、水和少量活性物，黏稠又保湿。它原产干旱，叶里存水供旱时用，那层胶就是内置水库。所以涂脸觉得润，本质是植物存的水被你借走了。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "芦荟能治烫伤吗？",
+          "content": "芦荟凝胶能舒缓轻度晒伤、小烫伤和干燥，给人清凉保湿感，但它不是神药，深二度以上烫伤、伤口感染不能只靠它，须就医。且部分人过敏、口服芦荟泻下成分可能伤身。当润肤辅助可以，当万能药就过头了。",
+          "action_hint": "左右滑动看正确使用 ➔",
+          "citation_anchor": "使用价值"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "芦荟小档案",
+          "items": [
+            "多肉，叶厚储水，耐旱。",
+            "凝胶多糖保湿，适合轻度晒后。",
+            "品种多，食用或药用需认品种。",
+            "外伤感染、深烫伤别只靠它。",
+            "家里好养，但猫狗误食某些种会不适。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_爬山虎吸盘",
+      "title": "爬山虎怎么爬墙",
+      "tags": [
+        "植物",
+        "攀援",
+        "绿化"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "爬山虎",
+        "url": "https://baike.baidu.com/item/%E7%88%AC%E5%B1%B1%E8%99%8E",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "爬山虎怎么粘墙上？",
+          "content": "爬山虎（地锦）靠卷须顶端的小吸盘牢牢吸附墙面、岩石，不需支架也能垂直上爬。吸盘分泌黏物并物理咬合，能承受一定拉力。它不钻墙、不伤结构（适度），是常用的垂直绿化，夏天遮阴降温、秋冬红叶好看。",
+          "action_hint": "左右滑动看吸盘 ➔",
+          "citation_anchor": "攀援结构"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它会毁墙吗？（点击翻转）",
+          "front_text": "爬山虎爬满墙会拆房子？",
+          "back_text": "多数情况下它只是附着，不钻缝、不吸墙的养分；但老藤若钻进裂缝、长期潮湿会加速石材风化，老旧墙要留意。健康实墙通常没事，反而帮隔热。所以毁墙说法夸张，关键看墙面状况和及时修剪。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "还有哪些会爬？",
+          "streaming_content": "攀援植物各显神通：牵牛、茑萝靠茎缠绕；葡萄、丝瓜靠卷须；蔷薇、悬钩子靠钩刺；常春藤靠气生根贴壁。爬山虎是吸盘派代表。它们把立体空间利用起来，是阳台、围墙、立交桥绿化的主力，既美又降温。",
+          "citation_anchor": "攀援类型"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_面包树",
+      "title": "树上长面包",
+      "tags": [
+        "植物",
+        "热带",
+        "食物"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "面包树",
+        "url": "https://baike.baidu.com/item/%E9%9D%A2%E5%8C%85%E6%A0%91",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "真有面包树？（点击翻转）",
+          "front_text": "树上能结面包？",
+          "back_text": "热带确有面包树（Artocarpus），结出硕大聚合果，淀粉多。果实烤熟后松软像面包，所以得名。它一棵能结很多果，是太平洋、东南亚一些岛民的传统主食之一，被称为天然粮仓树。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它和菠萝蜜啥关系？",
+          "content": "面包树和菠萝蜜是同属（波罗蜜属）近亲，都结大型聚合果、都长在树干或粗枝上（茎花）。区别在于面包树果偏淀粉作粮、菠萝蜜果更甜香作果。它们都靠大树直接挂果，是热带树上食堂的两兄弟。",
+          "action_hint": "左右滑动看两兄弟 ➔",
+          "citation_anchor": "分类关系"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "面包树要点",
+          "items": [
+            "热带乔木，聚合果富含淀粉。",
+            "烤食似面包，是部分岛民主粮。",
+            "与菠萝蜜同属近亲。",
+            "单株产量高，号称粮仓树。",
+            "喜热畏霜，只长在热带。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_见血封喉",
+      "title": "箭毒木的毒",
+      "tags": [
+        "植物",
+        "有毒",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "见血封喉",
+        "url": "https://baike.baidu.com/item/%E8%A7%81%E8%A1%80%E5%B0%81%E5%96%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "见血封喉有多毒？",
+          "content": "见血封喉（箭毒木）是桑科剧毒树，树皮、汁液含强心类毒素，伤口沾到血能迅速致死，古人常涂在箭头上狩猎，故名。它长在热带雨林，树形普通却碰不得。提醒：野外不识的树汁千万别碰，毒性植物低调而危险。",
+          "action_hint": "左右滑动看剧毒 ➔",
+          "citation_anchor": "毒性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它毒在哪？（点击翻转）",
+          "front_text": "为什么叫见血封喉？",
+          "back_text": "它的白色树液含强心苷，一旦进入血液会扰乱心跳、致人快速死亡，所以见血（伤口入血）才封喉。完整树皮碰皮肤不一定有事，但破损处极险。它是植物化学防御的极端例子——用毒保命。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "有毒植物警示",
+          "items": [
+            "见血封喉：汁液入血剧毒，雨林常见。",
+            "夹竹桃：全株有毒，园艺也需小心。",
+            "毒蘑菇：误食可致命，不识不吃。",
+            "滴水观音：汁液刺激皮肤口腔。",
+            "原则：野外观赏不折、不尝、不碰汁。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_薰衣草驱蚊",
+      "title": "薰衣草真驱蚊吗",
+      "tags": [
+        "植物",
+        "香草",
+        "驱虫"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "薰衣草",
+        "url": "https://baike.baidu.com/item/%E8%96%B0%E8%A1%A3%E8%8D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "薰衣草为什么香？",
+          "content": "薰衣草等香草含挥发性精油（如芳樟醇、乙酸芳樟酯），气味来自叶片腺体。这种气味对人舒缓，对部分昆虫有驱避作用。它原产地中海，耐旱喜阳，是著名的香氛植物，花穗紫蓝、晒干可香衣香枕。",
+          "action_hint": "左右滑动看精油 ➔",
+          "citation_anchor": "香味来源"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它真能驱蚊？（点击翻转）",
+          "front_text": "种盆薰衣草蚊子就不来？",
+          "back_text": "有帮助但不神。揉碎叶子散发的气味能赶走部分蚊虫，精油制品也更有效；但单靠一盆静态植物覆盖范围有限，蚊子多了照样来。它算辅助驱虫，别当成蚊香替代。真正防蚊还要清积水、用纱窗和合格驱蚊剂。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "常见驱蚊植物",
+          "items": [
+            "薰衣草：香精油驱避部分虫。",
+            "薄荷：清凉味，部分虫不喜。",
+            "驱蚊草（香叶天竺葵）：气味驱避。",
+            "艾草：燃烧熏烟传统驱虫。",
+            "都属辅助，不能替代常规防蚊。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_地衣是两家合体",
+      "title": "地衣是真菌和藻的合体",
+      "tags": [
+        "植物",
+        "地衣",
+        "共生"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "地衣",
+        "url": "https://baike.baidu.com/item/%E5%9C%B0%E8%A1%A3",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "地衣是什么？",
+          "content": "地衣不是单一植物，而是真菌和藻类（或蓝细菌）的共生体：真菌提供支架和保护、吸水矿；藻类光合造糖养双方。它们合体成壳状、叶状、枝状，贴在石头、树皮、冻原上，能在极端贫瘠处存活，是岩石风化的先锋。",
+          "action_hint": "左右滑动看共生体 ➔",
+          "citation_anchor": "共生本质"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它为什么耐饿？（点击翻转）",
+          "front_text": "地衣怎么在光秃处活？",
+          "back_text": "因为它两个人搭伙：真菌耐旱耐晒、守住水分矿盐；藻类在里头光合产粮。彼此依存，单独难活。地衣长得极慢，却极耐贫，是极地、高山、荒漠里少有的绿地毯，也被用来监测空气污染（对二氧化硫敏感）。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "地衣有啥用？",
+          "streaming_content": "它既是极地驯鹿的冬粮（枝状地衣），也是岩石成土的先锋，还能当染料、香料（如驯鹿苔、石蕊）。更妙的是它能吃空气里的污染物，因而被当成环境指示钟。看似不起眼的壳斑，其实是真菌与藻类写下的共生说明书。",
+          "citation_anchor": "用途价值"
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_巨杉大树",
+      "title": "最高的树有多高",
+      "tags": [
+        "植物",
+        "世界之最",
+        "针叶树"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "北美红杉",
+        "url": "https://baike.baidu.com/item/%E5%8C%97%E7%BE%8E%E5%B7%9E%E7%BA%A2%E6%9D%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "世界上最高的树？（点击翻转）",
+          "front_text": "现存最高的树能多高？",
+          "back_text": "是北美红杉（海岸红杉 Sequoia），有记录个体亥伯龙（Hyperion）高度超过100米，相当于三十多层楼。它长在加州湿润海岸，长得高是为了抢阳光、避竞争。但太高也受水分输送极限约束，不会无限长。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "水怎么送到百米顶？",
+          "content": "红杉靠根系吸水、蒸腾拉力把水柱一路拉到冠顶，配合粗大树干里的导管和常绿针叶减少失水，把水抽上几十层楼。高而不倒还靠极粗壮的基干和深根。它把高玩到植物极限，却仍被物理规律（水柱断裂风险）封顶。",
+          "action_hint": "左右滑动看抽水柱 ➔",
+          "citation_anchor": "水分运输"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "大树之最",
+          "items": [
+            "最高：海岸红杉，超百米。",
+            "最大（体积）：巨杉，树干极粗。",
+            "最粗：猴面包树、墨西哥图莱树等以周长惊人。",
+            "最老：狐尾松，单株超4800年。",
+            "高、粗、老，植物各有冠军。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants_topic_夜来香",
+      "title": "有些花专在晚上香",
+      "tags": [
+        "植物",
+        "花香",
+        "传粉"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "夜来香",
+        "url": "https://baike.baidu.com/item/%E5%A4%9C%E6%9D%A5%E9%A6%99",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "为什么夜来香晚上才香？（点击翻转）",
+          "front_text": "夜来香白天为什么不香？",
+          "back_text": "它靠蛾类等夜行昆虫传粉，于是把香味和开放安排在傍晚到夜间，正好接单。白天开的花多请蜂蝶、靠视觉；夜里开的多靠气味请蛾，是植物和夜班快递员的默契。所以夜来香是生物钟定好的夜场。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "花香从哪来？",
+          "content": "花香来自花瓣等的挥发油腺，在温度适宜、昆虫活跃时释放。不同花用不同香气组合写广告：白天艳香请蝶、夜里浓香请蛾、腐臭请蝇（如大王花）。气味是植物和传粉者之间的气味短信，比颜色传得更远。",
+          "action_hint": "左右滑动看气味短信 ➔",
+          "citation_anchor": "花香传粉"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "夜间花香植物",
+          "items": [
+            "夜来香：傍晚放香请蛾。",
+            "月光花：夜开晨合，白喇叭状。",
+            "昙花：夜间短开，昙花一现。",
+            "茉莉：部分品种夜香浓。",
+            "共同：靠气味对接夜行传粉者。"
+          ]
+        }
+      ]
     }
   ]
 }

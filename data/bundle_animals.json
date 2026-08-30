@@ -361,6 +361,1110 @@
           "citation": "概述"
         }
       ]
+    },
+    {
+      "id": "animals_topic_大象的长鼻子",
+      "title": "大象的鼻子有多万能",
+      "tags": [
+        "动物",
+        "哺乳动物",
+        "科普"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "象",
+        "url": "https://baike.baidu.com/item/%E8%B1%A1",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "大象的鼻子能做什么？",
+          "content": "象鼻既是鼻子又是手。它由数万块肌肉组成、几乎没有骨头，能闻、能吸水喷、能卷起重物、能摘树叶、还能轻轻抚摸同伴。一次能吸好几升水，但不会把水吸进肺里——它先吸水存鼻腔，再喷进嘴。象鼻的灵敏度甚至能捡起一粒花生。",
+          "action_hint": "左右滑动看象鼻的多种技能 ➔",
+          "citation_anchor": "形态与功能"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它为什么这么灵活？",
+          "streaming_content": "象鼻里没有骨骼支撑，全靠肌肉束像液压臂一样协调动作。鼻腔末端有手指状的鼻突（非洲象上唇和鼻尖各一个，亚洲象只有一个），能精准捏取。神经极丰富，触觉堪比人的指尖。失去象鼻对大象是致命的，所以母象会花很久教小象控制力气。",
+          "citation_anchor": "肌肉结构"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "大象用鼻子喝水会呛到吗？（点击翻转）",
+          "front_text": "大象吸水时水会进肺吗？",
+          "back_text": "不会。它把水存在鼻腔的空腔里，靠肌肉封口不往肺里走，然后卷到嘴边喷出咽下。一次可存数升。这也说明象鼻本质是加长加粗的上唇加鼻子，结构之巧让人称奇。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_猫的胡须",
+      "title": "猫的胡须是雷达",
+      "tags": [
+        "动物",
+        "猫",
+        "感官"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "猫",
+        "url": "https://baike.baidu.com/item/%E7%8C%AB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "猫的胡须有什么用？",
+          "content": "胡须（触须）是猫的超敏感触觉毛，根部深入皮肤、连着丰富神经。它能感知空气流动的微弱变化，帮猫在黑暗里描出前方障碍和猎物的轮廓。胡须长度大约对应猫身体最窄能通过的宽度，所以猫常先用胡须丈量缝隙能不能钻。",
+          "action_hint": "左右滑动看胡须怎么当卡尺 ➔",
+          "citation_anchor": "触须功能"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "胡须能剪吗？（点击翻转）",
+          "front_text": "把猫胡须剪短会怎样？",
+          "back_text": "千万别剪。剪掉胡须猫会失去空间感知，东撞西碰、不敢跳，像被蒙住眼。胡须还会定期自然脱落更换，那是正常的。胡须末端有振动感受器，能捕捉极轻的气流与振动，是猫的夜视辅助雷达。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "关于胡须的3个冷知识",
+          "items": [
+            "胡须不只长嘴边，眼睛上方、腮帮、前爪背面也有触须。",
+            "胡须根部血流丰富，情绪激动时会微微颤动。",
+            "胡须长度约等于猫身体最窄可通过宽度，相当于自带卡尺。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_蝙蝠回声定位",
+      "title": "蝙蝠靠回声看路",
+      "tags": [
+        "动物",
+        "蝙蝠",
+        "回声定位"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "蝙蝠",
+        "url": "https://baike.baidu.com/item/%E8%9D%99%E8%9D%A0",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "streaming_text",
+          "title": "蝙蝠为什么倒挂着睡？",
+          "streaming_content": "蝙蝠后腿细小、翅膀大，地上起飞困难，倒挂能从高处直接松手滑翔。倒挂时肌腱锁住爪子，几乎不费力气，即使睡着了也不掉。很多蝙蝠白天在洞穴或屋檐下倒挂休息，夜里才出动。",
+          "citation_anchor": "栖息习性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "蝙蝠怎么在黑里抓虫？",
+          "content": "它用回声定位（声呐）：嘴里或鼻子发出人耳听不到的高频超声波，碰到虫子或墙壁后反射回来，蝙蝠用耳朵接收，根据回声的时间差和强弱判断目标的位置、大小、距离。它一秒能处理几十次回声，在完全无光的环境里也能精准捕蚊，是夜空里的活雷达。",
+          "action_hint": "左右滑动看声呐原理 ➔",
+          "citation_anchor": "回声定位"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "蝙蝠是鸟吗？",
+          "wrong": "蝙蝠会飞，所以是鸟。",
+          "right": "蝙蝠是哺乳动物，不是鸟。它胎生、哺乳、长皮毛，翅膀是皮膜包着延长的指骨；鸟是卵生、长羽毛、翅为羽。会飞不等于鸟——蝙蝠是唯一真正能持续飞行的哺乳动物。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_企鹅不会飞",
+      "title": "企鹅为什么不上天",
+      "tags": [
+        "动物",
+        "鸟类",
+        "极地"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "企鹅",
+        "url": "https://baike.baidu.com/item/%E4%BC%81%E9%B9%85",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "企鹅是鸟却不会飞？（点击翻转）",
+          "front_text": "企鹅明明长着翅膀为什么飞不起来？",
+          "back_text": "企鹅的翅膀演化成鳍状肢，更适合在水里划水而非空中拍飞。它身体圆胖、骨头较重（不像飞鸟骨头中空），利于下潜却不利于起飞。为了当高效的游泳健将，它放弃了飞行——在海里，它的翅膀每秒能划出惊人速度。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "list_card",
+          "title": "企鹅的水下本事",
+          "items": [
+            "靠鳍状翅膀像翅膀一样飞过海水，游速可观。",
+            "羽毛密而短，层层叠叠防水又保暖，皮下还有厚脂肪。",
+            "多数企鹅潜几十米捕食，个别种类能潜更深。",
+            "用肚子在冰上滑雪（tobogganing），省力又好玩。"
+          ]
+        },
+        {
+          "sub_id": "s3",
+          "layout": "qa_card",
+          "title": "企鹅生活在很冷的地方吗？",
+          "content": "最出名的是南极企鹅，但其实企鹅大多分布在南半球，从南极到赤道附近都有（加拉帕戈斯企鹅甚至生活在热带海域）。关键是它们都适应海洋生活：靠冷水里的鱼、虾、鱿鱼为食，靠厚羽和脂肪御寒。不是所有企鹅都住冰雪里。",
+          "action_hint": "左右滑动看企鹅的分布 ➔",
+          "citation_anchor": "分布与习性"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_蛇蜕皮",
+      "title": "蛇为什么要蜕皮",
+      "tags": [
+        "动物",
+        "爬行动物",
+        "蜕皮"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "蛇",
+        "url": "https://baike.baidu.com/item/%E8%9B%87",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "蛇为什么要蜕皮？",
+          "content": "蛇的鳞甲不会随身体长大，所以定期把旧表皮整张蜕掉，露出下面更大的新皮，相当于换衣服。幼蛇长得快，蜕皮更勤；成蛇一年也蜕几次。蜕皮前眼睛会蒙上一层浊膜，看起来发白、视线模糊，这时它不爱动、较脆弱。",
+          "action_hint": "左右滑动看蜕皮前后 ➔",
+          "citation_anchor": "蜕皮机制"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它是怎么脱衣的？",
+          "streaming_content": "蛇先在粗糙石头或树干上摩擦，把嘴边的旧皮蹭破，然后慢慢从破口把整张皮由头到尾翻脱下来，像翻袜子。新皮柔软光亮、颜色更鲜。整个过程可能花几小时到几天。蜕皮也能帮它甩掉身上的寄生虫，是清洁加生长两不误。",
+          "citation_anchor": "蜕皮过程"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "蛇的鳞片有什么用？（点击翻转）",
+          "front_text": "蛇满身鳞片只是为了好看吗？",
+          "back_text": "鳞片是天然铠甲，防水、耐磨、减少摩擦，让蛇能在沙地、草丛里顺畅滑行；腹鳞像履带一格格抓住地面，配合肌肉推进前进。不同鳞片排列还帮科学家辨别种类。所以鳞片既是护甲也是鞋底。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_萤火虫发光",
+      "title": "萤火虫为什么发光",
+      "tags": [
+        "动物",
+        "昆虫",
+        "发光"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "萤火虫",
+        "url": "https://baike.baidu.com/item/%E8%90%A4%E7%81%AB%E8%99%AB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "萤火虫的光从哪来？（点击翻转）",
+          "front_text": "萤火虫肚子里装了小灯泡吗？",
+          "back_text": "它的腹部末端有发光器，里面有荧光素和荧光素酶，遇到氧气就会发生化学反应，把能量几乎全变成光、极少变热，叫冷光。不同种类闪光的节奏、颜色（黄绿到淡黄）不同，像在夜空里发摩斯电码。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它发光干嘛？",
+          "content": "主要是谈恋爱：成虫用特定闪烁节奏吸引同类、辨别对方是不是自己种。幼虫也会发光，更多是警示天敌我不好吃。有些雌虫还会模仿别种的闪光骗雄虫过来吃掉。所以那点光，既是情书也是防身术。",
+          "action_hint": "左右滑动看闪光密码 ➔",
+          "citation_anchor": "发光意义"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "关于萤火虫的真相",
+          "items": [
+            "发的是冷光，几乎不产生热，效率极高。",
+            "光由荧光素加荧光素酶加氧气的化学反应产生。",
+            "幼虫水生或半水生，以螺类、小虫为食。",
+            "成虫多数寿命很短，发光主要为了交配。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_海马爸爸怀孕",
+      "title": "海马爸爸来带娃",
+      "tags": [
+        "动物",
+        "海洋生物",
+        "繁殖"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "海马",
+        "url": "https://baike.baidu.com/item/%E6%B5%B7%E9%A9%AC",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "真的是爸爸生宝宝吗？",
+          "content": "在动物界很罕见：海马是雄性怀孕。雌海马把卵产进雄海马腹部的育儿袋里，雄海马受精并一直带着，袋内提供氧气和营养，几周后分娩出小海马。所以找老公负责怀胎，是海马最反常规的设定。",
+          "action_hint": "左右滑动看育儿袋 ➔",
+          "citation_anchor": "繁殖方式"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "为什么是爸爸带？（点击翻转）",
+          "front_text": "海马为什么让雄的育儿？",
+          "back_text": "一种解释是分工增效：雌海马省下育幼的能量能更快产下新一批卵，雄海马专心孵化，整体繁殖更快。育儿袋还能保护卵、提高存活。虽然男人生娃在脊椎动物里极少见，但在海龙科（海马、海龙）里是常态。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "小海马出生什么样？",
+          "streaming_content": "雄海马临产时会收缩育儿袋，把几十到上千只（视种类）迷你小海马像吐泡泡一样喷出来，它们一出生就能自己游、自己吃，几乎不靠父母。刚出生只有几毫米到一厘米，透明娇小。成活率靠数量堆出来，多数会被其他鱼吃掉。",
+          "citation_anchor": "幼体发育"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_蜗牛的牙齿",
+      "title": "蜗牛牙齿比鲨鱼多",
+      "tags": [
+        "动物",
+        "软体动物",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "蜗牛",
+        "url": "https://baike.baidu.com/item/%E5%9C%BA%E7%89%9B",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "蜗牛有牙齿吗？（点击翻转）",
+          "front_text": "软软的蜗牛怎么吃东西？",
+          "back_text": "有，而且多到惊人。蜗牛嘴里有叫齿舌的带状器官，上面排满细小角质齿，像一把不断更新的锉刀，用来刮磨叶子、藻类和腐殖质。某些蜗牛齿舌上的牙齿总数能上万，比鲨鱼（约几十到几百颗）多得多。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它怎么用牙齿吃东西？",
+          "content": "蜗牛不是咬，而是用齿舌反复刮刷食物表面，把植物刮成糊状送进咽喉。齿舌磨损后会从后面不断补给新齿，所以一辈子都在换牙。它进食慢，但那把微型锉刀非常耐用，连薄薄的钙壳也能慢慢啃。",
+          "action_hint": "左右滑动看齿舌 ➔",
+          "citation_anchor": "取食结构"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "蜗牛小档案",
+          "items": [
+            "属于软体动物，和蛞蝓（鼻涕虫）是近亲。",
+            "身体分泌黏液减少爬行摩擦、保湿、留信息。",
+            "多数陆生蜗牛雌雄同体，交配后双方都能产卵。",
+            "齿舌上的小齿数量可达上万，是牙最多的有力竞争者。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_鸵鸟的大眼睛",
+      "title": "鸵鸟眼大过脑",
+      "tags": [
+        "动物",
+        "鸟类",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "鸵鸟",
+        "url": "https://baike.baidu.com/item/%E9%B8%B5%E9%B8%9F",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "compare_card",
+          "title": "鸵鸟把头埋沙里？",
+          "wrong": "遇到危险鸵鸟会把头埋进沙子里装死。",
+          "right": "这是误解。鸵鸟不会真把头埋沙。它有时低头啄食或把蛋埋进沙坑孵化，从远处看像埋头。真遇险它会撒腿就跑，奔跑速度很快，或趴低身子借体色隐蔽。埋头痛只是童话。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "为什么说它眼比脑大？",
+          "content": "鸵鸟是现存最大的鸟，眼球直径能到5厘米上下，比它自己的脑子还大，视觉极佳，能在地平线上远远发现狮子等天敌。相应地它脑容量小，所以大眼小脑成了经典反差梗。它虽然不会飞，但腿长善跑，是草原上的瞭望塔。",
+          "action_hint": "左右滑动看大眼小脑 ➔",
+          "citation_anchor": "感官特征"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "鸵鸟翅膀干嘛用？（点击翻转）",
+          "front_text": "不会飞，翅膀岂不没用？",
+          "back_text": "翅膀不用于飞，但很有用：求偶时展开炫耀、奔跑时张开当舵和平衡、烈日下替雏鸟遮阴、夜间保暖。它靠粗壮双腿踢敌自卫，一脚力量足以伤人。翅膀是多功能工具，不只是摆设。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_鸭嘴兽",
+      "title": "鸭嘴兽四不像",
+      "tags": [
+        "动物",
+        "哺乳动物",
+        "卵生"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "鸭嘴兽",
+        "url": "https://baike.baidu.com/item/%E9%B8%AD%E5%98%B4%E5%85%BD",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "鸭嘴兽到底是啥？",
+          "content": "它是哺乳动物，却会下蛋；下完蛋像鸟一样孵，孵化后又能像兽一样用乳汁喂崽。它嘴像鸭、脚有蹼、尾巴像河狸，一身拼凑特征。生活在澳大利亚淡水里，是极少数单孔类哺乳动物之一，被称为演化史上的活化石。",
+          "action_hint": "左右滑动看四不像 ➔",
+          "citation_anchor": "分类特征"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它怎么喂奶？（点击翻转）",
+          "front_text": "鸭嘴兽没有乳头怎么哺乳？",
+          "back_text": "母兽腹部有乳腺区，乳汁从皮肤渗出到腹毛上，幼崽趴在妈妈肚子上舔食。而且雄性后脚有带毒的距刺，是少数会下毒的哺乳动物，用于求偶争斗。一身设定都很反常规。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "鸭嘴兽的反常清单",
+          "items": [
+            "哺乳动物却卵生，用蛋孵宝宝。",
+            "没有乳头，乳汁从腹部皮肤渗出。",
+            "雄性后脚有毒距，能刺伤同类。",
+            "靠电感受器在浑浊水里找猎物，嘴像金属探测器。",
+            "幼崽破壳后先长乳牙再换牙，和爬行类有点像。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_北极熊黑皮肤",
+      "title": "北极熊其实很黑",
+      "tags": [
+        "动物",
+        "北极",
+        "哺乳动物"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "北极熊",
+        "url": "https://baike.baidu.com/item/%E5%8C%97%E6%9E%81%E7%86%8A",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "北极熊皮肤是黑的？（点击翻转）",
+          "front_text": "白熊不就该白白净净？",
+          "back_text": "北极熊毛其实是透明中空、把光散射成白色用来伪装；皮肤却是黑色的，能更好吸收阳光热量。所以远看雪白、近看黑肉，是保暖与隐蔽的双重设计。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它怎么在冰天雪地活？",
+          "content": "北极熊靠三层装备御寒：中空透明的毛层隔热、黑色的皮肤吸光、皮下厚脂肪储能保温。它还是顶级猎手，主要捕食海豹，靠嗅觉在冰下很远就能闻到海豹的呼吸孔。游泳也强，能游很远追冰。随海冰减少，它的觅食越来越难。",
+          "action_hint": "左右滑动看三层保暖 ➔",
+          "citation_anchor": "御寒适应"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "它的毛真的会变色吗？",
+          "streaming_content": "正常毛是透明中空，因散射呈白。但脏了、沾油或长期圈养会变黄、变绿（藻类在空心毛里生长）。所以白熊是光学把戏，不是毛里真有白色颜料。这层空心毛像微型保温管，是它抗冻的关键之一。",
+          "citation_anchor": "毛色原理"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_狗的嗅觉",
+      "title": "狗鼻子是超级仪",
+      "tags": [
+        "动物",
+        "狗",
+        "感官"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "狗",
+        "url": "https://baike.baidu.com/item/%E7%8B%97",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "狗的嗅觉有多强？",
+          "content": "狗嗅觉受体数量远超人类，鼻腔结构让吸气时一部分空气专门走嗅觉通道，能分辨极稀的气味。警犬能闻出毒品、爆炸物、甚至某些疾病的气味痕迹。人类靠眼、狗靠鼻，世界对它们来说主要是气味地图。",
+          "action_hint": "左右滑动看气味地图 ➔",
+          "citation_anchor": "嗅觉系统"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "狗为什么爱闻屁股？（点击翻转）",
+          "front_text": "见面闻屁股是不是没礼貌？",
+          "back_text": "对狗来说是交换名片。肛门腺分泌物带着个体身份、性别、健康、情绪等信息，一闻便知对方是谁。这是它们正常的社交礼仪，不是失礼。同理它们也爱闻尿渍、树根来读新闻。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "狗鼻冷知识",
+          "items": [
+            "嗅上皮面积是人的几十倍，受体基因也多得多。",
+            "吸气时分流，让气味长时间停留鼻腔被分析。",
+            "能区分双胞胎气味、追踪数小时前的脚印气味。",
+            "湿鼻子有助于捕捉空气中微粒气味。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_壁虎断尾",
+      "title": "壁虎断尾求生",
+      "tags": [
+        "动物",
+        "爬行动物",
+        "再生"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "壁虎",
+        "url": "https://baike.baidu.com/item/%E5%A3%81%E8%99%8E",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "壁虎尾巴断了还能长？（点击翻转）",
+          "front_text": "尾巴被抓住就完了吗？",
+          "back_text": "壁虎遇袭会自割尾巴——肌肉主动在既定薄弱处断开，断尾还会扭动吸引天敌注意，本体趁机逃。之后能再生出新尾，但再生的多是软骨棒而非原来的脊椎分节，外观也更短钝。这是保命的舍车保帅。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它怎么让尾巴自己断？",
+          "content": "尾巴里有预设的断裂面，遇险时相关肌肉收缩让尾椎间断开，血管会快速收缩止血，所以不太流血。断尾神经暂时活跃，能抽动好一阵，像有生命一样迷惑捕食者。等安全了，壁虎靠储备能量慢慢长出替代尾。",
+          "action_hint": "左右滑动看自割机制 ➔",
+          "citation_anchor": "自割与再生"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "还有哪些动物会自断？",
+          "streaming_content": "除壁虎、蜥蜴，一些蜘蛛、海参、蠕虫也会自割逃生：海参能把内脏吐出缠敌后再生；某些蜥蜴断尾、角蜥喷血吓敌。共同逻辑是丢点不要紧的换条命，属于演化出的应急止损方案。",
+          "citation_anchor": "自割现象"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_蜜蜂舞蹈",
+      "title": "蜜蜂的舞蹈语言",
+      "tags": [
+        "动物",
+        "昆虫",
+        "群体行为"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "蜜蜂",
+        "url": "https://baike.baidu.com/item/%E8%9C%9C%E8%9C%82",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "蜜蜂怎么告诉同伴花在哪？",
+          "content": "发现蜜源的工蜂回巢会跳摇摆舞（waggle dance）：身体走8字、中间直线段摆动，直线方向表示花相对于太阳的角度，摆动时长表示距离远近。同伴看懂后就能飞出去找到那片花。这是用身体动作写的导航坐标。",
+          "action_hint": "左右滑动看8字舞 ➔",
+          "citation_anchor": "舞蹈通讯"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "距离怎么表达？（点击翻转）",
+          "front_text": "蜜蜂怎么说出有多远？",
+          "back_text": "摇摆舞中间那段直线跑的时间越长，说明蜜源越远；越短越近。若食物很近（几米内），它改跳圆圈舞表示就在附近。舞蹈还受气味、质量影响——好蜜源跳得更起劲，招来更多帮手。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "蜂群协作要点",
+          "items": [
+            "侦察蜂先找蜜源，回来用舞报坐标。",
+            "摇摆舞编码方向加距离，圆圈舞表示近。",
+            "工蜂按舞出门，形成集体采蜜流水线。",
+            "蜂巢温度靠扇风、结团来维持，像恒温空调。",
+            "蜂王专职产卵，工蜂包揽一切杂活。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_电鳗放电",
+      "title": "电鳗会放电",
+      "tags": [
+        "动物",
+        "鱼类",
+        "发电"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "电鳗",
+        "url": "https://baike.baidu.com/item/%E7%94%B5%E9%B3%83",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "电鳗真能电人吗？",
+          "content": "能。电鳗（其实是刀鱼近亲，不是真鳗）尾部有特化的发电细胞（电板），像一串生物电池串联，放电可达较高电压，足以击晕猎物、吓退天敌，人碰到也会被电得发麻甚至摔倒。它靠电来雷达探测猎物、再放电制服。",
+          "action_hint": "左右滑动看生物电池 ➔",
+          "citation_anchor": "放电能力"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "它怎么发电？（点击翻转）",
+          "front_text": "鱼身体里哪来的电？",
+          "back_text": "它尾巴肌细胞特化成电板，细胞膜内外离子差在受神经指挥时同步翻转，像无数小电池串并联，整体释放强电流。平时低电用于感知，捕猎时高压用于攻击。它大部分身体就是电池加导线，几乎把内脏挤到前端。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "电鳗会电死自己吗？",
+          "streaming_content": "它放电时靠绝缘材料和保护机制避免自伤，而且电流主要走体外水路击中猎物。多数时候它用低强度电场导航、探物，高压只在关键时刻短促释放。它还能靠电场在浑浊水里看见障碍和猎物，等于自带声呐加电棍二合一。",
+          "citation_anchor": "放电机制"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_拟态章鱼",
+      "title": "拟态章鱼变各种动物",
+      "tags": [
+        "动物",
+        "海洋生物",
+        "拟态"
+      ],
+      "type": "knowledge",
+      "difficulty": 3,
+      "source": {
+        "name": "百度百科",
+        "title": "拟态章鱼",
+        "url": "https://baike.baidu.com/item/%E6%8B%9F%E6%80%81%E7%AB%A0%E9%B1%BC",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "有章鱼能假装别的动物？（点击翻转）",
+          "front_text": "章鱼除了变色还能演戏？",
+          "back_text": "拟态章鱼（mimic octopus）被发现能模仿多种有毒或不好惹的生物外形与动作：把触手并成带状扮海蛇、缩成三角扮比目鱼、展开像狮子鱼。靠变形加变色加行为，把天敌吓退。它是已知少数主动角色扮演的软体动物。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它为什么模仿别人？",
+          "content": "拟态章鱼本身不算顶级战力，靠借威保命：模仿有毒的海蛇、蓑鲉（狮子鱼）等，让捕食者误以为遇到麻烦家伙而绕道。它还能根据威胁类型切换角色，是行为拟态加外形拟态结合的高手。这种灵活伪装在头足类里格外惊人。",
+          "action_hint": "左右滑动看角色切换 ➔",
+          "citation_anchor": "拟态意义"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "拟态章鱼的角色表",
+          "items": [
+            "扮海蛇：把几腕并成两条带状在水中摇摆。",
+            "扮比目鱼：压扁身体浮游、双目侧看。",
+            "扮狮子鱼：展开腕像毒鳍示威。",
+            "扮海葵或蟹：混进群里降低存在感。",
+            "靠变形加变色加动作组合，不止靠颜色。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_燕千鸟",
+      "title": "给鳄鱼剔牙的鸟",
+      "tags": [
+        "动物",
+        "鸟类",
+        "共生"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "埃及燕鸻",
+        "url": "https://baike.baidu.com/item/%E5%9F%83%E5%8F%8A%E7%87%95%E9%B8%BB",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "真有鸟给鳄鱼剔牙？",
+          "content": "传说里牙签鸟（如埃及燕鸻）会进鳄鱼嘴里吃残渣，鳄鱼不咬它。这被称为互利：鸟吃饱、鳄鱼洁牙。但严格说，这种行为在野外被直接观测记录得不多，更多是经典的共生例子；不过确实有鸟类在鳄鱼附近活动、捡食寄生虫和碎肉。",
+          "action_hint": "左右滑动看共生疑云 ➔",
+          "citation_anchor": "共生行为"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "鳄鱼为什么不吃了它？（点击翻转）",
+          "front_text": "鳄鱼张嘴鸟进去，不是送死？",
+          "back_text": "若属实，是鳄鱼忍住换清洁——鸟帮它清理口腔、预警危险，双方得益。但科学家提醒：这故事被很多人浪漫化，可靠影像有限，部分来自圈养观察。更常见的是水鸟在鳄鱼身边捡食、站背歇脚，互相利用多于亲密。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "compare_card",
+          "title": "共生还是传说？",
+          "wrong": "牙签鸟给鳄鱼剔牙是铁证如山的常见行为。",
+          "right": "它是最著名的互利共生案例之一，但野外确凿证据不如教科书说得那么普遍，部分来自圈养或偶发观察。鸟类在大型爬行动物附近觅食、清洁是真实现象，只是进嘴剔牙不宜当成每日必修课。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_候鸟迁徙",
+      "title": "候鸟如何不迷路",
+      "tags": [
+        "动物",
+        "鸟类",
+        "迁徙"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "候鸟",
+        "url": "https://baike.baidu.com/item/%E5%80%99%E9%B8%9F",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "候鸟怎么认路？",
+          "content": "它们用多重导航仪：白天看太阳位置、夜晚看星辰排列，还能感知地球磁场（体内可能有磁铁矿或光敏磁受体），加上记忆地标、气味。多种线索叠加，让它们能跨洲飞行几千公里，回到几乎同一片湿地繁殖或越冬。",
+          "action_hint": "左右滑动看导航仪 ➔",
+          "citation_anchor": "导航机制"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "streaming_text",
+          "title": "它们为什么要飞那么远？",
+          "streaming_content": "主因是追着食物和好天气走：北方夏天长、虫多、适合育雏，冬天变冷缺食就南迁；南方温暖但竞争大，来年再回北。迁徙是一场关于吃饭和生娃的年度长征，途中要穿越城市灯光、风电场、缺少歇脚点的荒地。很多幼鸟第一次就靠本能独自飞对路。",
+          "citation_anchor": "迁徙原因"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "flip_card",
+          "title": "小鸟第一次飞就知道方向？（点击翻转）",
+          "front_text": "没老鸟带，幼鸟不会迷路吗？",
+          "back_text": "许多种类靠遗传的内置地图首发就能上路，方向感写在基因里；也有种类靠成鸟带队学习路线。磁场感加星图加太阳共同兜底，让迷路概率降低。但人类灯光、建筑确实会干扰星图导航，造成撞楼悲剧。"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_鲨鱼无鳔",
+      "title": "鲨鱼为什么沉不下去",
+      "tags": [
+        "动物",
+        "鱼类",
+        "海洋"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "鲨鱼",
+        "url": "https://baike.baidu.com/item/%E9%B2%A8%E9%B1%BC",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "compare_card",
+          "title": "鲨鱼有鱼鳔吗？",
+          "wrong": "鲨鱼和多数鱼一样有鱼鳔控制沉浮。",
+          "right": "多数硬骨鱼有鱼鳔（气囊）帮忙悬浮，鲨鱼没有。它靠不停游动让胸鳍产生升力、靠巨大的肝脏里存油脂减轻比重，才不至于沉底。所以很多鲨鱼必须一直游，停了容易下沉甚至缺氧。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "鲨鱼靠什么浮着？",
+          "content": "鲨鱼肝脏占体重比例很大，富含低密度油脂，像内置浮力块。再配合游动时水流过鳍产生的升力，整体接近中性浮力。但它没法像有鳔的鱼那样原地悬停省力气，所以多数鲨鱼是永动机式巡航者，连睡觉也慢慢游。",
+          "action_hint": "左右滑动看浮力块 ➔",
+          "citation_anchor": "浮力调节"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "鲨鱼冷知识",
+          "items": [
+            "软骨鱼，骨架是软骨而非硬骨。",
+            "皮肤布满盾鳞，摸起来像砂纸。",
+            "多数需持续游动让水过鳃呼吸，部分可停但少。",
+            "换新牙频繁，旧牙掉了前面补上。",
+            "嗅觉极灵敏，能闻到稀释的血腥味。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_树懒慢动作",
+      "title": "树懒为什么这么慢",
+      "tags": [
+        "动物",
+        "哺乳动物",
+        "雨林"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "树懒",
+        "url": "https://baike.baidu.com/item/%E6%A0%91%E6%87%92",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "树懒慢是懒吗？（点击翻转）",
+          "front_text": "树懒是不是单纯懒？",
+          "back_text": "它慢是生存策略。树懒代谢极低、体温随环境浮动、肌肉少而省能，靠吃低营养树叶为生。慢等于低调加省电，天敌难发现，也少消耗。它毛里甚至长藻类，绿茸茸地成了移动伪装。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "它怎么活着不饿死？",
+          "content": "树叶营养少、难消化，树懒就用超长肠道慢慢发酵，一顿能消化很久。它活动极少、体温偏低、心跳慢，把能耗压到最低，所以不必频繁觅食。代价是动作极慢、反应迟钝，但正合它挂树上装背景的活法。",
+          "action_hint": "左右滑动看慢生活 ➔",
+          "citation_anchor": "低代谢适应"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "树懒的上厕所很拼？",
+          "streaming_content": "树懒几乎整天倒挂，却每周才下地一次到树根排便，慢慢挪、挖坑、掩埋再爬回。这趟下地最危险，易遭地面天敌。一种猜测是它用粪便给栖息地树木施肥、维持藻类共生；也有说只为掩味。无论如何，对慢先生来说，上厕所是难得的长途旅行。",
+          "citation_anchor": "特殊习性"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_考拉吃桉叶",
+      "title": "考拉只吃桉树叶",
+      "tags": [
+        "动物",
+        "有袋类",
+        "澳大利亚"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "考拉",
+        "url": "https://baike.baidu.com/item/%E8%80%83%E6%8B%89",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "考拉为什么只吃桉树叶？",
+          "content": "桉树叶有毒、又干又硬、营养低，多数动物不碰。考拉却专门吃它：盲肠超长能发酵解毒、吸收营养，而且它几乎只挑少数几种桉树、挑嫩叶。因为食物差，它进化出低代谢、长睡眠来省能量——一天能睡十几到二十小时。",
+          "action_hint": "左右滑动看挑食专家 ➔",
+          "citation_anchor": "食性"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "桉叶有毒它不怕？（点击翻转）",
+          "front_text": "桉树叶里的毒素不伤考拉吗？",
+          "back_text": "考拉肝脏有特殊酶能分解桉叶里的大部分毒素，加上超长盲肠里的微生物帮忙发酵。但它也只能扛本种习惯的那几种，换陌生桉树或别的有毒叶仍会出问题。专吃一种难吃的东西，反而帮它避开食物竞争。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "考拉小档案",
+          "items": [
+            "有袋类，幼崽在育儿袋里发育。",
+            "几乎只吃特定桉树叶，挑食到惊人。",
+            "一天睡眠极长，靠低代谢省能量。",
+            "鼻子大且灵敏，用来挑最好的叶子。",
+            "宝宝吃母体的软粪获取消化菌群。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_企鹅脚不怕冻",
+      "title": "企鹅脚为何不冻",
+      "tags": [
+        "动物",
+        "鸟类",
+        "极地"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "企鹅",
+        "url": "https://baike.baidu.com/item/%E4%BC%81%E9%B9%85",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "企鹅踩冰脚不冷？",
+          "content": "企鹅腿脚没厚羽也没多少脂肪，却不易冻伤，靠逆流热交换：动脉血流入脚前，与流回的静脉血贴着走，热量被预先回收，脚温降到接近冰点但不结冰、代谢也低，既省热又防冻伤。等于把热留在身体、只让脚刚好不死。",
+          "action_hint": "左右滑动看逆流换热 ➔",
+          "citation_anchor": "防冻机制"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "那脚不会冻坏？（点击翻转）",
+          "front_text": "脚温那么低为什么没冻烂？",
+          "back_text": "因为脚组织耐寒、血流经特殊网络把热回收，温度低但细胞仍存活；真到极寒它也会收拢、单脚站、用腹羽盖住。这套节能加防冻设计让它能久站冰面不伤。人类模仿这种结构做了保暖鞋和管道设计。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "还有哪些动物抗冻？",
+          "streaming_content": "极地鱼血液里有抗冻蛋白，防止体内结冰；北极狐耳朵小、毛厚减少散热；驯鹿腿细毛密也能踏雪。企鹅的脚只是其中一例：用逆流换热把热留住，是自然界反复演出的节能妙招，工程师也常抄这套作业。",
+          "citation_anchor": "抗冻适应"
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_猫头鹰转头",
+      "title": "猫头鹰能转头270度",
+      "tags": [
+        "动物",
+        "鸟类",
+        "冷知识"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "猫头鹰",
+        "url": "https://baike.baidu.com/item/%E7%8C%AB%E5%A4%B4%E9%B9%B0",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "猫头鹰头能转一圈？（点击翻转）",
+          "front_text": "猫头鹰脖子断不了吗？",
+          "back_text": "它眼睛不能转（管状眼固定在头里），所以靠转头看四周。颈椎多、关节松，能转到约270度。血管在转头时有备用通路供血，不会勒住大脑。这是眼不动、头代转的补偿设计。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "为什么它眼睛不能转？",
+          "content": "猫头鹰的眼是朝前的管状眼，聚光好、夜视强，但牺牲了转动范围，只能靠脖子补位。它头大颈骨多（约14块颈椎），韧带和血管有缓冲结构，猛转也不伤。配合超静音飞行，它是夜里的无声侦察机。",
+          "action_hint": "左右滑动看无声飞行 ➔",
+          "citation_anchor": "视觉与运动"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "猫头鹰本事",
+          "items": [
+            "管状眼夜视好，但不转动，靠转头看。",
+            "脖子可转约270度，靠多颈椎加血管缓冲。",
+            "羽毛边缘柔软，飞行几乎无声。",
+            "脸盘像雷达碟，聚拢声波帮定位老鼠。",
+            "多数夜间捕食，听声辨位极准。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_青蛙变态",
+      "title": "青蛙的变态发育",
+      "tags": [
+        "动物",
+        "两栖类",
+        "发育"
+      ],
+      "type": "knowledge",
+      "difficulty": 1,
+      "source": {
+        "name": "百度百科",
+        "title": "青蛙",
+        "url": "https://baike.baidu.com/item/%E9%9D%92%E8%9B%99",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "蝌蚪怎么变青蛙？",
+          "content": "青蛙经历变态发育：卵孵成蝌蚪，像小鱼有尾、用鳃呼吸、吃素；后来长后腿、前腿，尾巴萎缩，肺和皮肤接手呼吸，变成用肺和皮肤呼吸、四条腿的成蛙，改吃虫。从水生小鱼到陆地猎手，是一次大改造。",
+          "action_hint": "左右滑动看变形记 ➔",
+          "citation_anchor": "变态发育"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "尾巴去哪了？（点击翻转）",
+          "front_text": "蝌蚪的尾巴后来呢？",
+          "back_text": "尾巴不是掉，而是被身体吸收：细胞程序性凋亡，尾肌和尾鳍逐步分解，养分回收再利用，最后消失。同时四肢长出、肠变短（从吃素改吃肉）、眼和肺完善。整个过程由激素调控，像按剧本演出。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "list_card",
+          "title": "变态关键节点",
+          "items": [
+            "卵到蝌蚪：有外鳃、长尾、水生。",
+            "长后腿到长前腿：四肢依次出现。",
+            "尾萎缩吸收：养分回收，身体成形。",
+            "鳃退、肺成：改为肺加皮肤呼吸。",
+            "成蛙登陆：食性从藻转虫，完成变身。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animals_topic_鲸歌",
+      "title": "鲸鱼也会唱歌",
+      "tags": [
+        "动物",
+        "鲸类",
+        "声音"
+      ],
+      "type": "knowledge",
+      "difficulty": 2,
+      "source": {
+        "name": "百度百科",
+        "title": "座头鲸",
+        "url": "https://baike.baidu.com/item/%E5%BA%A7%E5%A4%B4%E9%B2%B8",
+        "publish_date": "2026",
+        "authority_level": "encyclopedia"
+      },
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "鲸鱼真的会唱歌？",
+          "content": "会。座头鲸的歌由一系列长鸣、呻吟、呼啸按主题重复编排，能持续十几分钟到数小时，且年年变化，像在更新专辑。科学家认为主要用于求偶和交流。声音在水里传得极远，一曲能让几十公里外的同类听见。",
+          "action_hint": "左右滑动听鲸歌 ➔",
+          "citation_anchor": "鲸歌"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "flip_card",
+          "title": "声音在水里传多远？（点击翻转）",
+          "front_text": "鲸歌为什么能在海里飘那么远？",
+          "back_text": "海水下标温层（声道轴）像天然声音管道，把低频鲸歌困在里面向远处传，衰减很小，座头鲸、蓝鲸的歌能传数十到上百公里。对人类这是免费的长距离通信网；对鲸，是跨越汪洋的情书与广播。"
+        },
+        {
+          "sub_id": "s3",
+          "layout": "streaming_text",
+          "title": "所有鲸都唱歌吗？",
+          "streaming_content": "不是所有鲸都唱歌。须鲸类（座头、蓝、鳍鲸）多用低频长鸣联络、求偶；齿鲸类（抹香鲸、海豚）更多用咔哒声回声定位、用哨声社交。song这个词特指向座头鲸那种有结构、会变的乐句。所以鲸歌主要指座头鲸的抒情段，而非全鲸通用。",
+          "citation_anchor": "鲸类声音"
+        }
+      ]
     }
   ]
 }

@@ -32,7 +32,7 @@
           "sub_id": "m1",
           "layout": "meme_card",
           "title": "程序员的浪漫",
-            "caption": "0 和 1 也能写成情书。"
+          "caption": "0 和 1 也能写成情书。"
         }
       ]
     },
@@ -154,7 +154,7 @@
           "sub_id": "s1",
           "layout": "meme_card",
           "title": "周一的状态",
-            "caption": "系统启动中……（进度 1%）"
+          "caption": "系统启动中……（进度 1%）"
         }
       ]
     },
@@ -171,7 +171,7 @@
           "sub_id": "s1",
           "layout": "meme_card",
           "title": "学习五分钟",
-            "caption": "学习五分钟，刷手机两小时。"
+          "caption": "学习五分钟，刷手机两小时。"
         }
       ]
     },
@@ -188,7 +188,7 @@
           "sub_id": "s1",
           "layout": "meme_card",
           "title": "程序员的浪漫",
-            "caption": "0 和 1 也能写成情书。"
+          "caption": "0 和 1 也能写成情书。"
         }
       ]
     },
@@ -219,6 +219,1148 @@
           "sub_id": "s1",
           "layout": "game_card",
           "title": "再来一局猜数字"
+        }
+      ]
+    },
+    {
+      "id": "fn_j01",
+      "title": "减肥的决心",
+      "tags": [
+        "冷笑话",
+        "生活"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "减肥的决心",
+          "caption": "睡前：明天开始减肥，只吃草。",
+          "punchline": "早上：草太难吃，先吃口肉垫垫。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "减肥APP",
+          "caption": "减肥APP说今天消耗300卡。",
+          "punchline": "我反手点杯奶茶，补回500卡。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j02",
+      "title": "闹钟的哲学",
+      "tags": [
+        "冷笑话",
+        "打工人"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "闹钟的哲学",
+          "caption": "闹钟响的那一刻，我做了个重要决定。",
+          "punchline": "再睡五分钟，世界不会崩。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "贪睡键",
+          "caption": "贪睡键按了第八次。",
+          "punchline": "成功把起床变成了极限运动。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j03",
+      "title": "成年人的购物车",
+      "tags": [
+        "冷笑话",
+        "钱包"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "成年人的购物车",
+          "caption": "白天加购三件衣服，晚上全删了。",
+          "punchline": "因为看见花呗账单，比衣服还好看。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "工资与购物车",
+          "caption": "工资一到，购物车自动清空。",
+          "punchline": "银行卡也跟着空了，很公平。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j04",
+      "title": "健身卡",
+      "tags": [
+        "冷笑话",
+        "自律"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "健身卡",
+          "caption": "办了健身卡第一天，雄心万丈。",
+          "punchline": "之后它的作用是——提醒我钱花了吗。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "去健身",
+          "caption": "说好去健身，走到楼下发现腿软。",
+          "punchline": "于是回家，把健身列入“明天”。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j05",
+      "title": "摸鱼的科学",
+      "tags": [
+        "冷笑话",
+        "职场"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "摸鱼的科学",
+          "caption": "工作五分钟，发呆两小时。",
+          "punchline": "老板问进度，我说：在进行深层思考。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "老板路过",
+          "caption": "老板路过，我秒切Excel。",
+          "punchline": "其实屏幕是计算器，在算午饭吃啥。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j06",
+      "title": "Wi-Fi 信号",
+      "tags": [
+        "冷笑话",
+        "生活"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "Wi-Fi 信号",
+          "caption": "路由器一重启，全家安静如鸡。",
+          "punchline": "那一刻才懂，网比亲情还黏人。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "手机内存",
+          "caption": "手机128G用了127G，全是缓存。",
+          "punchline": "清完缓存，明天它又满血归来。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j07",
+      "title": "妈妈的语音",
+      "tags": [
+        "冷笑话",
+        "家庭"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "妈妈的语音",
+          "caption": "妈妈发来60秒语音方阵。",
+          "punchline": "点开前先深呼吸，内容多半是：吃饭没？"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "家长群",
+          "caption": "家长群99+，点开全是接龙。",
+          "punchline": "我接的不是龙，是中年人的社交KPI。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j08",
+      "title": "外卖备注",
+      "tags": [
+        "冷笑话",
+        "干饭"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "外卖备注",
+          "caption": "备注：不要香菜，多放辣。",
+          "punchline": "到手一看：香菜铺满，辣度为零。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "奶茶点单",
+          "caption": "说好三分糖，店员手抖成全糖。",
+          "punchline": "甜是店的诚意，胖是我的代价。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j09",
+      "title": "周末计划",
+      "tags": [
+        "冷笑话",
+        "拖延"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "周末计划",
+          "caption": "周六：我要把家彻底打扫一遍。",
+          "punchline": "周日晚上：沙发真软，明天再扫。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "周末出游",
+          "caption": "周末想出门，一看天气取消了。",
+          "punchline": "床和被子发出了强烈挽留信号。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j10",
+      "title": "拍照修图",
+      "tags": [
+        "冷笑话",
+        "自拍"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "拍照修图",
+          "caption": "原图：普通人。修图两小时：明星。",
+          "punchline": "发出去前：还是用原图吧，更像我。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "拍照打卡",
+          "caption": "到了景点先拍照，拍完就走。",
+          "punchline": "朋友圈看过了，等于我去过了。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j11",
+      "title": "学习拖延",
+      "tags": [
+        "冷笑话",
+        "学习"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "学习拖延",
+          "caption": "打开书，先整理桌面半小时。",
+          "punchline": "桌净了，知识还没进脑子。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "买书如山倒",
+          "caption": "买书如山倒，读书如抽丝。",
+          "punchline": "书架满了，脑子还是空的，挺配。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j12",
+      "title": "充电宝",
+      "tags": [
+        "冷笑话",
+        "生活"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "充电宝",
+          "caption": "出门满电充电宝，回家满电充电宝。",
+          "punchline": "因为它全程在包里，没被掏出来过。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "手机电量",
+          "caption": "手机电量1%，满世界找充电口。",
+          "punchline": "那一刻才懂，安全感是20%起步。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j13",
+      "title": "养生青年",
+      "tags": [
+        "冷笑话",
+        "养生"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "养生青年",
+          "caption": "熬夜到两点，保温杯里泡枸杞。",
+          "punchline": "这叫：用最贵的方法，熬最野的夜。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "养生熬夜",
+          "caption": "边熬最晚的夜，边敷最贵的膜。",
+          "punchline": "这叫：在作死和惜命间反复横跳。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j14",
+      "title": "导航的信任",
+      "tags": [
+        "冷笑话",
+        "路痴"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "导航的信任",
+          "caption": "导航说掉头，我看前后都没路。",
+          "punchline": "信了，结果开进了小区花坛。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "跟着导航",
+          "caption": "跟着导航绕了三圈。",
+          "punchline": "它说已到达，我还在停车场。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j15",
+      "title": "购物车与工资",
+      "tags": [
+        "冷笑话",
+        "钱包"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "半夜涨价",
+          "caption": "购物车里的东西，半夜总会自己涨价。",
+          "punchline": "醒来看账单，它比我勤快。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "拆快递",
+          "caption": "快递拆开那三秒，是本周高光。",
+          "punchline": "拆完发现：又买了一件用不上的。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j16",
+      "title": "懒人哲学",
+      "tags": [
+        "冷笑话",
+        "躺平"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "懒人哲学",
+          "caption": "能躺着绝不坐着，能坐着绝不站。",
+          "punchline": "这不是懒，是对重力的高效利用。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "迟到理由",
+          "caption": "朋友问我为什么总迟到。",
+          "punchline": "因为我和时间，是异地恋。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j17",
+      "title": "表情包社交",
+      "tags": [
+        "冷笑话",
+        "社恐"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "表情包社交",
+          "caption": "不知回啥，发个猫猫头。",
+          "punchline": "一个表情，省下我半句真话。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "工作群",
+          "caption": "工作群晚上十点弹出“在吗”。",
+          "punchline": "这两个字，是成年人最怕的问候。"
+        }
+      ]
+    },
+    {
+      "id": "fn_j18",
+      "title": "睡前手机",
+      "tags": [
+        "冷笑话",
+        "熬夜"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "睡前手机",
+          "caption": "说好刷十分钟就睡。",
+          "punchline": "再抬头，天亮了，手机还亮着。"
+        },
+        {
+          "sub_id": "m2",
+          "layout": "meme_card",
+          "title": "早睡flag",
+          "caption": "立下flag：今晚十点睡。",
+          "punchline": "十点半：再看完这集，就一集。"
+        }
+      ]
+    },
+    {
+      "id": "fn_k01",
+      "title": "打哈欠会传染",
+      "tags": [
+        "冷知识",
+        "大脑"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "打哈欠会传染",
+          "front_text": "为什么看到别人打哈欠，自己也忍不住？",
+          "back_text": "这叫“共情式模仿”，大脑里的镜像神经元让我们不自觉模仿他人动作，打哈欠尤甚。可能是群体同步作息的古老机制，和真的困没必然关系。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "打哈欠传染是病吗？",
+          "content": "不是。约半数人看到、甚至听到别人打哈欠会跟着打，叫“传染性哈欠”，和大脑镜像神经元、共情能力有关。小孩到四五岁才明显出现，部分孤独症群体较弱。所以爱跟着打，说明共情力在线。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "打哈欠会传染",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k02",
+      "title": "天热吃冰反而更热",
+      "tags": [
+        "冷知识",
+        "身体"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "天热吃冰反而更热",
+          "front_text": "大夏天猛吃冰，为什么一会更燥？",
+          "back_text": "冰冷短暂刺激口腔，身体为保暖反而加快产热；且冰让血管先缩后扩，血流变快。真解暑靠少量多次、温水更稳。但快乐是真的。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "夏天喝冰水有时更热？",
+          "content": "冰水入口短暂凉，但身体为维持体温会反射性产热，且冰冷让体表血管收缩、散热变慢，反而可能闷热。真解暑宜少量、常温或微温。当然快乐不能量化，想喝就喝。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "天热吃冰反而更热",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k03",
+      "title": "左耳听情话更甜",
+      "tags": [
+        "冷知识",
+        "大脑"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "左耳听情话更甜",
+          "front_text": "有人说用左耳听情话更甜，真的吗？",
+          "back_text": "左右脑处理不同，左耳连右脑（偏情绪），接情话时情绪区更活跃，主观觉得更走心。科学上差异很小，但浪漫是真的。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "左耳听情话更动人？",
+          "content": "左耳信号主要进右脑，右脑管情绪和语调处理，所以左耳接收温柔语调时情绪区更活跃，主观更走心。差异微小但聊胜于无，情人节可一试。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "左耳听情话更甜",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k04",
+      "title": "笑能止痛",
+      "tags": [
+        "冷知识",
+        "情绪"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "笑能止痛",
+          "front_text": "伤口疼时笑一笑，为什么好像轻点？",
+          "back_text": "大笑促使大脑释放内啡肽，这是天然“止痛剂”，还能降血压、松肌肉。所以“笑是良药”不全是安慰，有点生化依据。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "笑真的能止痛？",
+          "content": "大笑刺激内啡肽、血清素释放，内啡肽是天然镇痛物质，还能放松肌肉、改善心情。所以“笑一笑十年少”有生化底气，但治不了大病，当辅助就好。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "笑能止痛",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k05",
+      "title": "鱼会口渴吗",
+      "tags": [
+        "冷知识",
+        "动物"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "鱼会口渴吗",
+          "front_text": "鱼天天泡在水里，还会渴吗？",
+          "back_text": "淡水鱼体内盐多，水自己渗进来，基本不渴；海水鱼恰恰相反，总在“脱水”，会主动喝海水、靠鳃排盐。所以海鱼其实常口渴。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "鱼到底渴不渴？",
+          "content": "淡水鱼体内比外界“咸”，水自动渗入，几乎不渴；海水鱼生活在更咸的水里，身体不断失水，会主动吞海水并用鳃排盐。一句话：看它住哪片海。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "鱼会口渴吗",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k06",
+      "title": "切洋葱会哭",
+      "tags": [
+        "冷知识",
+        "生活"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "切洋葱会哭",
+          "front_text": "切洋葱怎么就辣眼睛掉泪？",
+          "back_text": "洋葱被切破，细胞里的酶和前体碰一起，生成刺激性气体（含硫），飘到眼里刺激泪腺。冷藏后再切、刀沾水，能明显少哭。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "切洋葱为什么哭？",
+          "content": "洋葱含含硫前体，被刀切破细胞后酶把它变成刺激性气体（硫氧化物），飘到眼里刺激角膜神经，泪腺加班。冷藏、沾水切、用锋利刀都能减少刺激。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "切洋葱会哭",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k07",
+      "title": "人为什么会起鸡皮疙瘩",
+      "tags": [
+        "冷知识",
+        "身体"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "起鸡皮疙瘩",
+          "front_text": "冷或害怕时，皮肤为啥起小疙瘩？",
+          "back_text": "这是祖先“竖毛”遗留下来的：毛发炸开能保温、显壮。人毛少了，只剩皮肤凸起，变成鸡皮疙瘩，是进化留下的“无用但可爱”的痕迹。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "鸡皮疙瘩有什么用？",
+          "content": "这是哺乳动物“竖毛反射”的残留：祖先靠炸毛保暖、示威；人毛退化，只剩皮肤小丘。冷、怕、激动时交感神经触发立毛肌收缩，就起疙瘩。是无用的进化遗迹，但很诚实。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "人为什么会起鸡皮疙瘩",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k08",
+      "title": "午睡20分钟最香",
+      "tags": [
+        "冷知识",
+        "睡眠"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "午睡20分钟最香",
+          "front_text": "午睡越久越精神？未必。",
+          "back_text": "睡超过30分钟容易进入深睡，被叫醒反而昏沉（睡眠惯性）。15到20分钟浅睡最能恢复，长睡反而更累。所以“短平快”的午觉最值。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "午睡多久最好？",
+          "content": "15到20分钟浅睡最能恢复警觉，不进深睡所以醒后不昏；超过30分钟易陷深睡，被叫醒有“睡眠惯性”更累。夜班、司机尤该短睡。长睡留给周末补觉。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "午睡20分钟最香",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k09",
+      "title": "彩虹其实是个圈",
+      "tags": [
+        "冷知识",
+        "光学"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "彩虹其实是个圈",
+          "front_text": "我们看到的彩虹为什么是半截？",
+          "back_text": "彩虹本是个完整圆环，圆心在你和太阳连线的反方向；地平线挡住了下半，所以只看见弧。飞机上或山顶能看到整圈彩虹。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "彩虹为什么是弯的？",
+          "content": "彩虹圆心在你背阳视线延长线，地平线切掉下半，故见弧；完整是圆环。水滴把阳光色散并约42度反射而出，无数水滴连成一圈。山顶或飞机上能看到整圈。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "彩虹其实是个圈",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k10",
+      "title": "打鼾不等于睡得香",
+      "tags": [
+        "冷知识",
+        "睡眠"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "打鼾不等于睡得香",
+          "front_text": "呼噜震天，是睡得香吗？",
+          "back_text": "常是气道变窄、气流震动软组织，严重时是睡眠呼吸暂停，反而缺氧、白天犯困。香不香看白天精神，不看音量。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "打鼾等于睡得香？",
+          "content": "多数打鼾是气道软组织振动，轻则影响同床，重则睡眠呼吸暂停，夜间缺氧、白天嗜睡、心血管风险升。香不香看白天状态，不是听音量。持续大声打鼾建议就医。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "打鼾不等于睡得香",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k11",
+      "title": "有人吃香菜像肥皂",
+      "tags": [
+        "冷知识",
+        "味觉"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "有人吃香菜像肥皂",
+          "front_text": "同是香菜，有人爱死有人嫌臭？",
+          "back_text": "这和基因有关，部分人对香菜里的醛类化合物特别敏感，闻到就联想肥皂味；并非矫情，是鼻子“出厂设置”不同。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "香菜肥皂味是矫情？",
+          "content": "不是。部分人带特定嗅觉基因变异，对香菜中醛类极敏感，闻到像肥皂或臭虫。这是嗅觉“出厂差异”，尊重彼此，别硬劝。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "有人吃香菜像肥皂",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_k12",
+      "title": "眨眼是在给眼睛洗澡",
+      "tags": [
+        "冷知识",
+        "身体"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "flip_card",
+          "title": "眨眼是在给眼睛洗澡",
+          "front_text": "人一天眨上万次，图啥？",
+          "back_text": "每次眨眼像擦窗，把泪液均匀铺开，洗掉灰尘、供氧角膜。专注看屏幕时眨眼变少，眼睛干，所以“多眨眨眼”是真护眼。"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "qa_card",
+          "title": "人为什么一直眨眼？",
+          "content": "每次眨眼用泪液给角膜“擦窗”：冲洗灰尘、供氧、保持湿润。正常每分钟十几次，看屏幕时降到几次，眼干也就不奇怪。提醒：盯屏记得多眨。",
+          "action_hint": "左右滑动了解 ➔"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "眨眼是在给眼睛洗澡",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_q01",
+      "title": "熬夜补觉误区",
+      "tags": [
+        "解压",
+        "睡眠"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "熬夜后周末猛睡能补回来吗？",
+          "content": "不能完全。短期缺觉可部分弥补，但长期节律紊乱伤代谢、记忆和免疫。补觉宜规律小补，别指望周末“存钱”。",
+          "action_hint": "左右滑动了解 ➔"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "熬夜补觉误区",
+          "wrong": "熬夜周末一次性还清，身体不亏。",
+          "right": "睡眠债不能简单一次性还清，长期熬夜伤代谢免疫，补觉只能部分缓解。"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "熬夜补觉误区",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_q02",
+      "title": "咖啡提神误区",
+      "tags": [
+        "解压",
+        "咖啡因"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "咖啡为什么让人不困？",
+          "content": "咖啡因长得像腺苷，抢占受体不让“困”信号传达，于是大脑收不到累。但它不制造能量，效果过了更累，且下午喝易失眠。",
+          "action_hint": "左右滑动了解 ➔"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "咖啡代替睡觉",
+          "wrong": "咖啡能代替睡觉，困了猛灌就精神。",
+          "right": "咖啡只是阻断困意信号，不补精力，硬撑会透支，该睡还得睡。"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "咖啡提神误区",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_q03",
+      "title": "刮痧拔罐的紫",
+      "tags": [
+        "解压",
+        "养生"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "刮痧出的紫是毒吗？",
+          "content": "多数学者认为出痧是局部毛细血管受压破裂的皮下出血，颜色因力度、皮肤厚度而异，并非“毒”。适度放松可行，破损感染、凝血差者慎用。",
+          "action_hint": "左右滑动了解 ➔"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "出痧越多越好",
+          "wrong": "出痧越紫说明毒排得越多。",
+          "right": "颜色深浅多跟皮下毛细血管破裂、受力有关，不代表“毒”的多少，适度即可。"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "刮痧拔罐的紫",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_q04",
+      "title": "喝水减肥误区",
+      "tags": [
+        "解压",
+        "减肥"
+      ],
+      "type": "knowledge",
+      "sub_cards": [
+        {
+          "sub_id": "s1",
+          "layout": "qa_card",
+          "title": "多喝水真能减肥？",
+          "content": "水零热量，餐前喝能占胃、减食量，还能保代谢。但它不燃脂，猛灌超过肾脏负担会水中毒（低钠）。每天约1.5到2升因人而异，别硬灌。",
+          "action_hint": "左右滑动了解 ➔"
+        },
+        {
+          "sub_id": "s2",
+          "layout": "compare_card",
+          "title": "多喝水就瘦",
+          "wrong": "多喝水就能瘦，喝越多越好。",
+          "right": "水不直接燃脂，饭前喝可增饱腹，但过量水中毒伤身，每日适量即可。"
+        }
+      ],
+      "source": {
+        "name": "公开常识",
+        "title": "喝水减肥误区",
+        "url": "https://baike.baidu.com",
+        "publish_date": "2026",
+        "authority_level": "general"
+      }
+    },
+    {
+      "id": "fn_m01",
+      "title": "地铁座位",
+      "tags": [
+        "冷笑话",
+        "生活"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "地铁座位",
+          "caption": "空座位旁边有人放包，等于占了俩座。",
+          "punchline": "那包享受了比我还稳的位子。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m02",
+      "title": "天气预报",
+      "tags": [
+        "冷笑话",
+        "天气"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "天气预报",
+          "caption": "预报说晴我带伞，结果真晴。",
+          "punchline": "第二天信了没带，淋成落汤鸡。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m03",
+      "title": "减肥运动",
+      "tags": [
+        "冷笑话",
+        "运动"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "减肥运动",
+          "caption": "跟着视频跳操三分钟。",
+          "punchline": "心率没上来，笑点先上来了。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m04",
+      "title": "家长群接龙",
+      "tags": [
+        "冷笑话",
+        "家庭"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "家长群接龙",
+          "caption": "老师发通知，我秒回“收到”。",
+          "punchline": "其实在马桶上，手速代表了真诚。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m05",
+      "title": "周末出游",
+      "tags": [
+        "冷笑话",
+        "出游"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "周末出游",
+          "caption": "周末计划去山里吸氧，堵车三小时。",
+          "punchline": "氧没吸到，尾气吸饱了。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m06",
+      "title": "追剧熬夜",
+      "tags": [
+        "冷笑话",
+        "熬夜"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "追剧熬夜",
+          "caption": "说要早睡，结果追剧到凌晨。",
+          "punchline": "主角睡了，我精神了。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m07",
+      "title": "存钱罐",
+      "tags": [
+        "冷笑话",
+        "钱包"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "存钱罐",
+          "caption": "存钱罐攒了半年，打开一看。",
+          "punchline": "全是硬币，刚好够买根冰棍。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m08",
+      "title": "体检报告",
+      "tags": [
+        "冷笑话",
+        "健康"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "体检报告",
+          "caption": "体检报告最怕那行“建议复查”。",
+          "punchline": "于是塞抽屉，眼不见为净。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m09",
+      "title": "周末补觉",
+      "tags": [
+        "冷笑话",
+        "睡眠"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "周末补觉",
+          "caption": "周末补觉睡到头昏。",
+          "punchline": "发现：补觉也会累。"
+        }
+      ]
+    },
+    {
+      "id": "fn_m10",
+      "title": "熬夜与手机",
+      "tags": [
+        "冷笑话",
+        "熬夜"
+      ],
+      "type": "joke",
+      "sub_cards": [
+        {
+          "sub_id": "m1",
+          "layout": "meme_card",
+          "title": "熬夜与手机",
+          "caption": "说好不熬夜，手机先不同意。",
+          "punchline": "它用蓝光温柔地挽留了我。"
         }
       ]
     }
