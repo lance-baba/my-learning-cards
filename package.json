@@ -9,13 +9,15 @@
     "build:css": "tailwindcss -i tools/tailwind-input.css -o public/vendor/tailwind.min.css --minify",
     "audit:css": "node tools/audit_css_classes.js",
     "validate": "node tools/card_tool.js validate",
-    "test": "node tools/observe.test.mjs && node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs",
-    "test:unit": "node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs",
+    "test": "node tools/observe.test.mjs && node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs && node tools/sync_kv.test.mjs",
+    "test:unit": "node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs && node tools/sync_kv.test.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "new": "node tools/card_tool.js new",
     "setup-kv": "node tools/setup_kv.js",
     "sync": "node tools/sync_kv.js",
+    "sync:check": "node tools/sync_kv.js --check",
+    "sync:verify": "node tools/sync_kv.js --verify",
     "login": "wrangler login"
   },
   "devDependencies": {
