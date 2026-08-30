@@ -159,8 +159,11 @@ async function handle(request, env, ctx, rid) {
       });
     }
 
-    // API 路由: 获取指定卡片包（边缘缓存，URL 带 &v=VERSION 做版本隔离）
-    // 版本不变 => 同一边缘节点在 TTL 内直接命中缓存，不再打 KV；版本变更 => URL 变化自动失效
+    // API 路由: 获取指定卡片包
+    // 注意：本运行环境的 caches.default（Cache API）极不可靠——match/put 会间歇抛错，
+    // 且一旦 put 后后续 match 稳定抛错，曾造成「首请求成功、之后全部 500」的灾难。
+    // 因此这里完全放弃边缘缓存，只做 KV 读取 + 容错。KV 读放大靠前端版本号 &v= 隔离，
+    // 数据量很小，直接回源 KV 的延迟可忽略，稳定性远重于那点缓存收益。
     if (path === '/api/bundle') {
       const id = url.searchParams.get('id');
       if (!id) {
@@ -177,17 +180,17 @@ async function handle(request, env, ctx, rid) {
         });
       }
 
-      const cache = caches.default;
-      const cacheKey = new Request(url.toString(), request); // 含 ?id= 与 &v= 版本号
-      let res = await cache.match(cacheKey);
-      if (!res) {
-        const data = await env.CARD_KV.get(id, { type: 'json' });
-        res = new Response(JSON.stringify(data || {}), {
-          headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=86400' },
-        });
-        ctx.waitUntil(cache.put(cacheKey, res.clone()));
+      // 回源 KV；KV 异常降级为优雅空包，绝不抛 500（避免前端整站「卡片加载失败」）。
+      let data = null;
+      try {
+        data = await env.CARD_KV.get(id, { type: 'json' });
+      } catch (kvErr) {
+        ctx.waitUntil(captureException(env, kvErr, { rid, path, id }));
       }
-      return res;
+      const payload = data && Array.isArray(data.items) ? data : { items: [] };
+      return new Response(JSON.stringify(payload), {
+        headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=60' },
+      });
     }
 
     // 静态站点路由分发
