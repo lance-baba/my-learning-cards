@@ -118,18 +118,9 @@ const splitLines = (text) =>
 
 const subKey = (topic, sub) => `${topic.id}_${sub.sub_id}`;
 
-// 语义化版本比较：a 是否严格大于 b（按 . 分段数值比较）
-function isVersionGt(a, b) {
-  if (!a || !b) return false;
-  const pa = String(a).split('.').map(n => parseInt(n, 10) || 0);
-  const pb = String(b).split('.').map(n => parseInt(n, 10) || 0);
-  const n = Math.max(pa.length, pb.length);
-  for (let i = 0; i < n; i++) {
-    if ((pa[i] || 0) > (pb[i] || 0)) return true;
-    if ((pa[i] || 0) < (pb[i] || 0)) return false;
-  }
-  return false;
-}
+// 纯逻辑层（版本比较/混排/曝光/布局映射）已抽离到 cardflow-logic.js，便于 Vitest 单测
+// 由 index.html 提前加载并挂载 window.CardFlowLogic
+const { mixTopics, weightedOrder, resolveLayout, isVersionGt, loadExposure, saveExposure, recordExposure } = window.CardFlowLogic;
 
 // 客户端静态版本（仅用于 min_app_version 强制更新判断）
 const CLIENT_APP_VERSION = '1.0.0';
@@ -139,59 +130,11 @@ const CLIENT_APP_VERSION = '1.0.0';
  * ----------------------------------------------------------- */
 
 /* ---- 学习机制：曝光加权间隔排程（Leitner-lite） ----
- * 每张卡记录 已看次数(seen) + 上次时间(last)。排序权重：
- *   weight = 1/(1 + seen*0.7) * 间隔衰减(0.15~1，7天回满)
- * 再叠加 ±随机抖动，避免每次都从第一条开始、也避免刷过的内容频繁出现。 */
-const EXPOSURE_KEY = 'cf_exposure';
-function loadExposure() {
-  try { return JSON.parse(localStorage.getItem(EXPOSURE_KEY) || '{}') || {}; }
-  catch (e) { return {}; }
-}
-function saveExposure(map) {
-  try { localStorage.setItem(EXPOSURE_KEY, JSON.stringify(map)); } catch (e) {}
-}
-function recordExposure(topicId) {
-  if (!topicId) return;
-  const map = loadExposure();
-  const e = map[topicId] || { seen: 0, last: 0 };
-  e.seen += 1;
-  e.last = Date.now();
-  map[topicId] = e;
-  saveExposure(map);
-}
+ * 实现见 cardflow-logic.js（loadExposure/saveExposure/recordExposure/weightedOrder）。
+ * 排序权重 = 1/(1 + seen*0.7) * 间隔衰减(0.15~1，7天回满) * ±随机抖动，
+ * 未看/久未看排前，刚看/多看沉后。 */
 
-// 曝光加权混排：未看/久未看排前，刚看/多看沉后，+抖动保变化
-function weightedOrder(topics) {
-  const map = loadExposure();
-  const now = Date.now();
-  const scored = topics.map(t => {
-    const e = map[t.id] || { seen: 0, last: 0 };
-    const days = e.last ? (now - e.last) / 86400000 : 999;
-    const recency = Math.max(0.15, Math.min(1, days / 7));
-    const freq = 1 / (1 + e.seen * 0.7);
-    const jitter = 0.7 + Math.random() * 0.6; // 0.7~1.3
-    return { t, score: freq * recency * jitter };
-  });
-  scored.sort((a, b) => a.score - b.score);
-  return scored.map(s => s.t);
-}
 
-// 混排：按 relax_ratio 在学习卡间穿插放松卡（不再做永久去重）
-function mixTopics(topics, ratio) {
-  const study = topics.filter(t => t.type !== 'joke');
-  const fun = topics.filter(t => t.type === 'joke');
-  if (fun.length === 0) return study;
-
-  const r = Math.max(1, parseInt(ratio, 10) || 5);
-  const out = [];
-  let fi = 0;
-  for (let i = 0; i < study.length; i++) {
-    out.push(study[i]);
-    if ((i + 1) % r === 0 && fi < fun.length) out.push(fun[fi++]);
-  }
-  while (fi < fun.length) out.push(fun[fi++]); // 放松卡多于间隔时兜底追加
-  return out;
-}
 
 // 带超时 + 指数退避重试的 fetch 封装（解决「网络抖动即白屏、无重试」问题）
 // - 单次请求 8s 超时（AbortController 中断）
@@ -625,20 +568,7 @@ const GameCard = {
  * 布局分发：layout 字段 -> 组件名（新增题型只需注册组件，框架零改动）
  * 模块级，供 AppShell 与 FavoritesView 共用。
  * ----------------------------------------------------------- */
-function resolveLayout(layout) {
-  const map = {
-    qa_card: 'qa-card',
-    streaming_text: 'stream-card',
-    flip_card: 'flip-card',
-    joke_text: 'joke-card',
-    meme_card: 'meme-card',
-    game_card: 'game-card',
-    list_card: 'list-card',
-    quote_card: 'quote-card',
-    compare_card: 'compare-card'
-  };
-  return map[layout] || 'qa-card';
-}
+// layout 字段 -> 组件名 的映射见 cardflow-logic.js（resolveLayout），保持单一来源
 
 /* -------------------------------------------------------------
  * 8) 根组件 AppShell（持有数据拉取与 Swiper 生命周期）

@@ -8,6 +8,8 @@ dist/
 
 # npm 缓存与日志
 .npmcache/
+.npm-cache/
+install.log
 npm-debug.log*
 npm_install*.log
 
