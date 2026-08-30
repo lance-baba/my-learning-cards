@@ -3,7 +3,7 @@ main = "worker/index.js"
 compatibility_date = "2026-08-27"
 
 # 静态资源：public/ 目录，worker 内通过 env.ASSETS 访问
-assets = { directory = "./public", binding = "ASSETS" }
+assets = { directory = "F:/项目/网页刷题/cardflow/public", binding = "ASSETS" }
 
 [[kv_namespaces]]
 binding = "CARD_KV"
