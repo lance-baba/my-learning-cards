@@ -312,7 +312,7 @@ CardFlow 是一个**产品完成度高、交互打磨用心**的知识卡片应�
 
 | 问题 | 优先级 | 建议 | 成本 |
 |------|:------:|------|------|
-| **无 Git** | **P0** | 立即 `git init` + `.gitignore`（node_modules / .wrangler）+ 首次提交 + 推送到远端（GitHub / Gitee） | **10 分钟** |
+| **无 Git** | ~~P0~~ ✅ 已闭环 | `git init` + `.gitignore` + 首次提交 + 已推送到 `github.com/lance-baba/my-learning-cards`（2026-08-30） | 10 分钟 |
 | 无 CI | **P0** | GitHub Actions：push 触发 `validate` + `lint` + `test` + `node --check` | 低 |
 | 无环境隔离 | P1 | `wrangler.toml` 增加 `[env.staging]` / `[env.production]` 与独立 KV |
 | 无回滚 | P1 | 保留上一版本构建产物，支持 `wrangler rollback` |
@@ -460,18 +460,18 @@ CardFlow 是一个**产品完成度高、交互打磨用心**的知识卡片应�
 
 | # | 动作 | 维度 | 预估 | 状态 |
 |---|------|------|------|:----:|
-| 1 | **`git init` + 首次提交 + 推送远端**（含 `data/`） | DevOps | 10 min | ⚠️ **部分完成** |
+| 1 | **`git init` + 首次提交 + 推送远端**（含 `data/`） | DevOps | 10 min | ✅ 已完成 |
 | 2 | **Tailwind 按需构建**，2.8MB → ~30KB | 性能 | 2-4 h | ✅ 已完成 |
 | 3 | **收紧 CORS 白名单** + 生产错误脱敏 | 安全 | 30 min | ✅ 已完成 |
 | 4 | **接入 Sentry**（前端 + Workers） | 可观测 | 1-2 h | ✅ 已完成 |
 | 5 | **`npm run validate` 接入 Git pre-commit** | 数据治理 | 15 min | ✅ 已完成 |
 
-> 第 1 项是**全项目最高优先级**：10 分钟消除"代码全量丢失"的不可逆风险。
+> 第 1 项是**全项目最高优先级**：消除"代码全量丢失"的不可逆风险。
 >
-> **⚠️ 第 1 项尚未真正闭环**：本地 `git init` 与 4 次提交已完成（`data/` 与
-> `public/vendor/` 均已入库），但**未推送远端**——推送需本人 GitHub / Gitee 账号，
-> 属于必须由人执行的动作。**在此之前「磁盘故障即全量丢失」的风险依然存在**，
-> 这也是当前唯一仍未消除的 P0 风险。请尽快补上 `git remote add` + `git push -u`。
+> **✅ 第 1 项已闭环（2026-08-30）**：本地 `git init` + 5 次提交 + 已强制推送到
+> `https://github.com/lance-baba/my-learning-cards`（默认分支 `main`，远端 HEAD = `037d8f2`）。
+> `data/` 与 `public/vendor/` 均随仓库入库，「磁盘故障即全量丢失」风险已消除。
+> 说明：远端原有 15 个无关旧提交，经本人确认后 `git push --force` 覆盖。
 >
 > 各项执行结果、以及整改期间新发现并修复的两个真实缺陷，见 **第八章**。
 
@@ -625,23 +625,16 @@ options 根层级键，未发现同类问题。
 | **综合** | **54 / D** | **≈64 / C** | P0 消除后达到"可安全演进"的门槛 |
 
 > 复评为**估算值**，非重新全量评审。正式复评建议在 P1 完成后进行。
-> 注意：只要第 1 项（推远端）未完成，"不可逆丢失"风险就依然成立，
-> DevOps 维度的实际风险等级仍应按 F 看待。
+> 第 1 项（推远端）已于 2026-08-30 闭环，DevOps 维度实际风险已从 F 上调至 D。
 
 ### 8.4 仍未闭环的 P0 风险
 
-**唯一一项**：本地仓库尚未推送远端。
-`git init` 只解决了"可回滚"，没有解决"磁盘故障/误删即全量丢失"。
+**已无未闭环项** ✅。P0 五项（Git 推远端 / Tailwind 按需构建 / CORS 加固 / 可观测性 /
+数据校验门禁）全部完成，代码已托管于 `https://github.com/lance-baba/my-learning-cards`
+（默认分支 `main`）。
 
-需要本人执行（涉及账号授权）：
-
-```bash
-git remote add origin <你的 GitHub / Gitee 仓库地址>
-git push -u origin master
-```
-
-若仓库含敏感配置，请使用**私有仓库**。完成后建议顺手开启分支保护，
-并进入 P1 第 6 项（GitHub Actions：validate + lint + test + `node --check`）。
+> 下一步建议：开启 `main` 分支保护（禁止直接 force-push、要求 PR），
+> 并进入 P1 第 6 项（GitHub Actions：validate + lint + test + `node --check`）。
 
 ---
 
