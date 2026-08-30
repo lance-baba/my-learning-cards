@@ -853,9 +853,10 @@ main {
   }
 }
 
-/* ============ PC / 大屏（≥768px）：居中手机框，flex 三段式填满 100vh ============
- *   布局：#app(flex-col,100vh) → [header(固定)] + [main(flex-1)] + [nav(固定)]
- *   底栏在流内，不会被挤出；卡片高度跟随 main 自适应。
+/* ============ PC / 大屏（≥768px）：居中手机框，卡片自适应高度+字号放大 ============
+ *   布局：#app(flex-col,100vh) → [header(固定)] + [main(flex-1,居中)] + [nav(固定)]
+ *   卡片不再硬撑满 main，改为 height:auto + max-height 上限，垂直居中显示。
+ *   字号全面放大（标题1.6rem/正文1.25rem），同样文字自然占更多纵向空间。
  *   移动端不受影响（<768px 不命中此块）。 */
 @media (min-width: 768px) {
   #app {
@@ -877,9 +878,34 @@ main {
     border-radius: 0 0 20px 20px;
   }
 
-  /* 卡片：用 calc 直接算出 header+nav 之后的剩余空间，不依赖 % 链 */
-  /* 卡片高度由 flex 三段式统一驱动，无需覆盖 */
-  main { overflow: hidden; padding-bottom: 0; }
+  /* main：垂直居中卡片，不再强制子元素填满 */
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  /* 卡片：自适应内容高度，不硬撑满 main；max-height 防止超长卡溢出 */
+  .card-slide { height: auto; }
+  .card-slide > .card-shell {
+    height: auto;
+    max-height: calc(100vh - 150px);
+  }
+
+  /* ===== A. 桌面字号放大 ===== */
+  .card-title { font-size: 1.6rem; line-height: 1.45; }
+  .card-subtitle { font-size: 1.3rem; }
+  .card-body {
+    font-size: 1.25rem;
+    --card-fs: 1.25rem;
+    line-height: 1.85;
+  }
+
+  /* 头图区也相应加大 */
+  .card-hero { height: 180px; }
+  .card-hero-img { height: 180px; }
 }
 
 /* ============================================================
