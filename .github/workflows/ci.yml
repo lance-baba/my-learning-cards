@@ -1,0 +1,48 @@
+name: CI
+
+# 工程评审 P1 第 4 项：GitHub Actions 流水线
+# 覆盖评审时指出的「无 CI」缺口——每次 push / PR 自动跑质量门：
+#   数据契约校验 → ESLint → 单元测试 → 关键脚本语法检查 → CSS 类名审计。
+# 与 .githooks/pre-commit 同源门禁，但 CI 额外跑 eslint（pre-commit 为兼容沙箱未加 lint 分支）。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 本仓库未提交 package-lock.json（沙箱禁 npm install），用 npm install 拉 devDependencies
+      # （含 eslint / prettier，供 lint 步骤；wrangler 供 deploy 相关脚本）。
+      - name: Install dependencies
+        run: npm install
+
+      - name: Data contract validate
+        run: npm run validate
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Syntax check (worker + local server)
+        run: |
+          node --check worker/index.js
+          node --check worker/observe.js
+          node --check worker/ratelimit.js
+          node --check local-server.js
+
+      - name: CSS class audit (防 purge 漏扫致样式静默失效)
+        run: npm run audit:css
