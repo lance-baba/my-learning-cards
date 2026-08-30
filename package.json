@@ -11,12 +11,19 @@
     "validate": "node tools/card_tool.js validate",
     "test": "node tools/observe.test.mjs && node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs",
     "test:unit": "node tools/cardflow-logic.test.mjs && node tools/ratelimit.test.mjs",
+    "lint": "eslint .",
+    "format": "prettier --write .",
     "new": "node tools/card_tool.js new",
     "setup-kv": "node tools/setup_kv.js",
     "sync": "node tools/sync_kv.js",
     "login": "wrangler login"
   },
   "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.0.0",
     "tailwindcss": "2.2.19",
     "wrangler": "^3.0.0"
   }

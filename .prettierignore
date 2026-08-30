@@ -1,0 +1,9 @@
+node_modules
+public/vendor
+data
+.wrangler
+dist
+*.min.css
+*.min.js
+install.log
+.npm-cache
