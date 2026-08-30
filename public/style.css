@@ -656,6 +656,24 @@ body {
   text-align: right;
   margin-top: 2px;
 }
+/* 翻牌卡（收藏夹内点击翻转揭晓答案）。
+   翻转状态用左侧色条 + 底色 + 正文换色表达，避免 rotateY 180 导致文字镜像倒着显示。 */
+.fav-sub-flip {
+  cursor: pointer;
+  user-select: none;
+  border-left: 2px solid transparent;
+  border-radius: 6px;
+  padding-left: 8px;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+.fav-sub-flip:active { transform: scale(0.985); }
+.fav-sub-flip.is-flipped {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+.fav-sub-flip.is-flipped .fav-sub-body { color: #a7f3d0; }
+.fav-sub-flip .fav-sub-hint { color: #64748b; }
+.fav-sub-flip.is-flipped .fav-sub-hint { color: #34d399; }
 /* 收藏夹内分页点调小一点，适配紧凑空间 */
 .fav-topic-swiper .swiper-pagination {
   bottom: 4px;
@@ -878,12 +896,15 @@ main {
     border-radius: 0 0 20px 20px;
   }
 
-  /* main：垂直居中卡片，不再强制子元素填满 */
+  /* main：垂直居中卡片，不再强制子元素填满。
+   * min-height:0 是关键：否则 flex 列里 main 默认 min-height:auto 会被卡片内容撑高，
+   * 把底部 static 导航挤出 100vh 并被 #app 的 overflow:hidden 裁掉（全屏底栏消失）。 */
   main {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
+    overflow: hidden;
+    min-height: 0;
     padding-bottom: 0;
   }
 

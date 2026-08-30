@@ -179,11 +179,18 @@ async function fetchAllTopics() {
     for (const cat of indexData.categories) {
       if (enabled && enabled.length && !enabled.includes(cat.id)) continue; // ② 按需下载：未勾选分类直接跳过
       for (const bundleId of (cat.bundles || [])) {
-        const bundleRes = await fetchWithRetry(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
-        const bundleData = await bundleRes.json();
-        if (bundleData && Array.isArray(bundleData.items)) {
-          bundleData.items.forEach(it => { it.catId = cat.id; it.catName = cat.name; });
-          all = all.concat(bundleData.items);
+        // 单 bundle 容错：某一个分类的包拉取失败，只跳过该分类，绝不让整站「加载失败」。
+        // （历史上缓存投毒导致某版本号全 500，旧逻辑会连坐整站弹出「卡片加载失败，请检查网络」）
+        try {
+          const bundleRes = await fetchWithRetry(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
+          const bundleData = await bundleRes.json();
+          if (bundleData && Array.isArray(bundleData.items)) {
+            bundleData.items.forEach(it => { it.catId = cat.id; it.catName = cat.name; });
+            all = all.concat(bundleData.items);
+          }
+        } catch (e) {
+          console.error('分类 bundle 加载失败，已跳过：', cat.id, bundleId, e);
+          if (window.__cfReport) window.__cfReport('bundle', `${cat.id}/${bundleId}: ${e && e.message ? e.message : 'load-failed'}`);
         }
       }
     }
@@ -702,6 +709,14 @@ const FavoritesView = {
     openInStream(topicId) {
       this.services.openInStream(topicId);
     },
+    // 收藏夹内翻牌卡的翻转：沿用主卡片流同一 store.isFlipped，键名统一走
+    // subKey(topic, sub) = `${topic.id}_${sub.sub_id}`，保证收藏夹与卡片流两处状态同步。
+    favFlipKey(item, sub) { return subKey(item.topic, sub); },
+    isFavFlipped(item, sub) { return !!store.isFlipped[this.favFlipKey(item, sub)]; },
+    toggleFavFlip(item, sub) {
+      const k = this.favFlipKey(item, sub);
+      store.isFlipped[k] = !store.isFlipped[k];
+    },
     clearAll() {
       if (!confirm('确定清空所有收藏？')) return;
       store.bookmarked = {};
@@ -718,6 +733,53 @@ const FavoritesView = {
     measureChips() {
       const el = this.$refs.chipsEl;
       if (el) this.hasMoreCats = el.scrollHeight > el.clientHeight + 2;
+    },
+    // 桌面端鼠标拖拽滚动：原生 overflow-y:auto 容器在桌面只支持滚轮、不支持鼠标拖动，
+    // 用户会感觉「收藏夹拖不动」。这里给 .fav-list 加指针拖拽滚动。
+    // 触摸设备走原生滚动（不拦截）；横向拖动主导时交给内层横向 Swiper，避免冲突。
+    enableDragScroll() {
+      const el = this.$refs.listEl;
+      if (!el) return;
+      let down = false, startY = 0, startX = 0, startTop = 0, dragged = false;
+      const onDown = (e) => {
+        if (e.pointerType === 'touch') return; // 触摸交给原生滚动
+        if (e.button !== 0) return;
+        down = true;
+        // 不要 preventDefault：会连带吃掉 click，导致翻牌卡点不动。
+        dragged = false;
+        startY = e.clientY; startX = e.clientX; startTop = el.scrollTop;
+      };
+      const onMove = (e) => {
+        if (!down) return;
+        const dy = e.clientY - startY;
+        const dx = e.clientX - startX;
+        if (Math.abs(dy) < 4 && Math.abs(dx) < 4) return; // 阈值内视为点击
+        if (Math.abs(dy) >= Math.abs(dx)) {              // 纵向主导 → 拖拽滚动
+          el.scrollTop = startTop - dy;
+          dragged = true;                                 // 标记本次是拖拽而非点击
+          if (e.cancelable) e.preventDefault();
+        }
+        // 横向主导 → 不动，交给内层横向 Swiper
+      };
+      const onUp = () => { down = false; };
+      // 拖拽结束后浏览器仍会补发一次 click（落点在当前卡片上），若不拦会误触发翻牌。
+      // 用捕获阶段抢在卡片 click 之前吞掉它。
+      const onClick = (e) => {
+        if (!dragged) return;
+        dragged = false;
+        e.stopPropagation();
+        if (e.cancelable) e.preventDefault();
+      };
+      el.addEventListener('pointerdown', onDown);
+      el.addEventListener('pointermove', onMove, { passive: false });
+      el.addEventListener('click', onClick, true); // 捕获阶段
+      window.addEventListener('pointerup', onUp);
+      this._dragCleanup = () => {
+        el.removeEventListener('pointerdown', onDown);
+        el.removeEventListener('pointermove', onMove);
+        el.removeEventListener('click', onClick, true);
+        window.removeEventListener('pointerup', onUp);
+      };
     }
   },
   // 收藏夹 Swiper 延迟初始化（等 DOM 渲染完成）
@@ -736,10 +798,13 @@ const FavoritesView = {
           });
         });
         this.measureChips();
+        this.enableDragScroll();
       }, 200);
     });
   },
-  beforeUnmount() {},
+  beforeUnmount() {
+    if (this._dragCleanup) this._dragCleanup();
+  },
   // 收藏集合变化导致分类数变化时，重新测量是否需要「展开」按钮
   watch: {
     cats() {
@@ -770,8 +835,9 @@ const FavoritesView = {
         {{ chipsExpanded ? '收起 ▴' : '展开全部分类 ▾' }}
       </button>
 
-      <!-- 收藏列表：原生 CSS 滚动（外层），每条含内层横向 Swiper 切子卡 -->
-      <div class="fav-list">
+      <!-- 收藏列表：原生 CSS 滚动（外层），每条含内层横向 Swiper 切子卡。
+       *   桌面端额外支持鼠标拖拽滚动（enableDragScroll），触摸端仍走原生滚动。 -->
+      <div class="fav-list" ref="listEl">
         <div v-for="item in filtered" :key="item.key" class="fav-topic-card">
             <!-- 卡片头部：分类 + 操作 -->
             <div class="fav-item-head">
@@ -790,15 +856,29 @@ const FavoritesView = {
               <div class="swiper fav-topic-swiper" :data-fid="'fav-'+item.key">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide fav-swiper-slide" v-for="(sub, si) in item.topic.sub_cards" :key="sub.sub_id">
-                    <div class="fav-sub-preview">
+                    <!-- 翻牌卡：点击翻转。复用主卡片流同一 store.isFlipped（键名统一走 subKey），
+                         两处状态同步；未翻时只显示问题，禁止剧透 back_text。 -->
+                    <div v-if="sub.layout==='flip_card'"
+                         class="fav-sub-preview fav-sub-flip"
+                         :class="{ 'is-flipped': isFavFlipped(item, sub) }"
+                         @click="toggleFavFlip(item, sub)">
+                      <div class="flex items-center justify-between mb-2">
+                        <span class="fav-sub-index">{{ si + 1 }}/{{ item.topic.sub_cards.length }}</span>
+                        <span class="text-xs text-slate-500">{{ isFavFlipped(item, sub) ? '💡' : '❓' }}</span>
+                      </div>
+                      <h4 class="fav-sub-title">{{ sub.front_text || sub.title || '无标题' }}</h4>
+                      <p class="fav-sub-body">{{ isFavFlipped(item, sub) ? (sub.back_text || '（暂无解析）') : '点击卡片揭晓答案' }}</p>
+                      <p class="fav-sub-hint">{{ isFavFlipped(item, sub) ? '点击翻回正面 ↺' : '点击翻牌查看解析 ↺' }}</p>
+                    </div>
+                    <!-- 其余布局：静态预览。翻牌卡已走上面分支，故此处不再拼接 back_text（防剧透）。 -->
+                    <div v-else class="fav-sub-preview">
                       <div class="flex items-center justify-between mb-2">
                         <span class="fav-sub-index">{{ si + 1 }}/{{ item.topic.sub_cards.length }}</span>
                         <span class="text-xs text-slate-500">{{ {streaming_text:'📖',joke_text:'😄',flip_card:'❓'}[sub.layout] || '🌱' }}</span>
                       </div>
                       <h4 class="fav-sub-title">{{ sub.title || sub.front_text || sub.caption || '无标题' }}</h4>
-                      <p class="fav-sub-body">{{ [sub.content, sub.streaming_content, sub.back_text, sub.caption, (sub.items||[]).join('')].filter(Boolean).join('').slice(0, 120) || '（暂无内容预览）' }}</p>
+                      <p class="fav-sub-body">{{ [sub.content, sub.streaming_content, sub.caption, (sub.items||[]).join('')].filter(Boolean).join('').slice(0, 120) || '（暂无内容预览）' }}</p>
                       <p v-if="sub.layout==='streaming_text'" class="fav-sub-hint">左右滑动查看更多 →</p>
-                      <p v-else-if="sub.layout==='flip_card'" class="fav-sub-hint">点击翻牌查看解析 ↺</p>
                     </div>
                   </div>
                 </div>

@@ -15,9 +15,12 @@
  *  - 纯逻辑 compareVersion / selectStaleBundleKeys 抽至 sw_cache.js（UMD，可单测）；
  *    若 importScripts 失败，回退到文件内联副本，保证 SW 安装不被该文件缺失拖垮。
  */
-// v5：接入缓存配额治理（safeCachePut + 旧 bundle 版本回收）。前端任何改动都 bump 本常量，
-//     使老用户丢弃旧缓存、拉取新 SW（activate 会删除非当前 CACHE 名）。
-const CACHE = 'cardflow-v5';
+// v6：① 修复 /api/* 缓存投毒——仅缓存 res.ok 成功响应，绝不缓存 500（此前会把投毒的
+//     500 长期喂给用户并反复写缓存）；② 缓存为错误/缺失时优先走网络而非返回旧 500。
+// v7：收藏夹翻牌卡可点击翻转（此前预览是静态 div、无点击处理器，点了没反应），
+//     并修掉 back_text 答案剧透；拖拽滚动后不再误触发翻牌。
+//     前端任何改动都 bump 本常量，使老用户丢弃旧缓存、拉取新 SW（activate 会删除非当前 CACHE 名）。
+const CACHE = 'cardflow-v7';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js'];
 const MAX_BUNDLE_VERSIONS_PER_ID = 1; // 每个 bundle（分类）仅保留最新一个版本缓存
 
@@ -166,18 +169,25 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 数据 API：stale-while-revalidate
+  // 数据 API：stale-while-revalidate（已加固，杜绝缓存投毒）
+  //  - 仅缓存 res.ok 的成功响应；500/错误响应绝不写缓存。
+  //  - 若命中缓存是成功响应 → 立即返回（SWR：即时 + 后台刷新）；否则优先等网络结果。
+  //  - 这样即使某次请求拿到 500，也只影响当次、不会被 SW 长期留存喂给用户。
   if (url.origin === self.location.origin && url.pathname.startsWith('/api/')) {
     event.respondWith(
       caches.open(CACHE).then(async (ca) => {
         const cached = await ca.match(req);
         const network = fetch(req)
           .then(async (res) => {
-            await safeCachePut(ca, req, res);
+            if (res.ok) await safeCachePut(ca, req, res.clone()); // 仅成功响应进缓存
             return res;
           })
           .catch(() => null);
-        return cached || network;
+        if (cached && cached.ok) {
+          network.then(() => {}).catch(() => {}); // 后台刷新缓存，不阻塞响应
+          return cached;
+        }
+        return (await network) || cached; // 缓存是错误/缺失 → 等网络；网络也失败才回退（前端会重试）
       })
     );
     return;
