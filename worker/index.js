@@ -21,27 +21,44 @@
  *   wrangler secret put APP_VERSION       # 可选，Sentry 里标记 release
  */
 import { requestId, log, captureException } from './observe.js';
+import { createRateLimiter } from './ratelimit.js';
 
-/** 前端错误上报限流：同一 isolate 内按 IP 计数（best-effort，见下方说明） */
-const logRate = new Map(); // ip -> { n, resetAt }
+/** 前端错误上报限流：同一 isolate 内按 IP 计数（best-effort，见 ratelimit.js 说明） */
 const RATE_WINDOW_MS = 60_000;
 const RATE_MAX = 20; // 每 IP 每分钟最多 20 条
+const logLimiter = createRateLimiter({ windowMs: RATE_WINDOW_MS, max: RATE_MAX, pruneSize: 1000 });
 
-function rateOk(ip) {
-  const now = Date.now();
-  const rec = logRate.get(ip);
-  if (!rec || now > rec.resetAt) {
-    logRate.set(ip, { n: 1, resetAt: now + RATE_WINDOW_MS });
-    // 顺带清理过期项，避免 Map 无界增长
-    if (logRate.size > 1000) {
-      for (const [k, v] of logRate) if (now > v.resetAt) logRate.delete(k);
-    }
-    return true;
-  }
-  if (rec.n >= RATE_MAX) return false;
-  rec.n += 1;
-  return true;
-}
+/** 全局 /api/* 限流（best-effort，单 isolate）：防 KV 读放大与探测扫描 */
+const API_RATE_WINDOW_MS = 60_000;
+const API_RATE_MAX = 120; // 每 IP 每分钟 120 次（index+bundle+health+log 合计）
+const apiLimiter = createRateLimiter({ windowMs: API_RATE_WINDOW_MS, max: API_RATE_MAX, pruneSize: 2000 });
+
+/**
+ * 内容安全策略：收紧为同源资源，杜绝外链脚本/内联脚本注入（XSS 防护基线）。
+ *
+ * ⚠️ script-src 必须含 'unsafe-eval'：本项目用「Vue 3 全局构建 + 无构建步骤」方案，
+ * 运行时模板编译器靠 new Function()（即 eval）编译 index.html 里的 in-DOM 模板与各组件
+ * 的 template 选项。若去掉 'unsafe-eval'，Vue 直接抛 EvalError 导致整站白屏（已在 #74
+ * 本地 fresh-profile 实测确认）。
+ *
+ * 风险说明：'unsafe-eval' 只影响「把字符串当代码执行」这一条路径。本应用模板全部来自
+ * 自有源码（index.html + app.js），不会把任何用户/题库数据喂进 eval；CSP 仍禁止内联
+ * <script> 与外链脚本。因此该项的 XSS 风险增量可忽略，属本架构下的必要且可接受取舍。
+ * 若要彻底去掉 'unsafe-eval'，需改「Vue runtime-only 构建 + 预编译 render 函数」，那要
+ * 引入构建步骤，超出 #74 范围（见评审报告 P1 后续项）。
+ */
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-eval'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "manifest-src 'self'",
+].join('; ');
 
 async function handle(request, env, ctx, rid) {
   const url = new URL(request.url);
@@ -69,6 +86,12 @@ async function handle(request, env, ctx, rid) {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // 全局 /api/* 限流（best-effort，单 isolate）：连续打 API 直接 429，保护 KV 与 Worker 算力
+  if (path.startsWith('/api/') && !apiLimiter.rateOk(request.headers.get('CF-Connecting-IP') || 'unknown')) {
+    log('warn', 'api_rate_limited', { rid, path });
+    return new Response(null, { status: 429, headers: corsHeaders });
+  }
+
   try {
     // ---- 健康检查：部署自检 / 探活。不读 KV，零成本 ----
     if (path === '/api/health') {
@@ -92,7 +115,7 @@ async function handle(request, env, ctx, rid) {
         });
       }
       const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-      if (!rateOk(ip)) {
+      if (!logLimiter.rateOk(ip)) {
         log('warn', 'log_rate_limited', { rid, ip });
         return new Response(null, { status: 429, headers: corsHeaders });
       }
@@ -191,6 +214,8 @@ export default {
 
     try {
       const res = await handle(request, env, ctx, rid);
+      // 安全基线：所有响应注入 CSP（脚本仅同源，阻断外链/内联脚本 XSS）
+      if (!res.headers.has('Content-Security-Policy')) res.headers.set('Content-Security-Policy', CSP);
       if (shouldLog) {
         log('info', 'request', {
           rid,
