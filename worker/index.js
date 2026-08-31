@@ -33,6 +33,11 @@ const API_RATE_WINDOW_MS = 60_000;
 const API_RATE_MAX = 120; // 每 IP 每分钟 120 次（index+bundle+health+log 合计）
 const apiLimiter = createRateLimiter({ windowMs: API_RATE_WINDOW_MS, max: API_RATE_MAX, pruneSize: 2000 });
 
+/** 题库上传限流（best-effort）：上传虽需密钥，仍限量防 KV 写入滥用 */
+const BANK_UPLOAD_WINDOW_MS = 60_000;
+const BANK_UPLOAD_MAX = 10; // 每 IP 每分钟最多上传 10 个题库
+const bankLimiter = createRateLimiter({ windowMs: BANK_UPLOAD_WINDOW_MS, max: BANK_UPLOAD_MAX, pruneSize: 500 });
+
 /**
  * 内容安全策略：收紧为同源资源，杜绝外链脚本/内联脚本注入（XSS 防护基线）。
  *
@@ -191,6 +196,71 @@ async function handle(request, env, ctx, rid) {
       return new Response(JSON.stringify(payload), {
         headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=60' },
       });
+    }
+
+    // 备考题库：上传（需密钥）→ 生成随机验证码；按验证码加载（公开）
+    // 验证码为 16 位不可猜测的随机串，存在 CARD_KV 的 bank:<code>。
+    if (path === '/api/bank') {
+      if (request.method === 'POST') {
+        // 鉴权：必须带正确上传密钥（env.BANK_UPLOAD_KEY），否则无权发布
+        const key = request.headers.get('X-Bank-Key') || '';
+        if (!env.BANK_UPLOAD_KEY || key !== env.BANK_UPLOAD_KEY) {
+          return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: corsHeaders });
+        }
+        if (!bankLimiter.rateOk(request.headers.get('CF-Connecting-IP') || 'unknown')) {
+          return new Response(JSON.stringify({ error: 'Too Many Requests' }), { status: 429, headers: corsHeaders });
+        }
+        const raw = await request.text();
+        if (raw.length > 1_000_000) {
+          return new Response(JSON.stringify({ error: 'Payload Too Large' }), { status: 413, headers: corsHeaders });
+        }
+        let bank;
+        try { bank = JSON.parse(raw); } catch {
+          return new Response(JSON.stringify({ error: 'Bad Request' }), { status: 400, headers: corsHeaders });
+        }
+        // 入参校验：必须有非空 questions 数组，其余字段可选
+        if (!bank || !Array.isArray(bank.questions) || !bank.questions.length) {
+          return new Response(JSON.stringify({ error: 'Invalid Bank' }), { status: 400, headers: corsHeaders });
+        }
+        // 生成不可猜测的验证码（UUID 去横杠取前 16 位）
+        const code = (typeof crypto.randomUUID === 'function'
+          ? crypto.randomUUID()
+          : (Date.now().toString(16) + Math.random().toString(16).slice(2))
+        ).replace(/-/g, '').slice(0, 16);
+        // 只存必要字段，避免客户端塞入垃圾数据撑爆 KV
+        const clean = {
+          title: String(bank.title || '').slice(0, 80),
+          version: String(bank.version || code).slice(0, 40),
+          chapters: Array.isArray(bank.chapters) ? bank.chapters : [],
+          shortNames: bank.shortNames && typeof bank.shortNames === 'object' ? bank.shortNames : {},
+          questions: bank.questions,
+        };
+        try {
+          await env.CARD_KV.put('bank:' + code, JSON.stringify(clean));
+        } catch (kvErr) {
+          ctx.waitUntil(captureException(env, kvErr, { rid, path }));
+          return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500, headers: corsHeaders });
+        }
+        return new Response(JSON.stringify({ code }), {
+          headers: { ...corsHeaders, 'Cache-Control': 'no-store' },
+        });
+      }
+      if (request.method === 'GET') {
+        const id = url.searchParams.get('id');
+        if (!id || !/^[A-Za-z0-9]{4,32}$/.test(id)) {
+          return new Response(JSON.stringify({ error: 'Invalid ID' }), { status: 400, headers: corsHeaders });
+        }
+        let data = null;
+        try { data = await env.CARD_KV.get('bank:' + id, { type: 'json' }); }
+        catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, id })); }
+        if (!data) {
+          return new Response(JSON.stringify({ error: 'Not Found' }), { status: 404, headers: corsHeaders });
+        }
+        return new Response(JSON.stringify(data), {
+          headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=300' },
+        });
+      }
+      return new Response(JSON.stringify({ error: 'Method Not Allowed' }), { status: 405, headers: corsHeaders });
     }
 
     // 备考题库独立页：/exam 与 /exam/ 都映射到 /exam.html（用户习惯不带后缀直接访问）。

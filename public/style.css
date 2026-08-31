@@ -467,9 +467,10 @@ body {
   z-index: 15;
   display: flex;
   flex-direction: column;
-  /* 收藏夹隐藏了底部 nav，无需再为它预留 72px；仅留安全区 + 小内边距，
-     让 .fav-list(flex:1) 向下延伸、显示更多卡片，回收底部空带 */
-  padding: calc(56px + env(safe-area-inset-top)) 14px calc(14px + env(safe-area-inset-bottom));
+  /* 收藏夹是盖住整个 #app 的覆盖层（含原 header），所以顶部不应再为
+     header 预留 56px，否则那 56px 会成纯空白带（用户报「顶部没到顶」）。
+     只留刘海安全区，内容直接顶到最上沿。 */
+  padding: env(safe-area-inset-top) 14px calc(14px + env(safe-area-inset-bottom));
   background: #0f172a;
   overflow: hidden;
 }

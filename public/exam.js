@@ -189,7 +189,7 @@
         version: '',
 
         // 学习模式
-        study: { chapter: '', type: 'all', list: [], idx: 0 },
+        study: { chapter: '', type: 'all', list: [], idx: 0, jumpInput: '' },
 
         // 模考配置与运行态
         cfg: { chapters: ['all'], types: ['all'], count: 50, time: 60 },
@@ -198,7 +198,7 @@
         sheetOpen: false,       // 答题卡
 
         // 错题重做
-        wrongPractice: { chapter: 'all', list: [], idx: 0, answers: {} },
+        wrongPractice: { chapter: 'all', list: [], idx: 0, answers: {}, jumpInput: '' },
         wrongPicked: {},        // 错题重做里的临时选中（答错可重试，未答对不落库）
         wrongWrong: {},         // 错题重做里本次答错过（仅驱动 UI 变红）
 
@@ -206,13 +206,26 @@
         dialog: null,           // { msg, onOk }
         // localStorage 不是响应式数据源，写它不会触发 computed 重算。
         // 用一个自增计数器建立依赖：任何写 LS 的地方都 rev++，读 LS 的 computed 才会刷新。
-        rev: 0
+        rev: 0,
+        // 返回栈：子页进栈，首页作为「退出到 CardFlow」的边界（清空历史）
+        history: [],
+        // 题库管理：当前激活题库（code 空 = 内置地基题库）。持久化到 localStorage。
+        activeBank: LS.get('activeBank', { code: '', title: '' }),
+        uploadOpen: false,
+        uploadText: '', uploadFileName: '', uploadKey: '', uploadMsg: '', uploadBusy: false,
+        generatedCode: '',
+        loadCode: '', loadBusy: false, loadMsg: ''
       };
     },
 
     computed: {
       /* ---------- 题库统计 ---------- */
       totalCount: function () { return this.questions.length; },
+
+      // 首页标题：内置题库显示「备考题库」，加载验证码题库后显示其标题
+      homeTitle: function () {
+        return this.activeBank.code ? ('题库 · ' + (this.activeBank.title || this.activeBank.code)) : '备考题库';
+      },
 
       // 每章：总题数 / 已读（学习模式）/ 各题型数量
       chapterCards: function () {
@@ -347,7 +360,8 @@
         if (this.loadState === 'ready' || this.loadState === 'loading') return;
         this.loadState = 'loading';
         this.loadError = '';
-        fetch(BANK_URL, { cache: 'force-cache' })
+        var bankUrl = this.activeBank.code ? ('/api/bank?id=' + encodeURIComponent(this.activeBank.code)) : BANK_URL;
+        fetch(bankUrl, { cache: this.activeBank.code ? 'no-store' : 'force-cache' })
           .then(function (r) {
             if (!r.ok) throw new Error('HTTP ' + r.status);
             return r.json();
@@ -384,15 +398,113 @@
         if (!this.chapters.length) this.chapters = Object.keys(map);
       },
 
+      /* ================= 题库管理（上传 + 验证码加载） ================= */
+      reloadBank: function () {
+        this.questions = []; this.chapters = []; this.chapterMap = {}; this.shortNames = {}; this.version = '';
+        this.history = [];
+        this.loadState = 'idle';
+        this.loadBank();
+      },
+      useBuiltin: function () {
+        this.activeBank = { code: '', title: '' };
+        LS.set('activeBank', this.activeBank);
+        this.reloadBank();
+      },
+      loadByCode: function (code) {
+        var self = this;
+        code = (code || '').trim();
+        if (!/^[A-Za-z0-9]{4,32}$/.test(code)) { this.loadMsg = '验证码格式不正确（4–32 位字母数字）'; return; }
+        this.loadBusy = true; this.loadMsg = '正在加载…';
+        fetch('/api/bank?id=' + encodeURIComponent(code), { cache: 'no-store' })
+          .then(function (r) {
+            if (r.status === 404) throw new Error('notfound');
+            if (!r.ok) throw new Error('http');
+            return r.json();
+          })
+          .then(function (data) {
+            if (!data || !Array.isArray(data.questions) || !data.questions.length) throw new Error('empty');
+            self.activeBank = { code: code, title: data.title || data.version || code };
+            LS.set('activeBank', self.activeBank);
+            self.loadBusy = false; self.loadMsg = '';
+            self.reloadBank();
+          })
+          .catch(function (e) {
+            self.loadBusy = false;
+            self.loadMsg = (e && e.message === 'notfound') ? '验证码不存在，请检查后重试' : '题库加载失败，请重试';
+          });
+      },
+      onFile: function (e) {
+        var f = e.target.files && e.target.files[0];
+        if (!f) return;
+        var self = this;
+        this.uploadFileName = f.name;
+        var reader = new FileReader();
+        reader.onload = function () { self.uploadText = reader.result; self.uploadMsg = ''; };
+        reader.onerror = function () { self.uploadMsg = '文件读取失败'; };
+        reader.readAsText(f);
+      },
+      doUpload: function () {
+        var self = this;
+        var text = (this.uploadText || '').trim();
+        if (!text) { this.uploadMsg = '请粘贴 JSON 或选择文件'; return; }
+        var parsed;
+        try { parsed = JSON.parse(text); } catch (e) { this.uploadMsg = 'JSON 解析失败：' + (e.message || e); return; }
+        if (!parsed || !Array.isArray(parsed.questions) || !parsed.questions.length) { this.uploadMsg = '题库格式不正确：需含非空 questions 数组'; return; }
+        this.uploadBusy = true; this.uploadMsg = '正在上传…';
+        fetch('/api/bank', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Bank-Key': (this.uploadKey || '').trim() },
+          body: text
+        })
+          .then(function (r) {
+            if (r.status === 401) throw new Error('key');
+            if (r.status === 413) throw new Error('big');
+            if (!r.ok) throw new Error('http' + r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            self.uploadBusy = false;
+            self.generatedCode = data.code;
+            self.uploadMsg = '上传成功！验证码已生成（见下方），把它发给对方即可加载。';
+            self.uploadText = '';
+          })
+          .catch(function (e) {
+            self.uploadBusy = false;
+            if (e.message === 'key') self.uploadMsg = '上传密钥错误，无权发布';
+            else if (e.message === 'big') self.uploadMsg = '题库过大，请精简后重试';
+            else self.uploadMsg = '上传失败，请重试';
+          });
+      },
+
       /* ================= 路由 ================= */
       go: function (page) {
         // 离开考试页时若考试未提交，倒计时必须停掉，
         // 否则定时器会在组件卸载后回调 submitExam 操作已销毁的数据。
         if (page !== 'exam' && page !== 'exam-result' && page !== 'exam-review') this.stopTimer();
+        // 返回栈：进入子页进栈；首页作为「退出到 CardFlow」的边界，清空历史
+        if (page !== this.page) {
+          if (page === 'home') { this.history = []; this.title = this.homeTitle(); }
+          else if (this.history[this.history.length - 1] !== this.page) this.history.push(this.page);
+        }
         this.page = page;
         this.sheetOpen = false;
         var el = this.$refs.body;
         if (el) el.scrollTop = 0;
+      },
+
+      // 返回：优先在备考模块内逐级回退（避免一按返回就跳回 CardFlow 刷一刷，跳转层级过多）。
+      // 仅在首页（历史栈空）时才退出到 CardFlow 主页。
+      back: function () {
+        this.stopTimer();
+        if (this.history.length) {
+          var prev = this.history.pop();
+          this.page = prev;
+          this.sheetOpen = false;
+          var el = this.$refs.body;
+          if (el) el.scrollTop = 0;
+        } else {
+          this.close();
+        }
       },
 
       close: function () {
@@ -467,9 +579,18 @@
 
       studyJump: function (n) {
         n = parseInt(n, 10);
-        if (isNaN(n) || n < 1 || n > this.study.list.length) return;
+        if (isNaN(n) || n < 1 || n > this.study.list.length) { this.study.jumpInput = ''; return; }
         this.study.idx = n - 1;
+        this.study.jumpInput = '';
         this.markCurrentRead();
+      },
+
+      // 错题重做：跳到指定题号（与学习模式同样的「输入 + 按钮」体验）
+      wrongJump: function (n) {
+        n = parseInt(n, 10);
+        if (isNaN(n) || n < 1 || n > this.wrongPractice.list.length) { this.wrongPractice.jumpInput = ''; return; }
+        this.wrongPractice.idx = n - 1;
+        this.wrongPractice.jumpInput = '';
       },
 
       markCurrentRead: function () {
@@ -716,7 +837,7 @@
 
       /* ---------- 顶栏 ---------- */
       '  <div class="ex-head">',
-      '    <button class="ex-back" @click="close">← 返回</button>',
+      '    <button class="ex-back" @click="back">← 返回</button>',
       '    <span class="ex-title">{{ title }}</span>',
       '    <button v-if="page === \'exam\'" class="ex-headbtn" @click="sheetOpen = !sheetOpen">答题卡</button>',
       '    <span v-else class="ex-headbtn ex-headbtn--ghost"></span>',
@@ -728,10 +849,11 @@
       '    <div v-if="loadState === \'loading\'" class="ex-state">',
       '      <div class="ex-spinner"></div><p>正在加载题库…</p>',
       '    </div>',
-      '    <div v-else-if="loadState === \'error\'" class="ex-state">',
-      '      <div class="ex-state-icon">⚠️</div><p>{{ loadError }}</p>',
-      '      <button class="ex-btn" @click="loadBank">重试</button>',
-      '    </div>',
+'    <div v-else-if="loadState === \'error\'" class="ex-state">',
+'      <div class="ex-state-icon">⚠️</div><p>{{ loadError }}</p>',
+'      <button class="ex-btn" @click="loadBank">重试</button>',
+'      <button v-if="activeBank.code" class="ex-btn ex-btn--sm" @click="useBuiltin">恢复内置题库</button>',
+'    </div>',
 
       /* ---------- 首页 ---------- */
       '    <div v-else-if="page === \'home\'" class="ex-home">',
@@ -754,12 +876,36 @@
       '          <span class="ex-entry-icon">🔁</span><span class="ex-entry-name">错题回顾</span>',
       '          <span class="ex-entry-desc">{{ wrongCount ? wrongCount + \' 道待巩固\' : \'巩固薄弱知识点\' }}</span>',
       '        </button>',
-      '        <button class="ex-entry ex-entry--stats" @click="go(\'stats\')">',
-      '          <span class="ex-entry-icon">📊</span><span class="ex-entry-name">学习统计</span>',
-      '          <span class="ex-entry-desc">正确率 · 章节进度</span>',
-      '        </button>',
-      '      </div>',
-      '    </div>',
+'        <button class="ex-entry ex-entry--stats" @click="go(\'stats\')">',
+'          <span class="ex-entry-icon">📊</span><span class="ex-entry-name">学习统计</span>',
+'          <span class="ex-entry-desc">正确率 · 章节进度</span>',
+'        </button>',
+'      </div>',
+'      <div class="ex-bankcard">',
+'        <div class="ex-bankhead">📚 题库管理</div>',
+'        <div v-if="activeBank.code" class="ex-bankrow">',
+'          <span>当前：{{ activeBank.title || activeBank.code }}（验证码 <b>{{ activeBank.code }}</b>）</span>',
+'          <button class="ex-btn ex-btn--sm" @click="useBuiltin">恢复内置题库</button>',
+'        </div>',
+'        <div v-else class="ex-bankrow"><span class="ex-banktip">当前：内置「地基题库」（测试用，可切换）</span></div>',
+'        <div class="ex-bankload">',
+'          <input class="ex-jumpinput" type="text" maxlength="32" placeholder="输入验证码" v-model="loadCode" :disabled="loadBusy">',
+'          <button class="ex-btn ex-btn--sm" :disabled="loadBusy" @click="loadByCode(loadCode)">加载</button>',
+'        </div>',
+'        <p v-if="loadMsg" class="ex-bankmsg">{{ loadMsg }}</p>',
+'        <button class="ex-banktoggle" @click="uploadOpen = !uploadOpen">{{ uploadOpen ? \'收起 ▴\' : \'＋ 制作 / 上传题库\' }}</button>',
+'        <div v-if="uploadOpen" class="ex-upload">',
+'          <textarea class="ex-uploadarea" v-model="uploadText" :placeholder="uploadFileName || \'粘贴题库 JSON（同 questions.json 格式）\'" :disabled="uploadBusy"></textarea>',
+'          <div class="ex-uploadrow">',
+'            <label class="ex-btn ex-btn--sm ex-uploadfile">选择文件<input type="file" accept=".json,application/json" @change="onFile" hidden></label>',
+'            <input class="ex-jumpinput" type="password" placeholder="上传密钥" v-model="uploadKey" :disabled="uploadBusy">',
+'            <button class="ex-btn ex-btn--sm ex-btn--primary" :disabled="uploadBusy" @click="doUpload">生成验证码</button>',
+'          </div>',
+'          <p v-if="uploadMsg" class="ex-bankmsg">{{ uploadMsg }}</p>',
+'          <p v-if="generatedCode" class="ex-bankcode">验证码：<b>{{ generatedCode }}</b>　把它发给对方，对方在「输入验证码」处即可加载本题库</p>',
+'        </div>',
+'      </div>',
+'    </div>',
 
       /* ---------- 学习：章节选择 ---------- */
       '    <div v-else-if="page === \'study-select\'" class="ex-page">',
@@ -790,12 +936,13 @@
       '          <button class="ex-btn" :disabled="study.idx === 0" @click="studyNav(-1)">← 上一题</button>',
       '          <button class="ex-btn" :disabled="study.idx === study.list.length - 1" @click="studyNav(1)">下一题 →</button>',
       '        </div>',
-      '        <div class="ex-jump">',
-      '          <span>跳至</span>',
-      '          <input class="ex-jumpinput" type="number" min="1" :max="study.list.length" placeholder="题号"',
-      '                 @keyup.enter="studyJump($event.target.value); $event.target.value = \'\'">',
-      '          <span>/ {{ study.list.length }}</span>',
-      '        </div>',
+'        <div class="ex-jump">',
+'          <span>跳至</span>',
+'          <input class="ex-jumpinput" type="number" min="1" :max="study.list.length" placeholder="题号"',
+'                 v-model="study.jumpInput" @keyup.enter="studyJump(study.jumpInput)">',
+'          <button class="ex-btn ex-btn--sm" @click="studyJump(study.jumpInput)">跳转</button>',
+'          <span>/ {{ study.list.length }}</span>',
+'        </div>',
       '      </template>',
       '    </div>',
 
@@ -853,7 +1000,7 @@
       '        <div class="ex-scorecell is-skip"><b>{{ result.unanswered }}</b><span>未答</span></div>',
       '      </div>',
       '      <button class="ex-btn ex-btn--primary ex-btn--block" @click="reviewExam(false)">查看全部复盘</button>',
-      '      <button class="ex-btn ex-btn--block" @click="reviewExam(true)">只看错题（{{ result.wrong + result.unanswered }}）</button>',
+      '      <button class="ex-btn ex-btn--block" @click="reviewExam(true)">只看未答对（{{ result.wrong + result.unanswered }}）</button>',
       '      <button class="ex-btn ex-btn--block" @click="go(\'exam-config\')">再考一次</button>',
       '      <button class="ex-btn ex-btn--block" @click="go(\'home\')">返回首页</button>',
       '    </div>',
@@ -907,8 +1054,15 @@
       '          <button class="ex-btn" :disabled="wrongPractice.idx === 0" @click="wrongNav(-1)">← 上一题</button>',
       '          <button class="ex-btn" :disabled="wrongPractice.idx === wrongPractice.list.length - 1" @click="wrongNav(1)">下一题 →</button>',
       '        </div>',
-      '        <button class="ex-btn ex-btn--block" @click="go(\'wrong\')">返回错题本</button>',
-      '      </template>',
+'        <button class="ex-btn ex-btn--block" @click="go(\'wrong\')">返回错题本</button>',
+'        <div class="ex-jump" v-if="wrongPractice.list.length > 1">',
+'          <span>跳至</span>',
+'          <input class="ex-jumpinput" type="number" min="1" :max="wrongPractice.list.length" placeholder="题号"',
+'                 v-model="wrongPractice.jumpInput" @keyup.enter="wrongJump(wrongPractice.jumpInput)">',
+'          <button class="ex-btn ex-btn--sm" @click="wrongJump(wrongPractice.jumpInput)">跳转</button>',
+'          <span>/ {{ wrongPractice.list.length }}</span>',
+'        </div>',
+'      </template>',
       '    </div>',
 
       /* ---------- 统计 ---------- */
