@@ -29,7 +29,9 @@
 // v9：备考题库拆成独立页面 exam.html（与 CardFlow 互不相干两套应用），
 //     其壳资源 exam.html/exam.js/exam.css 进入预缓存（题库 561KB 按需加载，不预缓存）。
 // v10：备考题库新增「上传题库 + 验证码加载」+ 页码跳转按钮 + 收藏夹顶部留白修复。
-const CACHE = 'cardflow-v10';
+// v11：备考题库网页端移除上传入口（上传改由本机程序 tools/upload_bank.mjs 调 Worker POST /api/bank），
+//      网页仅保留「验证码加载」；同步清理死 CSS。
+const CACHE = 'cardflow-v11';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
   // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
   // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，

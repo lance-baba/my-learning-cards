@@ -613,44 +613,6 @@ html, body { height: 100%; margin: 0; background: #F5F3ED; }
 .ex-bankload { display: flex; align-items: center; gap: 8px; }
 .ex-bankload .ex-jumpinput { flex: 1 1 auto; width: auto; text-align: left; }
 .ex-bankmsg { margin: 8px 0 0; font-size: 0.8rem; color: var(--ex-ink2); }
-.ex-banktoggle {
-  display: block;
-  width: 100%;
-  margin-top: 12px;
-  padding: 9px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--ex-accent);
-  background: var(--ex-accent-soft);
-  border: 1px dashed rgba(74, 124, 89, 0.4);
-  border-radius: 10px;
-  cursor: pointer;
-}
-.ex-upload { margin-top: 10px; }
-.ex-uploadarea {
-  width: 100%;
-  min-height: 120px;
-  resize: vertical;
-  padding: 10px 12px;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  border: 1.5px solid var(--ex-line);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--ex-ink);
-  font-family: ui-monospace, Menlo, Consolas, monospace;
-}
-.ex-uploadrow { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-.ex-uploadfile { position: relative; overflow: hidden; cursor: pointer; }
-.ex-bankcode {
-  margin: 10px 0 0;
-  font-size: 0.82rem;
-  color: var(--ex-ink);
-  background: rgba(74, 124, 89, 0.1);
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-.ex-bankcode b { color: var(--ex-accent); letter-spacing: 0.06em; font-size: 0.95rem; }
 
 /* ---------- 确认弹窗 ---------- */
 .ex-mask {

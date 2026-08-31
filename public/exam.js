@@ -210,10 +210,9 @@
         // 返回栈：子页进栈，首页作为「退出到 CardFlow」的边界（清空历史）
         history: [],
         // 题库管理：当前激活题库（code 空 = 内置地基题库）。持久化到 localStorage。
+        // 注意：网页端只保留「验证码加载」入口；上传题库只能由本机程序调用
+        // Worker POST /api/bank（需 X-Bank-Key，见 tools/upload_bank.mjs），不在网页留任何上传接口。
         activeBank: LS.get('activeBank', { code: '', title: '' }),
-        uploadOpen: false,
-        uploadText: '', uploadFileName: '', uploadKey: '', uploadMsg: '', uploadBusy: false,
-        generatedCode: '',
         loadCode: '', loadBusy: false, loadMsg: ''
       };
     },
@@ -398,7 +397,7 @@
         if (!this.chapters.length) this.chapters = Object.keys(map);
       },
 
-      /* ================= 题库管理（上传 + 验证码加载） ================= */
+      /* ================= 题库管理（网页端仅「验证码加载」） ================= */
       reloadBank: function () {
         this.questions = []; this.chapters = []; this.chapterMap = {}; this.shortNames = {}; this.version = '';
         this.history = [];
@@ -433,48 +432,8 @@
             self.loadMsg = (e && e.message === 'notfound') ? '验证码不存在，请检查后重试' : '题库加载失败，请重试';
           });
       },
-      onFile: function (e) {
-        var f = e.target.files && e.target.files[0];
-        if (!f) return;
-        var self = this;
-        this.uploadFileName = f.name;
-        var reader = new FileReader();
-        reader.onload = function () { self.uploadText = reader.result; self.uploadMsg = ''; };
-        reader.onerror = function () { self.uploadMsg = '文件读取失败'; };
-        reader.readAsText(f);
-      },
-      doUpload: function () {
-        var self = this;
-        var text = (this.uploadText || '').trim();
-        if (!text) { this.uploadMsg = '请粘贴 JSON 或选择文件'; return; }
-        var parsed;
-        try { parsed = JSON.parse(text); } catch (e) { this.uploadMsg = 'JSON 解析失败：' + (e.message || e); return; }
-        if (!parsed || !Array.isArray(parsed.questions) || !parsed.questions.length) { this.uploadMsg = '题库格式不正确：需含非空 questions 数组'; return; }
-        this.uploadBusy = true; this.uploadMsg = '正在上传…';
-        fetch('/api/bank', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'X-Bank-Key': (this.uploadKey || '').trim() },
-          body: text
-        })
-          .then(function (r) {
-            if (r.status === 401) throw new Error('key');
-            if (r.status === 413) throw new Error('big');
-            if (!r.ok) throw new Error('http' + r.status);
-            return r.json();
-          })
-          .then(function (data) {
-            self.uploadBusy = false;
-            self.generatedCode = data.code;
-            self.uploadMsg = '上传成功！验证码已生成（见下方），把它发给对方即可加载。';
-            self.uploadText = '';
-          })
-          .catch(function (e) {
-            self.uploadBusy = false;
-            if (e.message === 'key') self.uploadMsg = '上传密钥错误，无权发布';
-            else if (e.message === 'big') self.uploadMsg = '题库过大，请精简后重试';
-            else self.uploadMsg = '上传失败，请重试';
-          });
-      },
+      /* 上传题库走本机程序，见 tools/upload_bank.mjs（调用 Worker POST /api/bank，需 X-Bank-Key）。
+         网页端不提供任何上传入口，故此处只保留「验证码加载」。 */
 
       /* ================= 路由 ================= */
       go: function (page) {
@@ -893,17 +852,6 @@
 '          <button class="ex-btn ex-btn--sm" :disabled="loadBusy" @click="loadByCode(loadCode)">加载</button>',
 '        </div>',
 '        <p v-if="loadMsg" class="ex-bankmsg">{{ loadMsg }}</p>',
-'        <button class="ex-banktoggle" @click="uploadOpen = !uploadOpen">{{ uploadOpen ? \'收起 ▴\' : \'＋ 制作 / 上传题库\' }}</button>',
-'        <div v-if="uploadOpen" class="ex-upload">',
-'          <textarea class="ex-uploadarea" v-model="uploadText" :placeholder="uploadFileName || \'粘贴题库 JSON（同 questions.json 格式）\'" :disabled="uploadBusy"></textarea>',
-'          <div class="ex-uploadrow">',
-'            <label class="ex-btn ex-btn--sm ex-uploadfile">选择文件<input type="file" accept=".json,application/json" @change="onFile" hidden></label>',
-'            <input class="ex-jumpinput" type="password" placeholder="上传密钥" v-model="uploadKey" :disabled="uploadBusy">',
-'            <button class="ex-btn ex-btn--sm ex-btn--primary" :disabled="uploadBusy" @click="doUpload">生成验证码</button>',
-'          </div>',
-'          <p v-if="uploadMsg" class="ex-bankmsg">{{ uploadMsg }}</p>',
-'          <p v-if="generatedCode" class="ex-bankcode">验证码：<b>{{ generatedCode }}</b>　把它发给对方，对方在「输入验证码」处即可加载本题库</p>',
-'        </div>',
 '      </div>',
 '    </div>',
 
