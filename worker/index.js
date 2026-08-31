@@ -193,6 +193,13 @@ async function handle(request, env, ctx, rid) {
       });
     }
 
+    // 备考题库独立页：/exam 与 /exam/ 都映射到 /exam.html（用户习惯不带后缀直接访问）。
+    // 不依赖 Cloudflare 的 html_handling 扩展名补全行为，保证两种写法都稳定可访问。
+    if (path === '/exam' || path === '/exam/') {
+      const assetUrl = new URL('/exam.html', url.origin);
+      return env.ASSETS.fetch(new Request(assetUrl, request));
+    }
+
     // 静态站点路由分发
     return env.ASSETS.fetch(request);
   } catch (e) {

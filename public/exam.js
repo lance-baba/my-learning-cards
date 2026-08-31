@@ -974,10 +974,16 @@
    * 独立 bootstrap：本文件不再依赖 CardFlow 的 app 实例，
    * 自行创建 Vue 应用挂载到 #exam-app（见 exam.html）。
    * CardFlow 与备考题库是完全两套互不相干的页面/应用。
+   *
+   * ⚠️ 根因修正（线上空白 bug）：不能写成
+   *   Vue.createApp({ components: {...} }).mount('#exam-app')
+   * 那样根组件没有 template，而 #exam-app 又是空 div，Vue 会渲染出
+   * 空页面（exam-view 虽注册却从未被引用）。正确做法：根组件直接用
+   * ExamView 本身——它的 template 含完整页面，且自带 exam-question
+   * 子组件注册（components: { ExamQuestion }），因此 <exam-question>
+   * 在模板里能正常解析。
    * ============================================================= */
   if (window.Vue) {
-    Vue.createApp({
-      components: { 'exam-view': ExamView, 'exam-question': ExamQuestion }
-    }).mount('#exam-app');
+    Vue.createApp(ExamView).mount('#exam-app');
   }
 })();
