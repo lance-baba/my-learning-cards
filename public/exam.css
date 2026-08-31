@@ -1,0 +1,618 @@
+/* ================================================================
+ * exam.css — 备考题库「独立页面」样式（与 CardFlow 完全隔离）
+ *
+ * 移植自 learnST《模拟考试》。本文件不依赖 CardFlow 的 style.css，
+ * 仅共享自托管的 vendor 资源（vue / swiper）。所有类名带 ex- 前缀、
+ * 配色变量定义在 .ex-panel 上，绝不污染任何外部主题。
+ *
+ * 页面全屏铺满：html/body 占满视口，#exam-app 固定定位覆盖全屏，
+ * .ex-panel 在其内 inset:0 撑开。
+ * ================================================================ */
+
+html, body { height: 100%; margin: 0; background: #F5F3ED; }
+#exam-app { position: fixed; inset: 0; }
+
+/* ---------- 面板骨架 ---------- */
+.ex-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  background: var(--ex-bg);
+  color: var(--ex-ink);
+  overflow: hidden;
+
+  --ex-bg: #F5F3ED;           /* 米白纸底 */
+  --ex-card: #FFFDF8;         /* 卡片 */
+  --ex-ink: #2C2A26;          /* 主文字 */
+  --ex-ink2: #6B665C;         /* 次要文字 */
+  --ex-ink3: #9A9384;         /* 弱文字 */
+  --ex-accent: #4A7C59;       /* 墨绿主色 */
+  --ex-accent-soft: #E8F0EA;
+  --ex-line: #E4DFD2;         /* 分隔线 */
+  --ex-green: #4A7C59;
+  --ex-red: #C0563E;
+  --ex-amber: #C99A2E;
+  --ex-shadow: 0 1px 3px rgba(44, 42, 38, 0.06), 0 8px 24px -12px rgba(44, 42, 38, 0.18);
+}
+
+.ex-head {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
+  background: var(--ex-card);
+  border-bottom: 1px solid var(--ex-line);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.ex-back {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ex-accent);
+  background: var(--ex-accent-soft);
+  border: 1px solid rgba(74, 124, 89, 0.3);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.ex-back:active { background: rgba(74, 124, 89, 0.2); }
+.ex-title {
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ex-headbtn {
+  flex: 0 0 auto;
+  min-width: 52px;
+  font-size: 0.8rem;
+  color: var(--ex-ink2);
+  background: transparent;
+  border: 1px solid var(--ex-line);
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.ex-headbtn--ghost { border-color: transparent; pointer-events: none; }
+
+.ex-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 14px calc(24px + env(safe-area-inset-bottom));
+}
+
+/* ---------- 加载 / 空态 ---------- */
+.ex-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 80px 20px;
+  text-align: center;
+  color: var(--ex-ink2);
+}
+.ex-state-icon { font-size: 40px; }
+.ex-spinner {
+  width: 32px; height: 32px;
+  border: 3px solid var(--ex-line);
+  border-top-color: var(--ex-accent);
+  border-radius: 50%;
+  animation: ex-spin 0.8s linear infinite;
+}
+@keyframes ex-spin { to { transform: rotate(360deg); } }
+.ex-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ex-ink3);
+}
+.ex-empty-icon { font-size: 46px; margin-bottom: 10px; }
+
+/* ---------- 首页 ---------- */
+.ex-hero {
+  background: var(--ex-card);
+  border-radius: 18px;
+  padding: 22px 18px;
+  margin-bottom: 18px;
+  box-shadow: var(--ex-shadow);
+}
+.ex-hero-title {
+  margin: 0 0 6px;
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-family: Georgia, "Songti SC", "Noto Serif SC", serif;
+}
+.ex-hero-sub { margin: 0 0 14px; font-size: 0.85rem; color: var(--ex-ink2); }
+.ex-hero-bar {
+  height: 8px;
+  background: var(--ex-line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ex-hero-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--ex-accent), #6FA07F);
+  transition: width 0.3s ease;
+}
+.ex-hero-prog { margin: 8px 0 0; font-size: 0.8rem; color: var(--ex-ink2); }
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.ex-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 16px;
+  padding: 16px 14px;
+  cursor: pointer;
+  box-shadow: var(--ex-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ex-entry:active { transform: scale(0.97); }
+.ex-entry-icon { font-size: 1.6rem; line-height: 1; }
+.ex-entry-name { font-size: 1rem; font-weight: 700; color: var(--ex-ink); }
+.ex-entry-desc { font-size: 0.75rem; color: var(--ex-ink3); }
+.ex-entry--study { border-top: 3px solid #6B8FA8; }
+.ex-entry--exam  { border-top: 3px solid var(--ex-accent); }
+.ex-entry--wrong { border-top: 3px solid var(--ex-red); }
+.ex-entry--stats { border-top: 3px solid var(--ex-amber); }
+
+/* ---------- 章节卡 ---------- */
+.ex-page { display: block; }
+.ex-chcard {
+  position: relative;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--ex-shadow);
+}
+.ex-chcard:active { transform: scale(0.99); }
+.ex-chindex {
+  position: absolute;
+  right: 12px; top: 4px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--ex-line);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+.ex-chname {
+  position: relative;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-right: 52px;
+}
+.ex-chmeta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.ex-chtag {
+  font-size: 0.72rem;
+  color: var(--ex-ink2);
+  background: var(--ex-accent-soft);
+  border-radius: 9999px;
+  padding: 3px 9px;
+}
+.ex-chbar {
+  height: 6px;
+  background: var(--ex-line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ex-chbar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--ex-accent), #6FA07F);
+  transition: width 0.3s ease;
+}
+.ex-chpct { margin-top: 6px; font-size: 0.76rem; color: var(--ex-ink3); }
+
+/* ---------- 题目卡 ---------- */
+.ex-subhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.ex-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.ex-progtext { font-size: 0.8rem; color: var(--ex-ink2); white-space: nowrap; }
+
+.ex-qcard {
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: var(--ex-shadow);
+}
+.ex-qhead { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.ex-qnum { font-size: 0.8rem; font-weight: 700; color: var(--ex-ink2); }
+.ex-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: var(--ex-accent-soft);
+  color: var(--ex-accent);
+}
+.ex-tag--多选题 { background: #EDE7F6; color: #6B4E9B; }
+.ex-tag--判断题 { background: #E7F0F7; color: #3D6D94; }
+.ex-tag--计算题 { background: #FBEEE0; color: #B4741F; }
+.ex-tag--diff   { background: var(--ex-line); color: var(--ex-ink2); }
+
+.ex-qtext {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  color: var(--ex-ink);
+  word-break: break-word;
+}
+.ex-qtext sup, .ex-qtext sub { font-size: 0.7em; }
+
+.ex-opts { display: flex; flex-direction: column; gap: 9px; }
+.ex-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1.5px solid var(--ex-line);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.ex-opt:active { transform: scale(0.995); }
+.ex-optkey {
+  flex: 0 0 auto;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--ex-line);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ex-ink2);
+  background: #fff;
+}
+.ex-opttext { flex: 1 1 auto; font-size: 0.95rem; line-height: 1.6; }
+
+/* 选中但未判定：只有墨绿描边，不透露对错 */
+.ex-opt--picked { border-color: var(--ex-accent); background: var(--ex-accent-soft); }
+.ex-opt--picked .ex-optkey { border-color: var(--ex-accent); color: var(--ex-accent); }
+
+/* 已揭示答案：
+   - 我选对了 → 实心绿（与"漏选的正确答案"区分开，原版两者同款是缺陷） */
+.ex-opt--right { border-color: var(--ex-green); background: #DCEBD9; }
+.ex-opt--right .ex-optkey { border-color: var(--ex-green); background: var(--ex-green); color: #fff; }
+
+/* - 漏选的正确答案 → 描边绿 + 浅底，明显弱一档 */
+.ex-opt--right-hint { border-color: var(--ex-green); background: rgba(74, 124, 89, 0.07); }
+.ex-opt--right-hint .ex-optkey { border-color: var(--ex-green); color: var(--ex-green); }
+
+/* - 我选错了 → 实心红 */
+.ex-opt--wrong { border-color: var(--ex-red); background: #F7DED6; }
+.ex-opt--wrong .ex-optkey { border-color: var(--ex-red); background: var(--ex-red); color: #fff; }
+
+.ex-opt--locked { cursor: default; }
+
+.ex-answerbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: var(--ex-accent-soft);
+  font-size: 0.88rem;
+}
+.ex-ans-label { font-weight: 700; color: var(--ex-accent); white-space: nowrap; }
+.ex-ans-label--ok { color: var(--ex-green); }
+.ex-ans-label--bad { color: var(--ex-red); }
+.ex-ans-label--skip { color: var(--ex-ink2); }
+.ex-ans-val { color: var(--ex-ink); word-break: break-word; }
+
+/* ---------- 导航 / 按钮 ---------- */
+.ex-nav { display: flex; gap: 10px; margin-top: 16px; }
+.ex-btn {
+  flex: 1 1 0;
+  padding: 11px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ex-ink);
+  background: #fff;
+  border: 1.5px solid var(--ex-line);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.ex-btn:disabled { opacity: 0.42; cursor: default; }
+.ex-btn:not(:disabled):active { background: var(--ex-accent-soft); }
+.ex-btn--primary {
+  background: var(--ex-accent);
+  border-color: var(--ex-accent);
+  color: #fff;
+}
+.ex-btn--primary:not(:disabled):active { background: #3D6A4A; }
+.ex-btn--danger { color: var(--ex-red); border-color: rgba(192, 86, 62, 0.4); flex: 0 0 auto; }
+.ex-btn--block { display: block; width: 100%; margin-top: 10px; }
+
+.ex-jump {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--ex-ink3);
+}
+.ex-jumpinput {
+  width: 76px;
+  padding: 7px 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  border: 1.5px solid var(--ex-line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ex-ink);
+}
+
+/* ---------- 组卷配置 ---------- */
+.ex-field { margin-bottom: 18px; }
+.ex-field > label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ex-ink);
+}
+.ex-field--row { display: flex; gap: 14px; }
+.ex-field--row > div { flex: 1 1 0; }
+.ex-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.ex-chip {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--ex-line);
+  background: #fff;
+  color: var(--ex-ink2);
+  cursor: pointer;
+  user-select: none;
+}
+.ex-chip.is-on {
+  background: var(--ex-accent);
+  border-color: var(--ex-accent);
+  color: #fff;
+  font-weight: 600;
+}
+.ex-num {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--ex-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ex-ink);
+}
+.ex-poolinfo {
+  font-size: 0.85rem;
+  color: var(--ex-ink2);
+  margin: 0 0 14px;
+}
+.ex-poolinfo b { color: var(--ex-accent); }
+
+/* ---------- 考试进行中 ---------- */
+.ex-exambar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  margin-bottom: 12px;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 12px;
+}
+.ex-timer {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ex-accent);
+  font-variant-numeric: tabular-nums;
+}
+.ex-timer.is-danger { color: var(--ex-red); animation: ex-blink 1s ease-in-out infinite; }
+@keyframes ex-blink { 50% { opacity: 0.45; } }
+
+.ex-sheet {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 14px;
+}
+.ex-sheet-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--ex-line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ex-ink2);
+  cursor: pointer;
+}
+.ex-sheet-cell.is-done { background: var(--ex-accent-soft); border-color: var(--ex-accent); color: var(--ex-accent); font-weight: 700; }
+.ex-sheet-cell.is-cur  { background: var(--ex-accent); border-color: var(--ex-accent); color: #fff; font-weight: 700; }
+
+/* ---------- 成绩 ---------- */
+.ex-result { text-align: center; }
+.ex-score {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--ex-accent);
+  line-height: 1.1;
+  font-family: Georgia, serif;
+}
+.ex-score > span { font-size: 1.4rem; color: var(--ex-ink3); font-weight: 600; }
+.ex-scorelabel { margin: 6px 0 20px; font-size: 0.9rem; color: var(--ex-ink2); }
+.ex-scoregrid { display: flex; gap: 10px; margin-bottom: 20px; }
+.ex-scorecell {
+  flex: 1 1 0;
+  padding: 14px 8px;
+  border-radius: 14px;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+}
+.ex-scorecell > b { display: block; font-size: 1.5rem; line-height: 1.2; }
+.ex-scorecell > span { font-size: 0.76rem; color: var(--ex-ink3); }
+.ex-scorecell.is-right > b { color: var(--ex-green); }
+.ex-scorecell.is-wrong > b { color: var(--ex-red); }
+.ex-scorecell.is-skip  > b { color: var(--ex-ink3); }
+
+/* ---------- 错题本 ---------- */
+.ex-wrongbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ex-wrongcard {
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 14px;
+  padding: 13px 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: var(--ex-shadow);
+}
+.ex-wrongcard:active { transform: scale(0.99); }
+.ex-wrongmeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--ex-ink3);
+  margin-bottom: 8px;
+}
+.ex-wrongtext {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ex-wrongans {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ex-red);
+  background: rgba(192, 86, 62, 0.08);
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+.ex-more { text-align: center; font-size: 0.8rem; color: var(--ex-ink3); margin-top: 12px; }
+
+/* ---------- 统计 ---------- */
+.ex-statsover {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.ex-statcard {
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 14px;
+  padding: 14px 8px;
+  text-align: center;
+  box-shadow: var(--ex-shadow);
+}
+.ex-statcard > b { display: block; font-size: 1.35rem; color: var(--ex-accent); line-height: 1.25; }
+.ex-statcard > span { font-size: 0.74rem; color: var(--ex-ink3); }
+.ex-h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 22px 0 10px;
+  padding-left: 9px;
+  border-left: 3px solid var(--ex-accent);
+}
+.ex-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  background: var(--ex-card);
+  border: 1px solid var(--ex-line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ex-table th, .ex-table td {
+  padding: 9px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--ex-line);
+}
+.ex-table th { background: var(--ex-accent-soft); color: var(--ex-ink2); font-weight: 700; }
+.ex-table th:first-child, .ex-table td:first-child { text-align: left; padding-left: 12px; }
+.ex-table tr:last-child td { border-bottom: none; }
+.ex-accbar {
+  display: inline-block;
+  width: 52px;
+  height: 7px;
+  background: var(--ex-line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.ex-accbar > span { display: block; height: 100%; }
+
+/* ---------- 确认弹窗 ---------- */
+.ex-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(44, 42, 38, 0.42);
+}
+.ex-dialog {
+  width: 100%;
+  max-width: 320px;
+  background: var(--ex-card);
+  border-radius: 16px;
+  padding: 20px 18px 16px;
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.4);
+}
+.ex-dialog > p { margin: 0 0 18px; font-size: 0.95rem; line-height: 1.6; text-align: center; }
+.ex-dialogbtns { display: flex; gap: 10px; }
+
+/* ---------- 移动端窄屏微调 ---------- */
+@media (max-width: 380px) {
+  .ex-grid { gap: 9px; }
+  .ex-entry { padding: 13px 11px; }
+  .ex-entry-name { font-size: 0.92rem; }
+  .ex-statsover { grid-template-columns: repeat(2, 1fr); }
+  .ex-sheet { grid-template-columns: repeat(5, 1fr); }
+}

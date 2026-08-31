@@ -25,8 +25,15 @@
 //     ③ 修移动端 100vh 陷阱：#app 改用 100dvh，底栏从 fixed 改回文档流内，
 //     修掉卡片底部被裁、底栏被浏览器工具栏遮住。
 //     前端任何改动都 bump 本常量，使老用户丢弃旧缓存、拉取新 SW（activate 会删除非当前 CACHE 名）。
-const CACHE = 'cardflow-v8';
-const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js'];
+// v8：窗口化渲染（手机上滑标签页崩溃）+ 并行加载 + 100dvh 底栏修复。
+// v9：备考题库拆成独立页面 exam.html（与 CardFlow 互不相干两套应用），
+//     其壳资源 exam.html/exam.js/exam.css 进入预缓存（题库 561KB 按需加载，不预缓存）。
+const CACHE = 'cardflow-v9';
+const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
+  // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
+  // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，
+  // 避免每个 CardFlow 用户安装 SW 时都被迫先下这半兆题库。
+  '/exam.html', '/exam.js', '/exam.css'];
 const MAX_BUNDLE_VERSIONS_PER_ID = 1; // 每个 bundle（分类）仅保留最新一个版本缓存
 
 // ---- 加载纯逻辑层（失败回退内联副本） ----
@@ -148,15 +155,15 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
 
-  // 导航：network-first，离线回退缓存的 index.html
+  // 导航：network-first，离线回退到本次导航的实际页面（exam.html 与 index.html 各自兜底）
   if (req.mode === 'navigate') {
     event.respondWith(
       fetch(req)
         .then(async (res) => {
-          await safeCachePut(await caches.open(CACHE), '/index.html', res);
+          await safeCachePut(await caches.open(CACHE), req.url, res.clone());
           return res;
         })
-        .catch(() => caches.match('/index.html').then((r) => r || caches.match('/')))
+        .catch(() => caches.match(req.url).then((r) => r || caches.match('/index.html') || caches.match('/')))
     );
     return;
   }

@@ -1005,3 +1005,25 @@ main {
   animation: cf-spin 0.8s linear infinite;
 }
 @keyframes cf-spin { to { transform: rotate(360deg); } }
+
+/* ================================================================
+ * 备考题库入口按钮：位于 CardFlow 深色 header 内的「📝 模考」链接，
+ * 点击跳转到独立的 exam.html（与 CardFlow 是互不相干的两套应用）。
+ * 备考题库自身全部样式在 public/exam.css，不在这里。
+ * ================================================================ */
+
+/* 顶部「📝 模考」入口按钮（位于深色 header 内，故单独配色） */
+.ex-entry-btn {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fcd34d;
+  background: rgba(245, 158, 11, 0.14);
+  border: 1px solid rgba(245, 158, 11, 0.38);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ex-entry-btn:active { background: rgba(245, 158, 11, 0.26); }
+

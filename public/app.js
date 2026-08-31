@@ -221,6 +221,8 @@ let verticalSwiper = null;
 function setView(v) {
   store.view = v;
   if (!verticalSwiper) return;
+  // 收藏夹 / 分类 sheet 都是覆盖在主卡片流之上的全屏面板，
+  // 必须禁掉竖向 Swiper，否则手机上纵向拖动会被底层 Swiper 吃掉、面板滑不动。
   if (v === 'favorites' || v === 'catSheet') verticalSwiper.disable();
   else { verticalSwiper.enable(); setTimeout(() => verticalSwiper.update(), 60); }
 }

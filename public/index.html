@@ -27,6 +27,8 @@
       <button @click="store.catSheet = true" class="flex-shrink-0 text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 hover:border-emerald-500 whitespace-nowrap">📂 分类</button>
       <!-- 中：品牌标题（居中） -->
       <span class="flex-1 text-center text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">CardFlow</span>
+      <!-- 右：备考题库入口（独立页面 exam.html，与 CardFlow 互不相干） -->
+      <a href="./exam.html" class="ex-entry-btn">📝 模考</a>
       <!-- 右：发现新库提示 -->
       <div v-if="store.hasUpdate" @click="syncData" class="flex-shrink-0 pointer-events-auto cursor-pointer bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-full font-bold animate-pulse whitespace-nowrap">
         发现新库 ↺

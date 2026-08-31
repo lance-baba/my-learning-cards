@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F3ED">
+  <title>备考题库 · 地基基础检测</title>
+
+  <!-- 独立页面：仅依赖自托管 Vue 框架（运行时编译模板需 unsafe-eval，与主应用一致）。
+       不加载 Swiper——备考题库是纵向滚动，用不到；也不加载 CardFlow 的 style.css。 -->
+  <link rel="stylesheet" href="./exam.css" />
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+
+  <script src="./vendor/vue.global.prod.js"></script>
+</head>
+<body>
+  <!-- 备考题库应用挂载点。本页面与 CardFlow（index.html）是两套互不相干的应用，
+       不共享 Vue 实例、不共享 store、不共享 CardFlow 的卡片数据。 -->
+  <div id="exam-app"></div>
+
+  <script src="./exam.js"></script>
+</body>
+</html>
