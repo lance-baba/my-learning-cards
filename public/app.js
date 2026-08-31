@@ -28,6 +28,8 @@ const store = reactive({
   activeAnchor: null,     // 引用抽屉：当前章节锚点
   loading: false,         // 首屏数据加载中（驱动加载态 UI）
   loadError: '',          // 加载失败信息；空=正常，非空=显示错误态+重试
+  winFrom: 0,             // 垂直窗口渲染区间起点（仅该区间内的 topic 挂载真实 DOM）
+  winTo: 2,               // 垂直窗口渲染区间终点
 });
 
 /* -------------------------------------------------------------
@@ -174,27 +176,38 @@ async function fetchAllTopics() {
   const version = (indexData && indexData.version) || '0';
   const enabled = store.enabledCats; // null=全开；数组=仅这些分类
 
-  let all = [];
+  // 并行拉取：旧的串行 await 要排 12 次网络往返（分类越多越慢），移动端首屏十几秒都出不来；
+  // 改成 Promise.all 后总耗时 ≈ 最慢的那个请求。每个任务带 seq，最后按 seq 还原分类顺序，
+  // 保证卡片流顺序与串行时一致（否则并行完成顺序不定、每次刷新卡序都在变）。
+  const tasks = [];
   if (indexData && Array.isArray(indexData.categories)) {
+    let seq = 0;
     for (const cat of indexData.categories) {
       if (enabled && enabled.length && !enabled.includes(cat.id)) continue; // ② 按需下载：未勾选分类直接跳过
       for (const bundleId of (cat.bundles || [])) {
-        // 单 bundle 容错：某一个分类的包拉取失败，只跳过该分类，绝不让整站「加载失败」。
-        // （历史上缓存投毒导致某版本号全 500，旧逻辑会连坐整站弹出「卡片加载失败，请检查网络」）
-        try {
-          const bundleRes = await fetchWithRetry(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
-          const bundleData = await bundleRes.json();
-          if (bundleData && Array.isArray(bundleData.items)) {
-            bundleData.items.forEach(it => { it.catId = cat.id; it.catName = cat.name; });
-            all = all.concat(bundleData.items);
+        const mySeq = seq++;
+        tasks.push((async () => {
+          // 单 bundle 容错：某一个分类的包拉取失败，只跳过该分类，绝不让整站「加载失败」。
+          // （历史上缓存投毒导致某版本号全 500，旧逻辑会连坐整站弹出「卡片加载失败，请检查网络」）
+          try {
+            const bundleRes = await fetchWithRetry(`/api/bundle?id=${encodeURIComponent(bundleId)}&v=${encodeURIComponent(version)}`);
+            const bundleData = await bundleRes.json();
+            if (bundleData && Array.isArray(bundleData.items)) {
+              bundleData.items.forEach(it => { it.catId = cat.id; it.catName = cat.name; });
+              return { seq: mySeq, items: bundleData.items };
+            }
+          } catch (e) {
+            console.error('分类 bundle 加载失败，已跳过：', cat.id, bundleId, e);
+            if (window.__cfReport) window.__cfReport('bundle', `${cat.id}/${bundleId}: ${e && e.message ? e.message : 'load-failed'}`);
           }
-        } catch (e) {
-          console.error('分类 bundle 加载失败，已跳过：', cat.id, bundleId, e);
-          if (window.__cfReport) window.__cfReport('bundle', `${cat.id}/${bundleId}: ${e && e.message ? e.message : 'load-failed'}`);
-        }
+          return { seq: mySeq, items: [] };
+        })());
       }
     }
   }
+  const settled = await Promise.all(tasks);
+  settled.sort((a, b) => a.seq - b.seq);
+  const all = settled.reduce((acc, r) => acc.concat(r.items), []);
   return { topics: all, indexData };
 }
 
@@ -212,7 +225,72 @@ function setView(v) {
   else { verticalSwiper.enable(); setTimeout(() => verticalSwiper.update(), 60); }
 }
 
+// 横向 Swiper 实例表：topic 下标 -> Swiper 实例。
+// 窗口化后每个 topic 的内容是按需挂载/卸载的，实例不能再一次性 new 出来就不管，
+// 必须跟着窗口进出：滑出窗口的 destroy 掉（否则监听器和 timer 全泄漏），
+// 新进入窗口的重新 new。
+const horizSwipers = new Map();
+
+// 计算窗口区间：当前 topic 及其上下相邻各 1 个（共 3 个）。
+// 上下各多看 1 个是为了滑动过程中目标卡已经渲染好，不会出现滑过去一片空白。
+function windowRange(activeIdx) {
+  const last = Math.max(0, store.mixedTopics.length - 1);
+  let from = Math.max(0, activeIdx - 1);
+  let to = Math.min(last, activeIdx + 1);
+  if (to - from < 2) { // 首尾处补齐到 3 个，避免边界上窗口过窄
+    if (from === 0) to = Math.min(last, 2);
+    else from = Math.max(0, last - 2);
+  }
+  return { from, to };
+}
+
+// 同步窗口：更新响应式区间 -> 等 Vue 完成 DOM 挂载 -> 重建横向 Swiper 实例
+function syncWindow(activeIdx) {
+  const { from, to } = windowRange(activeIdx);
+  if (from === store.winFrom && to === store.winTo) return;
+  store.winFrom = from;
+  store.winTo = to;
+  Vue.nextTick(() => refreshHorizSwipers());
+}
+
+function refreshHorizSwipers() {
+  // 1) 销毁滑出窗口的实例。此时 DOM 已被 Vue 移除，用 destroy(false,false) 避免 Swiper 再去动 DOM。
+  for (const idx of Array.from(horizSwipers.keys())) {
+    if (idx < store.winFrom || idx > store.winTo) {
+      const inst = horizSwipers.get(idx);
+      try { inst && inst.destroy(false, false); } catch (e) { /* 忽略已卸载实例 */ }
+      horizSwipers.delete(idx);
+    }
+  }
+  // 2) 为窗口内新出现的 slide 初始化横向 Swiper
+  const vRoot = document.querySelector('.vertical-swiper > .swiper-wrapper');
+  if (!vRoot) return;
+  const slides = vRoot.querySelectorAll(':scope > .swiper-slide');
+  slides.forEach((slide, idx) => {
+    if (idx < store.winFrom || idx > store.winTo) return;
+    if (horizSwipers.has(idx)) return; // 已在窗口内且已初始化
+    const el = slide.querySelector('.horizontal-swiper');
+    if (!el) return;
+    // pagination 必须限定到本 slide 内部：用全局选择器会让所有实例共用第一个分页点容器，
+    // 结果就是只有第一张卡的分页点能动、其余全是死的。
+    const pg = el.querySelector('.swiper-pagination');
+    horizSwipers.set(idx, new Swiper(el, {
+      direction: 'horizontal',
+      nested: true,
+      pagination: pg ? { el: pg, clickable: true } : false
+    }));
+  });
+  // 3) 重算 slide 尺寸。用 updateSlides 而非 update —— update 内部会 slideTo，
+  //    在滑动过程中调用容易打断手势造成跳动；slide 高度由 CSS 固定，实际尺寸并未改变。
+  if (verticalSwiper) verticalSwiper.updateSlides();
+}
+
 function initSwipers() {
+  // 窗口化：先把区间设为「0 及其后两张」，模板据此只挂载 3 个 topic 的内容。
+  const { from, to } = windowRange(0);
+  store.winFrom = from;
+  store.winTo = to;
+
   verticalSwiper = new Swiper('.vertical-swiper', {
     direction: 'vertical',
     spaceBetween: 0,
@@ -222,15 +300,12 @@ function initSwipers() {
         triggerStreaming(s.activeIndex);
         const tp = store.mixedTopics[s.activeIndex];
         if (tp) recordExposure(tp.id);
+        syncWindow(s.activeIndex);
       }
     }
   });
 
-  new Swiper('.horizontal-swiper', {
-    direction: 'horizontal',
-    nested: true,
-    pagination: { el: '.swiper-pagination', clickable: true }
-  });
+  Vue.nextTick(() => refreshHorizSwipers());
 
   store.activeIndex = 0;
   triggerStreaming(0);

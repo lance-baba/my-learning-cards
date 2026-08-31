@@ -37,9 +37,13 @@
     <main class="w-full h-full flex-1 relative z-10">
       <div class="swiper vertical-swiper w-full h-full">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="topic in store.mixedTopics" :key="topic.id">
+          <!-- 窗口化渲染：每个 topic 的 slide 外壳始终存在（保证 Swiper 索引与滚动位置正确），
+               但只有 [winFrom, winTo] 区间内（当前及上下相邻各 1 个）才挂载真实内容。
+               曾经一次性渲染 371 个 topic / 1189 张子卡 / 2.9 万个 DOM 节点，
+               手机上滑几十张后标签页直接崩溃（"网页打不开"）。窗口化后 DOM 降到数百节点。 -->
+          <div class="swiper-slide" v-for="(topic, ti) in store.mixedTopics" :key="topic.id">
             <!-- 左右滑动子卡片 Swiper -->
-            <div class="swiper horizontal-swiper w-full h-full">
+            <div v-if="ti >= store.winFrom && ti <= store.winTo" class="swiper horizontal-swiper w-full h-full">
               <div class="swiper-wrapper">
                 <div class="swiper-slide card-slide" :class="(sub.layout === 'flip_card' || sub.layout === 'meme_card') ? 'card-slide--fill' : ''" v-for="sub in topic.sub_cards" :key="sub.sub_id">
                   <card-shell :topic="topic" :sub="sub">

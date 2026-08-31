@@ -1,5 +1,19 @@
 /* Tailwind 已通过 index.html <link> 引入本地 ./vendor/tailwind.min.css，不再依赖 CDN */
 
+/* ============ 移动端视口高度：100vh 陷阱 ============
+ * 手机浏览器（Chrome / Safari）的 100vh 取的是「地址栏隐藏时的最大视口高度」，
+ * 比首屏实际可视高度高出 50~100px。Index.html 上 #app 用的是 Tailwind h-screen(=100vh)，
+ * 于是整页比屏幕更高，直接后果有两个：
+ *   ① 卡片底部被挤出可视区 —— 用户反馈「内容卡片的框没有显示完整」；
+ *   ② position:fixed 的底栏 bottom:0 算在最大视口底部，正好落在浏览器工具栏下面被遮住
+ *      —— 用户反馈「底部的刷一刷和收藏夹不显示」。
+ * 用 dvh（dynamic viewport height，随地址栏伸缩）修正；不支持 dvh 的旧浏览器回退 vh。
+ * 另：底栏同时从 fixed 改回文档流内（见 .bottom-nav），双保险。 */
+#app {
+  height: 100vh;
+  height: 100dvh;
+}
+
 /* ============ 背景：深色基底 + 氛围光晕 ============ */
 body {
   background-color: #090d16;
@@ -410,9 +424,12 @@ body {
 }
 
 /* ============ 底部导航 ============ */
+/* 移动端同样不再用 position:fixed —— 100vh 陷阱下 fixed bottom:0 会落到地址栏之下被遮住，
+ * 用户看到的就是「底部的刷一刷和收藏夹不显示」。改为 #app(flex-col, 100dvh) 的文档流子项，
+ * 永远紧跟在 main 之后排布，不可能被系统 UI 挡掉。PC 端（≥768px）本来就是这个行为。 */
 .bottom-nav {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
+  position: static;
+  flex-shrink: 0;
   z-index: 30;
   display: flex;
   gap: 8px;
@@ -853,9 +870,10 @@ header > div:first-child { flex-wrap: nowrap; }
 /* 主区域禁止整体滚动，卡片内容滚动交给卡片内部处理 */
 main {
   overflow: hidden;
-  /* 移动端底部导航是 position:fixed，需要预留空间避免卡片 footer 被遮挡；
-   * PC 端（≥768px）nav 改为 static 后此 padding 会被覆盖为 0 */
-  padding-bottom: calc(52px + env(safe-area-inset-bottom));
+  min-height: 0;          /* flex 列里不加会被卡片内容撑高，把底栏挤出 100dvh */
+  /* 底栏已改为文档流内（不再是 fixed），无需再为它预留 padding-bottom。
+     之前预留的 52px 反而让卡片底部出现一条空白带。 */
+  padding-bottom: 0;
 }
 
 /* 顶部安全区：避免刘海屏 / 前置摄像头遮挡 */
@@ -880,6 +898,7 @@ main {
   #app {
     max-width: 30rem;
     height: 100vh;
+    height: 100dvh;
     margin: 0 auto;
     border-radius: 20px;
     box-shadow:

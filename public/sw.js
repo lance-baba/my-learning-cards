@@ -19,8 +19,13 @@
 //     500 长期喂给用户并反复写缓存）；② 缓存为错误/缺失时优先走网络而非返回旧 500。
 // v7：收藏夹翻牌卡可点击翻转（此前预览是静态 div、无点击处理器，点了没反应），
 //     并修掉 back_text 答案剧透；拖拽滚动后不再误触发翻牌。
+// v8：① 垂直卡片流窗口化渲染——此前一次性挂载 371 个 topic / 1189 张子卡 / 2.9 万 DOM 节点，
+//     手机上滑几十张后标签页直接崩溃（"网页打不开"），现只渲染当前及上下相邻共 3 个；
+//     ② 12 个分类 bundle 由串行改为并行拉取（首屏少等 11 次网络往返）；
+//     ③ 修移动端 100vh 陷阱：#app 改用 100dvh，底栏从 fixed 改回文档流内，
+//     修掉卡片底部被裁、底栏被浏览器工具栏遮住。
 //     前端任何改动都 bump 本常量，使老用户丢弃旧缓存、拉取新 SW（activate 会删除非当前 CACHE 名）。
-const CACHE = 'cardflow-v7';
+const CACHE = 'cardflow-v8';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js'];
 const MAX_BUNDLE_VERSIONS_PER_ID = 1; // 每个 bundle（分类）仅保留最新一个版本缓存
 
