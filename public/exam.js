@@ -416,12 +416,16 @@
         this.loadBusy = true; this.loadMsg = '正在加载…';
         fetch('/api/bank?id=' + encodeURIComponent(code), { cache: 'no-store' })
           .then(function (r) {
-            if (r.status === 404) throw new Error('notfound');
-            if (!r.ok) throw new Error('http');
-            return r.json();
+            if (r.ok) return r.json();
+            // 非 200：尽量取服务端返回的中文提示（如设备超限），否则按状态码给默认文案
+            return r.json().catch(function () { return {}; }).then(function (err) {
+              var msg = (err && (err.message || err.error)) ? (err.message || err.error) : null;
+              if (r.status === 404 && !msg) msg = '验证码不存在，请检查后重试';
+              throw new Error(msg || ('题库加载失败（' + r.status + '）'));
+            });
           })
           .then(function (data) {
-            if (!data || !Array.isArray(data.questions) || !data.questions.length) throw new Error('empty');
+            if (!data || !Array.isArray(data.questions) || !data.questions.length) throw new Error('题库为空或格式不正确');
             self.activeBank = { code: code, title: data.title || data.version || code };
             LS.set('activeBank', self.activeBank);
             self.loadBusy = false; self.loadMsg = '';
@@ -429,7 +433,7 @@
           })
           .catch(function (e) {
             self.loadBusy = false;
-            self.loadMsg = (e && e.message === 'notfound') ? '验证码不存在，请检查后重试' : '题库加载失败，请重试';
+            self.loadMsg = (e && e.message) || '题库加载失败，请重试';
           });
       },
       /* 上传题库走本机程序，见 tools/upload_bank.mjs（调用 Worker POST /api/bank，需 X-Bank-Key）。

@@ -31,7 +31,10 @@
 // v10：备考题库新增「上传题库 + 验证码加载」+ 页码跳转按钮 + 收藏夹顶部留白修复。
 // v11：备考题库网页端移除上传入口（上传改由本机程序 tools/upload_bank.mjs 调 Worker POST /api/bank），
 //      网页仅保留「验证码加载」；同步清理死 CSS。
-const CACHE = 'cardflow-v11';
+// v12：① exam.js 的 loadByCode 把服务端中文错误（如设备上限 403）透出到界面，不再只显示笼统失败；
+//      ② 题库系统新增富化元信息 + 设备绑定/私有分发（Worker 端，前端无需改壳）；
+//      ③ 新增本地出题工具 tools/make_bank.py（PDF/TXT → 标准题库 JSON，可直传云端）。
+const CACHE = 'cardflow-v12';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
   // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
   // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，

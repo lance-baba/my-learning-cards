@@ -13,13 +13,15 @@
  *   node tools/upload_bank.mjs <题库JSON路径> [选项]
  *
  * 选项：
- *   --key <KEY>      上传密钥（也可走环境变量 BANK_UPLOAD_KEY）
- *   --url <URL>      Worker 地址，默认 https://fwzy.ccwu.cc
- *                    （workers.dev 备选：https://cardflow.huqihang1990.workers.dev）
+ *   --key <KEY>        上传密钥（也可走环境变量 BANK_UPLOAD_KEY）
+ *   --url <URL>        Worker 地址，默认 https://fwzy.ccwu.cc
+ *                      （workers.dev 备选：https://cardflow.huqihang1990.workers.dev）
+ *   --max-devices <N>  私有分发：该验证码最多绑 N 台设备（默认 0 = 不限制，可填 1~50）
+ *   --note <TEXT>      题库备注（可选，写入本地 codes_manifest.json）
  *
  * 示例：
  *   BANK_UPLOAD_KEY=xxxx node tools/upload_bank.mjs public/exam/questions.json
- *   node tools/upload_bank.mjs ./my-bank.json --key xxxx --url https://fwzy.ccwu.cc
+ *   node tools/upload_bank.mjs ./my-bank.json --key xxxx --max-devices 3 --note "地基检测私享"
  */
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -34,14 +36,18 @@ const argv = process.argv.slice(2);
 let file = null;
 let key = process.env.BANK_UPLOAD_KEY || '';
 let url = DEFAULT_URL;
+let maxDevices = 0;
+let note = '';
 
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
   if (a === '--key') { key = argv[++i] || ''; }
   else if (a === '--url') { url = argv[++i] || DEFAULT_URL; }
+  else if (a === '--max-devices') { maxDevices = parseInt(argv[++i], 10) || 0; }
+  else if (a === '--note') { note = argv[++i] || ''; }
   else if (!file && !a.startsWith('--')) { file = a; }
   else if (a === '--help' || a === '-h') {
-    console.log('用法：node tools/upload_bank.mjs <题库JSON路径> [--key KEY] [--url URL]');
+    console.log('用法：node tools/upload_bank.mjs <题库JSON路径> [--key KEY] [--url URL] [--max-devices N] [--note 文本]');
     process.exit(0);
   }
 }
@@ -68,15 +74,20 @@ if (!bank || !Array.isArray(bank.questions) || !bank.questions.length) {
   fail('题库格式不正确：需含非空的 questions 数组（与 public/exam/questions.json 同结构）。');
 }
 
+// 注入私有分发参数（仅 maxDevices>0 时生效；服务端也会再校验 0~50）
+if (maxDevices > 0) bank.maxDevices = maxDevices;
+if (note) bank.note = note;
+const body = JSON.stringify(bank);
+
 const endpoint = String(url).replace(/\/+$/, '') + '/api/bank';
 console.log('→ 上传到：' + endpoint);
-console.log('→ 题库：' + file + '（' + bank.questions.length + ' 题' + (bank.title ? '，标题「' + bank.title + '」' : '') + '）');
+console.log('→ 题库：' + file + '（' + bank.questions.length + ' 题' + (bank.title ? '，标题「' + bank.title + '」' : '') + (maxDevices > 0 ? '，设备上限 ' + maxDevices + ' 台' : '') + '）');
 
 try {
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'X-Bank-Key': key.trim() },
-    body: raw,
+    body: body,
   });
 
   if (res.status === 401) fail('上传密钥错误（401 Unauthorized），无权发布。请检查 --key / BANK_UPLOAD_KEY 是否与 Worker 的 BANK_UPLOAD_KEY 一致。');
@@ -88,14 +99,45 @@ try {
   const data = await res.json();
   if (!data || !data.code) fail('响应异常：未返回验证码。');
 
+  // 题型分布摘要
+  const types = data.types || {};
+  const typeStr = Object.keys(types).map((t) => t + ' ' + types[t]).join(' / ') || '（无）';
+
   console.log('');
-  console.log('✓ 上传成功！验证码：');
-  console.log('  ' + data.code);
+  console.log('✓ 上传成功！验证码： ' + data.code);
+  if (data.title) console.log('  题库：' + data.title);
+  console.log('  题数：' + (data.total != null ? data.total : bank.questions.length));
+  console.log('  题型：' + typeStr);
+  console.log('  设备上限：' + (data.maxDevices > 0 ? data.maxDevices + ' 台' : '不限制'));
   console.log('');
   console.log('把该验证码发给对方，对方在 exam.html 首页「题库管理 → 输入验证码」处填入即可加载本题库。');
   console.log('（替换的是内置「地基题库」；对方点「恢复内置题库」可切回。）');
+
+  writeManifest({
+    code: data.code,
+    title: data.title || '',
+    total: data.total != null ? data.total : bank.questions.length,
+    types: types,
+    maxDevices: data.maxDevices || 0,
+    note: note || '',
+    file: file,
+    createdAt: new Date().toISOString(),
+  });
   process.exit(0);
 } catch (e) {
   if (e.cause && e.cause.code) fail('网络错误：' + e.cause.code + '（' + e.message + '）');
   fail('请求异常：' + e.message);
+}
+
+// 写入本地清单（仿小树学习平台 codes_manifest.json），按 code 去重
+function writeManifest(entry) {
+  const manifestPath = path.join(__dirname, '..', 'codes_manifest.json');
+  let list = [];
+  try { if (fs.existsSync(manifestPath)) list = JSON.parse(fs.readFileSync(manifestPath, 'utf8')); }
+  catch (_) { list = []; }
+  if (!Array.isArray(list)) list = [];
+  const idx = list.findIndex((e) => e.code === entry.code);
+  if (idx >= 0) list[idx] = entry; else list.push(entry);
+  fs.writeFileSync(manifestPath, JSON.stringify(list, null, 2), 'utf8');
+  console.log('（已记入本地清单 codes_manifest.json，共 ' + list.length + ' 个题库）');
 }

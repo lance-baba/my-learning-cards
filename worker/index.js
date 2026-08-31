@@ -199,8 +199,19 @@ async function handle(request, env, ctx, rid) {
     }
 
     // 备考题库：上传（需密钥）→ 生成随机验证码；按验证码加载（公开）
-    // 验证码为 16 位不可猜测的随机串，存在 CARD_KV 的 bank:<code>。
+    // 验证码为 16 位不可猜测的随机串，题库存 CARD_KV 的 bank:<code>；
+    // 设备绑定/分发元数据存 bankmeta:<code>（仅 maxDevices>0 时存在）。
     if (path === '/api/bank') {
+      // 设备指纹：IP + UA 前 80 字符（同小树学习平台，轻量区分设备，非强安全）
+      const deviceId = (() => {
+        const ip = request.headers.get('CF-Connecting-IP') || '0.0.0.0';
+        const ua = request.headers.get('User-Agent') || '';
+        const raw = ip + '|' + ua.slice(0, 80);
+        let h = 0;
+        for (let i = 0; i < raw.length; i++) { h = ((h << 5) - h) + raw.charCodeAt(i); h |= 0; }
+        return 'fp_' + Math.abs(h).toString(36);
+      })();
+
       if (request.method === 'POST') {
         // 鉴权：必须带正确上传密钥（env.BANK_UPLOAD_KEY），否则无权发布
         const key = request.headers.get('X-Bank-Key') || '';
@@ -222,6 +233,16 @@ async function handle(request, env, ctx, rid) {
         if (!bank || !Array.isArray(bank.questions) || !bank.questions.length) {
           return new Response(JSON.stringify({ error: 'Invalid Bank' }), { status: 400, headers: corsHeaders });
         }
+        // 题型分布统计（仿小树学习平台 codes_manifest 的 types）
+        const types = {};
+        for (const q of bank.questions) {
+          const t = String(q.type || '未知');
+          types[t] = (types[t] || 0) + 1;
+        }
+        // maxDevices：0 = 不限制（默认）；>0 = 该验证码最多绑这么多台设备（私有分发）
+        let maxDevices = parseInt(bank.maxDevices, 10);
+        if (!Number.isFinite(maxDevices) || maxDevices < 0) maxDevices = 0;
+        if (maxDevices > 50) maxDevices = 50;
         // 生成不可猜测的验证码（UUID 去横杠取前 16 位）
         const code = (typeof crypto.randomUUID === 'function'
           ? crypto.randomUUID()
@@ -234,14 +255,26 @@ async function handle(request, env, ctx, rid) {
           chapters: Array.isArray(bank.chapters) ? bank.chapters : [],
           shortNames: bank.shortNames && typeof bank.shortNames === 'object' ? bank.shortNames : {},
           questions: bank.questions,
+          total: bank.questions.length,
+          types,
+        };
+        const meta = {
+          maxDevices,
+          boundDevices: [],
+          note: String(bank.note || '').slice(0, 200),
+          title: clean.title,
+          total: clean.total,
+          types,
+          createdAt: Date.now(),
         };
         try {
           await env.CARD_KV.put('bank:' + code, JSON.stringify(clean));
+          if (maxDevices > 0) await env.CARD_KV.put('bankmeta:' + code, JSON.stringify(meta));
         } catch (kvErr) {
           ctx.waitUntil(captureException(env, kvErr, { rid, path }));
           return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500, headers: corsHeaders });
         }
-        return new Response(JSON.stringify({ code }), {
+        return new Response(JSON.stringify({ code, title: clean.title, total: clean.total, types, maxDevices }), {
           headers: { ...corsHeaders, 'Cache-Control': 'no-store' },
         });
       }
@@ -250,17 +283,77 @@ async function handle(request, env, ctx, rid) {
         if (!id || !/^[A-Za-z0-9]{4,32}$/.test(id)) {
           return new Response(JSON.stringify({ error: 'Invalid ID' }), { status: 400, headers: corsHeaders });
         }
+        // 设备绑定校验（仅当该码设了 maxDevices>0；旧题库无 meta → 不限制）
+        let meta = null;
+        try { meta = await env.CARD_KV.get('bankmeta:' + id, { type: 'json' }); }
+        catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, id })); }
+        if (meta && meta.maxDevices > 0) {
+          const bound = Array.isArray(meta.boundDevices) ? meta.boundDevices : [];
+          const existing = bound.find((d) => d.id === deviceId);
+          if (existing) {
+            existing.lastSeen = Date.now();
+          } else if (bound.length >= meta.maxDevices) {
+            return new Response(JSON.stringify({
+              error: 'device_limit_reached',
+              message: '该验证码已绑定的设备数已达上限（' + meta.maxDevices + ' 台），无法在新设备加载。如需换设备，请联系题库发布者解绑。',
+            }), { status: 403, headers: { ...corsHeaders, 'Cache-Control': 'no-store' } });
+          } else {
+            bound.push({ id: deviceId, lastSeen: Date.now() });
+          }
+          meta.boundDevices = bound;
+          meta.lastActiveAt = Date.now();
+          try { await env.CARD_KV.put('bankmeta:' + id, JSON.stringify(meta)); }
+          catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, id })); }
+        }
         let data = null;
         try { data = await env.CARD_KV.get('bank:' + id, { type: 'json' }); }
         catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, id })); }
         if (!data) {
           return new Response(JSON.stringify({ error: 'Not Found' }), { status: 404, headers: corsHeaders });
         }
+        // 设了设备绑定的码每次都校验绑定，不缓存；否则短缓存
+        const cc = (meta && meta.maxDevices > 0) ? 'no-store' : 'public, max-age=300';
         return new Response(JSON.stringify(data), {
-          headers: { ...corsHeaders, 'Cache-Control': 'public, max-age=300' },
+          headers: { ...corsHeaders, 'Cache-Control': cc },
         });
       }
       return new Response(JSON.stringify({ error: 'Method Not Allowed' }), { status: 405, headers: corsHeaders });
+    }
+
+    // 题库管理（本机程序专用，需 X-Bank-Key）：解绑设备 / 删除验证码
+    // 设备超限后无法自动换设备，必须由此接口解绑；删除则彻底移除该题库。
+    if (path === '/api/bank/admin') {
+      if (request.method !== 'POST') {
+        return new Response(JSON.stringify({ error: 'Method Not Allowed' }), { status: 405, headers: corsHeaders });
+      }
+      const key = request.headers.get('X-Bank-Key') || '';
+      if (!env.BANK_UPLOAD_KEY || key !== env.BANK_UPLOAD_KEY) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: corsHeaders });
+      }
+      let body;
+      try { body = await request.json(); } catch { body = {}; }
+      const code = String(body.code || '').trim();
+      if (!/^[A-Za-z0-9]{4,32}$/.test(code)) {
+        return new Response(JSON.stringify({ error: 'Invalid code' }), { status: 400, headers: corsHeaders });
+      }
+      const action = body.action;
+      if (action === 'unbind') {
+        let meta = null;
+        try { meta = await env.CARD_KV.get('bankmeta:' + code, { type: 'json' }); } catch {}
+        meta = meta && typeof meta === 'object' ? meta : { maxDevices: 0, boundDevices: [], note: '', title: '', total: 0, types: {}, createdAt: Date.now() };
+        meta.boundDevices = [];
+        try { await env.CARD_KV.put('bankmeta:' + code, JSON.stringify(meta)); }
+        catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, code })); return new Response(JSON.stringify({ error: 'KV Error' }), { status: 500, headers: corsHeaders }); }
+        return new Response(JSON.stringify({ success: true, action: 'unbind', code }), { status: 200, headers: corsHeaders });
+      }
+      if (action === 'delete') {
+        try {
+          await env.CARD_KV.delete('bank:' + code);
+          await env.CARD_KV.delete('bankmeta:' + code);
+        } catch (kvErr) { ctx.waitUntil(captureException(env, kvErr, { rid, path, code })); return new Response(JSON.stringify({ error: 'KV Error' }), { status: 500, headers: corsHeaders }); }
+        return new Response(JSON.stringify({ success: true, action: 'delete', code }), { status: 200, headers: corsHeaders });
+      }
+      return new Response(JSON.stringify({ error: 'Unknown action' }), { status: 400, headers: corsHeaders });
     }
 
     // 备考题库独立页：/exam 与 /exam/ 都映射到 /exam.html（用户习惯不带后缀直接访问）。
