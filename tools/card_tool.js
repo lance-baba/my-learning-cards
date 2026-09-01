@@ -36,6 +36,7 @@ const VALID_LAYOUTS = [
   'list_card',      // 要点清单（纯文本升级）
   'quote_card',     // 权威摘录（纯文本升级）
   'compare_card',   // 易错对照（纯文本升级）
+  'knowledge_card', // 知识卡：钩子 + 点击揭晓要点/公式/备注（降级渲染）
 ];
 
 // 每个 layout 的“专属必填字段”（sub_id / layout / title 是基础必填，单独处理）
@@ -49,6 +50,7 @@ const LAYOUT_REQUIRED = {
   list_card: ['items'],
   quote_card: ['quote'],
   compare_card: ['wrong', 'right'],
+  knowledge_card: [], // 仅需 title；hook/points/formula/note 可选（前端降级渲染）
 };
 
 const VALID_TYPES = ['knowledge', 'joke'];
@@ -288,6 +290,8 @@ function scaffoldSub(layout, idx) {
       return { ...base, title: '权威摘录', quote: 'TODO: 来源原文摘录', citation: 'TODO: 引用锚点（如 第一章第2条）' };
     case 'compare_card':
       return { ...base, title: '常见误区', wrong: 'TODO: 民间常见误区', right: 'TODO: 正确做法' };
+    case 'knowledge_card':
+      return { ...base, hook: 'TODO: 一句有吸引力的引子', points: ['TODO: 要点1', 'TODO: 要点2'], formula: 'TODO: 公式（可选）', note: 'TODO: 备注（可选）' };
     default:
       return base;
   }
