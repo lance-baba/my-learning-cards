@@ -34,6 +34,10 @@ Thumbs.db
 .env
 .env.*
 
+# Wrangler 本地密钥（dev 模式读取，等价于云端的 secret，绝不能入库）
+.dev.vars
+.dev.vars.*
+
 # 注意：data/ 与 public/vendor/ 必须入库
 #   - data/ 是题库唯一权威副本
 #   - public/vendor/ 是自托管依赖，缺了部署即白屏
