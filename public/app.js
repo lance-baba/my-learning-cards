@@ -582,6 +582,46 @@ const CompareCard = {
 };
 
 /* -------------------------------------------------------------
+ * 7b) 组件：知识卡（knowledge_card）—— 钩子先行 + 点击揭晓结构化答案
+ *      借鉴小树学习平台「知识卡片流」：标题 → 钩子(hook) → 点击揭晓
+ *      → 要点(points) + 公式(formula) + 备注(note)。
+ *      降级渲染：hook/formula/note 仅数据显式提供才显示；points 缺省时按句拆分 content。
+ * ----------------------------------------------------------- */
+const KnowledgeCard = {
+  props: { topic: Object, sub: Object },
+  inject: ['store'],
+  computed: {
+    key() { return `${this.topic.id}_${this.sub.sub_id}`; },
+    revealed() { return !!this.store.revealed[this.key]; },
+    hook() { return this.sub.hook || ''; },
+    points() {
+      if (Array.isArray(this.sub.points) && this.sub.points.length) return this.sub.points;
+      const text = this.sub.content || '';
+      return text.split(/(?<=[。！？；\n])/).map((s) => s.trim()).filter(Boolean);
+    },
+    formula() { return this.sub.formula || ''; },
+    note() { return this.sub.note || ''; }
+  },
+  methods: { reveal() { this.store.revealed[this.key] = true; } },
+  template: `
+    <div>
+      <h2 class="card-title text-slate-100 mb-4 leading-snug">{{ sub.title }}</h2>
+      <p v-if="hook" class="kcard-hook">{{ hook }}</p>
+      <div v-if="!revealed" class="kcard-reveal" @click="reveal">👇 点击查看解答</div>
+      <template v-else>
+        <ul v-if="points.length" class="list-card">
+          <li v-for="(p, i) in points" :key="i" class="list-item">
+            <span class="list-dot">✓</span><span>{{ p }}</span>
+          </li>
+        </ul>
+        <div v-if="formula" class="kcard-formula">{{ formula }}</div>
+        <div v-if="note" class="kcard-note">{{ note }}</div>
+      </template>
+    </div>
+  `
+};
+
+/* -------------------------------------------------------------
  * 7b) 组件：梗图（meme_card）—— 大图 + 文案，独占满屏
  * ----------------------------------------------------------- */
 const MemeCard = {
@@ -1024,6 +1064,7 @@ app.component('game-card', GameCard);
 app.component('list-card', ListCard);
 app.component('quote-card', QuoteCard);
 app.component('compare-card', CompareCard);
+app.component('knowledge-card', KnowledgeCard);
 app.component('favorites-view', FavoritesView);
 app.component('category-sheet', CategorySheet);
 

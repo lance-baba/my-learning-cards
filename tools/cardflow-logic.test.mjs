@@ -87,6 +87,7 @@ t('已知 layout 映射到组件名', () => {
   assert.equal(resolveLayout('list_card'), 'list-card');
   assert.equal(resolveLayout('quote_card'), 'quote-card');
   assert.equal(resolveLayout('compare_card'), 'compare-card');
+  assert.equal(resolveLayout('knowledge_card'), 'knowledge-card');
 });
 t('未知 layout 兜底 qa-card', () => {
   assert.equal(resolveLayout('unknown_layout'), 'qa-card');

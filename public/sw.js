@@ -34,7 +34,9 @@
 // v12：① exam.js 的 loadByCode 把服务端中文错误（如设备上限 403）透出到界面，不再只显示笼统失败；
 //      ② 题库系统新增富化元信息 + 设备绑定/私有分发（Worker 端，前端无需改壳）；
 //      ③ 新增本地出题工具 tools/make_bank.py（PDF/TXT → 标准题库 JSON，可直传云端）。
-const CACHE = 'cardflow-v12';
+// v13：刷一刷新增「知识卡 knowledge_card」布局（钩子 + 点击揭晓要点/公式/备注），
+//      借鉴小树学习平台知识卡片流；新增 kcard-* 样式类。
+const CACHE = 'cardflow-v13';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
   // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
   // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，

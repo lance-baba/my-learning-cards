@@ -423,6 +423,57 @@ body {
   margin: 0;
 }
 
+/* ============ 知识卡：钩子揭晓式 knowledge_card ============
+ * 借鉴小树学习平台的「知识卡片流」：标题 → 钩子 → 点击揭晓 → 要点/公式/备注。
+ * 复用现有 list-card/list-dot（要点）与 card-title；新增钩子、揭晓按钮、公式、备注四类。 */
+.kcard-hook {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-left: 3px solid #34d399;
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 0 12px 12px 0;
+  font-size: var(--card-fs, 1.02rem);
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+.kcard-reveal {
+  margin-top: 10px;
+  text-align: center;
+  padding: 13px;
+  border-radius: 14px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px dashed rgba(52, 211, 153, 0.5);
+  color: #6ee7b7;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.kcard-reveal:active {
+  transform: scale(0.97);
+  background: rgba(16, 185, 129, 0.24);
+}
+.kcard-formula {
+  margin: 12px 0 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  font-family: "SF Mono", "Fira Code", Consolas, monospace;
+  font-size: 1.05rem;
+  color: #fbbf24;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.kcard-note {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.08);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
 /* ============ 底部导航 ============ */
 /* 移动端同样不再用 position:fixed —— 100vh 陷阱下 fixed bottom:0 会落到地址栏之下被遮住，
  * 用户看到的就是「底部的刷一刷和收藏夹不显示」。改为 #app(flex-col, 100dvh) 的文档流子项，

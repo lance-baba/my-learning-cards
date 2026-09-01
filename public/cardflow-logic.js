@@ -98,6 +98,7 @@
       list_card: 'list-card',
       quote_card: 'quote-card',
       compare_card: 'compare-card',
+      knowledge_card: 'knowledge-card',
     };
     return map[layout] || 'qa-card';
   }
