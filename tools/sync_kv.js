@@ -43,13 +43,13 @@ function wrangler(args, opts) {
 
 function kvKeyGet(key) {
   const { cmd, args } = wranglerBin();
-  const line = [cmd, ...args, 'kv:key', 'get', '--binding=CARD_KV', key].map((a) => `"${a}"`).join(' ');
+  const line = [cmd, ...args, 'kv', 'key', 'get', '--binding=CARD_KV', '--remote', key].map((a) => `"${a}"`).join(' ');
   return execSync(line, { cwd: ROOT, encoding: 'utf8' });
 }
 
 function kvKeyList() {
   const { cmd, args } = wranglerBin();
-  const line = [cmd, ...args, 'kv:key', 'list', '--binding=CARD_KV'].map((a) => `"${a}"`).join(' ');
+  const line = [cmd, ...args, 'kv', 'key', 'list', '--binding=CARD_KV', '--remote'].map((a) => `"${a}"`).join(' ');
   const out = execSync(line, { cwd: ROOT, encoding: 'utf8' });
   try {
     const arr = JSON.parse(out);
@@ -196,7 +196,7 @@ function main() {
     if (!isIndex) {
       console.log(`\n→ 写入 ${e.key}  [${i + 1}/${order.length}]`);
       try {
-        wrangler(['kv:key', 'put', '--binding=CARD_KV', e.key, '--path=' + e.file]);
+        wrangler(['kv', 'key', 'put', '--binding=CARD_KV', '--remote', e.key, '--path=' + e.file]);
         ok++;
       } catch (err) {
         console.error(`\n✗ ${e.key} 写入失败：${err.message}`);
@@ -211,7 +211,7 @@ function main() {
       }
       console.log(`\n→ 写入 ${e.key}  [最后一步：发布目录]  [${i + 1}/${order.length}]`);
       try {
-        wrangler(['kv:key', 'put', '--binding=CARD_KV', e.key, '--path=' + e.file]);
+        wrangler(['kv', 'key', 'put', '--binding=CARD_KV', '--remote', e.key, '--path=' + e.file]);
         ok++;
       } catch (err) {
         console.error(`\n✗ ${e.key} 发布失败：${err.message}`);
@@ -238,7 +238,7 @@ function main() {
       if (really) {
         for (const k of toDelete) {
           try {
-            wrangler(['kv:key', 'delete', '--binding=CARD_KV', k]);
+            wrangler(['kv', 'key', 'delete', '--binding=CARD_KV', '--remote', k]);
             console.log('  ✓ 已删除 ' + k);
           } catch (err) {
             console.error('  ✗ 删除失败 ' + k + '：' + err.message);
