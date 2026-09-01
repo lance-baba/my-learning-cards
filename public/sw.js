@@ -39,7 +39,10 @@
 // v14：备考题库导航边界修正——「返回」只在模考内部逐级回退，栈空回落到模考首页，
 //      不再跳回 CardFlow 刷一刷（原行为导致偶发「按返回莫名回到刷卡界面」）；
 //      跨界跳转改为首页显式「← 回到刷一刷」按钮。
-const CACHE = 'cardflow-v14';
+// v15：① 备考题库「返回」统一用 titleFor(page) 恢复顶部标题，彻底消除从某类目学习返回后
+//      顶部仍残留旧类目（如「基本知识 看题学习」）的 bug；② 模考组卷「题数/时长」改为卡片化
+//      步进器（+/− 按钮、5 为步长、边界禁用）；③ 「看题学习」模式更名为「备考学习」。
+const CACHE = 'cardflow-v15';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
   // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
   // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，

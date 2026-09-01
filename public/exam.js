@@ -226,6 +226,23 @@
         return this.activeBank.code ? ('题库 · ' + (this.activeBank.title || this.activeBank.code)) : '备考题库';
       },
 
+      // 按页面推导顶部标题（返回时据此恢复，避免残留上一页的类目字样）。
+      // 与前进时各方法手动设置的标题保持一致。
+      titleFor: function (page) {
+        switch (page) {
+          case 'home': return this.homeTitle();
+          case 'study': return (this.shortNames[this.study.chapter] || this.study.chapter || '') + ' · 备考学习';
+          case 'study-select': return '选择章节';
+          case 'wrong': return '错题回顾';
+          case 'stats': return '学习统计';
+          case 'exam-config': return '模拟考试 · 组卷';
+          case 'exam':
+          case 'exam-result':
+          case 'exam-review': return '模拟考试';
+          default: return this.homeTitle();
+        }
+      },
+
       // 每章：总题数 / 已读（学习模式）/ 各题型数量
       chapterCards: function () {
         var self = this;
@@ -463,6 +480,7 @@
         if (this.history.length) {
           var prev = this.history.pop();
           this.page = prev;
+          this.title = this.titleFor(prev);   // 恢复该页标题，不再残留上一页类目
         } else {
           this.page = 'home';
           this.title = this.homeTitle();
@@ -513,7 +531,7 @@
           if (i === this.study.list.length - 1) resume = 0;
         }
         this.study.idx = resume;
-        this.title = (this.shortNames[ch] || ch) + ' · 看题学习';
+        this.title = (this.shortNames[ch] || ch) + ' · 备考学习';
         this.go('study');
         this.$nextTick(function () { self.markCurrentRead(); });
       },
@@ -592,6 +610,18 @@
       chipActive: function (group, val) {
         var arr = group === 'ch' ? this.cfg.chapters : this.cfg.types;
         return arr.indexOf(val) >= 0;
+      },
+
+      // 组卷配置：题数 / 时长 步进调整（+5/-5，钳制在合法区间并对齐步长）
+      stepCfg: function (key, delta) {
+        var max = key === 'count' ? 200 : 300;
+        var step = 5;
+        var v = (parseInt(this.cfg[key], 10) || step) + delta;
+        v = Math.max(5, Math.min(max, v));
+        v = Math.round(v / step) * step;
+        if (v < 5) v = 5;
+        if (v > max) v = max;
+        this.cfg[key] = v;
       },
 
       startExam: function () {
@@ -833,7 +863,7 @@
       '      </div>',
       '      <div class="ex-grid">',
       '        <button class="ex-entry ex-entry--study" @click="go(\'study-select\')">',
-      '          <span class="ex-entry-icon">📖</span><span class="ex-entry-name">看题学习</span>',
+      '          <span class="ex-entry-icon">📖</span><span class="ex-entry-name">备考学习</span>',
       '          <span class="ex-entry-desc">逐题浏览 · 直接看答案</span>',
       '        </button>',
       '        <button class="ex-entry ex-entry--exam" @click="go(\'exam-config\')">',
@@ -918,8 +948,24 @@
       '        </div>',
       '      </div>',
       '      <div class="ex-field ex-field--row">',
-      '        <div><label>题数</label><input class="ex-num" type="number" min="5" max="200" v-model.number="cfg.count"></div>',
-      '        <div><label>时长（分钟）</label><input class="ex-num" type="number" min="5" max="300" v-model.number="cfg.time"></div>',
+      '        <div class="ex-stepper">',
+      '          <label>题数</label>',
+      '          <div class="ex-stepper-row">',
+      '            <button type="button" class="ex-step" :disabled="cfg.count <= 5" @click="stepCfg(\'count\', -5)">−</button>',
+      '            <input class="ex-num" type="number" min="5" max="200" v-model.number="cfg.count">',
+      '            <button type="button" class="ex-step" :disabled="cfg.count >= 200" @click="stepCfg(\'count\', 5)">+</button>',
+      '          </div>',
+      '          <span class="ex-step-unit">道（5 道 / 步）</span>',
+      '        </div>',
+      '        <div class="ex-stepper">',
+      '          <label>时长</label>',
+      '          <div class="ex-stepper-row">',
+      '            <button type="button" class="ex-step" :disabled="cfg.time <= 5" @click="stepCfg(\'time\', -5)">−</button>',
+      '            <input class="ex-num" type="number" min="5" max="300" v-model.number="cfg.time">',
+      '            <button type="button" class="ex-step" :disabled="cfg.time >= 300" @click="stepCfg(\'time\', 5)">+</button>',
+      '          </div>',
+      '          <span class="ex-step-unit">分钟（5 分 / 步）</span>',
+      '        </div>',
       '      </div>',
       '      <p class="ex-poolinfo">可用题目：<b>{{ examPool.length }}</b> 道<span v-if="examPool.length < cfg.count">（不足设定题数，将按 {{ examPool.length }} 道组卷）</span></p>',
       '      <button class="ex-btn ex-btn--primary ex-btn--block" :disabled="!examPool.length" @click="startExam">开始考试</button>',
