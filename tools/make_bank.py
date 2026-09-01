@@ -9,7 +9,7 @@
 然后（可选地）直接上传到云端 Worker，云端返回 16 位验证码，
 对方在 exam.html 首页「输入验证码」处填入即可加载本题库。
 
-数据流（与小树学习平台的 generate_bank.py 同源思路，但输出适配 CardFlow 结构）：
+数据流（思路源自小树学习平台的 generate_bank.py，输出适配 CardFlow 结构）：
   PDF/TXT ──▶ pdfplumber/纯文本读取 ──▶ 正则解析「题干类型/题目N./答案/选项」
         ──▶ 组装 {title, version, chapters, shortNames, questions}
         ──▶ 本地写 JSON（--out）──▶ [--upload] POST /api/bank（需 X-Bank-Key）
@@ -33,7 +33,7 @@
   # 多个 PDF 合并成一份题库（每个文件当作一个章节）
   python tools/make_bank.py --pdf a.pdf b.pdf c.pdf --title "全套模考"
 
-  # 纯文本（从 Word / 网页复制粘贴成 .txt 也行）
+  # 纯文本（从 Word / 网页复制粘贴成 .txt 也行；此模式不需要任何依赖）
   python tools/make_bank.py --text 题库.txt --title "练习题"
 
   # 生成并直接上传到云端（环境变量 BANK_UPLOAD_KEY 或 --key）
@@ -43,12 +43,14 @@
   python tools/make_bank.py --pdf 地基.pdf --title "私享题库" --upload --max-devices 3
 
 依赖（本机安装一次即可）：
-  pip install pdfplumber PyMuPDF
-  （PyMuPDF 仅 --images 时才需要，不装也能跑纯文本/无图模式）
+  pip install pdfplumber
+  （--text 纯文本模式不需要任何依赖，开箱即用）
 
 注意：
-  - 云端 KV 单题库上限 1MB。带图（--images）极易超限，默认关闭；
-    开启 --images 后若超过 900KB 会拒绝上传并提示。
+  - 云端 KV 单题库上限 1MB；上传前若超过 900KB 会拒绝并提示。
+  - 刻意不提取 / 不嵌入图片：考试界面（exam.js）只渲染题干与选项文本，
+    没有任何图片渲染位，塞 base64 图只会白白把题库撑爆 1MB 上限。
+    小树学习平台那条图片流水线在本项目不适用，已主动去掉。
   - 题型识别：默认按「题干类型：X」分段；没有该标记的 PDF 走全文单段模式。
   - 多选题自动识别：答案长度 > 1（如 BD / ABD）即升级为「多选题」。
 ================================================================
@@ -58,7 +60,6 @@ import os
 import re
 import sys
 import argparse
-import base64
 from datetime import datetime
 from pathlib import Path
 from urllib import request as urllib_request
@@ -68,11 +69,6 @@ try:
     import pdfplumber
 except ImportError:
     pdfplumber = None
-
-try:
-    import fitz  # PyMuPDF
-except ImportError:
-    fitz = None
 
 
 # ============================================================
@@ -93,15 +89,8 @@ def fail(msg):
 
 
 def safe_name(s, n=40):
-    s = re.sub(r'[\\/:*?"<>|\r\n\t]+', '_', s).strip()
+    s = re.sub(r'[\\/:*?"<>|\r\n\t]+', "_", s).strip()
     return s[:n] or "题库"
-
-
-def gen_code_local(length=16):
-    """仅用于本地预览展示；真正的验证码由云端生成。"""
-    import secrets
-    import string
-    return "".join(secrets.choice(string.ascii_letters + string.digits) for _ in range(length))
 
 
 def format_types(questions):
@@ -117,7 +106,7 @@ def format_types(questions):
 # ============================================================
 def extract_pdf_text(pdf_path):
     if pdfplumber is None:
-        fail("未安装 pdfplumber。请运行：pip install pdfplumber")
+        fail("未安装 pdfplumber。请运行：pip install pdfplumber（或改用 --text 纯文本模式，无需依赖）")
     print(f"  📖 正在读取: {pdf_path}")
     parts = []
     with pdfplumber.open(pdf_path) as pdf:
@@ -130,62 +119,11 @@ def extract_pdf_text(pdf_path):
     return text
 
 
-def extract_pdf_images(pdf_path):
-    """PyMuPDF 逐页提取图片（base64 data-uri），返回 {page(1-based): [uri,...]}。"""
-    if fitz is None:
-        print("  ⚠️  未安装 PyMuPDF，跳过图片提取（运行 pip install PyMuPDF）")
-        return {}
-    doc = fitz.open(pdf_path)
-    page_images = {}
-    for page_num in range(len(doc)):
-        images = doc[page_num].get_images(full=True)
-        if not images:
-            continue
-        uris = []
-        for img_info in images:
-            xref = img_info[0]
-            img_data = doc.extract_image(xref)
-            if img_data and img_data.get("image"):
-                b64 = base64.b64encode(img_data["image"]).decode("utf-8")
-                mime = "image/" + img_data.get("ext", "jpeg")
-                uris.append(f"data:{mime};base64,{b64}")
-        if uris:
-            page_images[page_num + 1] = uris
-    doc.close()
-    total = sum(len(v) for v in page_images.values())
-    if total:
-        print(f"  📷 扫描到 {total} 张图片，分布在 {len(page_images)} 页")
-    return page_images
-
-
-def match_images_to_questions(questions, page_images):
-    """含图页 → 该页全部题目自动获得图片（逐页共存策略，简化版）。"""
-    if not page_images:
-        return questions
-    # 按题干前 25 字在全文中定位页码（仅用图片页做粗匹配）
-    for q in questions:
-        if "img" in q:
-            continue
-        head = q["q"][:25].strip()
-        if len(head) < 6:
-            continue
-        for pnum, imgs in page_images.items():
-            # 没有全文，无法精确定位；退而求其次：给前 1/3 题配首页图、其余略过
-            pass
-    # 简化策略：给「第一个含图页」的所有题配该页图（多数真题每页一图一题）
-    first_page = min(page_images.keys())
-    imgs = page_images[first_page]
-    for q in questions:
-        if "img" not in q:
-            q["img"] = imgs[0] if len(imgs) == 1 else imgs
-    return questions
-
-
 # ============================================================
-# 模式 A：解析已有题目（题目+选项+答案格式）
+# 解析已有题目（题目+选项+答案格式）
 # ============================================================
 def parse_exam_questions(raw_text, chapter_name):
-    """从文本解析格式化的题目，输出 CardFlow 标准 question 列表（不含 num 重排）。"""
+    """从文本解析格式化的题目，输出 CardFlow 标准 question 列表（num 由 build_bank 统一重排）。"""
     questions = []
 
     # ── Step 1: 按「题干类型」拆分为多个段落；无标记则全文单段 ──
@@ -292,11 +230,12 @@ def parse_exam_questions(raw_text, chapter_name):
 # 组装题库
 # ============================================================
 def build_bank(questions, title, version, short_map):
-    # 全局重编号 + 章节顺序
+    # 章节按出现顺序去重
     chapters = []
     for q in questions:
         if q["ch"] not in chapters:
             chapters.append(q["ch"])
+    # 全局重编号（源 PDF 里 q.num 按题型分别计数会重复，这里统一连续）
     for i, q in enumerate(questions):
         q["num"] = i + 1
 
@@ -315,9 +254,8 @@ def build_bank(questions, title, version, short_map):
 
 
 def validate_bank(bank):
-    """本地质检：返回 (ok, warnings)。"""
+    """本地质检：返回 (ok, warnings)。答案必须落在选项内，否则前端判分必然错。"""
     warnings = []
-    types = format_types(bank["questions"])
     for idx, q in enumerate(bank["questions"], 1):
         opts = q.get("opts") or {}
         if not q.get("ch"):
@@ -350,7 +288,7 @@ def upload_bank(bank, url, key, max_devices, note):
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
 
     if len(body) > 1_000_000:
-        fail(f"题库体积 {len(body)//1024}KB 超过云端 1MB 上限，无法上传。请精简或关闭 --images。")
+        fail(f"题库体积 {len(body) // 1024}KB 超过云端 1MB 上限，无法上传。请精简题库。")
 
     req = urllib_request.Request(
         endpoint,
@@ -369,7 +307,8 @@ def upload_bank(bank, url, key, max_devices, note):
         except Exception:
             pass
         if e.code == 401:
-            fail("上传密钥错误（401）：--key / BANK_UPLOAD_KEY 与 Worker 的 BANK_UPLOAD_KEY 不一致。")
+            fail("上传密钥错误（401）：--key / BANK_UPLOAD_KEY 与 Worker 的 BANK_UPLOAD_KEY 不一致，"
+                 "或该 secret 尚未配置（wrangler secret put BANK_UPLOAD_KEY）。")
         if e.code == 429:
             fail("限流（429）：每 IP 每分钟最多 10 次，稍后再试。")
         if e.code == 413:
@@ -393,13 +332,12 @@ def main():
     parser.add_argument("--title", default="", help="题库标题（默认取第一个文件名）")
     parser.add_argument("--version", default="", help="版本号（默认当天日期）")
     parser.add_argument("--short", nargs="*", help="章节短名映射，格式 ch:短名（可多次）")
-    parser.add_argument("--images", action="store_true", help="启用 PDF 图片提取（base64，易超 1MB，慎开）")
     parser.add_argument("--out", default="", help="输出 JSON 路径（默认 generated_banks/<标题>.json）")
     parser.add_argument("--upload", action="store_true", help="生成后直接上传到云端并返回验证码")
     parser.add_argument("--url", default=DEFAULT_URL, help="Worker 地址（默认 https://fwzy.ccwu.cc）")
     parser.add_argument("--key", default=os.environ.get("BANK_UPLOAD_KEY", ""), help="上传密钥（或环境变量 BANK_UPLOAD_KEY）")
     parser.add_argument("--max-devices", type=int, default=0, help="私有分发：验证码最多绑 N 台设备（0=不限制，1~50）")
-    parser.add_argument("--note", default="", help="题库备注（写入本地 codes_manifest.json）")
+    parser.add_argument("--note", default="", help="题库备注（随上传写入云端 bankmeta）")
     args = parser.parse_args()
 
     if not args.pdf and not args.text:
@@ -413,16 +351,15 @@ def main():
             ch, short = s.split(":", 1)
             short_map[ch.strip()] = short.strip()
 
-    all_qs = []
     sources = (args.pdf or []) + (args.text or [])
+    all_qs = []
+
     for pdf in (args.pdf or []):
         if not os.path.exists(pdf):
             fail(f"文件不存在：{pdf}")
         text = extract_pdf_text(pdf)
         ch = safe_name(os.path.splitext(os.path.basename(pdf))[0], 30)
         qs = parse_exam_questions(text, ch)
-        if args.images:
-            qs = match_images_to_questions(qs, extract_pdf_images(pdf))
         all_qs.extend(qs)
         print(f"    {os.path.basename(pdf)} → {len(qs)} 题")
 
@@ -457,8 +394,7 @@ def main():
 
     # 输出 JSON
     DEFAULT_OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = args.out or (DEFAULT_OUT_DIR / (safe_name(title, 40) + ".json"))
-    out_path = Path(out_path)
+    out_path = Path(args.out) if args.out else (DEFAULT_OUT_DIR / (safe_name(title, 40) + ".json"))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(bank, f, ensure_ascii=False, indent=2)
@@ -468,18 +404,20 @@ def main():
     # 上传
     if args.upload:
         if not args.key:
-            fail("未提供上传密钥：加 --key <KEY> 或设置环境变量 BANK_UPLOAD_KEY（需先 `wrangler secret put BANK_UPLOAD_KEY`）。")
+            fail("未提供上传密钥：加 --key <KEY> 或设置环境变量 BANK_UPLOAD_KEY"
+                 "（需先 `wrangler secret put BANK_UPLOAD_KEY`）。")
         if size_kb > 900:
-            print(f"  ⚠️  题库 {size_kb}KB 已接近 1MB 上限，上传可能因体积被拒。")
+            fail(f"题库 {size_kb}KB 已接近/超过 1MB 上限，拒绝上传以免被服务端 413 拦掉。")
         data = upload_bank(bank, args.url, args.key, args.max_devices, args.note)
         print(f"\n  ✅ 上传成功！验证码： {data['code']}")
         if data.get("title"):
             print(f"     题库：{data['title']}")
         print(f"     题数：{data.get('total', len(bank['questions']))}")
-        print(f"     设备上限：{data.get('maxDevices', 0) if data.get('maxDevices', 0) > 0 else '不限制'} 台")
-        print(f"\n  把验证码发给对方，对方在 exam.html 首页「题库管理 → 输入验证码」填入即可加载。")
+        md = data.get("maxDevices", 0)
+        print(f"     设备上限：{md if md > 0 else '不限制'} 台")
+        print("\n  把验证码发给对方，对方在 exam.html 首页「题库管理 → 输入验证码」填入即可加载。")
     else:
-        print(f"\n  下一步：上传到云端生成验证码 ——")
+        print("\n  下一步：上传到云端生成验证码 ——")
         print(f"    BANK_UPLOAD_KEY=xxxx python tools/make_bank.py --pdf <源> --title \"{title}\" --upload")
         print(f"  或走专用上传器：node tools/upload_bank.mjs {out_path}")
 
