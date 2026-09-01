@@ -38,6 +38,9 @@ Thumbs.db
 .dev.vars
 .dev.vars.*
 
+# 题库发布本地清单（每次 publish/upload 都会追加，属运行时状态，不入库）
+codes_manifest.json
+
 # 注意：data/ 与 public/vendor/ 必须入库
 #   - data/ 是题库唯一权威副本
 #   - public/vendor/ 是自托管依赖，缺了部署即白屏

@@ -36,6 +36,9 @@
   # 纯文本（从 Word / 网页复制粘贴成 .txt 也行；此模式不需要任何依赖）
   python tools/make_bank.py --text 题库.txt --title "练习题"
 
+  # Word 文档（.docx；用标准库解 zip+xml，零额外依赖。老 .doc 请先另存为 .docx）
+  python tools/make_bank.py --docx 题库.docx --title "练习题"
+
   # 生成并直接上传到云端（环境变量 BANK_UPLOAD_KEY 或 --key）
   BANK_UPLOAD_KEY=xxxx python tools/make_bank.py --pdf 地基.pdf --title "地基检测" --upload
 
@@ -44,7 +47,7 @@
 
 依赖（本机安装一次即可）：
   pip install pdfplumber
-  （--text 纯文本模式不需要任何依赖，开箱即用）
+  （--text / --docx 模式不需要任何依赖，标准库即可，开箱即用）
 
 注意：
   - 云端 KV 单题库上限 1MB；上传前若超过 900KB 会拒绝并提示。
@@ -116,6 +119,32 @@ def extract_pdf_text(pdf_path):
                 parts.append(t)
     text = "\n".join(parts)
     print(f"     {len(parts)} 有效页, {len(text)} 字符")
+    return text
+
+
+def extract_docx_text(docx_path):
+    """Word .docx → 纯文本。零依赖：docx 本质是 zip，直接解 word/document.xml 取段落文本。
+    （python-docx 若已安装会更快，但标准库方案零依赖即可用。）"""
+    import zipfile
+    from xml.etree import ElementTree as ET
+
+    print(f"  📖 正在读取: {docx_path}")
+    W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    try:
+        with zipfile.ZipFile(docx_path) as z:
+            xml = z.read("word/document.xml")
+    except zipfile.BadZipFile:
+        fail("不是有效的 .docx 文件（老版 .doc 是二进制格式，请先用 Word 另存为 .docx，或另存为 .txt）")
+    except KeyError:
+        fail("该 .docx 里没有 word/document.xml，文件可能损坏。")
+    root = ET.fromstring(xml)
+    paras = []
+    for p in root.iter(W + "p"):
+        line = "".join(t.text or "" for t in p.iter(W + "t"))
+        if line.strip():
+            paras.append(line.strip())
+    text = "\n".join(paras)
+    print(f"     {len(paras)} 个段落, {len(text)} 字符")
     return text
 
 
@@ -326,8 +355,9 @@ def upload_bank(bank, url, key, max_devices, note):
 # CLI
 # ============================================================
 def main():
-    parser = argparse.ArgumentParser(description="PDF/TXT → CardFlow 标准题库 JSON（可直传云端）")
+    parser = argparse.ArgumentParser(description="PDF/Word/TXT → CardFlow 标准题库 JSON（可直传云端）")
     parser.add_argument("--pdf", nargs="+", help="刷题类 PDF（可多个，每个文件当一个章节）")
+    parser.add_argument("--docx", nargs="+", help="Word 文档（.docx，可多个；老 .doc 请先另存为 .docx）")
     parser.add_argument("--text", nargs="+", help="纯文本题库（.txt，从 Word/网页复制粘贴）")
     parser.add_argument("--title", default="", help="题库标题（默认取第一个文件名）")
     parser.add_argument("--version", default="", help="版本号（默认当天日期）")
@@ -340,7 +370,7 @@ def main():
     parser.add_argument("--note", default="", help="题库备注（随上传写入云端 bankmeta）")
     args = parser.parse_args()
 
-    if not args.pdf and not args.text:
+    if not args.pdf and not args.docx and not args.text:
         parser.print_help()
         sys.exit(1)
 
@@ -351,7 +381,7 @@ def main():
             ch, short = s.split(":", 1)
             short_map[ch.strip()] = short.strip()
 
-    sources = (args.pdf or []) + (args.text or [])
+    sources = (args.pdf or []) + (args.docx or []) + (args.text or [])
     all_qs = []
 
     for pdf in (args.pdf or []):
@@ -362,6 +392,15 @@ def main():
         qs = parse_exam_questions(text, ch)
         all_qs.extend(qs)
         print(f"    {os.path.basename(pdf)} → {len(qs)} 题")
+
+    for docx in (args.docx or []):
+        if not os.path.exists(docx):
+            fail(f"文件不存在：{docx}")
+        text = extract_docx_text(docx)
+        ch = safe_name(os.path.splitext(os.path.basename(docx))[0], 30)
+        qs = parse_exam_questions(text, ch)
+        all_qs.extend(qs)
+        print(f"    {os.path.basename(docx)} → {len(qs)} 题")
 
     for txt in (args.text or []):
         if not os.path.exists(txt):
