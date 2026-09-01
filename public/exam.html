@@ -19,5 +19,26 @@
   <div id="exam-app"></div>
 
   <script src="./exam.js"></script>
+
+  <!-- Service Worker：注册并监听更新。新版本就绪后自动刷新当前页，
+       用户无需手动硬刷新即可看到最新 exam.js / exam.css（避免旧 SW 一直喂旧缓存）。 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').then(function (reg) {
+          reg.addEventListener('updatefound', function () {
+            var installing = reg.installing;
+            if (!installing) return;
+            installing.addEventListener('statechange', function () {
+              // 已有旧版在控且新 SW 安装完成 → 自动刷新以应用新版本
+              if (installing.state === 'installed' && navigator.serviceWorker.controller) {
+                window.location.reload();
+              }
+            });
+          });
+        }).catch(function () { /* 注册失败不影响正常使用，下次加载重试 */ });
+      });
+    }
+  </script>
 </body>
 </html>

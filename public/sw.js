@@ -42,7 +42,9 @@
 // v15：① 备考题库「返回」统一用 titleFor(page) 恢复顶部标题，彻底消除从某类目学习返回后
 //      顶部仍残留旧类目（如「基本知识 看题学习」）的 bug；② 模考组卷「题数/时长」改为卡片化
 //      步进器（+/− 按钮、5 为步长、边界禁用）；③ 「看题学习」模式更名为「备考学习」。
-const CACHE = 'cardflow-v15';
+// v16：① 家页左上新增「← 回到刷一刷」跨界按钮（原在 hero 内，移到标题栏最左，与「← 返回」同位）；
+//      ② exam.html 补上 SW 注册 + 新版本就绪自动刷新，解决「部署后浏览器一直显示旧 UI」的缓存问题。
+const CACHE = 'cardflow-v16';
 const SHELL = ['/', '/index.html', '/app.js', '/style.css', '/monitor.js', '/manifest.webmanifest', '/icon.svg', '/sw.js',
   // 备考题库独立页面（与 CardFlow 互不相干，按需进入）。
   // 注意：exam/questions.json（561KB）不进预缓存，改为首次打开模块时由 SW 按需缓存，

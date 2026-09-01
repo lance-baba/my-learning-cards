@@ -834,7 +834,7 @@
       /* ---------- 顶栏 ---------- */
       '  <div class="ex-head">',
       '    <button v-if="page !== \'home\'" class="ex-back" @click="back">← 返回</button>',
-      '    <span v-else class="ex-back ex-back--ghost"></span>',
+      '    <button v-else class="ex-back" @click="close">← 回到刷一刷</button>',
       '    <span class="ex-title">{{ title }}</span>',
       '    <button v-if="page === \'exam\'" class="ex-headbtn" @click="sheetOpen = !sheetOpen">答题卡</button>',
       '    <span v-else class="ex-headbtn ex-headbtn--ghost"></span>',
@@ -859,7 +859,6 @@
       '        <p class="ex-hero-sub">涵盖 {{ chapters.length }} 大章节 · 4 种题型 · 共 {{ totalCount }} 题</p>',
       '        <div class="ex-hero-bar"><span :style="{ width: studyProgress.pct + \'%\' }"></span></div>',
       '        <p class="ex-hero-prog">学习进度 {{ studyProgress.done }}/{{ studyProgress.total }}（{{ studyProgress.pct }}%）</p>',
-      '        <button class="ex-tohome" @click="close">← 回到刷一刷</button>',
       '      </div>',
       '      <div class="ex-grid">',
       '        <button class="ex-entry ex-entry--study" @click="go(\'study-select\')">',
