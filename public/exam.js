@@ -455,24 +455,27 @@
         if (el) el.scrollTop = 0;
       },
 
-      // 返回：优先在备考模块内逐级回退（避免一按返回就跳回 CardFlow 刷一刷，跳转层级过多）。
-      // 仅在首页（历史栈空）时才退出到 CardFlow 主页。
+      // 返回：只在备考模块内部逐级回退，**永不跳回 CardFlow 刷一刷**。
+      // 栈空（如已在首页）时回落到备考首页，而不是退出 —— 模考与刷一刷视为两个独立站点，
+      // 跨界跳转只能由首页的「← 回到刷一刷」按钮显式触发（见 close）。
       back: function () {
         this.stopTimer();
         if (this.history.length) {
           var prev = this.history.pop();
           this.page = prev;
-          this.sheetOpen = false;
-          var el = this.$refs.body;
-          if (el) el.scrollTop = 0;
         } else {
-          this.close();
+          this.page = 'home';
+          this.title = this.homeTitle();
         }
+        this.sheetOpen = false;
+        var el = this.$refs.body;
+        if (el) el.scrollTop = 0;
       },
 
+      // 跨界跳转：备考题库 → CardFlow 刷一刷主页（同一站点下的 index.html）。
+      // 仅由首页显式按钮调用，普通「返回」不会走到这里。
       close: function () {
         this.stopTimer();
-        // 独立页面：返回 CardFlow 主页（同一站点下的 index.html）
         window.location.href = './';
       },
 
@@ -800,7 +803,8 @@
 
       /* ---------- 顶栏 ---------- */
       '  <div class="ex-head">',
-      '    <button class="ex-back" @click="back">← 返回</button>',
+      '    <button v-if="page !== \'home\'" class="ex-back" @click="back">← 返回</button>',
+      '    <span v-else class="ex-back ex-back--ghost"></span>',
       '    <span class="ex-title">{{ title }}</span>',
       '    <button v-if="page === \'exam\'" class="ex-headbtn" @click="sheetOpen = !sheetOpen">答题卡</button>',
       '    <span v-else class="ex-headbtn ex-headbtn--ghost"></span>',
@@ -825,6 +829,7 @@
       '        <p class="ex-hero-sub">涵盖 {{ chapters.length }} 大章节 · 4 种题型 · 共 {{ totalCount }} 题</p>',
       '        <div class="ex-hero-bar"><span :style="{ width: studyProgress.pct + \'%\' }"></span></div>',
       '        <p class="ex-hero-prog">学习进度 {{ studyProgress.done }}/{{ studyProgress.total }}（{{ studyProgress.pct }}%）</p>',
+      '        <button class="ex-tohome" @click="close">← 回到刷一刷</button>',
       '      </div>',
       '      <div class="ex-grid">',
       '        <button class="ex-entry ex-entry--study" @click="go(\'study-select\')">',

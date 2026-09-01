@@ -59,6 +59,26 @@ html, body { height: 100%; margin: 0; background: #F5F3ED; }
   cursor: pointer;
 }
 .ex-back:active { background: rgba(74, 124, 89, 0.2); }
+/* 首页不显示「返回」，用同等尺寸的透明占位保持标题居中 */
+.ex-back--ghost { border-color: transparent; pointer-events: none; }
+
+/* 跨界跳转按钮：备考题库 → CardFlow 刷一刷。
+   模考与刷一刷视为两个独立站点，这是唯一跨界入口 —— 「返回」只在模考内部逐级回退，
+   避免出现「按返回莫名其妙跳回刷一刷」的跳转层级混乱。 */
+.ex-tohome {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ex-ink2);
+  background: rgba(44, 42, 38, 0.04);
+  border: 1px solid var(--ex-line);
+  padding: 7px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.ex-tohome:active { background: rgba(44, 42, 38, 0.1); }
 .ex-title {
   flex: 1 1 auto;
   text-align: center;
